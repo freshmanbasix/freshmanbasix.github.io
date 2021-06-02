@@ -4,9 +4,15 @@
   <head>
     <meta charset="utf-8">
     <title>freshman basix</title>
+    <link rel="stylesheet" type="text/css" href=style.css>
   </head>
   <body>
-    <p>Behold, the white horse on the hill. His name was death, and all life ends at his feet</p>
+    <div class="content-block">
+      <p>Here's an example of how one might use the gpg command line tool to encrypt an arbitrary file to be decryptable only by the intenden recipient.</p>
+    </div>
+    <pre>
+      <code>gpg --encrypt secret-message.text --armor --recipient UID --output encrypted-message.asc</code>
+    </pre>
 
   </body>
 </html>
