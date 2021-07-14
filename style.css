@@ -1,3 +1,10 @@
+/*
+  nice orange color #f2951d
+  black color #282828
+  white color #F8F8F8
+*/
+
+/* @import "codestyler.css"; */
 
 body {
   width: 50%;
@@ -5,16 +12,100 @@ body {
   margin: 0 auto;
 }
 
-.content-block {
-  display: block;
+header {
   margin-top: 1%;
   margin-bottom: 1%;
+  /* width: 60%; */
+  margin: 0 auto;
 }
 
-pre code {
+pre {
   text-align: center;
-  background-color: #eee;
-  border: 1px solid #999;
+}
+
+.code-snippet {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f2951d;
+  color: #666;
+  page-break-inside: avoid;
+  font: 14px/16px "Courier New";
+  text-align: left;
+  line-height: 1.0;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  padding: .5em 1em;
   display: block;
-  padding: 20px;
+  word-wrap: break-word;
+
+  margin-left: 3%;
+  overflow: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: #f4f4f4;
+  color: red;
+  padding: 0px 3px 0px 3px;
+}
+
+.banner {
+  margin: 1% 0 1% 0;
+  flex: 3;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: #282828;
+  color: #F8F8F8;
+}
+
+.main-content-container {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  display: flex;
+}
+
+#wiki-entry {
+  /* margin-left: : 3%;
+  margin-right: : 3%; */
+  flex: 4;
+  text-align: left;
+}
+
+#toc-overview {
+  flex: 1;
+  text-align: left;
+  border: 1px solid black;
+  margin-left: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.entry-name {
+  background-color: #f2951d;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.entry-name a {
+  color: black;
+}
+
+.entry-toc ul {
+  margin-top: 1%;
+  padding-left: 10%;
+}
+
+.placeholder-block {
+  display: block;
+  text-align: center;
+  border: 1px solid #000000;
+  background-color: #f2951d;
+  padding: 5%;
 }

@@ -1,18 +1,54 @@
 <!DOCTYPE html5>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>freshman basix</title>
+    <title>freshman basix wiki</title>
     <link rel="stylesheet" type="text/css" href=style.css>
   </head>
-  <body>
-    <div class="content-block">
-      <p>Here's an example of how one might use the gpg command line tool to encrypt an arbitrary file to be decryptable only by the intenden recipient.</p>
-    </div>
-    <pre>
-      <code>gpg --encrypt secret-message.text --armor --recipient UID --output encrypted-message.asc</code>
-    </pre>
+  <body onload="loadDefault();">
 
+    <header>
+        <div class="banner">
+          <pre>
+  /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
+  | $$  /$ | $$|_  $$_/| $$  /$$/|_  $$_/
+| $$ /$$$| $$  | $$  | $$ /$$/   | $$
+| $$/$$ $$ $$  | $$  | $$$$$/    | $$
+| $$$$_  $$$$  | $$  | $$  $$    | $$
+| $$$/ \  $$$  | $$  | $$\  $$   | $$
+  | $$/   \  $$ /$$$$$$| $$ \  $$ /$$$$$$
+  |__/     \__/|______/|__/  \__/|______/
+          </pre>
+        </div>
+      </header>
+
+    </div>
+
+    <div class="main-content-container">
+      <div  id="wiki-entry">
+        <h1><span id="section-ENCRYPTION">ENCRYPTION</span></h1>
+        <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
+
+        <h2> <span id="sub-section-The_Key-Pair_Model">The Key-Pair Model</span> </h2>
+        Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one private that can decrypt (unlock) messages meant only for the owner, and public that encrypts (locks) a message meant for a specific recipient.
+
+        <h2> <span id="sub-section-Gnu_Privacy_Guard">Gnu Privacy Guard</span> </h2>
+        <p>Assymetric encryption can be achieved on a linux machine using the <code>gpg</code> terminal utility. Below follows an example of how one might use the gpg command line tool to encrypt an arbitrary <i>input-file</i> to be decryptable only by the intended recipient.</p>
+
+        <pre class="code-snippet">gpg --encrypt input-file --armor --recipient UID --output output-file </pre>
+
+      </div>
+      <div id="toc-overview">
+        <div class="entry-name">
+          <a href="#section-ENCRYPTION">ENCRYPTION</a>
+        </div>
+        <div class="entry-toc">
+          <ul>
+            <li> <a href="#sub-section-The_Key-Pair_Model">The Key-Pair Model</a></li>
+            <li> <a href="#sub-section-Gnu_Privacy_Guard">Gnu Privacy Guard</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
