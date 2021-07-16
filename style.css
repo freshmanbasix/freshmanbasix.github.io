@@ -4,108 +4,132 @@
   white color #F8F8F8
 */
 
-/* @import "codestyler.css"; */
-
 body {
-  width: 50%;
+  width: 70vw;
   min-width: 800px;
   margin: 0 auto;
+
+  background-image: url(rsc/seigaiha.png);
+  background-repeat: repeat;
+
+  font-family: "Fira Sans";
 }
 
 header {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /* width: 60%; */
+  width: 66.6%;
+  background-color: #282828;
   margin: 0 auto;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
-pre {
+pre#banner {
   text-align: center;
-}
-
-.code-snippet {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  border-left: 3px solid #f2951d;
-  color: #666;
-  page-break-inside: avoid;
-  font: 14px/16px "Courier New";
-  text-align: left;
-  line-height: 1.0;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  padding: .5em 1em;
-  display: block;
-  word-wrap: break-word;
-
-  margin-left: 3%;
-  overflow: auto;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
-
-code {
-  background-color: #f4f4f4;
-  color: red;
-  padding: 0px 3px 0px 3px;
-}
-
-.banner {
-  margin: 1% 0 1% 0;
-  flex: 3;
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding: 1vh 0;
   background-color: #282828;
   color: #F8F8F8;
 }
 
-.main-content-container {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+h1.column-header {
+  background-color: #282828;
+  color: #F8F8F8;
+  padding: 1vh 0;
+  margin: 0;
+  margin-bottom: 1vh;
+  text-align: center;
+  font-size: medium;
+}
+
+.flex-container {
+    display: flex;
+    margin: 1vh 0;
+}
+
+.navbar-container {
+  flex: 1;
+}
+
+nav#navbar {
+  padding-right: 0.5vw;
+}
+
+#navbar > ul {
+  list-style-type: none;
+  margin: 1vh 0;
+  padding: 0;
+}
+
+li.nav-item a {
+  display: block;
+  background-color: #f2951d;
+  padding: 1vh 0 1vh 0.5vw;
+  margin: 0;
+  margin-bottom: 0.5vh;
+  text-decoration: none;
+  color: #000;
+}
+
+li.nav-item a:hover {
+  background-color: #282828;
+  color: #F8F8F8;
+}
+
+main#core-content {
+  flex: 4;
   display: flex;
 }
 
-#wiki-entry {
-  /* margin-left: : 3%;
-  margin-right: : 3%; */
-  flex: 4;
-  text-align: left;
+.wiki-entry-container {
+  flex: 3;
 }
 
-#toc-overview {
+article#wiki-entry {
+  padding-right: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background-color: #eee;
+  padding: 0.5vh 0 0.5vh 0.5vw;
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1vh;
+}
+
+.toc-container {
   flex: 1;
-  text-align: left;
-  border: 1px solid black;
-  margin-left: 1%;
 }
 
-a {
-  text-decoration: none;
+aside#toc {
 }
 
-.entry-name {
-  background-color: #f2951d;
-  text-align: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
+aside#toc > ul {
+  list-style-type: none;
+  margin: 1vh 0 1vh 0.5vw;
+  padding: 0;
 }
 
-.entry-name a {
-  color: black;
-}
-
-.entry-toc ul {
-  margin-top: 1%;
-  padding-left: 10%;
-}
-
-.placeholder-block {
+li.toci a {
   display: block;
-  text-align: center;
-  border: 1px solid #000000;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.25vh;
+  text-decoration: none;
+  color: #000;
+}
+
+.calendar-container {
+  flex: 1;
+}
+
+aside#calendar {
+  padding-left: 0.5vw;
+}
+
+.placeholder {
+  height: 500px;
   background-color: #f2951d;
-  padding: 5%;
 }
