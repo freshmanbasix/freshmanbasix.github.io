@@ -1,6 +1,7 @@
 /*
   nice orange color #f2951d
   black color #282828
+  grey color #5E5E5E
   white color #F8F8F8
 */
 
@@ -106,6 +107,7 @@ p {
 }
 
 aside#toc {
+  position: fixed;
 }
 
 aside#toc > ul {
@@ -120,7 +122,7 @@ li.toci a {
   margin: 0;
   margin-bottom: 0.25vh;
   text-decoration: none;
-  color: #000;
+  color: #5E5E5E;
 }
 
 .calendar-container {
