@@ -112,7 +112,7 @@ aside#toc {
 
 aside#toc > ul {
   list-style-type: none;
-  margin: 1vh 0 1vh 0.5vw;
+  margin: 0 0 1vh 0.5vw;
   padding: 0;
 }
 
