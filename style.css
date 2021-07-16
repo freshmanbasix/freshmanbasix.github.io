@@ -77,6 +77,7 @@ li.nav-item a:hover {
 main#core-content {
   flex: 4;
   display: flex;
+  background-color: #F8F8F8;
 }
 
 .wiki-entry-container {
@@ -127,6 +128,7 @@ li.toci a {
 
 aside#calendar {
   padding-left: 0.5vw;
+  background-color: #F8F8F8;
 }
 
 .placeholder {
