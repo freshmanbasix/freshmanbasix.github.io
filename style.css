@@ -6,9 +6,10 @@
 */
 
 body {
-  width: 70vw;
+  width: 80vw;
   min-width: 800px;
   margin: 0 auto;
+  margin-bottom: 10vh;
 
   background-image: url(rsc/seigaiha.png);
   background-repeat: repeat;
@@ -26,9 +27,37 @@ header {
 
 pre#banner {
   text-align: center;
-  padding: 1vh 0;
+  padding: 2vh 0;
   background-color: #282828;
   color: #F8F8F8;
+}
+
+.code-snippet {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f2951d;
+  color: #666;
+  page-break-inside: avoid;
+  font: 14px/16px "Courier New";
+  text-align: left;
+  line-height: 1.0;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  padding: 1.5vh 0.5vw;
+  display: block;
+  display: block;
+  word-wrap: break-word;
+  display: block;
+  margin-left: 2vw;
+  overflow: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: #f4f4f4;
+  color: red;
+  padding: 0px 3px 0px 3px;
 }
 
 h1.column-header {
@@ -38,7 +67,7 @@ h1.column-header {
   margin: 0;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: medium;
+  font-size: x-large;
 }
 
 .flex-container {
@@ -85,8 +114,13 @@ main#core-content {
   flex: 3;
 }
 
-article#wiki-entry {
+article {
+  display: none;
   padding-right: 2vw;
+}
+
+article.active-wiki-entry {
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,11 +140,16 @@ p {
   flex: 1;
 }
 
-aside#toc {
+aside.toc {
   position: fixed;
+  display: none;
 }
 
-aside#toc > ul {
+aside.active-toc {
+  display: block;
+}
+
+aside.toc > ul {
   list-style-type: none;
   margin: 0 0 1vh 0.5vw;
   padding: 0;

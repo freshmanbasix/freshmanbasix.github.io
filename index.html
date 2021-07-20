@@ -9,16 +9,14 @@
 
   <body>
     <header>
-      <pre id="banner">
-   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
+      <pre id="banner" onclick="javascript:setActive('welcome')">   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
   | $$  /$ | $$|_  $$_/| $$  /$$/|_  $$_/
 | $$ /$$$| $$  | $$  | $$ /$$/   | $$
 | $$/$$ $$ $$  | $$  | $$$$$/    | $$
 | $$$$_  $$$$  | $$  | $$  $$    | $$
 | $$$/ \  $$$  | $$  | $$\  $$   | $$
   | $$/   \  $$ /$$$$$$| $$ \  $$ /$$$$$$
-  |__/     \__/|______/|__/  \__/|______/
-      </pre>
+  |__/     \__/|______/|__/  \__/|______/</pre>
     </header>
 
     <div class="flex-container">
@@ -27,10 +25,11 @@
         <nav id="navbar">
             <h1 class="column-header">ARTICLES</h1>
             <ul>
-              <li class="nav-item"><a href="#">Encryption</a></li>
-              <li class="nav-item"><a href="#">Linux System Admin</a></li>
-              <li class="nav-item"><a href="#">Web Hosting</a></li>
-              <li class="nav-item"><a href="#">Networks</a></li>
+              <li class="nav-item"><a href="javascript:setActive('encryption')">Encryption</a></li>
+              <li class="nav-item"><a href="javascript:setActive('servers-hosting')">Servers & Hosting</a></li>
+              <li class="nav-item"><a href="javascript:setActive('networks')">Networks</a></li>
+              <li class="nav-item"><a href="javascript:setActive('terminals-scripting')">Terminals & Scripting</a></li>
+              <li class="nav-item"><a href="javascript:setActive('chicken-project-management')">Chicken Project Management</a></li>
             </ul>
         </nav>
     </div>
@@ -39,35 +38,102 @@
       <main id="core-content">
         <!-- ARTICLE CONTENT -->
         <div class="wiki-entry-container">
-          <article id="wiki-entry">
+          <article id="welcome" class="wiki-entry">
             <h1 class="column-header">WELCOME</h1>
-            <p>This is a wiki-page for the wiki-weak.  It will contain some knowledge and descriptions that brings the reader from rookie to rad</p>
+            <p>Welcome to the Freshman Basix Wiki for computer science tinkerers. This is a resource intended to help interested parties get familiar with, or reaquaint themselves with computer science topics. There will be a particular focus on hands on implementation with a strong prescence of theoretical background. Read below for more background, or choose a topic on the left to read more.</p>
 
-            <section>
-              <h2 id="How to Read">How to Read</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2 id="history">History</h2>
+            <p>Freshman Basix had its origin at The Royal Institute of Technology(KTH) in 2015, when <a href="https://www.github.com/hjallepp">David Jacobsson</a> and <a href="https://www.github.com/sieken">David Henriksson</a> jokingly created the <i>company</i>. The name is derived partly from the joke that the tasks undertaken by the company was at the first year basic level, and also that university freshmen are <strong>basic</strong> in the derogatory sense</p>
 
-              <h3 id="Practical Tips">Practical Tips</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
+            <p>Through the years, many uncompleted project ideas saw the light of day, and the idea was born. What if there was a single place where all the knowledge needed to start fidgeting with any of these ideas was gathered. As such, the <strong>Freshman Basix Wiki</strong> was created to house content authored by mainly its creators and contain part lecture notes, part summaries of googling sessions and part formal documentation that may help anyone orient themselves when starting to get their feet wet in the field of computers, hardware, information technology and all the rest.</p>
 
-            <section>
-              <h2 id="Additional Resources">Additional Resources</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
+            <p>This wiki is taking its first studdering steps in the summer of 2021. Hopefully, the content within these pages will prove to be inspiring, useful and continue to grow for many years to come.</p>
 
+            <h2 id="kista-mentorspace">Kista Mentorspace</h2>
+            <p>For many years now, there has been a hidden gem stashed away at the KTH satellite campus in Kista. Run by the inimitable <a href="https://people.kth.se/~msmith/">Mark Smith</a>, the mentorspace offers tools, equipment and knowledge for anyone who would like to get a project going. To complement the resources on offer in the mentorspace, this wiki also aims to be a shared hub of additional documentation that pertains to projects, workshops or topics being worked on in the mentorspace.</p>
+
+            <h2 id="contact-contribute">Contact or Contribute</h2>
+            <p>In the spirit of the rag-tag-beginner skillset that epitomizes the origin of this wiki, this website is a pretty clumsy hodge-podge of decreasingly banal efforts, always striving to become less trivial. Should you feel the desire to correct, complement or contribute to this wiki, feel free to smash that pull-request button over on the <a href="https://github.com/hjallepp/hjallepp.github.io">website github page</a>. Alternatively, you can send an <a href="mailto:david@hjallesoft.com">email</a>.</p>
           </article>
+          <article id="encryption" class="wiki-entry">
+            <h1 class="column-header">ENCRYPTION</h1>
+            <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
+
+            <h2 id="the-key-pair-model">The Key-Pair Model</h2>
+            <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one private that can decrypt (unlock) messages meant only for the owner, and public that encrypts (locks) a message meant for a specific recipient.</p>
+
+            <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
+            <p>Assymetric encryption can be achieved on a linux machine using the <code>gpg</code> terminal utility. Below follows an example of how one might use the gpg command line tool to encrypt an arbitrary <i>input-file</i> to be decryptable only by the intended recipient.</p>
+
+            <pre class="code-snippet">  $ gpg --encrypt input-file --armor --recipient UID --output output-file </pre>
+            
+          </article>
+          <article id="servers-hosting" class="wiki-entry">
+            <h1 class="column-header">SERVERS & HOSTING</h1>
+            This article will mainly cover hosting your own server and putting cool stuff on it, such as websites, back-ends, email etc.
+            <h2 id="client-server-model-overview">Client Server Model Overview</h2>
+            <h2 id="web-servers">Web Servers</h2>
+            <h2 id="ssh">Secure Socket Shell</h2>
+            <h2 id="torrent-server">Torrent Server</h2>
+            <h2 id="network-storage-backup">Network Storage and Backup</h2>
+            <h2 id="git-server">GIT Server</h2>
+          </article>
+          <article id="networks" class="wiki-entry">
+            <h1 class="column-header">NETWORKS</h1>
+            <p>More content to follow...</p>
+          </article>
+          <article id="terminals-scripting" class="wiki-entry">
+            <h1 class="column-header">TERMINALS & SCRIPTING</h1>
+            <p>More content to follow...</p>
+          </article>
+          <article id="chicken-project-management" class="wiki-entry">
+            <h1 class="column-header">CHICKEN PROJECT MANAGEMENT</h1>
+            <p>More content to follow...</p>
+          </article>
+
         </div>
         <div class="toc-container">
-          <h1 class="column-header">TABLE OF CONTENTS</h1>
-          <aside id="toc">
+          <h1 class="column-header">CONTENTS</h1>
+          <aside id="welcome-toc" class="toc">
             <ul>
-              <li class="toci"> <a href="#wiki-entry">Top</a></li>
-              <li class="toci"> <a href="#How to Read">How to Read</a></li>
-              <ul>
-                <li class="toci"> <a href="#Practical Tips">Practical Tips</a></li>
-              </ul>
-              <li class="toci"> <a href="#Additional Resources">Additional Resurces</a></li>
+              <li class="toci"> <a href="#banner">Top</a> </li>
+              <li class="toci"><a href="#history">History</a></li>
+              <li class="toci"><a href="#kista-mentorspace">Kista Mentorspace</a></li>
+              <li class="toci"><a href="#contact-contribute">Contact & Contribute</a></li>
+            </ul>
+          </aside>
+          <aside id="encryption-toc" class="toc">
+            <ul>
+              <li class="toci"> <a href="#banner">Top</a> </li>
+              <li class="toci"> <a href="#the-key-pair-model">The Key-Pair Model</a> </li>
+              <li class="toci"> <a href="#gnu-privacy-guard">Gnu Privacy Guard</a> </li>
+            </ul>
+          </aside>
+          <aside id="servers-hosting-toc" class="toc">
+            <ul>
+              <li class="toci"> <a href="#banner">Top</a> </li>
+              <li class="toci"><a href="#client-server-model-overview">Client Server Model Overview</a></li>
+              <li class="toci"><a href="#web-servers">Web Servers</a></li>
+              <li class="toci"><a href="#ssh">Secure Socket Shell</a></li>
+              <li class="toci"><a href="#torrent-server">Torrent Server</a></li>
+              <li class="toci"><a href="#network-storage-backup">Network Storage and Backup</a></li>
+              <li class="toci"><a href="#git-server">GIT Server</a></li>
+
+            </ul>
+          </aside>
+          <aside id="networks-toc" class="toc">
+            <ul>
+              <li class="toci"><a href="#banner">Top</a></li>
+            </ul>
+          </aside>
+          <aside id="terminals-scripting-toc" class="toc">
+            <ul>
+              <li class="toci"><a href="#banner">Top</a></li>
+            </ul>
+          </aside>
+          <aside id="chicken-project-management-toc" class="toc">
+            <ul>
+              <li class="toci"><a href="#banner">Top</a></li>
             </ul>
           </aside>
         </div>
@@ -82,8 +148,7 @@
 
     </div>
 
-    <script type="text/javascript">
-    </script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 
   </body>
 
