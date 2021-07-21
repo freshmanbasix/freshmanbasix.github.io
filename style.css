@@ -110,18 +110,14 @@ main#core-content {
   background-color: #F8F8F8;
 }
 
-.wiki-entry-container {
+#wiki-entry-container {
   flex: 3;
 }
 
 article {
-  display: none;
   padding-right: 2vw;
 }
 
-article.active-wiki-entry {
-  display: block;
-}
 
 h1, h2, h3, h4, h5, h6 {
   background-color: #eee;

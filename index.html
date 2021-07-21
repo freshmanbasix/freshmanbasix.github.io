@@ -9,7 +9,7 @@
 
   <body>
     <header>
-      <pre id="banner" onclick="javascript:setActive('welcome')">   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
+      <pre id="banner" onclick="javascript:newContent('articles/welcome.txt');setActive('welcome')">   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
   | $$  /$ | $$|_  $$_/| $$  /$$/|_  $$_/
 | $$ /$$$| $$  | $$  | $$ /$$/   | $$
 | $$/$$ $$ $$  | $$  | $$$$$/    | $$
@@ -25,11 +25,11 @@
         <nav id="navbar">
             <h1 class="column-header">ARTICLES</h1>
             <ul>
-              <li class="nav-item"><a href="javascript:setActive('encryption')">Encryption</a></li>
-              <li class="nav-item"><a href="javascript:setActive('servers-hosting')">Servers & Hosting</a></li>
-              <li class="nav-item"><a href="javascript:setActive('networks')">Networks</a></li>
-              <li class="nav-item"><a href="javascript:setActive('terminals-scripting')">Terminals & Scripting</a></li>
-              <li class="nav-item"><a href="javascript:setActive('chicken-project-management')">Chicken Project Management</a></li>
+              <li class="nav-item"><a href="javascript:newContent('articles/encryption.txt'); setActive('encryption')">Encryption</a></li>
+              <li class="nav-item"><a href="javascript:newContent('articles/servers-hosting.txt'); setActive('servers-hosting')">Servers & Hosting</a></li>
+              <li class="nav-item"><a href="javascript:newContent('articles/networks.txt'); setActive('networks')">Networks</a></li>
+              <li class="nav-item"><a href="javascript:newContent('articles/terminals-scripting.txt'); setActive('terminals-scripting')">Terminals & Scripting</a></li>
+              <li class="nav-item"><a href="javascript:newContent('articles/chicken-project-management.txt'); setActive('chicken-project-management')">Chicken Project Management</a></li>
             </ul>
         </nav>
     </div>
@@ -37,60 +37,7 @@
       <!-- WIKI ENTRY COLUMN -->
       <main id="core-content">
         <!-- ARTICLE CONTENT -->
-        <div class="wiki-entry-container">
-          <article id="welcome" class="wiki-entry">
-            <h1 class="column-header">WELCOME</h1>
-            <p>Welcome to the Freshman Basix Wiki for computer science tinkerers. This is a resource intended to help interested parties get familiar with, or reaquaint themselves with computer science topics. There will be a particular focus on hands on implementation with a strong prescence of theoretical background. Read below for more background, or choose a topic on the left to read more.</p>
-
-            <h2 id="history">History</h2>
-            <p>Freshman Basix had its origin at The Royal Institute of Technology(KTH) in 2015, when <a href="https://www.github.com/hjallepp">David Jacobsson</a> and <a href="https://www.github.com/sieken">David Henriksson</a> jokingly created the <i>company</i>. The name is derived partly from the joke that the tasks undertaken by the company was at the first year basic level, and also that university freshmen are <strong>basic</strong> in the derogatory sense</p>
-
-            <p>Through the years, many uncompleted project ideas saw the light of day, and the idea was born. What if there was a single place where all the knowledge needed to start fidgeting with any of these ideas was gathered. As such, the <strong>Freshman Basix Wiki</strong> was created to house content authored by mainly its creators and contain part lecture notes, part summaries of googling sessions and part formal documentation that may help anyone orient themselves when starting to get their feet wet in the field of computers, hardware, information technology and all the rest.</p>
-
-            <p>This wiki is taking its first studdering steps in the summer of 2021. Hopefully, the content within these pages will prove to be inspiring, useful and continue to grow for many years to come.</p>
-
-            <h2 id="kista-mentorspace">Kista Mentorspace</h2>
-            <p>For many years now, there has been a hidden gem stashed away at the KTH satellite campus in Kista. Run by the inimitable <a href="https://people.kth.se/~msmith/">Mark Smith</a>, the mentorspace offers tools, equipment and knowledge for anyone who would like to get a project going. To complement the resources on offer in the mentorspace, this wiki also aims to be a shared hub of additional documentation that pertains to projects, workshops or topics being worked on in the mentorspace.</p>
-
-            <h2 id="contact-contribute">Contact or Contribute</h2>
-            <p>In the spirit of the rag-tag-beginner skillset that epitomizes the origin of this wiki, this website is a pretty clumsy hodge-podge of decreasingly banal efforts, always striving to become less trivial. Should you feel the desire to correct, complement or contribute to this wiki, feel free to smash that pull-request button over on the <a href="https://github.com/hjallepp/hjallepp.github.io">website github page</a>. Alternatively, you can send an <a href="mailto:david@hjallesoft.com">email</a>.</p>
-          </article>
-          <article id="encryption" class="wiki-entry">
-            <h1 class="column-header">ENCRYPTION</h1>
-            <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
-
-            <h2 id="the-key-pair-model">The Key-Pair Model</h2>
-            <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one private that can decrypt (unlock) messages meant only for the owner, and public that encrypts (locks) a message meant for a specific recipient.</p>
-
-            <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
-            <p>Assymetric encryption can be achieved on a linux machine using the <code>gpg</code> terminal utility. Below follows an example of how one might use the gpg command line tool to encrypt an arbitrary <i>input-file</i> to be decryptable only by the intended recipient.</p>
-
-            <pre class="code-snippet">  $ gpg --encrypt input-file --armor --recipient UID --output output-file </pre>
-            
-          </article>
-          <article id="servers-hosting" class="wiki-entry">
-            <h1 class="column-header">SERVERS & HOSTING</h1>
-            This article will mainly cover hosting your own server and putting cool stuff on it, such as websites, back-ends, email etc.
-            <h2 id="client-server-model-overview">Client Server Model Overview</h2>
-            <h2 id="web-servers">Web Servers</h2>
-            <h2 id="ssh">Secure Socket Shell</h2>
-            <h2 id="torrent-server">Torrent Server</h2>
-            <h2 id="network-storage-backup">Network Storage and Backup</h2>
-            <h2 id="git-server">GIT Server</h2>
-          </article>
-          <article id="networks" class="wiki-entry">
-            <h1 class="column-header">NETWORKS</h1>
-            <p>More content to follow...</p>
-          </article>
-          <article id="terminals-scripting" class="wiki-entry">
-            <h1 class="column-header">TERMINALS & SCRIPTING</h1>
-            <p>More content to follow...</p>
-          </article>
-          <article id="chicken-project-management" class="wiki-entry">
-            <h1 class="column-header">CHICKEN PROJECT MANAGEMENT</h1>
-            <p>More content to follow...</p>
-          </article>
-
+        <div id="wiki-entry-container">
         </div>
         <div class="toc-container">
           <h1 class="column-header">CONTENTS</h1>
@@ -136,6 +83,7 @@
               <li class="toci"><a href="#banner">Top</a></li>
             </ul>
           </aside>
+
         </div>
       </main>
 
