@@ -1,17 +1,15 @@
 let currentActiveToc = document.getElementById("welcome-toc");
 currentActiveToc.classList.add("active-toc");
 
-function setActive(entryName) {
+function updateToc(tocID) {
   currentActiveToc.classList.remove("active-toc");
 
-  let newActiveToc = document.getElementById(entryName + "-toc");
+  let newActiveToc = document.getElementById(tocID);
   newActiveToc.classList.add("active-toc");
   currentActiveToc = newActiveToc;
-
-  console.log(entryName + "-toc");
 }
 
-function newContent(fileName) {
+function updateWikiEntry(fileName) {
   let wikiElement = document.getElementById("wiki-entry-container");
 
   fetch(fileName)
@@ -21,4 +19,10 @@ function newContent(fileName) {
   })
 }
 
-newContent('articles/welcome.txt')
+function openArticle(articleName) {
+  updateWikiEntry("articles/" + articleName + ".html");
+  updateToc(articleName + "-toc");
+}
+
+openArticle("welcome");
+// newContent('articles/welcome.html');
