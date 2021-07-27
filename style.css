@@ -17,6 +17,12 @@ body {
   font-family: "Fira Sans";
 }
 
+/*********************
+*
+* BANNER
+*
+********************/
+
 header {
   width: 66.6%;
   background-color: #282828;
@@ -32,32 +38,15 @@ pre#banner {
   color: #F8F8F8;
 }
 
-.code-snippet {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  border-left: 3px solid #f2951d;
-  color: #666;
-  page-break-inside: avoid;
-  font: 14px/16px "Courier New";
-  text-align: left;
-  line-height: 1.0;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  padding: 1.5vh 0.5vw;
-  display: block;
-  display: block;
-  word-wrap: break-word;
-  display: block;
-  margin-left: 2vw;
-  overflow: auto;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
+/*********************
+*
+* MAIN FLEX CONTAINER
+*
+********************/
 
-code {
-  background-color: #f4f4f4;
-  color: red;
-  padding: 0px 3px 0px 3px;
+.flex-container {
+  display: flex;
+  margin: 1vh 0;
 }
 
 h1.column-header {
@@ -70,10 +59,11 @@ h1.column-header {
   font-size: x-large;
 }
 
-.flex-container {
-    display: flex;
-    margin: 1vh 0;
-}
+/*********************
+ *
+ * NAVIGATION
+ *
+ ********************/
 
 .navbar-container {
   flex: 1;
@@ -104,49 +94,20 @@ li.nav-item a:hover {
   color: #F8F8F8;
 }
 
-/*
+/*********************
+ *
  * MAIN WIKI ENTRY
- */
+ *
+ ********************/
 
 main#wiki-entry-container {
   flex: 4;
   background-color: #F8F8F8;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  background-color: #eee;
-  padding: 0.5vh 0 0.5vh 0.5vw;
-  margin: 0;
-  margin-bottom: 1%;
-}
+/* INTRODUCTION */
 
-p {
-  padding: 0 0.5vw;
-  margin: 0;
-  margin-bottom: 1vh;
-}
-
-figure {
-  border: 1px solid black;
-  padding: 2vh 1vw;
-  margin: 2vh 1vw;
-}
-
-figcaption {
-  margin: 1vh auto;
-  font-style: italic;
-}
-
-img {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/*
- * INTRO SECTION OF ARTICLES
- */
-
-.intro {
+section.intro {
   margin: 2vh 0;
   overflow: hidden;
 }
@@ -187,6 +148,73 @@ aside#toc {
   margin-left: 1vw;
 }
 
+/* ARTICLE BODY */
+
+section.article-body {}
+
+section.article-body > h2, section.article-body > h3, section.article-body > h4 {
+  background-color: #eee;
+  padding: 0.5vh 0 0.5vh 0.5vw;
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+p {
+  padding: 0 0.5vw;
+  margin: 0;
+  margin-bottom: 1vh;
+}
+
+.code-snippet {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f2951d;
+  color: #666;
+  page-break-inside: avoid;
+  font: 14px/16px "Courier New";
+  text-align: left;
+  line-height: 1.0;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  padding: 1.5vh 0.5vw;
+  display: block;
+  display: block;
+  word-wrap: break-word;
+  display: block;
+  margin-left: 2vw;
+  overflow: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+code {
+  background-color: #f4f4f4;
+  color: red;
+  padding: 0px 3px 0px 3px;
+}
+
+figure {
+  border: 1px solid black;
+  padding: 2vh 1vw;
+  margin: 2vh 1vw;
+}
+
+figcaption {
+  margin: 1vh auto;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/*********************
+ *
+ * CALENDAR
+ *
+ ********************/
+
 .calendar-container {
   flex: 1;
 }
@@ -195,6 +223,12 @@ aside#calendar {
   padding-left: 0.5vw;
   background-color: #F8F8F8;
 }
+
+/*********************
+ *
+ * OTHER
+ *
+ ********************/
 
 .temp {
   background-color: #f2951d;

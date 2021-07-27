@@ -1,6 +1,6 @@
 <article id="encryption" class="wiki-entry">
   <h1 class="column-header">ENCRYPTION</h1>
-  <div class="intro">
+  <section class="intro">
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <aside id="toc">
@@ -10,14 +10,15 @@
       </aside>
     </div>
     <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
-  </div>
+  </section>
 
-  <h2 id="the-key-pair-model">The Key-Pair Model</h2>
-  <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one private that can decrypt (unlock) messages meant only for the owner, and public that encrypts (locks) a message meant for a specific recipient.</p>
+  <section class="article-body">
+    <h2 id="the-key-pair-model">The Key-Pair Model</h2>
+    <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one private that can decrypt (unlock) messages meant only for the owner, and public that encrypts (locks) a message meant for a specific recipient.</p>
 
-  <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
-  <p>Assymetric encryption can be achieved on a linux machine using the <code>gpg</code> terminal utility. Below follows an example of how one might use the gpg command line tool to encrypt an arbitrary <i>input-file</i> to be decryptable only by the intended recipient.</p>
+    <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
+    <p>Assymetric encryption can be achieved on a linux machine using the <code>gpg</code> terminal utility. Below follows an example of how one might use the gpg command line tool to encrypt an arbitrary <i>input-file</i> to be decryptable only by the intended recipient.</p>
 
-  <pre class="code-snippet">  $ gpg --encrypt input-file --armor --recipient UID --output output-file </pre>
-
+    <pre class="code-snippet">  $ gpg --encrypt input-file --armor --recipient UID --output output-file </pre>
+  </section>
 </article>
