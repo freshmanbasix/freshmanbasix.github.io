@@ -132,6 +132,22 @@ p {
   margin-bottom: 1vh;
 }
 
+figure {
+  border: 1px solid black;
+  padding: 2vh 1vw;
+  margin: 2vh 1vw;
+}
+
+figcaption {
+  margin: 1vh auto;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 #toc-container {
   flex: 1;
 }
