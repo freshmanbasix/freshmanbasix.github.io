@@ -104,20 +104,14 @@ li.nav-item a:hover {
   color: #F8F8F8;
 }
 
-main#core-content {
+/*
+ * MAIN WIKI ENTRY
+ */
+
+main#wiki-entry-container {
   flex: 4;
-  display: flex;
   background-color: #F8F8F8;
 }
-
-#wiki-entry-container {
-  flex: 3;
-}
-
-article {
-  padding-right: 2vw;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
   background-color: #eee;
@@ -148,20 +142,32 @@ img {
   margin: 0 auto;
 }
 
+/*
+ * INTRO SECTION OF ARTICLES
+ */
+
+.intro {
+  margin: 2vh 0;
+  overflow: hidden;
+}
+
 #toc-container {
-  flex: 1;
+  border: 1px solid black;
+  margin: 0 1vw;
+  width: 30%;
+  float: left;
 }
 
-aside.toc {
-  /* position: fixed; */
-  display: none;
+h1.toc-header {
+  font-size: large;
+  margin-bottom: 0;
 }
 
-aside.active-toc {
-  display: block;
+aside#toc {
+  padding: 1vh 1vw;
 }
 
-.toc a {
+#toc a {
   display: block;
   padding: 0;
   margin: 0;
@@ -170,18 +176,15 @@ aside.active-toc {
   color: #5E5E5E;
 }
 
-.toc > h2, .toc > h3{
+#toc > h2, #toc > h3{
   font-size: large;
   background-color: unset;
   margin: 0;
   padding: 0;
 }
 
-.toc > h2 {
+#toc > h3 {
   margin-left: 1vw;
-}
-.toc > h3 {
-  margin-left: 2vw;
 }
 
 .calendar-container {

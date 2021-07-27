@@ -1,13 +1,3 @@
-let currentActiveToc = document.getElementById("welcome-toc");
-
-function updateToc(tocID) {
-  currentActiveToc.classList.remove("active-toc");
-
-  let newActiveToc = document.getElementById(tocID);
-  newActiveToc.classList.add("active-toc");
-  currentActiveToc = newActiveToc;
-}
-
 function updateWikiEntry(fileName) {
   let wikiElement = document.getElementById("wiki-entry-container");
 
@@ -20,7 +10,6 @@ function updateWikiEntry(fileName) {
 
 function openArticle(articleName) {
   updateWikiEntry("articles/" + articleName + ".html");
-  updateToc(articleName + "-toc");
 }
 
 openArticle("welcome");
