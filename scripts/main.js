@@ -1,5 +1,4 @@
 let currentActiveToc = document.getElementById("welcome-toc");
-currentActiveToc.classList.add("active-toc");
 
 function updateToc(tocID) {
   currentActiveToc.classList.remove("active-toc");

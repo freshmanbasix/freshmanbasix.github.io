@@ -132,7 +132,7 @@ p {
   margin-bottom: 1vh;
 }
 
-.toc-container {
+#toc-container {
   flex: 1;
 }
 
@@ -166,21 +166,6 @@ aside.active-toc {
 }
 .toc > h3 {
   margin-left: 2vw;
-}
-
-aside.toc > ul {
-  list-style-type: none;
-  margin: 0 0 1vh 0.5vw;
-  padding: 0;
-}
-
-li.toci a {
-  display: block;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 0.25vh;
-  text-decoration: none;
-  color: #5E5E5E;
 }
 
 .calendar-container {
