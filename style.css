@@ -198,10 +198,12 @@ figure {
   border: 1px solid black;
   padding: 2vh 1vw;
   margin: 2vh 1vw;
+  text-align: center;
 }
 
 figcaption {
   margin: 1vh auto;
+  text-align: center;
   font-style: italic;
 }
 
