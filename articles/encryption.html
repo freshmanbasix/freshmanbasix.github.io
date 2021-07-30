@@ -1,10 +1,9 @@
 <article id="encryption" class="wiki-entry">
   <h1 class="column-header">ENCRYPTION</h1>
-  <section class="intro">
+  <section class="sub-section">
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <aside id="toc">
-        <h2> <a href="#banner">Top</a> </h2>
         <h2> <a href="#the-key-pair-model">The Key-Pair Model</a> </h2>
         <h2> <a href="#gnu-privacy-guard">Gnu Privacy Guard</a> </h2>
       </aside>
@@ -12,12 +11,14 @@
     <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
   </section>
 
-  <section class="article-body">
-    <h2 id="the-key-pair-model">The Key-Pair Model</h2>
+  <h2 id="the-key-pair-model">The Key-Pair Model</h2>
+  <section class="sub-section">
     <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one <b>private</b> that can decrypt (unlock) messages meant only for the owner, and one <b>public</b> that encrypts (locks) a message meant for a specific recipient.</p>
+  </section>
 
-    <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
+  <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
 
+  <section class="sub-section">
     <p><i>GPG</i> is a open source and readily available command line utility that enables a large amount of functionality and management. <i>This paragraph will expand on the interesting history of GPG, it's quite a doozie</i></p>
 
     <figure>
@@ -42,6 +43,5 @@
     <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <code>--list-keys</code> command.</p>
 
     <pre class="code-snippet">$ gpg --list-public-keys</pre>
-
   </section>
 </article>

@@ -2,6 +2,9 @@
   nice orange color #f2951d
   black color #282828
   grey color #5E5E5E
+  blue color #80D4FF
+  red color #FF4D4D
+  pink color #FFEAE6
   white color #F8F8F8
 */
 
@@ -56,7 +59,7 @@ h1.column-header {
   margin: 0;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 /*********************
@@ -106,16 +109,11 @@ main#wiki-entry-container {
   background-color: #F8F8F8;
 }
 
-/* INTRODUCTION */
-
-section.intro {
-  margin: 2vh 0;
-  overflow: hidden;
-}
+/* TABLE OF CONTENTS */
 
 #toc-container {
   border: 1px solid black;
-  margin: 0 1vw 0 2.5vw;
+  margin: 0 1vw 0 0;
   width: 30%;
   float: left;
 }
@@ -151,27 +149,35 @@ aside#toc {
 
 /* ARTICLE BODY */
 
-section.article-body {}
+section.sub-section {
+  margin: 1.5vh 2.5vw;
+  font-size: 20px;
+  overflow: hidden;
+}
 
-section.article-body > h2, section.article-body > h3, section.article-body > h4 {
+article.wiki-entry > h2, article.wiki-entry h3, article.wiki-entry h4 {
   background-color: #eee;
   padding: 1.5vh 1.5vw;
   margin: 0;
-  margin-bottom: 1%;
 }
 
-section.article-body > h3, section.article-body > h4  {
-  padding-left: 0.5vw;
-  margin: 0 2.5vw;
+section.sub-section > h3, section.sub-section > h4  {
+  padding: 0.5vh 0.5vw;
 }
 
-p {
-  padding: 0 2.5vw;
-  margin: 0;
-  margin-bottom: 1vh;
-  font-size: 20px;
+section.sub-section > p {
 }
 
+a {
+  color: #4D88FF;
+  text-decoration: none;
+}
+
+.note {
+  background: #FFEAE6;
+  border-left: 3px solid #FF4D4D;
+  padding: 1.5vh 1.5vw;
+}
 .code-snippet {
   background: #f4f4f4;
   border: 1px solid #ddd;
@@ -195,7 +201,7 @@ p {
 
 code {
   background-color: #f4f4f4;
-  color: red;
+  color: #FF4D4D;
   padding: 0px 3px 0px 3px;
 }
 

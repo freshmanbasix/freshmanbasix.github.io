@@ -1,33 +1,127 @@
 <article id="servers-hosting" class="wiki-entry">
   <h1 class="column-header">SERVERS & HOSTING</h1>
-  <section class="intro">
+
+  <section class="sub-section">
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <aside id="toc">
-        <h2><a href="#banner">                        Top</a></h2>
-        <h2><a href="#client-server-model-overview">  Client Server Model Overview</a></h2>
-        <h2><a href="#web-servers">                   Web Servers</a></h2>
-        <h2><a href="#ssh">                           Secure Socket Shell</a></h2>
-        <h2><a href="#torrent-server">                Torrent Server</a></h2>
-        <h2><a href="#network-storage-backup">        Network Storage and Backup</a></h2>
-        <h2><a href="#git-server">                    GIT Server</a></h2>
+        <h2><a href="#client-server-model-overview">Client Server Model Overview</a></h2>
+        <h2><a href="#web-servers">Web Servers</a></h2>
+        <h2><a href="#ssh">Secure Socket Shell</a></h2>
+        <h2><a href="#torrent-server">Torrent Server</a></h2>
+        <h2><a href="#network-storage-backup">Network Storage and Backup</a></h2>
+        <h2><a href="#git-server">GIT Server</a></h2>
       </aside>
     </div>
     <p>This article will mainly cover hosting your own server and putting cool stuff on it, such as websites, back-ends, email etc.</p>
   </section>
 
-  <section class="article-body">
-    <h2 id="client-server-model-overview">Client Server Model Overview</h2>
+  <h2 id="client-server-model-overview">Client Server Model Overview</h2>
+  <section class="sub-section">
     <figure>
       <img src="rsc/server-hosting-overview.png" alt="image">
       <figcaption>General overview of the server client environment and its components. Download XML version of the file <a href="rsc/server-hosting-overview.xml">here</a></figcaption>
     </figure>
 
-    <h2 id="web-servers">Web Servers</h2>
-    <h2 id="ssh">Secure Socket Shell</h2>
-    <h2 id="torrent-server">Torrent Server</h2>
-    <h2 id="network-storage-backup">Network Storage and Backup</h2>
-    <h2 id="git-server">GIT Server</h2>
+  </section>
+
+  <h2 id="web-servers">Web Servers</h2>
+
+  <section class="sub-section">
+    <h3>Backend</h3>
+    <p>Setting up a website is done in two shakes of a rabbits ass. Just install the apache package on your linux machine and you're done.</p>
+
+    <pre class="code-snippet">sudo apt-get install apache2</pre>
+
+    <p>Default location for the outward facing website <code>/var/www/html/index.html</code></p>
+
+    <p>Slam open a browser and visit <code>localhost</code> or <code>197.0.0.1</code> to see if apache started up correctly. You'll see a simple placeholder site that clearly indicates that it's working.</p>
+
+    <p>Config files for apache are located in <code>/etc/apache2</code></p>
+
+    <h3>DNS services</h3>
+    <p>The <i>Domain Name System</i> infrastructure is what translates a human-readable web adress. This service needs to be bought. While technically possible, setting up your own private DNS server will only be plausible on a local network. On the internet, we turn to Domain Name Registrars.</p>
+
+    <p>Here is a useful, quite indepth, <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/36/11/how-do-i-start-using-dynamic-dns/">tutorial</a> for domain names bought at namecheap.com</p>
+  </section>
+
+  <h2 id="ssh">Secure Socket Shell</h2>
+  <section class="sub-section">
+    <figure>
+      <img src="rsc/ssh-flowchart.png" alt="image">
+      <figcaption>General overview of the SSH connection and its components. XML version of the image can be downloaded <a href="rsc/ssh-flowchart.XML">here</a></figcaption>
+    </figure>
+
+    <p>Below follows a long list of tutorials that will one day be consolidated into a nice wiki entry</p>
+    <ul>
+      <li><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md">Raspberry Pi tutorial on password free SSH login</a></li>
+      <li><a href="https://howtoraspberrypi.com/how-to-raspberry-pi-headless-setup/">Headless Setup Tutorial for Raspi</a></li>
+      <li><a href="https://ostechnix.com/allow-deny-ssh-access-particular-user-group-linux/">Tutorial for allowing/blocking particular users/groups</a></li>
+      <li><a href="https://linuxconfig.org/how-to-generate-and-manage-ssh-keys-on-linux">https://linuxconfig.org/how-to-generate-and-manage-ssh-keys-on-linux</a></li>
+      <li><a href="https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/">https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/</a></li>
+      <li><a href="https://bizanosa.com/generate-ssh-keys-linux-server/">https://bizanosa.com/generate-ssh-keys-linux-server/</a></li>
+      <li><a href="https://www.techrepublic.com/article/how-to-easily-add-an-ssh-fingerprint-to-your-knownhosts-file-in-linux/">https://www.techrepublic.com/article/how-to-easily-add-an-ssh-fingerprint-to-your-knownhosts-file-in-linux/</a></li>
+      <li><a href="https://www.unixtutorial.org/how-to-inspect-ssh-key-fingerprints/">https://www.unixtutorial.org/how-to-inspect-ssh-key-fingerprints/</a></li>
+    </ul>
+  </section>
+
+  <h2 id="torrent-server">Torrent Server</h2>
+
+  <section class="sub-section">
+    <p>Many torrent clients have built in support for running a background daemon on the server side and controlling it for a specialized gui on the client side. Deluge, for one, does so well.</p>
+    <p class="note">All components need to be the same main version! For example Deluge is version 1.3 in Debian package managers, but 2.0 on Ubuntu which will cause issues. See <a href="https://deluge.readthedocs.io/en/latest/intro/01-install.html">these</a> instructions for installing the newest version</p>
+
+    <p>Before reading the tutorials below, see this simplified overview:</p>
+    <ul>
+      <li>Server Side</li>
+      <ul>
+        <li><strong>deluged</strong> is the daemon running in the background and serves as the engine</li>
+        <li><strong>deluge-console</strong> is a command line interface with deluged that is used to manage torrents, files etc. In a minimal setup, these two programs are the only thing necessary to have a torrent server up and running and control it via ssh</li>
+        <li><strong>deluge-web</strong> is an additional application necessary to support deluge's web browser interface (web ui)</li>
+      </ul>
+      <li>Client Side</li>
+      <ul>
+        <li><strong>deluge</strong> or <strong>deluge-gtk</strong> are the standard torrent clients that users install on their computers. Can be set to operate as <i>thin client</i> which is a completely networked based version. Both modes are built in out of the box</li>
+        <li><strong>deluge web</strong> ui is the browser based version of the normal gui</li>
+      </ul>
+    </ul>
+
+    <p>If things turn sour, keep it simple and use only deluged and deluge-console. </p>
+    <p>If you do create a dedicated user for just the deluge daemon, remember to be logged in as that user when changing config and test-running the interface </p>
+
+    <ul>
+      <li><a href="https://dev.deluge-torrent.org/wiki/UserGuide/ThinClient#CreateSSHTunnel">Deluge Tutorial for setting up server daemon and running thinclient on local machine</a></li>
+      <li><a href="https://deluge.readthedocs.io/en/latest/how-to/systemd-service.html">Deluge Tutorial for setting up server daemon and running thinclient on local machine</a></li>
+      <li><a href="https://www.techjunkie.com/create-a-headless-torrent-server-with-deluge-on-a-raspberry-pi/">Simplified tutorial that also includes using a vpn and external harddrive for storage. Use this if things become to messy with deluges official tutorials</a></li>
+    </ul>
+
+  </section>
+
+  <h2 id="network-storage-backup">Network Storage and Backup</h2>
+
+  <section class="sub-section">
+    <p>When making your own google drive solution, you'll want to achieve one or more out the following outcomes</p>
+    <ul>
+      <li><strong>Synchronize Data</strong>: A server and client directory is updated live to match exactly and respond immediately to any changes on either end. All data is stored both on local machine and on server</li>
+      <ul>
+        <li><strong>Rsync</strong></li>
+      </ul>
+      <li><strong>Network Drive Mapping</strong>: Data is only stored on the server side, but a easily accessible symbolic link is established on the local machine. Depending on latency, files can be executed directly over the network</li>
+      <ul>
+        <li><strong>SMB Network Drive</strong></li>
+        <li><strong>NAS</strong></li>
+      </ul>
+      <li><strong>Backup</strong>: Serve as a complete copy of the system state at a given time. Used as fallback at times of failure.</li>
+      <ul>
+        <li><strong>Bash Script & Crontab</strong></li>
+        <li><strong>3d party clients</strong></li>
+      </ul>
+    </ul>
+  </section>
+
+  <h2 id="git-server">GIT Server</h2>
+
+  <section class="sub-section">
   </section>
 
 </article>
