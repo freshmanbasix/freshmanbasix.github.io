@@ -52,6 +52,14 @@ pre#banner {
   margin: 1vh 0;
 }
 
+.flex-item-outer {
+  flex: 1;
+}
+
+.flex-item-main {
+  flex: 4;
+}
+
 h1.column-header {
   background-color: #282828;
   color: #F8F8F8;
@@ -69,11 +77,10 @@ h1.column-header {
  ********************/
 
 .navbar-container {
-  flex: 1;
+  padding-right: 0.5vw;
 }
 
 nav#navbar {
-  padding-right: 0.5vw;
 }
 
 #navbar > ul {
@@ -104,8 +111,9 @@ li.nav-item a:hover {
  *
  ********************/
 
-main#wiki-entry-container {
-  flex: 4;
+.wiki-container {}
+
+main#wiki-column {
   background-color: #F8F8F8;
 }
 
@@ -230,11 +238,10 @@ img {
  ********************/
 
 .calendar-container {
-  flex: 1;
+  padding-left: 0.5vw;
 }
 
 aside#calendar {
-  padding-left: 0.5vw;
   background-color: #F8F8F8;
 }
 
@@ -249,4 +256,16 @@ aside#calendar {
   margin: 1vh 1vw;
   padding: 1vh 1vw;
   text-align: center;
+}
+
+div#upArrow {
+  background: #282828;
+  margin: 1vh auto;
+  padding: 1vh 1vw;
+  position: fixed;
+}
+
+div#upArrow > a {
+  color: white;
+  text-decoration: none;
 }

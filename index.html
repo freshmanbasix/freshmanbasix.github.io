@@ -20,9 +20,11 @@
     </header>
 
     <div class="flex-container">
+
       <!-- NAVIGATION COLUMN -->
-      <div class="navbar-container">
-        <nav id="navbar">
+      <div class="flex-item-outer">
+        <div class="navbar-container">
+          <nav id="navbar">
             <h1 class="column-header">ARTICLES</h1>
             <ul>
               <li class="nav-item"><a href="javascript:openArticle('encryption')">Encryption</a></li>
@@ -31,24 +33,33 @@
               <li class="nav-item"><a href="javascript:openArticle('terminals-scripting')">Terminals & Scripting</a></li>
               <li class="nav-item"><a href="javascript:openArticle('chicken-project-management')">Chicken Project Management</a></li>
             </ul>
-        </nav>
-    </div>
+          </nav>
+        </div>
+      </div>
 
       <!-- WIKI ENTRY COLUMN -->
-      <main id="wiki-entry-container">
-        <!-- ARTICLE CONTENT -->
-      </main>
+      <div class="flex-item-main">
+        <div class="wiki-container">
+          <main id="wiki-column">
+            <!-- ARTICLE CONTENT -->
+          </main>
+        </div>
+      </div>
 
       <!-- CALENDAR/UPCOMING COLUMN -->
-      <div class="calendar-container">
-        <aside id="calendar">
+      <div class="flex-item-outer">
+        <div class="calendar-container">
+          <aside id="calendar">
             <h1 class="column-header">UPCOMING</h1>
             <div class="temp">
               # Under Construction #
             </div>
-        </aside>
-    </div>
-
+          </aside>
+          <div id="upArrow">
+            <a href="#banner">Back to Top</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="scripts/main.js"></script>

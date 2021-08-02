@@ -1,5 +1,5 @@
 function updateWikiEntry(fileName) {
-  let wikiElement = document.getElementById("wiki-entry-container");
+  let wikiElement = document.getElementById("wiki-column");
 
   fetch(fileName)
   .then(response => response.text())
