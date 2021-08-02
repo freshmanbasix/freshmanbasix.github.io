@@ -221,6 +221,12 @@ a {
   margin: 0;
 }
 
+blockquote.q {
+  border-left: 3px solid var(--black);
+  padding: 1.5vh 1.5vw;
+  margin: 1.5vh 2.5vw;
+}
+
 code {
   background-color: #f4f4f4;
   color: #FF4D4D;
