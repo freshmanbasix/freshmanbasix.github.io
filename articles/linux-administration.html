@@ -9,7 +9,6 @@
         <h2><a href="#users-groups">Users & Groups</a></h2>
         <h2><a href="#resource-management">Resource Management</a></h2>
         <h2><a href="#package-management">Package Management</a></h2>
-        <h2><a href="#shell-management">Shell Management</a></h2>
       </aside>
     </div>
 
@@ -90,35 +89,4 @@
   <section class="sub-section">
     <p>...</p>
   </section>
-
-  <h2 id="shell-management">SHELL Management</h2>
-  <section class="sub-section">
-    <p>The <code>source</code> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
-
-    <pre class="code-snippet">source FILENAME [ARGUMENTS]
-. FILENAME [ARGUMENTS]</pre>
-
-    <p class="note">Note that a single period <code>.</code> expands to <code>source</code></p>
-
-    <div class="toadd"><p> TODO: Explain the export command</p></div>
-
-    <h3>Setting up .bashrc</h3>
-    <p>Below follows an example of how to display the <strong>Git Branch</strong> in the command line.</p>
-    <pre class="code-snippet">parse_git_branch() {
-
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-
-}
-
-if [ "$color_prompt" = yes ]; then
-
- PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(parse_git_branch)\[\033[00m\]\$ '
-
-else
-
- PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
-
-fi</pre>
-  </section>
-
 </article>
