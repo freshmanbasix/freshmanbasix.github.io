@@ -1,12 +1,13 @@
-/*
-  nice orange color #f2951d
-  black color #282828
-  grey color #5E5E5E
-  blue color #80D4FF
-  red color #FF4D4D
-  pink color #FFEAE6
-  white color #F8F8F8
-*/
+:root{
+  --orange: #f2951d;
+  --black:  #282828;
+  --grey:   #5E5E5E;
+  --blue:   #80D4FF;
+  --red:    #FF4D4D;
+  --pink:   #FFEAE6;
+  --white:  #F8F8F8;
+  --yellow: #FFFF00;
+}
 
 body {
   width: 80vw;
@@ -205,6 +206,19 @@ a {
   overflow: auto;
   overflow-x: auto;
   white-space: pre-wrap;
+}
+
+.toadd {
+  border: 1px solid var(--yellow);
+  padding: 0.5vh 2.5vw;
+  background-color: var(--black);
+  color: var(--yellow);
+  margin: 1.5vh 0;
+  text-align: right;
+}
+
+.toadd > p {
+  margin: 0;
 }
 
 code {
