@@ -185,12 +185,18 @@ a {
   text-decoration: none;
 }
 
-.note {
+.box {
   padding: 1.5vh 1.5vw;
+  margin: 1.5vh 2.5vw;
+}
+
+.note {
   background: var(--pink);
   border-left: 3px solid var(--red);
+  /* padding: 1.5vh 1.5vw; */
 }
-.code-snippet {
+
+.snippet {
   background: var(--lgrey);
   border: 1px solid var(--mgrey);
   border-left: 3px solid var(--orange);
@@ -200,12 +206,10 @@ a {
   text-align: left;
   line-height: 1.0;
   max-width: 100%;
-  padding: 1.5vh 0.5vw;
-  display: block;
+  /* padding: 1.5vh 0.5vw; */
   display: block;
   word-wrap: break-word;
-  display: block;
-  margin: 1.5vh 2.5vw;
+  /* margin: 1.5vh 2.5vw; */
   overflow: auto;
   overflow-x: auto;
   white-space: pre-wrap;

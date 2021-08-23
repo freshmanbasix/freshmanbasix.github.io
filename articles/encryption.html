@@ -30,18 +30,18 @@
 
     <p>Below follows a number of examples of how one might use the <code>gpg</code> command achieve some serious privacy. First you will want to encrypt a <i>input-file</i> intended to be read only by the designated recipient <i>UID</i>s.</p>
 
-    <pre class="code-snippet">$ gpg --encrypt &ltinput-file&gt --armor --recipient UID --output &ltoutput-file&gt </pre>
+    <pre class="box snippet">$ gpg --encrypt &ltinput-file&gt --armor --recipient UID --output &ltoutput-file&gt </pre>
 
     <p>When you've received an <i>encrypted-message</i>, you're going to want to decrypt it and output the unencrypted message to an appropriate <i>output-file</i>.</p>
 
-    <pre class="code-snippet">$ gpg --decrypt --output &ltoutput-file&gt &ltencrypted-message&gt</pre>
+    <pre class="box snippet">$ gpg --decrypt --output &ltoutput-file&gt &ltencrypted-message&gt</pre>
 
     <p>In order to share your own key with other people, export it into a file that can be sent through any prefered means. </p>
 
-    <pre class="code-snippet">$ gpg --export &ltuid&gt --armor --output &ltfilename&gt</pre>
+    <pre class="box snippet">$ gpg --export &ltuid&gt --armor --output &ltfilename&gt</pre>
 
     <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <code>--list-keys</code> command.</p>
 
-    <pre class="code-snippet">$ gpg --list-public-keys</pre>
+    <pre class="box snippet">$ gpg --list-public-keys</pre>
   </section>
 </article>

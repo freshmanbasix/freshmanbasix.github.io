@@ -37,7 +37,7 @@
 
     <p>One very practical way of printing basic user info to the terminal is by piping the content of passwd into cut, which will use : as separator, and only output the first field per line. <code>-d</code> signifies the separator wanted, <code>-f</code> sets the range of fields that should be printed.</p>
 
-    <pre class="code-snippet">$ cat /etc/passwd | cut -d: -f1</pre>
+    <pre class="box snippet">$ cat /etc/passwd | cut -d: -f1</pre>
 
     <h3>Modifying Users</h3>
     <p><code>useradd</code>,<code>userdel</code>,<code>usermod</code> are low level command line tools which can be used to create, delete and modify users on a machine. Respectively, <code>groupadd</code>, <code>groupdel</code>, and <code>groupmod</code> are all corresponding tools for groups.</p>
@@ -46,7 +46,7 @@
 
     <h3>Permissions</h3>
     <p>Viewing permissions of any file or directory is essentially achieved with <code>ls -la</code></p>
-    <pre class="code-snippet">-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.txt
+    <pre class="box snippet">-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.txt
 (    1   )    2      3      4    5     (     6    ) (   7   )</pre>
     <ol>
       <li>Permission Mode bits. In order of owner, group, other</li>
@@ -75,10 +75,10 @@
     <p><code>fdisk</code> is the standard command utility used to <strong>create, delete, list</strong> and <strong>analyze disk partitions</strong></p>
 
     <p>Output partitions of a given device:</p>
-    <pre class="code-snippet">$ sudo fdisk -l &ltdevice&gt</pre>
+    <pre class="box snippet">$ sudo fdisk -l &ltdevice&gt</pre>
 
     <p>To <strong>edit partitions</strong> you might use the <strong>interactive utility tools</strong> giving &ltdevice&gt as the argument:</p>
-    <pre class="code-snippet">$ sudo fdisk /dev/sda</pre>
+    <pre class="box snippet">$ sudo fdisk /dev/sda</pre>
 
     <h3>Memory & Processor Usage</h3>
     <p><code>htop</code>. Go get it.</p>
