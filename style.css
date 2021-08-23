@@ -2,7 +2,10 @@
   --orange: #f2951d;
   --black:  #282828;
   --grey:   #5E5E5E;
-  --blue:   #80D4FF;
+  --lgrey:  #F4F4F4;
+  --mgrey:  #DDDDDD;
+  --dgrey:  #666666;
+  --blue:   #4D88FF;
   --red:    #FF4D4D;
   --pink:   #FFEAE6;
   --white:  #F8F8F8;
@@ -29,7 +32,7 @@ body {
 
 header {
   width: 66.6%;
-  background-color: #282828;
+  background-color: var(--black);
   margin: 0 auto;
   margin-bottom: 1vh;
   margin-top: 1vh;
@@ -38,8 +41,8 @@ header {
 pre#banner {
   text-align: center;
   padding: 2vh 0;
-  background-color: #282828;
-  color: #F8F8F8;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 /*********************
@@ -62,8 +65,8 @@ pre#banner {
 }
 
 h1.column-header {
-  background-color: #282828;
-  color: #F8F8F8;
+  background-color: var(--black);
+  color: var(--white);
   padding: 1vh 0;
   margin: 0;
   margin-bottom: 1vh;
@@ -92,18 +95,18 @@ nav#navbar {
 
 li.nav-item a {
   display: block;
-  background-color: #f2951d;
+  background-color: var(--orange);
   padding: 1vh 0 1vh 0.5vw;
   margin: 0;
   margin-bottom: 0.5vh;
   text-decoration: none;
   font-size: x-large;
-  color: #000;
+  color: var(--black);
 }
 
 li.nav-item a:hover {
-  background-color: #282828;
-  color: #F8F8F8;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 /*********************
@@ -115,13 +118,13 @@ li.nav-item a:hover {
 .wiki-container {}
 
 main#wiki-column {
-  background-color: #F8F8F8;
+  background-color: var(--white);
 }
 
 /* TABLE OF CONTENTS */
 
 #toc-container {
-  border: 1px solid black;
+  border: 1px solid var(--black);
   margin: 0 1vw 0 0;
   width: 30%;
   float: left;
@@ -142,7 +145,7 @@ aside#toc {
   margin: 0;
   margin-bottom: 0.25vh;
   text-decoration: none;
-  color: #5E5E5E;
+  color: var(--grey);
 }
 
 #toc > h2, #toc > h3{
@@ -165,7 +168,7 @@ section.sub-section {
 }
 
 article.wiki-entry > h2, article.wiki-entry h3, article.wiki-entry h4 {
-  background-color: #eee;
+  background-color: var(--mgrey);
   padding: 1.5vh 1.5vw;
   margin: 0;
 }
@@ -178,20 +181,20 @@ section.sub-section > p {
 }
 
 a {
-  color: #4D88FF;
+  color: var(--blue);
   text-decoration: none;
 }
 
 .note {
-  background: #FFEAE6;
-  border-left: 3px solid #FF4D4D;
   padding: 1.5vh 1.5vw;
+  background: var(--pink);
+  border-left: 3px solid var(--red);
 }
 .code-snippet {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  border-left: 3px solid #f2951d;
-  color: #666;
+  background: var(--lgrey);
+  border: 1px solid var(--mgrey);
+  border-left: 3px solid var(--orange);
+  color: var(--dgrey);
   page-break-inside: avoid;
   font: 18px/20px "Courier New";
   text-align: left;
@@ -228,8 +231,8 @@ blockquote.q {
 }
 
 code {
-  background-color: #f4f4f4;
-  color: #FF4D4D;
+  background-color: var(--lgrey);
+  color: var(--red);
   padding: 0px 3px 0px 3px;
 }
 
@@ -262,7 +265,7 @@ img {
 }
 
 aside#calendar {
-  background-color: #F8F8F8;
+  background-color: var(--white);
 }
 
 /*********************
@@ -272,20 +275,20 @@ aside#calendar {
  ********************/
 
 .temp {
-  background-color: #f2951d;
+  background-color: var(--orange);
   margin: 1vh 1vw;
   padding: 1vh 1vw;
   text-align: center;
 }
 
 div#upArrow {
-  background: #282828;
+  background: var(--black);
   margin: 1vh auto;
   padding: 1vh 1vw;
   position: fixed;
 }
 
 div#upArrow > a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
