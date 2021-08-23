@@ -212,17 +212,10 @@ a {
   white-space: pre-wrap;
 }
 
-.toadd {
-  border: 1px solid var(--yellow);
-  padding: 0.5vh 2.5vw;
-  background-color: var(--black);
+p.addme {
   color: var(--yellow);
-  margin: 1.5vh 0;
-  text-align: right;
-}
-
-.toadd > p {
-  margin: 0;
+  background-color: var(--black);
+  font-style: italic;
 }
 
 blockquote.q {
