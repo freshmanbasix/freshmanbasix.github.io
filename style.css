@@ -135,28 +135,19 @@ h1.toc-header {
   margin-bottom: 0;
 }
 
-aside#toc {
-  padding: 1vh 1vw;
+ul.toc {
+  list-style-type: decimal;
+  margin: 1vh auto;
+  color: var(--grey);
 }
 
-#toc a {
+.toc a {
   display: block;
   padding: 0;
   margin: 0;
   margin-bottom: 0.25vh;
   text-decoration: none;
   color: var(--grey);
-}
-
-#toc > h2, #toc > h3{
-  font-size: large;
-  background-color: unset;
-  margin: 0;
-  padding: 0;
-}
-
-#toc > h3 {
-  margin-left: 1vw;
 }
 
 /* ARTICLE BODY */
