@@ -265,6 +265,19 @@ img {
   margin: 0 auto;
 }
 
+table {
+  margin: 1.5vh 2.5vw;
+  border: 1px solid var(--mgrey);
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+td, th {
+  width: 50%;
+  padding: 0.5vh 1vw;
+  border: 1px solid var(--mgrey);
+}
+
 /*********************
  *
  * CALENDAR
