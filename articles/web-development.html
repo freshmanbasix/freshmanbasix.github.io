@@ -1,0 +1,90 @@
+<article id="web-development" class="wiki-entry">
+  <h1 class="column-header">WEB DEVELOPMENT</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <ul class="toc">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#html">HyperText Markup Language</a></li>
+        <li><a href="#css">Cascading StyleSheets</a></li>
+      </ul>
+    </div>
+    <p>This article is intended to cover any and all interesting aspects of web development. That technically includes frameworks like Angular, React or whatever the hell else. But more likely, the content in here will only ever cover HTML, CSS and vanilla Javascript. For one, frameworks are a god damn blight on the world. But furthermore, one guiding principle of importance is to be independent. HTML, CSS and JS will run on ANY browser and requires exactly fuck-all to be installed. No packages, no compilers, no nothing. Write the code and go.</p>
+  </section>
+
+  <h2 id="introduction">Introduction</h2>
+  <section class="sub-section">
+    <p class="addme">This paragraph will introduce the general symbiosis between html & css, as well as cascading.</p>
+
+    <p>For daily reference, the only real resource you need for HTML, CSS and vanilla JS is the <<strong>Mozilla Developer Network</strong>. Some other alternatives might be Tutorials Point, or W3 Schools, but there's no real reason to bother any of them. Just get aquainted with MDN and be all the happier for it. Some quick links below will bring you right into the shit.</p>
+
+    <table>
+      <caption>Suggested Web Development Reading Material</caption>
+      <colgroup span="2"></colgroup>
+      <tr>
+        <td>MDN HTML Reference Page</td>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">https://developer.mozilla.org/en-US/docs/Web/HTML</a></td>
+      </tr>
+      <tr>
+        <td>MDN CSS Reference Page</td>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></td>
+      </tr>
+      <tr>
+        <td>MDN JavaScript Reference Page</td>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></td>
+      </tr>
+    </table>
+
+  </section>
+
+  <h2 id="html">HyperText Markup Language </h2>
+  <section class="sub-section">
+    <p>I have no idea what's so damn hyper about it, but the language is a syntax for marking up data to enable it's presentation to be rendered by some other software. The complete language set is very small, consisting of a few central components making up the syntax glossary. There's just a few of them, illustrating how quick HTML truly is to review and start using</p>
+
+    <h3>Syntax Glossary</h3>
+    <ol>
+      <li>
+        First out is the HTML <b>ELEMENT</b>, exemplified below with a  <em>&ltimg&gt</em> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element. While some circumstances allow for the two to be combined, or the closing tag to be omitted, using both is the only certain way to avoid undefined behavior.
+        <pre class="box snippet">&ltimg src="file"&gt &lt/img&gt</pre>
+      </li>
+
+      <li>
+        Secondly comes the <b>ATTRIBUTE</b>. These are descriptors defining the behavior and presentation of the Element. Attributes are always located inside the opening tag and separated by white spaces. Generally speaking, most attributes use in practice are specific for the element. Styling is possible through attributes,  many CSS properties have attribute equivalents, but it's a BAD IDEA!
+        <pre class="box snippet">src="file"</pre>
+      </li>
+      <li>
+        Any element will have ONE <b>PARENT</b> and ANY NUMBER of <b>CHILDREN</b>, i.e one element of which said element is inside and zero or more elements in between the tags.
+<pre class="box snippet">
+&ltfigure&gt
+  &ltimg src="/img/file.png" alt="text"&gt&lt/img&gt
+  &ltfigcaption&gtHere's a caption&lt/figcaption&gt
+&lt/figure&gt
+</pre>
+      </li>
+    </ol>
+
+    <h3>Document Object Model</h3>
+    <p>Every single html document can be represented by a tree hierarchy</p>
+
+    <h3>Document Design</h3>
+    <p class="addme">Describe shortly how to think about using existing elements to implement a website, and how the paper document history makes HTML a little unintuitive for sexy modern web pages.</p>
+
+<pre class="box snippet">
+&lt!DOCTYPE html&gt
+&lthtml lang="en" dir="ltr"&gt
+  &lthead&gt
+    &ltmeta charset="utf-8"&gt
+    &lttitle&gt&lt/title&gt
+  &lt/head&gt
+  &ltbody&gt
+    &lt!-- Content of the webpage --&gt
+  &lt/body&gt
+&lt/html&gt
+</pre>
+  </section>
+
+  <h2 id="css">Cascading StyleSheets</h2>
+  <section class="sub-section">
+
+  </section>
+</article>
