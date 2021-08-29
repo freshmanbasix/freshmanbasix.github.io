@@ -187,7 +187,7 @@ strong {
   margin: 1.5vh 2.5vw;
 }
 
-.note {
+.attention {
   background: var(--pink);
   border-left: 3px solid var(--red);
 }
