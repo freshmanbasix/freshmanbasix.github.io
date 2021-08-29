@@ -1,22 +1,128 @@
-<article id="contribute" class="wiki-entry">
+&lt<article id="contribute" class="wiki-entry">
   <h1 class="column-header">CONTRIBUTE</h1>
   <section class="sub-section">
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li><a href="#formating">Formating</a></li>
-        <li><a href="#git">Git</a></li>
+        <li><a href="#external-resources">External Resources</a></li>
+        <li><a href="#html-map-overview">HTML Map Overview</a></li>
+        <li><a href="#formating-style-rules">Formating and style-rules</a></li>
+        <li><a href="#attribution">Attribution</a></li>
       </ul>
     </div>
-    <p>How to contribute</p>
+    <p>In this article, complete instructions on how to practically go about making a contribution to the wiki will be documented. For the foreseeable future, it will be required by an author to get aquainted with the particular way that the website is designed and styled. Be aware that these particular solutions might not always be optimal, or even very good, from a conventional perspective. This does leave a great deal of room to make contributions that improve on these rag-tag, homemade design decitions. If you find something on this wiki that is crap and you have a good idea on how it might become less so, then keep reading this article and submit your suggestions.</p>
   </section>
 
-  <h2 id="formating">Formating</h2>
+  <h2 id="external-resources">External Resources</h2>
   <section class="sub-section">
-    <p>How the HTML document is structured.</p>
+    <p>The wiki is compeletely stored on a Git repository, meaning any change is done through pull requests. This offers an existing open source framework for managing, moderating and administrating the wiki without any need for user accounts. The repo is currently publicly hosted on Github and you'll find it <a href="https://github.com/freshmanbasix/freshmanbasix.github.io">right here</a>.</p>
+
+    <p>For managing active maintenance and tasks pertaining to the wiki, there's a <a href="https://trello.com/b/ZHplhRZO/wikifreshmanbasix">publicly readable Trello board</a> which can be used by anyone to view what sort of improvements have already been identified and what is being worked on.</p>
+
+    <p>If you would like to grab an improvement task for yourself, or perhaps suggest one, an email is the way to go. Just shoot an email to <a href="mailto:hjalle@freshmanbasix.com">hjalle@freshmanbasix.com</a>. If interest ever grows large enough, there might appear a discord server as well. Time will tell.</p>
+
   </section>
-  <h2 id="git">Git</h2>
+
+  <h2 id="html-map-overview">HTML Map Overview</h2>
   <section class="sub-section">
-    <p>Visit the <a href="https://github.com/freshmanbasix/freshmanbasix.github.io">Github repo</a></p>
+    <p>The core content of the wiki is contained within a CSS flexbox dividing itself into 3 columns where the central columns contains the main article and is 4 times as wide as the outer ones.</p>
+
+    <figure>
+      <img src="rsc/wiki-html-structure.png" alt="image missing">
+      <figcaption>Diagram describing the general element hierarchy of wiki.freshmanbasix.com. <a href="rsc/wiki-html-structure.xml">Download XML file</a>.</figcaption>
+    </figure>
+
+    <h3>Navigation Bar</h3>
+    <p>The leftmost column offers an overview and navigation of articles. Under the nav element with <b>id="nav-bar"</b> is an unordered list, with each <em>li</em> formated as follows:</p>
+
+    <pre class="box snippet">&ltli class="nav-item"&gt
+  &lta href="javascript:openArticle('<em>article-file-name</em>')"&gt<em>Title</em>&lt/a&gt
+&lt/li&gt</pre>
+
+    <p>Each list-item must have the class attribute set to <b>nav-item</b> and contain an anchor element with the href attribute set to call the javascript function <em>openArticle()</em>.</p>
+
+    <h3>Wiki Article Column</h3>
+    <p>The article itself is contained within the <em>main</em> element with id <em>wiki-column</em>. The whole article itself is stored inside a <em>article</em> element which has an id value corresponding to the article file name, as found in the <em>/articles</em> directory. It also has the class value <em>wiki-entry</em>. In general, the article is divided into several <em>section</em> elements, the first of which also contains the table of contents. See a core example code below.</p>
+    <pre class="box snippet">
+&ltarticle id="<em>file-name</em>" class="wiki-entry"&gt
+
+  &lth1 class="column-header"&gt<em>Title</em>&lt/h1&gt
+
+  &ltsection class="sub-section"&gt
+
+    &ltdiv id="toc-container"&gt
+      &lth1 class="column-header toc-header"&gtTable Of Contents&lt/h1&gt
+      &ltul class="toc"&gt
+        &ltli&gt&lta href="#<em>sub-section-1</em>"&gt<em>Sub Header</em>&lt/a&gt&lt/li&gt
+      &lt/ul&gt
+    &lt/div&gt
+
+    &ltp&gtIntroduction&lt/p&gt
+
+  &lt/section&gt
+
+  &lth2 id="#<em>sub-section-1</em>"&gt<em>Sub Header</em>&lt/h2&gt
+
+  &ltsection class="sub-section"&gt
+
+    &ltp&gt <em>Sub section content</em> &lt/p&gt
+
+  &lt/section&gt
+
+&lt/article&gt
+    </pre>
+
+    <p class="box attention">Note that each <b>h2</b> header preceeds the <b>section</b> element for each sub-section. This was chosen because it made it simpler to reliably make the margins larger for the text content than the header itself. It does feel slightly unintuitive though, so an alternate solution is being worked on. </p>
+
+    <h3>Calendar</h3>
+
+    <p class="addme">This section is under construction but will one day contain a calendar for events related to the Kista Mentorspace.</p>
   </section>
+
+  <h2 id="formating-style-rules">Formating and style-rules</h2>
+  <section class="sub-section">
+    <p>The styling in the wiki is built on the assumption that all articles are authored and formated in a consistent way. There are a number of predefined blocks that can be used to present information in a effective way. Below follows the available elements that can be used, along with necessary attributes.</p>
+
+    <p class="addme">Some thought on what to aim for and how to overall structure content will be added here.</p>
+
+    <ol>
+      <li><b>Sub-sub-headers</b>. Two levels of sub-sub-sections are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that is needed.</li>
+      <li><b>Paragraphs</b>. The plain <b>&ltp&gt</b> element is all that is required. Each paragraph of the content need an element on its own.</li>
+      <li>
+        <b>Figures</b>. Images can be inserted using the <b>&ltfigure&gt</b> element along with the <b>&ltimg&gt</b> and <b>&ltfigcaption&gt</b> elements.
+<pre class="box snippet">
+&ltfigure&gt
+  &ltimg src="<em>filepath</em>" alt=""&gt
+  &ltfigcaption&gt<em>Caption</em>&lt/figcaption&gt
+&lt/figure&gt
+</pre>
+
+        <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
+      </li>
+      <!-- <li><b>Tables</b>.Coming soon.</li> -->
+      <li>
+        <b>Code snippets</b>. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render a neat little code example box.
+<pre class="box snippet">
+&ltpre class="box snippet"&gt<em>Write code here</em>&lt/pre&gt
+</pre>
+        <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
+      </li>
+      <li>
+        <b>Attention block</b>. A good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.
+        <p class="box attention">This is an example of the attention box</p>
+<pre class="box snippet">
+&ltp class="box attention"&gt <em>Write important info here</em>&lt/p&gt
+</pre>
+      </li>
+    </ol>
+
+    <p class="addme">More formating instructions will be added here.</p>
+  </section>
+
+  <h2 id="attribution">Attribution</h2>
+  <section class="sub-section">
+    <p>Any and all resources fetched from somewhere else need to be clearly attributed, prefereably in direct proximity to the material itself.</p>
+    <p class="addme">Specific methods of citing and attributing will be added here.</p>
+  </section>
+
 </article>
