@@ -10,6 +10,7 @@
         <li><a href="#users-groups">Users & Groups</a></li>
         <li><a href="#resource-management">Resource Management</a></li>
         <li><a href="#package-management">Package Management</a></li>
+        <li><a href="#archives-compression">Archives & Compression</a></li>
       </ul>
     </div>
 
@@ -98,5 +99,22 @@
   <h2 id="package-management">Package Management</h2>
   <section class="sub-section">
     <p>...</p>
+  </section>
+
+  <h2 id="archives-compression">Archives & Compression</h2>
+  <section class="sub-section">
+    <p>The <code>tar</code> utility is basically all you'll need to compress, decompress and otherwise deal with archives. The <b>full documentation</b> is available in the manpages or via the following link <a href="http://www.gnu.org/software/tar/manual">http://www.gnu.org/software/tar/manual</a>. Primarily, the main idea is to make files and/or directories smaller to make management and transfer easier.</p>
+    <p>Examples on how the create and extract (i.e compress and decompress) archives follow below. </p>
+    <pre class="box snippet">tar -czvf &ltcompressed archive path&gt &ltinput directory&gt
+
+tar -zxvf &ltarchive path&gt</pre>
+    <ul>
+      <li><b>-c</b> is the command for <em>creating</em> an arhive.</li>
+      <li><b>-x</b> is the command for <em>extracting</em> data out of the archive</li>
+      <li><b>-z</b> is the option for selecting <b>gzip</b> as the method for compression. There are essentially two alternative programs for this, the other one being <b>bzip2</b>(-j)</li>
+      <li><b>-v</b> is the option selecting verbose output during execution.</li>
+      <li><b>-f</b> is the option for selecting the archive to work with. In the creation case, it designate the archive that will be crated and where it will be located. In the extraction case, it selects the archive that will be uncompressed.</li>
+    </ul>
+    <p>Generally speaking, the basic command will <em>"extract here"</em> in the <code>pwd</code>.</p>
   </section>
 </article>
