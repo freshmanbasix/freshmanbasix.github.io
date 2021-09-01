@@ -5,6 +5,7 @@
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
         <li><a href="#external-resources">External Resources</a></li>
+        <li><a href="#directory-hierarchy">Directory Hierarchy</a></li>
         <li><a href="#html-map-overview">HTML Map Overview</a></li>
         <li><a href="#formating-style-rules">Formating and style-rules</a></li>
         <li><a href="#attribution">Attribution</a></li>
@@ -21,6 +22,38 @@
 
     <p>If you would like to grab an improvement task for yourself, or perhaps suggest one, an email is the way to go. Just shoot an email to <a href="mailto:hjalle@freshmanbasix.com">hjalle@freshmanbasix.com</a>. If interest ever grows large enough, there might appear a discord server as well. Time will tell.</p>
 
+  </section>
+
+  <h2 id="directory-hierarchy">Directory Hierarchy</h2>
+  <section class="sub-section">
+    <p>Under the <b>root</b>, the wiki is organized into a few simple folders. The complexity remains quite low which allows for the website directory to consist only a small number of files.</p>
+
+    <pre class="box snippet">
+<b>root/</b>--
+      |-index.html
+      |-style.css
+      |-CNAME
+      |-README.md
+      |-<b>scripts/</b>---
+      |           |-main.js
+      |
+      |-<b>rsc/</b>-------
+      |           |-diagram.xml
+      |           |-image.png
+      |
+      |-<b>articles/</b>--
+                  |-article.html
+</pre>
+
+    <ul>
+      <li><b>index.html</b> is the core of the website, being loaded as the default on a web request. This file should ONLY contain the primary framework of the website, leaving the actual content distributed elsewhere.</li>
+      <li><b>style.css</b> is the complete css style document.</li>
+      <li><b>README.md</b> is a github specific file that only corresponds to the github repo <em>Readme</em> section.</li>
+      <li><b>CNAME</b> is for the CNAME record at the domain name registrar.</li>
+      <li>All js scripts are located under the <b>scripts/</b> directory. Remember that each added scripts must be imported with a script element in index.html.</li>
+      <li>The <b>articles/</b> folder contain the primary content of each article. The article IDs correspond to the name of the file exactly, subtracting the file ending.</li>
+      <li>Every file, image or other visual resource useed somewhere in the wiki should be stored under the <b>rsc/</b> directory. Be sure to name the file in a consise and clear way.</li>
+    </ul>
   </section>
 
   <h2 id="html-map-overview">HTML Map Overview</h2>
@@ -42,7 +75,13 @@
     <p>Each list-item must have the class attribute set to <b>nav-item</b> and contain an anchor element with the href attribute set to call the javascript function <em>openArticle()</em>.</p>
 
     <h3>Wiki Article Column</h3>
-    <p>The article itself is contained within the <em>main</em> element with id <em>wiki-column</em>. The whole article itself is stored inside a <em>article</em> element which has an id value corresponding to the article file name, as found in the <em>/articles</em> directory. It also has the class value <em>wiki-entry</em>. In general, the article is divided into several <em>section</em> elements, the first of which also contains the table of contents. See a core example code below.</p>
+    <p>The article itself is contained within the <em>main</em> element with id <em>wiki-column</em>. The whole article itself is stored inside a <em>article</em> element which has an id value corresponding to the article file name, as found in the <em>/articles</em> directory. It also has the class value <em>wiki-entry</em>. In general, the article is divided into several <em>section</em> elements, the first of which also contains the table of contents. Below follows a diagram along with core example code to illustrate how the hierarchy of a article must be structured to render properly.</p>
+
+    <figure>
+      <img src="rsc/wiki-article-diagram.png" alt="image">
+      <figcaption>Diagram illustrating the core hierarchy of the a wiki article. <a href="rsc/wiki-article-diagram.xml">Download XML file</a></figcaption>
+    </figure>
+
     <pre class="box snippet">
 &ltarticle id="<em>file-name</em>" class="wiki-entry"&gt
 
@@ -79,46 +118,83 @@
     <p class="addme">This section is under construction but will one day contain a calendar for events related to the Kista Mentorspace.</p>
   </section>
 
+  <!-- STYLE RULES -->
   <h2 id="formating-style-rules">Formating and style-rules</h2>
   <section class="sub-section">
-    <p>The styling in the wiki is built on the assumption that all articles are authored and formated in a consistent way. There are a number of predefined blocks that can be used to present information in a effective way. Below follows the available elements that can be used, along with necessary attributes.</p>
+    <p>The styling in the wiki is built on the assumption that all articles are written and formated in a consistent way. It does not make use of any kind of third party documentation framework or software. It is simply done completely by hand. There are a number of predefined blocks that can be used to present information in a effective way. Below follows the available elements that can be used, along with descriptions and examples.</p>
 
-    <p class="addme">Some thought on what to aim for and how to overall structure content will be added here.</p>
+    <p>All predefined components listed below make up ALL components with pre-existing styling that fit consistently. Of course, anything not mentioned should fit just fine and may be used freely. The components that are listed however MUST be written that way for consistency of presentation.</p>
 
-    <ol>
-      <li><b>Sub-sub-headers</b>. Two levels of sub-sub-sections are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that is needed.</li>
-      <li><b>Paragraphs</b>. The plain <b>&ltp&gt</b> element is all that is required. Each paragraph of the content need an element on its own.</li>
-      <li>
-        <b>Figures</b>. Images can be inserted using the <b>&ltfigure&gt</b> element along with the <b>&ltimg&gt</b> and <b>&ltfigcaption&gt</b> elements.
-<pre class="box snippet">
+    <p>A few words should be said about <b>display style</b> and <b>nesting</b> before going further. Elements that are not explicitly intended by the default HTML style to be inline elements should not be used as such. It is the recomended practice to add content one component at a time. The <b>exception</b> being lists. <em>Inside the &ltli&gt</em> tag, any component can essentially be added in series to achieve an effective slight increase in margin size.</p>
+
+    <p class="box attention">Note that each<b>&ltli&gt</b> elements do not have to contain a paragraph element. Only this list items containing multiple paragraphs will need the content wrapped further.</p>
+
+    <h3>Regular blocks</h3>
+    <p>Two levels of <strong>Sub-sub-sections</strong> are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that are needed.</p>
+
+    <p>The plain <b>&ltp&gt</b> element is all you need to create a correctly styled <strong>Paragraph</strong>. Each paragraph of text need an element on its own. Manual linebreaks inside p elements are to be avoided</p>
+
+    <p>To mark out points where future <strong>TODOs</strong> should be added, there is a dedicated &ltp&gt element with the class attribute set to <em>addme</em>. It will render a very eyecathcing and pretty ugly object. Use them mainly to quickly mark out the general idea of what should be added.</p>
+    <pre class="box snippet">&ltp class="addme"&gt&lt/p&gt</pre>
+    <p class="addme">The todos will look like this.</p>
+
+    <h3>Inline blocks</h3>
+    <p>Only a couple of inline elements will be relevant for articles. In the order of eyecathing, the &ltstrong&gt tag will make text stick out <strong>VERY</strong> much. The &ltb&gt tag is just plain <b>boldface</b> and lastly the &ltem&gt is used for cursive text.</p>
+    <p>For marking out programming keywords or general code-adjacent words the <code>&ltcode&gt</code> element can be used. Be aware that the &ltcode&gt tag has a tendency to violate the width set by the parent element. As such, longer words might not wrap as desired. </p>
+
+    <h3>Empasized Blocks</h3>
+    <p><strong>Blockquotes</strong> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
+    <pre class="box snippet">
+&ltfigure class="blockquote"&gt
+  &ltblockquote cite="<em>optional link to source</em>"&gt
+    &ltp&gt<em>Actual quote</em>&lt/p&gt
+  &lt/blockquote&gt
+  &ltfigcaption&gt- <em>source</em>, &ltcite&gt&lta href="<em>link to source</em>"&gt<em>link text</em>&lt/a&gt&lt/cite&gt&lt/figcaption&gt
+&lt/figure&gt</pre>
+    <figure class="blockquote">
+      <blockquote cite="">
+        <p>This is what the blockquote will look like</p>
+      </blockquote>
+      <figcaption>- Hjalle <cite><a href="https://hjallesoft.com">Hjallesoft homepage</a></cite></figcaption>
+    </figure>
+
+    <p><strong>Figures & Images</strong> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
+    <pre class="box snippet">
 &ltfigure&gt
-  &ltimg src="<em>filepath</em>" alt=""&gt
-  &ltfigcaption&gt<em>Caption</em>&lt/figcaption&gt
+&ltimg src="<em>filepath</em>" alt=""&gt
+&ltfigcaption&gt<em>Caption</em>&lt/figcaption&gt
 &lt/figure&gt
-</pre>
+    </pre>
+    <figure>
+      <img src="rsc/logo-hjallium.jpg" alt="image">
+      <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/logo-hjallium.jpg">downloaded directly here</a></figcaption>
+    </figure>
+    <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
 
-        <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
-      </li>
-      <!-- <li><b>Tables</b>.Coming soon.</li> -->
-      <li>
-        <b>Code snippets</b>. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render a neat little code example box.
-<pre class="box snippet">
-&ltpre class="box snippet"&gt<em>Write code here</em>&lt/pre&gt
-</pre>
-        <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
-      </li>
-      <li>
-        <b>Attention block</b>. A good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.
-        <p class="box attention">This is an example of the attention box</p>
-<pre class="box snippet">
-&ltp class="box attention"&gt <em>Write important info here</em>&lt/p&gt
-</pre>
-      </li>
-    </ol>
+    <p><strong>Code snippets</strong> are simple boxes with example code. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render the box correctly.</p>
+    <pre class="box snippet">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</pre>
+    <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
 
-    <p class="addme">More formating instructions will be added here.</p>
+    <p><strong>Attention blocks</strong> are a good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.</p>
+    <pre class="box snippet">&ltp class="box attention"&gt <em>Write important info here...</em>&lt/p&gt</pre>
+    <p class="box attention">... and the info will render like this</p>
+
+    <h3>Tables</h3>
+    <p><strong>Tables</strong> are currently only supported in two-column form, with each column eating up 50% of the width. The most appropriate use is to simply make visually appealing lists of resource and link pairs.</p>
+    <pre class="box snippet">
+&lttable&gt
+  &ltcaption&gt<em>top caption</em>&lt/caption&gt
+  &ltcolgroup span="2"&gt&lt/colgroup&gt
+  &lttr&gt
+    &lttd&gt<em>description</em>&lt/td&gt
+    &lttd&gt<em>link</em>&lt/td&gt
+  &lt/tr&gt
+&lt/table&gt</pre>
+
   </section>
 
+  <!--              -->
+  <!-- ATTRIBUTIONS -->
   <h2 id="attribution">Attribution</h2>
   <section class="sub-section">
     <p>Any and all resources fetched from somewhere else need to be clearly attributed, prefereably in direct proximity to the material itself.</p>
