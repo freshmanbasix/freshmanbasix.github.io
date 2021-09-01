@@ -87,7 +87,7 @@ h1.column-header {
 nav#navbar {
 }
 
-#navbar > ul {
+#navbar > ul#nav-items {
   list-style-type: none;
   margin: 1vh 0;
   padding: 0;
