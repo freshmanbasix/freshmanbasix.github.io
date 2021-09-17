@@ -1,4 +1,4 @@
-<article id="web-development" class="wiki-entry">
+code<article id="web-development" class="wiki-entry">
   <h1 class="column-header">WEB DEVELOPMENT</h1>
   <section class="sub-section">
     <div id="toc-container">
@@ -6,17 +6,26 @@
       <ul class="toc">
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#html">HyperText Markup Language</a></li>
-        <li><a href="#css">Cascading StyleSheets</a></li>
+        <li><a href="#css">Cascading Style Sheets</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#frameworks">Frameworks</a></li>
       </ul>
     </div>
-    <p>This article is intended to cover any and all interesting aspects of web development. That technically includes frameworks like Angular, React or whatever the hell else. But more likely, the content in here will only ever cover HTML, CSS and vanilla Javascript. For one, frameworks are a god damn blight on the world. But furthermore, one guiding principle of importance is to be independent. HTML, CSS and JS will run on ANY browser and requires exactly fuck-all to be installed. No packages, no compilers, no nothing. Write the code and go.</p>
+
+    <p>Web Devlopment entails all concepts pertaining to the task of constructing a website. This involves the full technical stack as a website is made up of everything from UX to back-end. As this is tightly intertwined with servers and hosting, the content in this article will focus primarily on the client side, leaving most of the rest to other dedicated articles. As with everything else in this wiki, the primary purpose is to cover the fundamentals. As such, frameworks like Angular and React are welcome, but will not be actively added by the wiki's main authors.</p>
+
+    <p>In essence, this article will continually reflect the knowledge aquired in order to make this wiki a reality. As the wiki itself becomes more advanced, so will the concepts discussed below. The primary content below will cover HTML, CSS and vanilla JavaScript. </p>
+
   </section>
 
+  <!--
+  Introduction
+ -->
   <h2 id="introduction">Introduction</h2>
   <section class="sub-section">
-    <p class="addme">This paragraph will introduce the general symbiosis between html & css, as well as cascading.</p>
+    <p>The key is in the name. It's called <em>markup</em>. The process of building a website is enclosing the actual content in predefined signifiers telling someone else exactly how to draw it up so that it looks nice. The HTLM code is the <b>skeleton</b>, essentially drawing up a diagram of all constituent parts. The CSS defines what all the <b>parts should look like and how they are formated</b> in relation to each other. Lastly, The JS is the tool that allows us to <b>dynamically change the content and structure</b> when the user interacts with the site. There are some very limited built-in support for interactivity in basic HTML, e.g clickable links and such, but JS opens up a whole new ballgame. It's especially adept at punching giant holes in the security.</p>
 
-    <p>For daily reference, the only real resource you need for HTML, CSS and vanilla JS is the <<strong>Mozilla Developer Network</strong>. Some other alternatives might be Tutorials Point, or W3 Schools, but there's no real reason to bother any of them. Just get aquainted with MDN and be all the happier for it. Some quick links below will bring you right into the shit.</p>
+    <p>For daily reference, the only real resource you need for HTML, CSS and vanilla JS is the <strong>Mozilla Developer Network</strong>. Some other alternatives might be Tutorials Point, or W3 Schools, but there's no real reason to bother any of them. Just get aquainted with MDN and be all the happier for it. Some quick links below will bring you right into the shit. There are also multiple tutorials for getting started with web development which go into much further detail than this wiki ever can.</p>
 
     <table>
       <caption>Suggested Web Development Reading Material</caption>
@@ -35,22 +44,37 @@
       </tr>
     </table>
 
+    <!--
+      Document Object Model
+    -->
+    <h3>Document Object Model</h3>
+    <p>Being a <em>markup</em> language, HTML is very much oriented towards generating documents. That history means that the term document has come to essentially refer to the root of any webpage. From the perspective of the network, the actual html file generating a webpage is called <b>the document</b>. In terms of scope, the document is the absolute root. The <b>Document Object Model</b>, DOM, is the formalized data representation to abstract all objects within a document. Each document can be comprised of one or more actual HTML files, so it can be important to point out that the <em>document</em> in definite form actually mean some kind of rendered web resource.</p>
+
+    <p>The DOM abstracts a document into a hierarchical tree structure where each object is represented by a node. This does not only include the elements of the core file, but also multiple other attributes, properties and other stuff. The DOM can be discussed for hours, but some very useful reading can be done by beginners at the <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Document Object Model Wikipedia Page</a>. Furthermore, one might want to take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">MDN Introduction to the DOM pages</a>.</p>
+
+    <p>The most important factors to keep in mind is that the DOM is what specifies how to access and modify the content of a document. It's not extremely essential to understand in depth as an actual <em>model</em> apart from the fact that it is what formalizes the conceptual tree structure. It does establish a large set of rules though, so anyone interested in becoming a very skilled web developer will want to have a thorough theoretical and practical understanding of the DOM.</p>
+
   </section>
 
+  <!--
+    HTML
+  -->
   <h2 id="html">HyperText Markup Language </h2>
   <section class="sub-section">
-    <p>I have no idea what's so damn hyper about it, but the language is a syntax for marking up data to enable it's presentation to be rendered by some other software. The complete language set is very small, consisting of a few central components making up the syntax glossary. There's just a few of them, illustrating how quick HTML truly is to review and start using</p>
+    <p>God only knows what's so damn hyper about it, but the language is a syntax for marking up data to enable its presentation to be rendered by some other software. The complete language set is very small, consisting of a few central components making up the syntax glossary. There's just a few of them, illustrating how quick HTML truly is to review and start using</p>
 
+    <!-- Syntax Glossary -->
     <h3>Syntax Glossary</h3>
     <ol>
       <li>
-        First out is the HTML <b>ELEMENT</b>, exemplified below with a  <em>&ltimg&gt</em> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element. While some circumstances allow for the two to be combined, or the closing tag to be omitted, using both is the only certain way to avoid undefined behavior.
-        <pre class="box snippet">&ltimg src="file"&gt &lt/img&gt</pre>
+        First out is the HTML <b>ELEMENT</b>, exemplified below with a  <code>&ltimg&gt</code> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element.
+        <pre class="box snippet">&ltarticle class="wiki-article"&gt &lt/article&gt</pre>
+        Generally browsers can work around omitting the closing tag depending on the circumstances. It is usually best practice to thoroughly add both tags in order to avoid undefined behavior. Some elements are intended to hold no content, known as <b>Empty Elements</b>. These usually even <em>require</em> the closing tag to be left out.
       </li>
 
       <li>
-        Secondly comes the <b>ATTRIBUTE</b>. These are descriptors defining the behavior and presentation of the Element. Attributes are always located inside the opening tag and separated by white spaces. Generally speaking, most attributes use in practice are specific for the element. Styling is possible through attributes,  many CSS properties have attribute equivalents, but it's a BAD IDEA!
-        <pre class="box snippet">src="file"</pre>
+        Secondly comes the <b>ATTRIBUTE</b>. These are descriptors defining the meta data and presentation of the Element. Attributes are always located inside the opening tag and separated by white spaces. Generally speaking, most attributes use in practice are specific for the element. Styling is possible through attributes,  many CSS properties have attribute counter-parts, but it's a BAD IDEA! Two very important attributes are <code>class</code> and <code>id</code> which are both used to organize the HTML document and allow more intricate behaviour and style. Both CSS and JS make good use of classes and id's to effectively parse and access specific content for modification and interaction.
+        <pre class="box snippet">class="wiki-article"</pre>
       </li>
       <li>
         Any element will have ONE <b>PARENT</b> and ANY NUMBER of <b>CHILDREN</b>, i.e one element of which said element is inside and zero or more elements in between the tags.
@@ -63,28 +87,177 @@
       </li>
     </ol>
 
-    <h3>Document Object Model</h3>
-    <p>Every single html document can be represented by a tree hierarchy</p>
+    <!-- Core Document Anatomy -->
+    <h3>Core Document Anatomy</h3>
 
-    <h3>Document Design</h3>
-    <p class="addme">Describe shortly how to think about using existing elements to implement a website, and how the paper document history makes HTML a little unintuitive for sexy modern web pages.</p>
+    <p>From the history that gave birth to it, HTML is naturally designed to generate a typical paper document conventionally structured like an academic essay or technical litterature. That means it has predefined pieces that can make up sections, headers, paragprahs and so on. This is because that was the intended use at first. With webpage design becoming a lot more colorful and ballsy, the old model doesn't quite fit anymore. Still, there have never been any realistic competitors and HTML was just so established by the time that internet speeds where high enough to support anything other than confetti colored walls of text that developers just made do. If anything, modern frameworks have been constructed on top of the HTML/CSS/JS combo to provide tools making current design a bit more streamlined. At the core though, they are all still just generating HTML.</p>
+
+    <p>Any HTML element will create a node in the DOM. Any natural hierarchical order of elements is only infered, with a fe exceptions. Syntactically, the browser isn't going to care that you place a <code>&ltmain&gt</code> element inside a <code>&lth1&gt</code> element. By default, it's going to look pretty weird, but as long as the diagram of nodes can be drawn, the page will work. The attributes are not the same for all elements of course. You can't make a <code>&ltp&gt</code> element behave like an <code>&ltimg&gt</code> element. This is true for styling properties as well, but in most cases, you can make one element look and feel like another. The reason we have multiple types of elements are to allow us to: </p>
+    <ol>
+      <li>Embed external content, i.e images and the like</li>
+      <li>Parse the document in a useful way</li>
+      <li>Define consistent styling rules</li>
+    </ol>
+    <p>For a HTML document to be <b>legally recognized</b> by a browser, it will need to contain a couple of core components. The <b>DOCTYPE</b> tag establishes what kind of document it is. The version of HTML can be defined in this element. The <b>&lthtml&gt</b> element establishes the root node of the document. The root must have two children, the <b>&lthead&gt</b> and <b>&ltbody&gt</b> elements.</p>
+
+    <figure>
+      <img src="rsc/html-core-document.png" alt="image">
+      <figcaption>Diagram illustrating the root of a HTML document. <a href="rsc/html-core-document.xml">Download XML here</a></figcaption>
+    </figure>
+
+    <p>The example below is a good standard template for creating a basic html which imports a stylesheet from a separate file, which is the only sensible way to do things.</p>
 
 <pre class="box snippet">
 &lt!DOCTYPE html&gt
 &lthtml lang="en" dir="ltr"&gt
   &lthead&gt
     &ltmeta charset="utf-8"&gt
-    &lttitle&gt&lt/title&gt
+    &lttitle&gt<em>Website Title</em>&lt/title&gt
+    &ltlink rel="stylesheet" type="text/css" href="style.css"&gt
   &lt/head&gt
   &ltbody&gt
     &lt!-- Content of the webpage --&gt
   &lt/body&gt
 &lt/html&gt
 </pre>
+
+    <!-- Blocks -->
+    <h3>Element Blocks</h3>
+    <p>The last important thing to cover is how html elements are placed in relation to each other. There are essentially two main important ways that a element can be displayed:</p>
+    <ol>
+      <li>As a series of <b>blocks</b> that are placed beneath each other.</li>
+      <li>As <b>inline</b> objects, essentially putting the element on the same line as the previous one.</li>
+    </ol>
+    <p>There are several other display modes for html, mainly flex and grid, which will be touched upon in the <a href="#css">CSS section</a>. But at it's core, html is all about placing blocks of content in the correct place. This whole subsection touches on style to a large degree, but is still a central concept of how to structure HTML. Most elements will be displayed as a block by default. Headers and paragraphs are examples of this. They will simply render one after the other on a new lines. Meanwhile, the elements marking up emphasis are all displayed on the same line as the context they are situated in.</p>
+
+    <figure>
+      <img src="rsc/html-display-mode.png" alt="image">
+      <figcaption>Diagram represention of block and inline display. <a href="rsc/html-display-mode.xml">Download XML here</a></figcaption>
+    </figure>
   </section>
 
-  <h2 id="css">Cascading StyleSheets</h2>
+  <!--
+    CSS
+  -->
+  <h2 id="css">Cascading Style Sheets</h2>
   <section class="sub-section">
+    <p>CSS is a language in itself, claimed to be Turing complete by a classmate of this author once (citation needed). The only real use web developers have for it is however to set rules for how to style the content of a HTML document when rendering it in a browser. This section will present a few very central concepts that will be essential to understand how CSS works. It will also establish a complete <em>syntax taxonomy</em> to present all constituent parts of a CSS file. Lastly, the <em>Box Model</em>, which is how CSS represents objects will be discussed. This will be sufficient for any reader to move forwards with a sufficient understanding to start reading further on the topic.</p>
 
+    <!-- sub-sub-section -->
+    <h3>Cascade, Specificity and Inheritance</h3>
+    <p>There are three concept innate to CSS that are very important to grasp when working effectively with style sheets. These are <em>Cascading</em>, <em>Specificity</em>, and <em>Inheritance</em>. In essence, a CSS file is a long set of rules, defining how elements are to be rendered. These rules follow a general behaviour which will be discussed in this section, but can should be studied in much further detail by those who wish to be very skilled front end developers.</p>
+
+    <p>The <b>cascading</b> part of the name comes from the fact that the rules are applied on a sequential cascading order, where each styling rule is read at a time, from top to bottom, and applied linearly. In short, this means that rules appearing later in the file will potentially overwrite the ones appearing earlier.</p>
+
+    <p>Whether or not this conflict will occur is highly dependent on the <b>specificity</b> of the rule, i.e exactly which elements it will apply to. Depending on the complexity, rules might have to be very intricateky designed to apply as desired. This puts a responsibility on the designer to establish a very clear structure on the document as a whole so that rules can be applied in a systematic way.</p>
+
+    <p>The last major concept is that of <b>Inheritance</b>. All CSS rules work by defining properties. Some properties can be inherited from parent elements. Some apply only to the element itself and some will affect all its children. Knowing which is which is very important to achieve the intended outcome.</p>
+
+    <!-- Ruleset -->
+    <h3 id="ruleset">The Ruleset</h3>
+    <p>While HTML was a very simple language, the syntax of CSS is even more simple, even by far. There are two ways to include CSS styling in a HTML document:</p>
+    <ol>
+      <li>
+        Like a schmuck, as the content of a <b>&ltstyle&gt</b> element, which must be the direct descendant of the &lthead&gt element.
+<pre class="box snippet">
+&lthead&gt
+  &ltstyle&gt
+    #some rules
+  &lt/style&gt
+&lt/head&gt
+</pre>
+      </li>
+      <li>Professionally, as the content of a separate file, linked into the html file with a <b>&ltlink&gt</b> element. Multiple CSS files can be linked into the same HTML file but the cascading behaviour will apply.
+        <pre class="box snippet">&ltlink rel="stylesheet" type="text/css" href="style.css"&gt</pre>
+      </li>
+    </ol>
+    <p>Below is an example of what the content of a CSS file might look like. The sample code below is an example of what is called a <b>ruleset</b>, or in short just a <b>css rule</b>.</p>
+<pre class="box snippet">
+body {
+  width: 80vw;
+  min-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+}</pre>
+
+    <p>In this case, what is shown are all the styling rules that will apply to any <em>body</em> elements. The constituent parts of a ruleset are broken down below and syntax.</p>
+
+    <figure>
+      <img src="rsc/css-ruleset.png" alt="image">
+      <figcaption>A breakdown of the constituent parts of a ruleset. <a href="rsc/css-ruleset.xml">Download XML here</a></figcaption>
+    </figure>
+
+    <p class="box attention">Note that each singular rule separates property and value with a <code>:</code>, and ends each rule with the <code>;</code> character.</p>
+
+    <p>Formally speaking, the syntax rules for rulesets are as follows. Note that any rule that is incorrectly formulated is simply ignored. One very important consequence of this is that a missed semicolon, <code>;</code>, could possibly throw the syntax off enough to make the browser discard the entire ruleset.</p>
+
+<pre class="box snippet">
+ruleset ::=
+    selectors-list {
+      properties-list
+    }
+
+selectors-list ::=
+    selector[:pseudo-class] [::pseudo-element]
+    [, selectors-list]
+
+properties-list ::=
+    [property : value] [; properties-list]
+</pre>
+
+    <ul>
+      <li>The <b>Selector</b> is the part specifying which elements that the ruleset apply to. Details of the many kinds of selectors can be at the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#selectors">CSS Reference</a>. It is possible to vary the level of specificity a great deal in terms of place of decendancy, siblings, class affiliation etc. Being precise with the selector becomes increasingly important as the complexity of style grows. Selectors are what allows the web developer to assign multiple layers of style and should be understood thoroughly.</li>
+      <li><b>Properties</b> are in this case differing style properties that can be modified to change the presentation of the element. Some properties correlate directly to HTML attributes and current best practice is to only use CSS to modify them. Most properties are shared by all elements, with a few being specific for certain element types. A complete list of <em>all</em> properties can be found <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index">indexed here</a>.</li>
+      <li>Depending on the property itself, the <b>Property Value</b> comes in a multitude of <b>data types</b>. To see exactly what values are accepted for a given property it is best to refer to the documentation. MDN has a good reference sheet for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types here</a>.</li>
+      <li>Every rule is made up of a <b>Declaration</b>, defined above as <em>properties-list</em>. Any ruleset can essentially contain as many declarations as there are properties supported by the selector in question.</li>
+    </ul>
+
+    <p class="box attention">For readability it is always a good idea to put a single rule per line, but the syntax does not require a linebreak. Be sure to also keep in mind that the order of the rules make all the difference. All changes applied by some rule at the bottom will overwrite a rule at the top.</p>
+
+    <p>Another important concept relevant to properties are the <b>Shorthands</b>, which are composite properties that combine multiple properties in one and allow us to define multiple values in a sinlge line separated by a space character</p>
+    <pre class="box snippet">margin: 1px 2px 1px 2px;</pre>
+    <p>The example above shows how one might define the values of all the margin properties in one. Each value, starting from the left, represent a clockwise movement from top, right, bottom and lastly left. Some shorthand support several combinations, for instance margin can take two values, which then applies to top/bottom and left/reft respectively. Check out MDN for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">a reference and more information</a>.</p>
+
+    <!-- Box Model -->
+    <h3>The Box Model</h3>
+    <p>Each block has 3 spacial properties that are very important to grasp in order to make a website appear as intended. The <b>margin</b> determines how much space there is between an element and it's parent. Meanwhile the <b>padding</b> is the space between the point where an element begins and where the content is displayed. The <b>border</b> is the line inbetween these spaces, which has a thickness of its own. The diagram below explain how these three fit together visually.</p>
+    <figure>
+      <img src="rsc/html-box-model.png" alt="image">
+      <figcaption>Diagram visualizing the 3 spacial properties of an html element. <a href="rsc/html-box-model.xml">Download XML here</a></figcaption>
+    </figure>
+
+    <!-- Environment variables -->
+    <h3 id="variables-environment">Variables and Environment</h3>
+    <p>Variables can be very effective in structuring a large ruleset, especially when establishing a color palette. Variables can be declared and defined in a separate ruleset with the <code>:root</code> pseudo-class selector. This establishes the variable in the global scope and lets any ruleset access it.</p>
+<pre class="box snippet">
+:root {
+  --palette-orange: #f2951d;
+}
+</pre>
+    <p class="box attention">All variables must begin with a double hyphen, <code>--</code>. Variables can be declared inside any ruleset, but will only exist in that scope.</p>
+    <p>In order to use the variable the <code>var()</code> function is used.</p>
+<pre class="box snippet">
+element {
+  background-color: var(--palette-orange);
+}
+</pre>
+    <p>On top of custom defined variables, there are also some very practical environment and language defined variables that can be practical to know.</p>
+    <ul>
+      <li>The <b>viewport</b> is the window used to render the website. The value of this variable is dependent on the client side screen as well as the actual window rendering the content, but can be accessed directly in the CSS code in several ways. For one, as a fractional value representing size with the <code>vh</code> and <code>vw</code> units.</li>
+      <li>... and many more.</li>
+    </ul>
+  </section>
+
+  <h2 id="javascript">Javascript</h2>
+  <section class="sub-section">
+    <p>Javascript is an entire god damn language. It was designed to improve the functionality of web pages and has a ton of quirks, but its a full feature language nonetheless. Apart from a few extremely basic starter tips, this wiki will only refer to official documentation. Some excellent reading resources can be found at the <a href="https://developer.mozilla.org/en-US/docs/Web/javascript">MDN JavaScript pages</a>. One very useful book that might be of interest is <a href="https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/"><em>JavaScript: The Definitive Guide</em></a> by David Flanagan (O'Reilly Media). It is utterly pointless trying to establish any foundational knowledge here when it comes to JS, as it is utterly enormous comapred to HTML and CSS, but a few little pointers is likely meaningful to leave here for future quick reference.</p>
+
+    <p>Javascript code is embedded as the content of a <code>&ltscript&gt</code> element which is most appropriately placed at the very bottom of the <code>&ltbody&gt</code>. Through the <code>src</code> attribute the actual content of the js code can be read from a separate file. For managability, this is usually the most appropriate method and allows the element content to be left empty.</p>
+
+    <pre class="box snippet">&ltscript type="text/javascript" src="file.js"&gt &lt/script&gt</pre>
+  </section>
+  <h2 id="frameworks">Frameworks</h2>
+  <section class="sub-section">
+    <p>There are tons of them, and if you actually intend to develop for the web, you'll want to get aquainted. But until one of the authors of this wiki decide to care, this section will essentially be empty. The big three that you may want to start looking at are <a href="https://vuejs.org/">Vue.js</a>, <a href="https://angularjs.org/">Angular</a> and <a href="https://angularjs.org/">React</a>. One of those are independent, the other two are created and managed by Google and Facebook respectively. Then there are of course garbagetons of others, but who gives a crap.</p>
   </section>
 </article>
