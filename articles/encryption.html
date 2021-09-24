@@ -4,46 +4,75 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li> <a href="#the-key-pair-model">The Key-Pair Model</a> </li>
-        <li> <a href="#gnu-privacy-guard">Gnu Privacy Guard</a> </li>
+        <li> <a href="#keep-it-secret">KEEP IT SECRET</a> </li>
+        <li> <a href="#encryption-methods">ENCRYPTION METHODS</a> </li>
+        <li> <a href="#gnu-privacy-guard">GNU PRIVACY GUARD</a> </li>
       </ul>
     </div>
-    <p>In this article, how to apply encryption will be explained. What it is, how to use it practically etc.</p>
+    <p>Encryption covers the massive field of data science that endeavors to obfuscate information. It spans a long history and obviously has become of utmost importance in recent decades. This article aims to cover some historical and theoretical background on different methods and initiatives that have made an impact.</p>
   </section>
 
-  <h2 id="the-key-pair-model">The Key-Pair Model</h2>
+  <h2 id="keep-it-secret">KEEP IT SECRET, KEEP IT SAFE</h2>
   <section class="sub-section">
-    <p>Of all available encryption methods, one very common and reliable kind is the <i>private public keypair model</i>. The idea is that a user has two keys; one <b>private</b> that can decrypt (unlock) messages meant only for the owner, and one <b>public</b> that encrypts (locks) a message meant for a specific recipient.</p>
+    <p>There is essentially only purpose of encryption, make it difficult, if not impossible, for unintended people to take part of data. From ciphers in antiquity to trendy chat applications, there has always been an interest in communicating in secret. Rendering data illegible and back again is the practical challenge, discussed further <a href="#encryption-methods">below</a>. In this section however, different actors on the scene will be presented, giving some context to the eternal struggle. Sometimes fought due to the sensitive nature of the data, other times for the principle of privacy and integrity.</p>
+    <p class="addme">In the future, this section will contain a great deal more stuff, talking about things like PGP, political and technological movements, and so on.</p>
   </section>
 
-  <h2 id="gnu-privacy-guard">Gnu Privacy Guard</h2>
-
+  <h2 id="encryption-methods">ENCRYPTION METHODS</h2>
   <section class="sub-section">
-    <p><i>GPG</i> is a open source and readily available command line utility that enables a large amount of functionality and management.</p>
+    <p>Applying kickass algorithms that transform a chunk of data into a nonsensical lump is what this section will be all about. The field is huge enough with such a mass of models and standards that the entire wiki could be dedicated to concepts alone. The authors will endeavor to describe the main methods of encryption, as well as describe to some degree the actual algorithms themselves.</p>
 
-    <p class="addme">This paragraph will expand on the interesting history of GPG, it's quite a doozie</p>
+    <p class="addme">This section will further expand on models like assymetric/symetric keys, the RSA algortihm and so on.</p>
 
-    <figure>
-      <img src="rsc/gnupg_directory_structure.png" alt="image">
-      <figcaption>Overview of the directory where all data on the local keychain is stored. XML version of image available <a href="rsc/gnupg_directory_structure.png">here</a></figcaption>
-    </figure>
+    <!-- <h3 id="assymetric-keys">Assymetric Keys</h3> -->
+    <!-- <p>Of all available encryption methods, one very common and reliable kind is the <strong>private public keypair model</strong>. The idea is that a user has two keys; one <b>private</b> that can decrypt (unlock) messages meant only for the owner, and one <b>public</b> that encrypts (locks) a message meant for a specific recipient.</p> -->
+  </section>
 
-    <h3>Usage</h3>
+  <h2 id="gnu-privacy-guard">GNU PRIVACY GUARD</h2>
+  <section class="sub-section">
+    <p><i>GPG</i> is a open source and readily available command line utility that enables a large amount of functionality and management. Once installed on a linux machine it offers an excellent way to simply manage encryption/decryption and key management. This section will primarily only contain information for linux users. However, no matter the plattform, it will be a good idea to also refer to the <a href="https://www.gnupg.org/documentation/">official documentation</a>.</p>
 
-    <p>Below follows a number of examples of how one might use the <code>gpg</code> command achieve some serious privacy. First you will want to encrypt a <i>input-file</i> intended to be read only by the designated recipient <i>UID</i>s.</p>
+    <!-- <figure>
+      <img src="rsc/encryption-gpg-directory-structure.png" alt="image">
+      <figcaption>Overview of the directory where all data on the local keychain is stored. <a href="rsc/encryption-gpg-directory-structure.xml">Download XML here</a></figcaption>
+    </figure> -->
 
-    <pre class="box snippet">$ gpg --encrypt &ltinput-file&gt --armor --recipient UID --output &ltoutput-file&gt </pre>
+    <h3>USAGE</h3>
 
-    <p>When you've received an <i>encrypted-message</i>, you're going to want to decrypt it and output the unencrypted message to an appropriate <i>output-file</i>.</p>
+    <p>Below follows a number of examples of how one might use <code>gpg</code> to achieve some serious privacy with key-pairs. If questions pop up, it is always good practice to take a look in the manpages, found either in your terminal, or <a href="http://manpages.org/gpg">right here</a>.</p>
 
-    <pre class="box snippet">$ gpg --decrypt --output &ltoutput-file&gt &ltencrypted-message&gt</pre>
+    <h4>CREATE KEYS</h4>
+    <p>To partake in any kind of encrypted communication, you need to <b>generate a pair of keys</b>. These need to be generated on the own computer. The <code>--generate-key</code> command is the standard one intended for creating a new key. The <code>--full-generate-key</code> command is another alternative. Both prompt the user for input for the different parameters, but the latter will prompt for <em>all</em> options.</p>
+    <pre class="box snippet">gpg --generate-key</pre>
+    <div class="box attention">For SSH keys, take a look at the <a href="https://www.ssh.com/academy/ssh/keygen">ssh-keygen</a> tool instead</div>
 
-    <p>In order to share your own key with other people, export it into a file that can be sent through any prefered means. </p>
 
-    <pre class="box snippet">$ gpg --export &ltuid&gt --armor --output &ltfilename&gt</pre>
+    <h4>ENCRYPT/DECRYPT</h4>
+    <p> First you will want to <b>encrypt a file</b> intended to be read only by the <b>designated recipient</b> <i>UID</i>s.</p>
 
-    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <code>--list-keys</code> command.</p>
+    <pre class="box snippet">$ gpg --encrypt <em>original-file</em> --armor --recipient <em>UID</em> --output <em>encrypted-file</em> </pre>
 
-    <pre class="box snippet">$ gpg --list-public-keys</pre>
+    <p>When you've received a <b>encrypted-message</b>, you're going to want to <b>decrypt</b> it and output the unencrypted message to an appropriate <b>output-file</b>.</p>
+
+    <pre class="box snippet">$ gpg --decrypt --output <em>decrypted-file</em> <em>encrypted-file</em></pre>
+
+    <div class="box attention">The <b>--armor</b> option makes sure the resulting file uses a compatability friendly character set so no issues occur inbetween language environments.</div>
+
+    <h4>SHARE & IMPORT KEYS</h4>
+    <p>In order to <b>share</b> your own key with other people, <b>export it into a file</b> that can be sent through any prefered means. </p>
+
+    <pre class="box snippet">$ gpg --export <em>UID</em> --armor --output <em>output-file</em></pre>
+
+    <p>Given a file with a key, <b>import it into your keychain</b></p>
+    <pre class="box snippet">gpg --import <em>key-file</em></pre>
+
+    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <code>--list-keys</code> command. Optionally, the <code>--fingerprint</code> command gives a similar output. Both commands can take a UID argument to single out a particular key which is useful when automating verification.</p>
+
+    <pre class="box snippet">$ gpg --list-keys [UID]</pre>
+    <pre class="box snippet">$ gpg --fingerprint [UID]</pre>
+
+    <p>When a key has been confirmed beyond all reasonable doubt, the trust value can be edited. The command below will prompt the user to input a new trust value</p>
+    <pre class="box snippet">gpg --edit-key <em>UID</em> trust</pre>
+
   </section>
 </article>
