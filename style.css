@@ -9,6 +9,7 @@
   --red:    #FF4D4D;
   --pink:   #FFEAE6;
   --white:  #F8F8F8;
+  --bwhite:  #FFFFFF;
   --yellow: #FFFF00;
 }
 
@@ -217,6 +218,33 @@ strong {
   overflow: auto;
   overflow-x: auto;
   white-space: pre-wrap;
+}
+
+.math {
+  background: var(--bwhite);
+  border-left: 3px solid var(--blue);
+  text-align: center;
+  font-style: italic;
+}
+
+.inline-math {
+  display: inline;
+  font-style: italic;
+  color: var(--red);
+}
+
+.math-definition {
+  /* background: var(--bwhite); */
+  border-left: 3px solid var(--red);
+}
+
+figure.math-formula {
+  border-left: 3px solid var(--blue);
+  background: var(--bwhite);
+}
+
+figure.math-formula > img {
+  margin: 0 auto;
 }
 
 p.addme {

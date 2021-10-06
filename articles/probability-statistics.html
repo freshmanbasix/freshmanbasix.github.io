@@ -1,0 +1,263 @@
+<article id="probability-statistics" class="wiki-entry">
+  <h1 class="column-header">PROBABILITY AND STATISTICS</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <ul class="toc">
+        <li><a href="#probability-fundamentals">PROBABILITY FUNDAMENTALS</a></li>
+        <li><a href="#conditional-probability">CONDITIONAL PROBABILITY</a></li>
+        <li><a href="#random-variables">RANDOM VARIABLES</a></li>
+        <li><a href="#multidimensional-random-variables">MULTIDIMENSIONAL RANDOM VARIABLES</a></li>
+      </ul>
+    </div>
+    <p>The field of Probability and Statistics is a staple of any technical education. Many fields will require a fundamental understanding and in life overall, any human being should be at least moderately versed in it. This article will be a useful primer and lookup for many corre concepts which can be practical when quickly needing to brush up on some particular module. Most, if not all, theory in this article is derived from the book <em>Probabitily and Statistics, Theory and Applications </em>(<a href="https://www.springer.com/gp/book/9781461281580">G Blom, 1989, Springer</a>).</p>
+  </section>
+
+  <h2 id="probability-fundamentals">PROBABILITY FUNDAMENTALS</h2>
+  <section class="sub-section">
+    <p>A number of core concepts need to be presented first to establish the theory needed to go into the more complicated sections below. This section will go into some of the initial taxonomy needed and give quick presentations of concept that demand little to none background mainly for reference. There will also be some minor theory concepts that don't motivate a full subsection for themselves will be given some minor expansion.</p>
+
+    <h3 id="probability-triple">PROBABILITY TRIPLE</h3>
+    <p>An initial concept that will be absolute key for establishing a language to use in all coming sections, is the <strong>Probability Triple</strong> or <strong>Probability Space</strong>. More formal information can be found on the <a href="https://en.wikipedia.org/wiki/Probability_space">Probability Space Wikipedia page</a>. Before anything else though, two extremely central terms need to be established.</p>
+    <ul>
+      <li>An <b>outcome</b> is the result from a randomized expermient. E.g the throwing of a die, flip of a coin or random selection out of a hat. The symbol for outcomes is commonly lower-case omega (<span class="inline-math">ω</span>)</li>
+      <li>An <b>event</b> is a general set of outcomes that usually fulfill some kind of criteria. An event can include zero or more outcomes from an experiment. Most commonly denoted using upper-case alphabetical letters (<span class="inline-math">H</span>)</li>
+    </ul>
+    <p> The triple is a mathematical construct made up of three elements, denoted <strong>(Ω, F, P)</strong>, that allow us to make a formal model of a <em>"random process or 'experiment'"</em>. The concept only makes internal sense in the context of a particular experiment. Using the example of a single throw of a 6 sided die, the three elements <span class="inline-math">(Ω, F, P)</span> are defined further in the subsections below</p>
+
+    <h4 id="sample-space">SAMPLE SPACE Ω</h4>
+    <p>The <b>sample space</b> represent ALL POSSIBLE OUTCOMES of the experiment. In this case it is the set <span class="inline-math">[1, 2, 3, 4, 5, 6]</span>.</p>
+
+    <h4 id="event-space">EVENT SPACE F</h4>
+    <p>The <b>Event Space</b> is a set of possible <b>events</b>. In general terms, the event space will be the set of subsets of the sample space. In the case of the example above, a multitude of subsets, but not all sets in the event space will make any kind of natural sense. A more realistic example would be the event where the result of the experiment is an odd number. This is represented by the subset <span class="inline-math">[1, 3, 5]</span>.</p>
+
+    <h4 id="probability-function">PROBABILITY FUNCTION P</h4>
+    <p>The <b>Probability function</b> assigns probability values to all events in the event space between 0 and 1. When looking for the probability of any certain set of circumstances, the basic way to refer to it, given a defined Probability Space, is <span class="inline-math">P of H</span>, <span class="inline-math">P(H)</span>, or more formally <em>Probability of outcomes in event H occuring</em>.</p>
+
+    <p><span class="inline-math">P(ω<sub>i</sub>)</span> is the probability of the particular outcome <span class="inline-math">ω<sub>i</sub></span>, where one important sum is that of the probabilities of all outcomes, which must amount to 1.</p>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-sumofoutcomes.png" alt="image">
+    </figure>
+
+    <h4>KOLMOGOROVS THEOREM</h4>
+    <p>Regarding the probability function P, <b>Kolmogorovs Theorem</b> establish three very useful axioms:</p>
+    <ol>
+      <li><div class="box math">0 ≤ P ≤ 1</div></li>
+      <li><div class="box math">P(Ω) = 1 & P(∅) = 0</div></li>
+      <li><p>For any finite or enumarably infinite set of events <span class="inline-math">[H<sub>1</sub>,...]</span>, where all events are mutually, exclusive the following equation is fullfilled</p>
+        <div class="box math">P(H<sub>1</sub> ∪ H<sub>2</sub> ∪ ...) = P(H<sub>1</sub>) + P(H<sub>2</sub>) + ...</div></li>
+      </ol>
+
+    <h3 id="core-principles">PRINCIPLES & THEOREMS</h3>
+    <p>A few very important theorems merit a bit of additional focus without occupying their own sections.</p>
+
+    <h4>UNIFORM PROBABILITY DISTRIBUTION</h4>
+    <p>For sample spaces where the probability of all outcomes are the same have a <b>uniform probability distribution</b>. Formally the following equation must be satisfied for all outcomes <span class="inline-math">ω<sub>i</sub></span> and <span class="inline-math">ω<sub>j</sub></span></p>
+    <div class="box math">P(ω<sub>i</sub>) = P(ω<sub>j</sub>) : i,j ∈ [1,n]</div>
+    <p>The number of outcomes is commonly set to <em>n</em>. In real terms, the probability function for a uniform distribution means that the probability for all outcomes ω will satisfy the following:</p>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-uniform-distribution.png" alt="image">
+    </figure>
+
+    <h4>THE CLASSICAL PROBABILITY THEOREM</h4>
+    <p>Given a uniform probability distribution, the probability for some event A will follow the <b>Classical Probability Theorem</b>:</p>
+    <div class="box math">P(A) = number of beneficial outcomes / number of possible outcomes </div>
+
+    <h4>MULTIPLICATION PRINCIPLE</h4>
+    <p>The <b>Multiplication Principle</b> states that given <span class="inline-math">n</span> separate sets of objects <span class="inline-math">[S<sub>1</sub>, ..., S<sub>n</sub>]</span>, the number of ways you can create combinations with one object from each set is <span class="inline-math">|S<sub>1</sub>| x ... x   |S<sub>n</sub>|</span>. This is a very often recurring principle when dealing with uniform probability distribution. As an example, the figure below illustrates the principle visually, with the combination of of the two sets <span class="inline-math">F</span> and <span class="inline-math">V</span>, with 2 and 3 members respectively</p>
+    <figure>
+      <img src="rsc/prob-multiplication-principle.png" alt="image">
+      <figcaption>A tree diagram where each path illustrates one unique combination of sets F and V. The number of leafs in the tree is the product of the cardinality of the two sets. <a href="rsc/prob-multiplication-principle.xml">Download XML here</a></figcaption>
+    </figure>
+
+    <h3 id="combinatorics-drawing-tokens">COMBINATORICS, DRAWING TOKENS</h3>
+    <p>Drawing tokens at random from a bag can be used as an illustration to exemplify a great many different probabilistic scenarios. Generally, the concept assumes a set <span class="inline-math">T</span> of <span class="inline-math">p</span> tokens, <span class="inline-math">[t<sub>1</sub>,...,t<sub>p</sub>]</span>. From the set T, we will draw <span class="inline-math">n</span> tokens at random where each token has a uniform chance of being drawn.</p>
+    <p>The <b>order</b> of the tokens can make a difference depending on the context that the Probability Space defines. For example, a hand of cards is the same no matter in which the cards appear. If the tokens are letters however, only certain orders will form actual words. If you're not counting with respect to order, that means that there are several duplicate permutations of the beneficial outcomes. That means the absolute number will be smaller.</p>
+    <p>This gives rise to 4 general formulas for calculating the <b>possible ways to draw the <span class="inline-math">n</span> tokens</b>.</p>
+    <ul>
+      <li>We <b>DO RETURN</b> the token to the bag.</li>
+      <ul>
+        <li>
+          <p>The order of the token <b>IS CONSIDERED</b>. For each draw, there are <span class="inline-math">p</span> possible options.</p>
+          <figure class="box math-formula">
+            <img src="rsc/prob-eq-tokens-yreturn-yorder.png" alt="image">
+          </figure>
+          <!-- <div class="box math">p<sup>n</sup></div> -->
+        </li>
+        <li>When the order of the tokens <b>IS NOT CONSIDERED</b>, the author has as of yet been unable to find the general formula.</li>
+      </ul>
+      <li>We <b>DO NOT RETURN</b> the token to the bag.</li>
+      <ul>
+        <li>
+          <p>The order of the token <b>IS CONSIDERED</b>. Now the number of possible options decrease by one on each draw.</p>
+          <figure class="box math-formula">
+            <img src="rsc/prob-eq-tokens-nreturn-yorder.png" alt="image">
+          </figure>
+        </li>
+        <li>
+          <p>The order of the token <b>IS NOT CONSIDERED</b>. We must now keep in mind that each group of <span class="inline-math">n</span> selected tokens have <span class="inline-math">n!</span> permutations that represent the same outcome. Another way of expressing it is that there are one n!-th as many unique outcomes.</p>
+          <figure class="box math-formula">
+            <img src="rsc/prob-eq-tokens-nreturn-norder.png" alt="image">
+          </figure>
+          <p class="box attention">Note that this expression is called <b>"p choose n"</b> because it models the number of ways we can choose n members from a list of p total items.</p>
+        </li>
+      </ul>
+    </ul>
+
+    <h4>EXAMPLE - PROBABILITY OF DRAWING K WHITE TOKENS</h4>
+    <p>Consider that there are <span class="inline-math">w</span> white, and <span class="inline-math">b</span> black tokens in T such that <span class="inline-math">w + b = p</span>. When drawing <span class="inline-math">n</span> tokens, what is the probability that <span class="inline-math">k</span> out of the drawn tokens are white?</p>
+
+    <p class="box attention">This scenario means we do not consider the order of the tokens since any selection of black or white tokens are indistinguishable from the next. We care only for the color, not the individual token itself.</p>
+
+    <p>In the first case, the tokens get <b>put back in the bag</b>. From the equations above, we can determine that the number of possible outcomes is <span class="inline-math">p<sup>n</sup></span>. Remember though, that <span class="inline-math">p = w + b</span>, which in turn means that we can express it as <span class="inline-math">(w + b) <sup>n</sup></span>. Take note of the similarity with the <a href="#general-calculation-rules">binomial theorem below</a>.</p>
+
+    <p>The number of beneficial outcomes is determined by multiplying first the number of times we can select <span class="inline-math">k out of w</span> white tokens, then the remaining <span class="inline-math">n-k out of b</span> black tokens and lastly this is combined with the number of times k tokens can be drawn from a n large selection.</p>
+
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-tokens-kwhite-yreturn.png" alt="image">
+    </figure
+
+    <p>In the second case, where the tokens are <b>not returned into the bag</b>, the number of possible outcomes correspond exactly to <span class="inline-math">p choose n</span>, since now we are just grabbing <span class="inline-math">n</span>  tokens out of the bag. </p>
+    <p>Meanwhile, the beneficial outcomes is determined by multiplying the number of ways that <span class="inline-math">k</span> tokens can be selected from <span class="inline-math">w</span> white tokens, times the way <span class="inline-math">n - k</span> remaining tokens can be selected from <span class="inline-math">b</span> black ones:</p>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-tokens-kwhite-nreturn.png" alt="image">
+    </figure>
+
+    <h3 id="general-calculation-rules">GENERAL CALCULATION RULES</h3>
+
+    <p>When inverting the unions and intersections of multiple events, <b>De Morgans Law</b> is very practical</p>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-demorgans-law.png" alt="image">
+    </figure>
+
+    <p><b>The Multiplicative Property</b> shows us that set operations behave essentially the same way as multiplying factors in natural algebra.</p>
+    <div class="box math">A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div>
+
+    <p>To practically determine the <b>resulting probability of a union</b>, the following formula is useful. You simply add the probabilities for each event and then subtract the overlap so that it is not added twice. Keep in mind that it effectivelly expands to the union of any number of events in the same manner.</p>
+    <div class="box math">P(A ∪ B) = P(A) + P(B) - (A ∩ B)</div>
+    <div class="box math">P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - (A ∩ B) - (A ∩ C) - (B ∩ C) + (A ∩ B ∩ C)</div>
+    <p></p>
+
+    <p>Related to the above, in accordance with <b>Booles Inequality</b>, it can be meaningful to consider that the probability of a union can be no larger than the sum of it's constituent parts.</p>
+    <div class="box math">P(A ∪ B) ≤ P(A) + P(B)</div>
+
+    <p>The <b>Complemental Theorem</b> shows how the complement, or inverse probability of an event must be the event itself subtracted from the sample space.</p>
+    <div class="box math">P(A<sup>*</sup>) = P(Ω) - P(A) = 1 - P(A)</div>
+
+    <p>The <b>Binomial Theorem</b> state that for any positive integer <em>n</em> and arbitrary numbers <em>x, y</em> the following holds true:</p>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-binomial-theorem.png" alt="image">
+    </figure>
+
+    <p>Two concepts that are easily conflated are <b>independent</b> and <b>mutually exclusive</b> sets. See the <a href="#independence-exclusivity">conditional probability</a> section for more details on both. For events that SHARE NO COMMON OUTCOMES, the events are said to be <b>mutually exclusive</b>. </p>
+    <div class="box math">if A ∩ B = ∅ i.e P(A ∩ B) = 0 ⟺ A & B are mutually exclusive, i.e disjoint</div>
+
+    <p>When outcomes in one event give no information about the outcomes of another, they are said to be <b>independent</b>.</p>
+    <div class="box math">if P(A ∩ B) = P(A) * P(B) ⟺ A & B are independent</div>
+
+    <div class="box attention">Note that mutually exclusive sets cannot be independent, and vice versa.</div>
+
+    <h3 id="set-theory">SET THEORY</h3>
+    <p>Set theory is obviously worth an article all of its own, but since a subset of set operations are very common in probability calculations, this section will establish some of the very basic ideas needed to understand the notation in coming sections. Keep in mind that the symbols used can vary slightly in different litteratures.</p>
+    <ul>
+      <li><b>Unions</b>, denoted with a <b>∪</b> or <b>+</b> character, are the combination of all members of both sets, but excludes duplicates. Logically, you might consider the <em>union</em> to be the <b>OR</b> operation. Any outcome that exist in either set is part of the union.</li>
+      <li>The <b>Intersection</b> represent the outcomes that sets have in common. The most common symbol used is <b>∩</b>. It is equivalent to the <b>AND</b> operator. For a set member to be part of the <em>intersection</em>, it must be a member of both sets. </li>
+      <li>The <b>Difference</b> is operation that can be the largest headscratcher at first. The symbol used is often <b>\</b> or <b>-</b> and it signifies all members of the set A which are not also a member of set B. Quite the mouthful. You essentially take members of one set and then subtract all members of the other that the two have in common. As such, the term difference makes more sense.</li>
+      <li>The <b>Complement</b>, denoted most usually by a <b>∁</b> or <b>*</b> in superscript, of a set is all outcomes of the sample space that <em>isn't</em> part of the set. Essentially, what is the decsribed is the <b>NOT</b> operation.</li>
+    </ul>
+    <p>A combination of these four operations can essentially describe any combinations of events and outcomes that one might want to express. The figure below gives a more visual understanding.</p>
+    <figure>
+      <img src="rsc/prob-set-operations.png" alt="image">
+      <figcaption>Diagram illustrating the different set operations. <a href="rsc/prob-set-opertions.xml">Download XML here</a></figcaption>
+    </figure>
+  </section>
+
+  <h2 id="conditional-probability">CONDITIONAL PROBABILITY</h2>
+  <section class="sub-section">
+    <p>Depending on the probability space that has been defined, two events can be tightly intertwined in a fundamental way. This is expressed in a situation where we know that the outcome analyzed falls under event A. If this can be assumed, what does that tell us about the probability of the outcome also belonging to event B?</p>
+    <div class="box math-definition">
+      <p>Given the two arbitrary events A and B, the equation ...</p>
+      <figure class="box math-formula">
+        <img src="rsc/prob-eq-conditional-probability.png" alt="image">
+      </figure
+      <p>... is known as the <b>conditional probability of B, given A</b>. It establishes that an outcome belongs to A for certain, and now seeks the probability of B. Visually, one can imagine the sample space being shrunk down to the event A. The definition thereby follows the <em>classical probability theorem</em> as P(A) becomes the sample space, i.e all possible outcomes, and the beneficial outcomes exist inside A∩B.</p>
+      <figure>
+        <img src="rsc/prob-conditional-b-given-a.png" alt="image">
+        <figcaption>Diagram illustrating how the sample space is cropped into the event A. <a href="rsc/prob-conditional-b-given-a.xml">Download XML here</a></figcaption>
+      </figure>
+      <p>If <span class="inline-math">P(A) = 0</span>, then <span class="inline-math">P(B | A)</span> is undefined. Be <b>careful not to confuse P(A | B) and P(B | A)</b>. The following complementary theorem also applies:</p>
+      <div class="box math">P(B<sup>*</sup> | A) = 1 - P(B | A)</div>
+    </div>
+
+    <div class="box attention">The <b>conditional</b> probability makes an active assumption about where exactly the outcome is. It is different from the <b>intersection</b> because the outcomes exist ONLY within both events whereas the conditional outcomes are only certain to be contained within one of them.  </div>
+
+    <p>Multiplying out the fraction in the definition above, we get <span class="inline-math">P(A ∩ B) = P(A)P(B | A) = P(B)P(A | B)</span>. The below equation illustrates how the expression can be expanded for multiple events</p>
+    <div class="box math">P(A ∩ B ∩ C) = P(A ∩ B)P(C | A ∩ B)↩ <br>P(A)P(B | A)P(C | A ∩ B)</div>
+
+    <h3 id="independence-exclusivity">INDEPENDENCE & EXCLUSIVITY</h3>
+    <h4>INDEPENDENT EVENTS</h4>
+    <div class="box math-definition">
+      <p>Events in a sample space are independent from each other if knowing an outcome has fallen in event A gives us no concrete information about whether the outcome also falls in event B. Following the definition for conditional probability above, the indepence occurs when <span class="inline-math">P(B | A) = P(B)</span>. This in turn means we can multiply both sides by <span class="inline-math">P(A)</span> resulting in the following:</p>
+      <div class="box math">P(B) * P(A) = P(A ∩ B)</div>
+      <p>The defintion requires <span class="inline-math">P(A) ≠ 0 & P(B) ≠ 0</span>.</p>
+    </div>
+
+    <p>Given independent events A & B, then <span class="inline-math">A<sup>*</sup> & B are also independent</span>. This expands into larger group of independent sets, for example A, B & C means A<sup>*</sup>, B<sup>*</sup> & C<sup>*</sup> and A B<sup>*</sup> C<sup>*</sup> etc. are also independent. This can be derived with with variations on the equations below.</p>
+    <div class="box math">P(B) = P(A ∪ B) + P(A<sup>*</sup> ∪ B) = P(A)P(B) + P(A<sup>*</sup> ∪ B)<br>P(A<sup>*</sup> ∪ B) = P(B) - P(A)P(B) ⟺ P(A<sup>*</sup> ∪ B) = P(B)(1-P(A)) = P(A<sup>*</sup>)P(B) </div>
+
+    <p>For a group of independent events <span class="inline-math">[A<sub>1</sub>, ..., A<sub>n</sub>]</span> where <span class="inline-math">P(A<sub>i</sub>) = p<sub>i</sub></span> then:</p>
+    <div class="box math">P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p<sub>1</sub>) × ... × (1-p<sub>n</sub>)</div>
+    <p>In the simplified case where <span class="inline-math">P(A<sub>i</sub>) = p</span> this expression takes a simpler form</p>
+    <div class="box math">P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p)<sup>n</sup></div>
+    <p>Two practical type examples for sets of independent events are:</p>
+    <div class="box math">
+      P(A<sub>1</sub> ∩ ... ∩ A<sub>n</sub>) = P(A<sub>1</sub>× ... × P(A<sub>n</sub>) = p<sub>1</sub> × ... × p<sub>n</sub><br>
+      P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub> ∩ ... ∩ A<sup>*</sup><sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub> × ... × P(A<sup>*</sup><sub>n</sub>)
+    </div>
+    <p>Note that pairwise indepence does not necessarily mean complete indepence. If <span class="inline-math">P(A ∩ B) = P(A)P(B)</span>, <span class="inline-math">P(A ∩ C) = P(A)P(C)</span>, <span class="inline-math">P(B ∩ C) = P(B)P(C)</span> & <span class="inline-math">P(A ∩ B ∩ C) = P(A)P(B)P(C)</span>, then <em>A, B AND C are independent.</em>. All 4 have to be fullfilled for it to apply which might appear unintuitive. This is illustrated in the example of throwing two die and letting A be the event where the first die gets an even result. B is when the second die gets a even result. C is the event where the sum of the two is even.</p>
+    <figure>
+      <img src="rsc/prob-conditional-independent-set.png" alt="image">
+      <figcaption>Example of a situation where three pairwise independent sets are not all independent from each other as <br> P(A ∩ B ∩ C) ≠ P(A)P(B)P(C). <br><a href="rsc/prob-conditional-independent.set.xml">Download XML here</a></figcaption>
+    </figure>
+
+
+
+    <h4>MUTUALLY EXCLUSIVE EVENTS</h4>
+    <p>Mutually exclusive events are those that SHARE NO OUTCOMES. This means <span class="inline-math">A ∩ B = ∅</span> and in turn <span class="inline-math">P(A ∩ B) = 0</span></p>
+    <figure>
+      <img src="rsc/prob-conditional-disjoint-events.png" alt="image">
+      <figcaption>A venn diagram illustrating disjoint sets, i.e mutually exclusive events and independent sets.</figcaption>
+    </figure>
+    <div class="box attention">Mutually exclusive events A & B MUST BE DEPENDENT. This is intuitive because given A, we know for certain that B has NOT occured. INDEPENDENCE meanwhile, only occurs when the event A occupies the same fraction of the sample space as it does the events in outcome B, i.e |A|  / |Ω| = |A ∩ B| / |B|</div>
+    <p></p>
+
+    <h3 id="law-of-total-probability">LAW OF TOTAL PROBABILITY</h3>
+    <div class="box math-definition">
+      <p>Given the set of mutually exlusive events <span class="inline-math">[H<sub>1</sub>, ..., H<sub>n</sub>]</span> such that <span class="inline-math">H<sub>1</sub> ∪ ... ∪ H<sub>n</sub> = Ω</span>:</p>
+      <p>Then for the event A:</p>
+      <figure class="box math-formula">
+        <img src="rsc/prob-eq-law-otp.png" alt="image">
+      </figure>
+    </div>
+    <p>The definition above is visualized and derived below</p>
+    <figure>
+      <img src="rsc/prob-conditional-law-otp.png" alt="image">
+      <figcaption>A venn diagram illustrating the set of mutually exclusive events<a href="rsc/prob-conditional-law-otp.xml">Download XML here</a></figcaption>
+    </figure>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-law-otp-derive.png" alt="image">
+    </figure>
+    <h4>BAYES THEOREM</h4>
+    <figure class="box math-formula">
+      <img src="rsc/prob-eq-bayes-theorem.png" alt="image">
+    </figure>
+  </section>
+
+  <h2 id="random-variables">RANDOM VARIABLES</h2>
+  <section class="sub-section">
+  </section>
+
+  <h2 id="multidimensional-random-variables">MULTIDIMENSIONAL RANDOM VARIABLES</h2>
+  <section class="sub-section">
+  </section>
+</article>
