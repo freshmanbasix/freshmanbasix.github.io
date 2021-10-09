@@ -202,8 +202,29 @@
       <p>The defintion requires <span class="inline-math">P(A) ≠ 0 & P(B) ≠ 0</span>.</p>
     </div>
 
-    <p>Given independent events A & B, then <span class="inline-math">A<sup>*</sup> & B are also independent</span>. This expands into larger group of independent sets, for example A, B & C means A<sup>*</sup>, B<sup>*</sup> & C<sup>*</sup> and A B<sup>*</sup> C<sup>*</sup> etc. are also independent. This can be derived with with variations on the equations below.</p>
+    <p>In the set of independent events <span class="inline-math">H = [H<sub>1</sub>, ... , H<sub>n</sub>]</span> each member <span class="inline-math">H<sub>i</sub></span> will be independent from <span class="inline-math">H<sub>j</sub></span> as long as complete independence holds. It also means that any combination of members and complements will also be independent. For example, If A and B are independent, then so are A<sup>*</sup> and B<sup>*</sup> as well as A and B<sup>*</sup> etc.</p>
     <div class="box math">P(B) = P(A ∪ B) + P(A<sup>*</sup> ∪ B) = P(A)P(B) + P(A<sup>*</sup> ∪ B)<br>P(A<sup>*</sup> ∪ B) = P(B) - P(A)P(B) ⟺ P(A<sup>*</sup> ∪ B) = P(B)(1-P(A)) = P(A<sup>*</sup>)P(B) </div>
+    <div class="box math">
+      P(A<sup>*</sup> ∩ B<sup>*</sup>) = P((A ∪ B)<sup>*</sup>) = 1 - P(A ∪ B) = ↩ <br>
+      = 1 - (P(A) + P(B) - P(A ∩ B)) = 1 - P(A) - P(B) + P(A)P(B) = ↩ <br>
+      (1 - P(A))(1 - P(B)) = P(A<sup>*</sup>)P(B<sup>*</sup>)
+    </div>
+
+    <div class="box attention">
+      <p>Note that pairwise indepence does not necessarily mean complete indepence. Only when the following 4 equations holds will events A, B AND C be independent:</p>
+      <div class="box math">
+        P(A ∩ B) = P(A)P(B)<br>
+        P(A ∩ C) = P(A)P(C)<br>
+        P(B ∩ C) = P(B)P(C)<br>
+        P(A ∩ B ∩ C) = P(A)P(B)P(C)
+      </div>
+      <p>All 4 have to be fullfilled for it to apply which might appear unintuitive. This is illustrated in the example of throwing two die and letting A be the event where the first die gets an even result. B is when the second die gets a even result. C is the event where the sum of the two is even.</p>
+    </div>
+    
+    <figure>
+      <img src="rsc/prob-conditional-independent-set.png" alt="image">
+      <figcaption>Example of a situation where three pairwise independent sets are not all independent from each other as <br> P(A ∩ B ∩ C) ≠ P(A)P(B)P(C). <br><a href="rsc/prob-conditional-independent.set.xml">Download XML here</a></figcaption>
+    </figure>
 
     <p>For a group of independent events <span class="inline-math">[A<sub>1</sub>, ..., A<sub>n</sub>]</span> where <span class="inline-math">P(A<sub>i</sub>) = p<sub>i</sub></span> then:</p>
     <div class="box math">P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p<sub>1</sub>) × ... × (1-p<sub>n</sub>)</div>
@@ -214,11 +235,6 @@
       P(A<sub>1</sub> ∩ ... ∩ A<sub>n</sub>) = P(A<sub>1</sub>× ... × P(A<sub>n</sub>) = p<sub>1</sub> × ... × p<sub>n</sub><br>
       P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub> ∩ ... ∩ A<sup>*</sup><sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub> × ... × P(A<sup>*</sup><sub>n</sub>)
     </div>
-    <p>Note that pairwise indepence does not necessarily mean complete indepence. If <span class="inline-math">P(A ∩ B) = P(A)P(B)</span>, <span class="inline-math">P(A ∩ C) = P(A)P(C)</span>, <span class="inline-math">P(B ∩ C) = P(B)P(C)</span> & <span class="inline-math">P(A ∩ B ∩ C) = P(A)P(B)P(C)</span>, then <em>A, B AND C are independent.</em>. All 4 have to be fullfilled for it to apply which might appear unintuitive. This is illustrated in the example of throwing two die and letting A be the event where the first die gets an even result. B is when the second die gets a even result. C is the event where the sum of the two is even.</p>
-    <figure>
-      <img src="rsc/prob-conditional-independent-set.png" alt="image">
-      <figcaption>Example of a situation where three pairwise independent sets are not all independent from each other as <br> P(A ∩ B ∩ C) ≠ P(A)P(B)P(C). <br><a href="rsc/prob-conditional-independent.set.xml">Download XML here</a></figcaption>
-    </figure>
 
 
 
