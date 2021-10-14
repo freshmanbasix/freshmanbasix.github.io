@@ -45,7 +45,7 @@
     <h3 id="git-glossary-primer">Git Glossary Primer</h3>
     <p>One excellent place to start, along with this section, is the git introduction chapter of <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Pro Git 2ed (Chacon & Straub)</a>. This is all to set git in context. There will be a fair deal of taxonomy that takes a while to learn before one can make sense of what's happening. The concepts mentioned in this section should set you well on your way to start grasping how git fits together.</p>
 
-    <p>First, we must talk about the <strong>repository</strong>. Git is the program and the interface we use to achieve version control. But it operates inside the existing filesystem. Git doesn't set up a complicated environment but is rather designed to operate on top of whatever else you're already doing. Any directory can become a designated repository. The root of the repo is where git stores all it's configuration metadata, and all sub folders will be recognized and handled by git. Anything above the repo root however will mean nothing, which is why you can move repositories around very freely. When you move through the project history, you will actually rewrite the files in the physical memory.</p>
+    <p>First, we must talk about the <strong>repository</strong>. Git is the program and the interface we use to achieve version control. But it operates on top of the existing filesystem. Git doesn't set up a complicated environment but is rather designed to operate on top of whatever else you're already doing. Any directory can become a designated repository. The root of the repo is where git stores all it's configuration metadata, and all sub folders will be recognized and handled by git. Anything above the repo root however will mean nothing, which is why you can move repositories around very freely. When you move through the project history, you will actually rewrite the files in the physical memory.</p>
 
     <p>A repository is <strong>cloned</strong> into a file system by git. The act of cloning is essentially making a local copy. Git offers plenty of functionality to automate the process and clone over a network connection, which is how multiple users can collaborate on a single repository. You are not, however, giving other people access to your computer when you collaborate with them. Instead, you create a local copy, which is then <strong>pushed</strong>, i.e writes all new changes, to a <strong>remote repository</strong>, often just refered to as <em>"the remote"</em>.</p>
 
@@ -55,21 +55,25 @@
 
     <p>Switching between branches is called a <strong>checkout</strong>. Any move through project history is similarly refered to as "<em>checking out</em>". Other than branching, you can also do a slightly more extensive operation called <strong>fork</strong>. In short, a fork creates a completely new direction with a new master branch. It entirely diverts the project history in a separate direction, for when you want to take the work in a completely new direction.</p>
 
-    <p>There are three stages in which git can recognize a file and understanding how they flow together is key to effectively utilizing the tool. As mentioned, git only <b>tracks</b> changes. The files themselves are simply the result of applying these changes from the ground up. If a change has been applied to a file, for instance a line of text has been added, git will see the file as <strong>Modified</strong>.
-    <br>
-    This only means git knows that something is different since last time changes where locked in place. In order to solidify a change, we must <strong>Stage</strong> the changes. Staged is a state that multiple files can be take to prepare them all to be locked in. Any number of changes can be staged at the same time, even partial changes to a single file.
-    <br>
-    Finally, when we've applied the changes we want and they have all been staged, then we can <strong>Commit</strong> them, immortalizing them in the annals of git forever. The version history in git is simply a list of commited changes that represent version states of a directory. This list can be traversed freely to transform the directory into what the files looked like at that time, either to diverge again from that point, or perhaps roll back some unexpected side-effects.</p>
+    <p>There are three stages in which git can recognize a file and understanding how they flow together is key to effectively utilizing the tool. These are all important to understand fairly well. They're not especially complicated, but you'll want to take a look in the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">git book</a> as soon as possible. Just to get started, they will be quickly presented here:</p>
 
+    <ul>
+      <li>Git <b>tracks</b>  changes. Once any change has been done to a file, git will consider it as <strong>modified</strong>.</li>
+      <li>Some of these changes are good enough to keep around. These will be <strong>staged</strong>, which sets them apart from the rest. Some or all of the changes in a repository can be staged line by line.</li>
+      <li>Once modifications have been staged to the authors pleasure, they are <strong>commited</strong> to perpetuity, creating a permanent point of history and entering them into the annals of git forever. Write <code>git log</code> in the terminal to see them all.</li>
+    </ul>
+
+    <p>The <em>"commits"</em> are the points which can be traversed freely, rolling the version hirstory of a directory back and forth.</p>
 
     <h3 id="beginners-advise">Beginners Advice</h3>
     <p>As a last piece of useful information, this section will simply list a couple of practical advise that may help give some actionable tips when getting started.</p>
     <ol>
-      <li>Only commit changes that make a consistent difference. Git isn't intended to use as a backup system. There is no point to arbitrarily commit content that isn't fullfilling any level of working order. It is better to commit multiple, smaller and concrete changes, perhaps when some functionality has been implemented or a certain bug got fixed.</li>
+      <li>Only commit changes that make a consistent difference. Git isn't intended to use as a backup system. There is no point to arbitrarily commit content that isn't fullfilling any level of working order. It is better to commit multiple, smaller and concrete changes, perhaps when some functionality has been implemented or a certain bug got fixed. It is common for beginner to mistakenly use git as some kind of backup, which is perfectly possible, but not very meaningful.</li>
       <li>Don't work all over the place at once. Just pick a goal to work towards and do that particular thing. When commits stretch over several files and several components, they will get very messy very fast and untangling them can become really difficult.</li>
       <li>Create a branch when you start working on any level of larger change and only merge that back to the master branch when the work is done and the changes work acceptably well.</li>
       <li>Keep your log clean. Clear commit messages goes a long way to make the project progress easier to follow and navigate in the case where you might need to go back.</li>
       <li>Don't use git with cloud sync software. It will give you all kinds of wacky back and forths as both git and the cloud software tries to sort out what happened every time you checkout a new branch.</li>
+      <li>Make good use of the gitignore file. It allows you to instruct git to ignore certain files that don't need shared with others, e.g executables, locals tests etc. You'll find an intro in section <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">2.2 <em>Ignoring Files</em></a> of the book.</li>
     </ol>
   </section>
 </article>
