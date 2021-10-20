@@ -8,6 +8,9 @@
         <li><a href="#conditional-probability">CONDITIONAL PROBABILITY</a></li>
         <li><a href="#random-variables">RANDOM VARIABLES</a></li>
         <li><a href="#multidimensional-random-variables">MULTIDIMENSIONAL RANDOM VARIABLES</a></li>
+        <li><a href="#distributions">DISTRIBUTIONS</a></li>
+        <li><a href="#arithmetic-properties">ARITHMETIC PROPERTIES</a></li>
+        <li><a href="#statistics">STATISTICS</a></li>
       </ul>
     </div>
     <p>The field of Probability and Statistics is a staple of any technical education. Many fields will require a fundamental understanding and in life overall, any human being should be at least moderately versed in it. This article will be a useful primer and lookup for many corre concepts which can be practical when quickly needing to brush up on some particular module. Most, if not all, theory in this article is derived from the book <em>Probabitily and Statistics, Theory and Applications </em>(<a href="https://www.springer.com/gp/book/9781461281580">G Blom, 1989, Springer</a>).</p>
@@ -273,9 +276,244 @@
 
   <h2 id="random-variables">RANDOM VARIABLES</h2>
   <section class="sub-section">
+    <div class="box math-definition">
+      <p>Assuming an existing sample space <span class="inline-math">Ω = {ω<sub>1</sub>, ω<sub>2</sub>, ...}</span>, then:</p>
+      <p>A random variable X is a <span class="inline-math">real value numbered function</span> defined on the sample space. By convention, capital letters from the end of the alphabet are commonly used to denote a random variable.</p>
+      <p>The random variable <span class="inline-math">X(ω<sub>i</sub>) → Ω : ℝ</span> is the mapping function from the sample space to the real number line.</p>
+      <figure>
+        <img src="rsc/prob-random-function-map.png" alt="image">
+        <figcaption>Illustration of how the outcomes of a sample space maps on to the real number line. <a href="rsc/prob-random-omega-to-real.xml">Download XML here</a></figcaption>
+      </figure>
+      <p>Each random variable X distributes the sample space onto the real number line. This is called a <span class="inline-math">probability distribution on X</span>, and it is characterised by a <span class="inline-math">probability function</span>.</p>
+      <p>Random variables can be <span class="inline-math">one or multi dimensional</span>, that is X(ω) assumes one or multiple values.</p>
+      <p>A random variable is <span class="inline-math">discrete</span> when the number of possible values for X is a finite or enumerably infinite, i.e <span class="inline-math">X(ω) ∈ ℤ</span>. Alternately, it can be <span class="inline-math">continous</span>.</p>
+      <div class="box attention">Take note that <em>ω</em> and <em>a</em> are two different things. The correct relationship is X(ω) = a. An experiment outcome is mapped onto the real number line.</div>
+      <div class="box attention">Be aware that the random variable X is a variable, and not a set.</div>
+    </div>
+    <p>Some basic examples are:</p>
+    <ul>
+      <li><b>Number of sixes in 20 throws of a dice</b>. There are 6<sup>20</sup> different unique outcomes of such an experiment, but the random variable only takes on the unique number of sixes, which is 21 (0-20 of them). </li>
+      <li><b>The weight of a randomly selected person</b>. The sample space is every single person in the world. The values assumed by the random variable range between a few pounds, up to whatever the heaviest person on earth weights.</li>
+    </ul>
+    <h3 id="discrete-random-variables">DISCRETE RANDOM VARIABLES</h3>
+    <p>Given a finite or enumarably infinite set of values <span class="inline-math">k</span>. Then X is a <b>discrete random variable</b> that can take on the value <span class="inline-math">k</span>. We let <span class="inline-math">ρ<sub>X</sub>(k) = P(X = k)</span> be called The <b>probability function</b> of the random variable X. The variable <span class="inline-math">k</span> takes on all possible values for X, which is defined by the experiement and formally expressed as <span class="inline-math">k ∈ Ω<sub>X</sub></span>. The following criteria must be met to qualify as a probability function for a discrete random variable.</p>
+    <div class="box math">ρ<sub>X</sub>(k) ⋝ 0 for all k & ∑<sub>k=0:∞</sub> = 1</div>
+    <div class="box attention">When determining the probability function, it will either fit one of the common distribution, or it will be calculated manually for all values of k.</div>
+
+    <p>Given the discrete set <span class="inline-math">A = {a<sub>1</sub>, a<sub>2</sub>, ...}</span>, some different interpretation examples for X follow:</p>
+    <ul>
+      <li>ρ<sub>X</sub>(a<sub>2</sub>) is the <b>probability that X takes on the value a<sub>2</sub></b>, i.e P(X = a<sub>2</sub>)</li>
+      <li>The probability of X taking on a value between a<sub>2</sub> through a<sub>4</sub> is the <b>sum of the probabilities</b> ρ<sub>X</sub>(a<sub>2</sub>) + ρ<sub>X</sub>(a<sub>3</sub>) + ρ<sub>X</sub>(a<sub>4</sub>), i.e P(a<sub>2</sub> ⋜ X ⋜ a<sub>4</sub>)</li>
+    </ul>
+
+    <figure>
+      <img src="rsc/prob-random-discrete-distribution.png" alt="image">
+      <figcaption>Example discrete distribution for the random variable X assuming the values k ∈ A = {a<sub>1</sub>:a<sub>6</sub>}. <a href="rsc/prob-random-discrete-distribution.xml">Download XML here</a></figcaption>
+    </figure>
+
+    <p>Some generally useful truths. Keep in mind that the different values for k are mutually exclusive.</p>
+    <div class="box math">P(X ∈ A) = ∑<sub>k∈A</sub> ρ<sub>X</sub>(k)</div>
+    <div class="box attention">Note that X(ω) doesn not necessarily need to be defined for all outcomes. Furthermore, the set A does not have to be the same as Ω<sub>X</sub>. As such, the probability of X taking a value in the set A doesn't have to sum to 1.</div>
+    <div class="box math">P(X = [0, 1, 2, ...)) = ∑<sub>k∈∞</sub> ρ<sub>X</sub>(k) = 1 (special case where X∈ℕ)</div>
+    <div class="box math">P(w ⋜ X ⋜ y) = ∑<sub>k=w:y</sub> ρ<sub>X</sub>(k)</div>
+    <div class="box math">P(w &lt X ⋜ y) = ∑<sub>k=w+1:y</sub> ρ<sub>X</sub>(k)</div>
+
+    <h4>EXAMPLE</h4>
+    <p>One very illustrative example is letting a person throw a single die. A result of one gives 1 point. A result of two or three gives 2 points, and lastly four to six gives 4 points. This gives a sample space <span class="inline-math">Ω = {ω<sub>1</sub> = one, ω<sub>2</sub> = two, ω<sub>3</sub> = three, ω<sub>4</sub> = four, ω<sub>5</sub> = five, ω<sub>6</sub> = six}</span>. and our random variable function <span class="inline-math">X(ω) ∈ {1, 2, 4}</span></p>
+    <figure>
+      <img src="rsc/prob-random-discrete-example.png" alt="image">
+      <figcaption>Diagram of the 6 faces of a die mapped onto three values on the real number line along with a chart of the probability function ρ<sub>X</sub>(x) <a href="rsc/prob-random-discrete-example.xml">Download XML here</a></figcaption>
+    </figure>
+    <p>The probability function ρ<sub>X</sub>(a) is here illustrated on the left. It can't be expressed mathematically, but will be found in a table format. It fullfills the criteria listed above. The distribution is on the right. P(X = 1) = 1/3, for instance, means that the probability of getting 1 point from the throw is 1 in 3.</p>
+
+    <h3 id="continous-random-variables">CONTINOUS RANDOM VARIABLES</h3>
+    <p>Continous random variables take on non-enumerably infinite ranges. This happens when the outcomes are placed infinitely tightly, of which no single outcome can be determined with a positive probability. Therefore, no probability function is possible. It should be noted that in reality, measurements are almost done with a particular precision, making them enumerable. The mathematical abstraction holds true in theory and integration is often simpler than summation.</p>
+
+    <figure>
+      <img src="rsc/prob-random-continous-functions.png" alt="image">
+      <figcaption>Illustration of the areas under the graph for a density function ƒ<sub>X</sub>(k), showing what constitute as the value for the distribution function F(x), the probability mass between [a&ltx&ltb], and the α-quantile</figcaption>
+    </figure>
+
+    <h4>DENSITY FUNCTION ƒ(x)</h4>
+    <div class="box math-definition">
+      <p>For a continous random variable X, the probability mass is mapped onto ℝ with a <b>density function</b> <span class="inline-math">ƒ<sub>X</sub>(x)</span>, for <span class="inline-math">x ∈ ℝ</span>. This describes the <b>probability mass per interval-unit at the point x</b>.</p>
+
+      <div class="box attention">Note that the value for any ƒ is a rate of change. It does not make sense to determine the probability for a particular value x as P(X = x) = ƒ<sub>X</sub>(x). Remember your calculus. For a function F(x) with a differential dF(x)/dx, the summation of all values of the derivative from the bottom of the domain, up until x equal the value for F at x. When you sum up the changes made, you arrive at the destination.</div>
+
+      <p>Any function meeting the criteria below is sufficient as a density function for X:</p>
+      <div class="box math">ƒ<sub>X</sub>(x) ⋝ 0 for all x ∈ ℝ AND ∫<sub>{-∞:∞} </sub>ƒ<sub>X</sub>(x)dx = 1</div>
+
+      <p>Determining the probability that X takes on a value inside a particular range is done by calculating the integral for ƒ on the interval:</p>
+      <div class="box math">P(a &lt X ⋜ b) = ∫<sub>a:b</sub> ƒ<sub>X</sub>(x)dx</div>
+
+      <p>Note that X is continous ONLY if there exists a function ƒ<sub>X</sub>(x) such that:</p>
+      <div class="box math">P(X ∈ A) = ∫<sub>A</sub> ƒ<sub>X</sub>(x)dx</div>
+
+      <div class="box attention">As no positive probability can be given for any single point x, i.e P(X = x) = 0 for all x. As such, the ranges (a &lt X &lt b) is the same as (a ⋜ X ⋜ b). In practice, we do not differentiate between open and closed intervalls.</div>
+    </div>
+
+    <h3 id="DISTRIBUTION FUNCTION F(x)"></h3>
+    <p>The particular range A = (-∞, ..., x] gives root to the <span class="inline-math">distribution function</span> <b>F<sub>X</sub>(x)</b>, which is essentially the function expressing the probability mass from the negative infinite end up until the value for x. In that sense, it determines the probability that X takes a value less than or equal to x, i.e P(X ⋜ x). The distribution function can be a mix of discrete and continous models.</p>
+
+    <div class="box attention">Keep in mind that the F(x) does not determine the probability AT x, but UP TO AND INCLUDING x.</div>
+
+    <h4>THE DISCRETE CASE</h4>
+    <p>For the discrete random variable, the distribution function becomes a step function, summing up the probabilities over the range</p>
+
+    <div class="box math">F(x) = ∑<sub>j⋜x</sub> ρ<sub>X</sub>(j) for j ∈ ℤ</div>
+
+    <h4>CONTINOUS CASE</h4>
+    <p>Generally, A function <span class="inline-math">F(x)</span> that is the general integral of <span class="inline-math">ƒ<sub>X</sub>(x)</span> will be the distribution function for a random variable X. Technically, any F<sub>X</sub>(x) that fullfills the following will be an acceptable distribution function.</p>
+    <ul>
+      <li>F<sub>X</sub>(x) → 0 when x → -∞</li>
+      <li>F<sub>X</sub>(x) → 1 when x → +∞</li>
+      <li>F<sub>X</sub>(x) is a non-decreasing function of x</li>
+      <li>F<sub>X</sub>(x) is continous to the right for each x</li>
+    </ul>
+
+    <p>Some useful truisms</p>
+    <div class="box math">F<sub>X</sub>(x) = P(X ⋜ x) = P(-∞ &lt X ⋜ x) = ∫<sub>-∞:x</sub> ƒ<sub>X</sub>(x)dx</div>
+    <div class="box math">(d/dx)F<sub>X</sub>(x) = ƒ<sub>X</sub>(x)</div>
+
+    <p>for constants a & b where a &lt b:</p>
+    <div class="box math">P(a &lt X ⋜ b = ∫<sub>a:b</sub> ƒ<sub>X</sub>(t)dt = F<sub>X</sub>(b) - F<sub>X</sub>(a)</div>
+
+    <div class="box attention">Important. In the continuous case, P(X &lt x) = P(X ⋜ x) so when determining the limits of the integral, keep that in mind!</div>
+
+    <h4>QUANTILES</h4>
+    <p>The probability mass of a random variable can always be split into a number of evenly spaced quantiles, i.e halves, thirds, quartiles etc. These all represent a fraction of the total probability mass(area under the graph), 1/2, 1/3, 1/4 etc. If we let the variable α represent the area to the right of x, then we achieve the so called <span class="inline-math">α-quantile</span>. by solving the x = x<sub>α</sub> such that:</p>
+    <div class="box math">F<sub>X</sub>(x) = 1 - α</div>
+    <p>One basic quantile is the <b>quartile</b>, i.e determining three dividers splitting the mass in 4 parts of 25%. These three divisors are known as the <span class="inline-math">lower quartile</span>, <span class="inline-math">median</span>, and <span class="inline-math">upper quartile</span>.</p>
+
+    <h3 id="intensity">INTENSITY</h3>
+    <p>Intensity can be perceived as the probability per unit of time. Whateer the hell that means... It can be read about more in section 3.8 of the literature, but more or less describes the lifespan of things.</p>
+
+    <div class="box math-definition">
+      <p>For a random variable <span class="inline-math">X</span> with density function <span class="inline-math">ƒ<sub>X</sub>(x)</span> and distribution function <span class="inline-math">F<sub>X</sub>(x)</span>, there is a <b>intensity</b> to X, <span class="inline-math">λ<sub>X</sub>(x)</span>, defined by:</p>
+
+      <div class="box math">λ<sub>X</sub>(x) = ƒ<sub>X</sub>(x)/(1 - F<sub>X</sub>(x)), x &gt 0</div>
+    </div>
+
+    <p>Given a intensity, the distribution function can be extracted by:</p>
+    <div class="box math">F<sub>X</sub>(x) = 1 - exp{-∫<sub>t=0:x</sub> λ<sub>X</sub>(t)}</div>
+  </section>
+
+  <h2 id="distributions">DISTRIBUTIONS</h2>
+  <section class="sub-section">
+    <p>This section will describe the common distributions in further detail and combine information from multiple chapters of the book that are relevant.</p>
+
+    <h3 id="binomial-distribution">THE BINOMIAL DISTRIBUTION</h3>
+    <p>Relevant for random selections from an urn where the tokens are placed back into the urn. In this distribution, the probability of one selection may not have an effect on the next. I.e the draws must be independenp from each other.</p>
+
+    <div class="box math">A random variable is X ∈ Bin(n, p) om ρ<sub>X</sub>(k) = (n choose k) × p<sup>k</sup> × (1-p)<sup>n-k</sup> <br>for k = 0, 1, ..., n and 0 &lt p &lt 1</div>
+    <div class="box math">For X ∈ Bin(n, p) ⇒ E(X) = np, V(X) = np(1-p)</div>
+
+    <h3 id="hypergeometric-distribution">THE HYPERGEOMETRIC DISTRIBUTION</h3>
+    <p>Very similar to the binomial dist, but used for the case where a clear dependence exist between values for X. So drawing tokens from urn without putting them back is the natural base case.</p>
+
+    <div class="box math">The random variable X ∈ Hyp(N, n, p) ⟺ <br>ρ<sub>X</sub>(k) = frac{ (Np choose k) × (N(1-p) choose (n-k)) }{ (N choose n) }<br> where 0 ⋜ k ⋜ Np, 0 ⋜ n-k ⋜ N(1-p). N, Np & n are positive integers and N ⋝ 2, n &lt N & 0 &lt p &lt 1.</div>
+
+    <p><span class="inline-math">N</span> is the number of total tokens available to draw from. <span class="inline-math">n</span> is the number actually drawn. <span class="inline-math">p</span> is the fraction of tokens of one color, <span class="inline-math">n/N</span>, of which the equation asks that we draw <span class="inline-math">k</span>.</p>
+
+    <div class="box math">In the hypergeometric case,<br>E(X) = np <br>V(X) = np(1-p) × frac{ N - n }{ N - 1 }</div>
+
+    <h3 id="normal-distribution">THE NORMAL DISTRIBUTION</h3>
+    <p>The typical bell-curve distribution. Makes up a HUGE part of all statistics, probably because most things in the universe can be modelled by the gaussian bitch.</p>
+
+    <div class="box math">Random variable X ∈ N(μ, σ) ⟺ <br> ƒ<sub>X</sub>(x) = frac{ exp{ -(x - μ)<sup>2</sup>  × 1/2σ <sup>2</sup> } }{ σ × sqrt{2π} }, x ∈ ℝ and σ &gt 0 <br>E(X) = μ, V(X) = σ <sup>2</sup>, D(X) = σ</div>
+
+    <div class="box attention">A linear combination of normally distributed and independent random variables will also be normally distributed.</div>
+
+    <div class="box math">Given the independent random variables X ∈ N(μ<sub>X</sub>, σ<sub>X</sub>), and Y ∈ N(μ<sub>Y</sub>, σ<sub>Y</sub>) then: <br>X + Y ∈ N( μ<sub>X</sub> + μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )<br>X - Y ∈ N( μ<sub>X</sub> - μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )</div>
+
+    <h4>THE STANDARD DISTRIBUTION</h4>
+    <p>Given a random variable <span class="inline-math">Z ∈ N(0, 1)</span> will have a distribution function Φ(x) of which values can usually be found in a table.</p>
+
+    <div class="box math">Random variable <span class="inline-math">X ∈ N(μ, σ)</span> ⟺ frac{ X - μ }{ σ } ∈ N(0,1)</div>
+    <p>The above allows for a very useful method of standardizing any random variable. This can be achieved through the following</p>
+    <div class="box math">P(X ⋜ x) = P(frac{ X - μ }{ σ } ⋜ frac{ x - μ }{ σ }) = Φ(frac{ x - μ }{ σ })</div>
+    <p>If the right constants can be determined, a probability can very easily be determined without difficult calculation needed.</p>
+
   </section>
 
   <h2 id="multidimensional-random-variables">MULTIDIMENSIONAL RANDOM VARIABLES</h2>
+  <h2 id="arithmetic-properties">ARITHMETIC PROPERTIES</h2>
   <section class="sub-section">
+    <p>Expected values, variance, standard deviation and co-variance.</p>
+
+    <h3 id="expected-values">EXPECTED VALUES</h3>
+    <p>The expected value is projected average value per outcome for multiple attempts. It describes the <b>mean</b> position of the probability mass</p>
+
+    <div class="box math">E(X) = ∑<sub>k</sub> k × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> x × ƒ<sub>X</sub>(x)dx (continous case)</div>
+
+    <div class="box math">For the random variable Y = g(x) <br>E(Y) = ∑<sub>i</sub> g(k) × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> g(k) × ƒ<sub>X</sub>(x)dx (continous case)</div>
+
+    <p>The above is important to consider when determining the value of E(X<sup>2</sup>) as it is not quite as natural as one might expect. Only the extra coefficient is quadrated. To clarify:</p>
+
+    <div class="box math">E(X<sup>2</sup>) = ∑<sub>k</sub> k<sup>2</sup>  × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> x<sup>2</sup> × ƒ<sub>X</sub>(x)dx (continous case)</div>
+
+    <p>Independent random variables X & Y give us <span class="inline-math">E(XY) = E(X)E(Y)</span>, and similarly, the expected value of arbitrary amounts of variables is the product of the individual ones.</p>
+
+    <h3 id="variance">VARIANCE V(X)</h3>
+    <p>A measure of how much the probability mass varies over the domain. It gives an idea of how much of the total mass that is concentrated around the expected value μ</p>
+
+    <div class="box math-definition">
+      <p>Given the random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span>, where <span class="inline-math">E(X) = μ</span> and Y = (X - μ)<sup>2</sup>, then:</p>
+      <div class="box math">V(X) = E[(X - μ)<sup>2</sup>] = E(Y)<br>Formally:<br>V(X) = ∑<sub>k</sub>(k - μ)<sup>2</sup> × ρ<sub>X</sub>(k) <br>V(X) = ∫<sub>ℝ</sub>(x - μ)<sup>2</sup> ×  ƒ<sub>X</sub>(x)dx</div>
+      <p>Simpler still, a very important relation is <span class="inline-math">V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>. It is important to keep in mind that when calculating <span class="inline-math">E(X <sup>2</sup>)</span>, you only quadrate the single x, and not the density function. I.e <span class="inline-math">E(X <sup>2</sup>) = ∑<sub>k</sub> k<sup>2</sup> × ρ<sub>X</sub>(k)</span>.</p>
+    </div>
+
+    <p>Generally, low variances indicate that the mass is concentrated in smaller areas. It will be 0 when its all gathered in a single point. There is also the useful concept of the <b>standard deviation D(X)</b>. One can consider D(X) <em>the order of magnitude of X's deviation from its expected value E(X)</em>.</p>
+    <div class="box math">D(X) = sqrt{ V(X) }</div>
+
+    <h4>COVARIANCE</h4>
+    <p>One absolutely horrible concept, is the covariance and it characterizes two random variables together. Independent random variables will always give a covariance of 0</p>
+    <div class="box math-definition">
+      <p>Random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span> have a covariance <span class="inline-math">C(X, Y)</span> such that:</p>
+      <div class="box math">C(X, Y) = E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] <br>C(X, Y) = E(XY) - E(X)E(Y)</div>
+    </div>
+
+    <p>If the value of <span class="inline-math">C(X, Y) = 0</span>, then X and Y are said to be <b>uncorrelated</b>. Independent variables ⇒ uncorrelated variables.</p>
+
+    <h3 id="linear-combinations-expected">LINEAR COMBINATIONS WITH EXPECTED AND VARIANCE VALUES</h3>
+
+    <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> then expected value and variance is:</p>
+
+    <div class="box math">E(∑<sub>i</sub> a<sub>i</sub>×X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) <br>V(∑<sub>i</sub> a<sub>i</sub> × X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
+
+    <p>Given independent random variables <span class="inline-math">X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline-math">E(X<sub>i</sub>) = μ</span>, <span class="inline-math">D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
+    <div class="box math"><b>X</b> = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
+
+    <p>... then <span class="inline-math">E(<b>X</b>) = μ, V(<b>X</b>) = σ<sup>2</sup>/n, D(<b>X</b>) = σ / sqrt{ n }</span></p>
+    <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value.</div>
+  </section>
+
+  <h2 id="statistics">STATISTICS</h2>
+  <section class="sub-section">
+    <p>This whole thing is a pain in the ass building on top of the fundamentals introduced in previous sections. Using the tools of mathematical probability, we do statistical analysis, which will wrinkle your brain straight to death.</p>
+
+    <p>A practical rule of thumb is that when the <b>distribution is known</b>, then we apply probability theory to determine information on the outcomes. Inversely, when the <b>outcomes are known</b>, we apply statistical theory to uncover information on the distribution.</p>
+
+    <p>Some important measures of location when dealing with statistics are:</p>
+    <ul>
+      <li>The <b>arithmetic mean</b> <span class="inline-math">x̄ = ∑<sub>i=1:n</sub>x<sub>j</sub> × frac{ 1 }{ n - 1 }</span></li>
+      <li>The <b>sample variance</b> <span class="inline-math">s<sup>2</sup> = frac{ 1 }{ n } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup></span></li>
+      <li>The <b>sample standard deviation</b> <span class="inline-math">s = sqrt{ frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup> }</span></li>
+    </ul>
+
+    <h3 id="sample-estimation">SAMPLE ESTIMATION</h3>
+    <p>This becomes relevant when examples of outcomes from experiements have been gathered by physically performing them.</p>
+
+    <div class="box math-definition">
+      <p>A <b>point sample estimate</b> <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline-math">θ</span> is a function of measurement data <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline-math">θ</span>. The observation <span class="inline-math">θ<sub>obs</sub><sup>*</sup></span> is itself an outcome of the sample variable <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
+    </div>
+    <p>Some important distinctions to keep straight here:</p>
+    <ul>
+      <li>The random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> each represent one potential measurement. They don't have to share the same <span class="inline-math">Ω<sub>X</sub></span>, but generally they will. It can be the possible answers to a poll, of possible colors in a bag. Each variable correspond to one draw from the bag.</li>
+      <li>The random variables <span class="inline-math">X<sub>i</sub></span> will in turn be dependent on some parameter <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> that plays a big role in the distribution. They don't necessarily have to share distributions. If they do, then θ will likely be one of the common parameters for different distributions, such as <em>p</em>, <em>μ</em>, <em>σ</em>, <em>λ</em> and so on.</li>
+      <li>Out datapoints <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span> are numerical outcomes of the random variable <span class="inline-math">θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span>. They are a function of the random variables <span class="inline-math">X<sub>i</sub></span>.</li>
+      <li>The random variable <span class="inline-math">θ<sup>*</sup></span> has a outcome space <span class="inline-math">Ω<sub>θ<sup>*</sup></sub></span> that essentially describe ALL POSSIBLE DATAPOINTS that a random sample might produce.</li>
+      <li>Lastly, we have an observed numerical value <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> that represents a known and observed representative of θ. In the case where the <span class="inline-math">E(θ<sup>*</sup>) = θ</span> for all <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> then our observation is <b>in line with the expected value</b>.</li>
+    </ul>
   </section>
 </article>
