@@ -480,10 +480,11 @@
     <div class="box math">E(∑<sub>i</sub> a<sub>i</sub>×X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) <br>V(∑<sub>i</sub> a<sub>i</sub> × X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
 
     <p>Given independent random variables <span class="inline-math">X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline-math">E(X<sub>i</sub>) = μ</span>, <span class="inline-math">D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
-    <div class="box math"><b>X</b> = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
+    <div class="box math">X̅ = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
 
-    <p>... then <span class="inline-math">E(<b>X</b>) = μ, V(<b>X</b>) = σ<sup>2</sup>/n, D(<b>X</b>) = σ / sqrt{ n }</span></p>
-    <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value.</div>
+    <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value. It should be denoted with a capital X bar and should not be confused the mean of numerical values x̄, or with a vector.</div>
+
+    <p>... then <span class="inline-math">E(X̅) = μ, V(X̅) = σ<sup>2</sup>/n, D(X̅) = σ / sqrt{ n }</span></p>
   </section>
 
   <h2 id="statistics">STATISTICS</h2>
@@ -494,7 +495,7 @@
 
     <p>Some important measures of location when dealing with statistics are:</p>
     <ul>
-      <li>The <b>arithmetic mean</b> <span class="inline-math">x̄ = ∑<sub>i=1:n</sub>x<sub>j</sub> × frac{ 1 }{ n - 1 }</span></li>
+      <li>The <b>arithmetic mean</b> <span class="inline-math">x̄ = ∑<sub>i=1:n</sub>x<sub>j</sub> × frac{ 1 }{ n }</span></li>
       <li>The <b>sample variance</b> <span class="inline-math">s<sup>2</sup> = frac{ 1 }{ n } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup></span></li>
       <li>The <b>sample standard deviation</b> <span class="inline-math">s = sqrt{ frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup> }</span></li>
     </ul>
@@ -513,5 +514,17 @@
       <li>The random variable <span class="inline-math">θ<sup>*</sup></span> has a outcome space <span class="inline-math">Ω<sub>θ<sup>*</sup></sub></span> that essentially describe ALL POSSIBLE DATAPOINTS that a random sample might produce.</li>
       <li>Lastly, we have an observed numerical value <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> that represents a known and observed representative of θ. In the case where the <span class="inline-math">E(θ<sup>*</sup>) = θ</span> for all <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> then our observation is <b>in line with the expected value</b>.</li>
     </ul>
+
+    <h4>COMMON OBSERVATIONS IN TYPICAL DISTRIBUTIONS</h4>
+    <p>Given the typical distributions, the following estimates are relevant values for θ<sub>obs</sub><sup>*</sup>.</p>
+    <ul>
+      <li>Measurements assumed to be Bin(n, p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x / n</span></li>
+      <li>Measurements assumed to be Hyp(N, n, p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x / n</span></li>
+      <li>Measurements assumed to be ffg(p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x̄</span></li>
+      <li>Measurements assumed to be Po(μ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span></li>
+      <li>Measurements assumed to be Exp(λ) → <span class="inline-math">λ<sub>obs</sub><sup>*</sup> = 1 / x̄</span></li>
+      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span>  and <span class="inline-math">σ<sub>obs</sub><sup>*</sup> = s</span> , i.e the sample standard deviation s (see above).</li>
+    </ul>
+
   </section>
 </article>
