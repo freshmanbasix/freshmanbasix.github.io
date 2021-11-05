@@ -100,6 +100,11 @@
 
   <h2 id="package-management">Package Management</h2>
   <section class="sub-section">
+    <p>Packages, i.e applications, libraries, plugins and other resources, are commonly installed with a <b>package manager</b> in Linux. Distros often offer software center shipped in the box which perform a similar task. <code>apt</code> is a command line tool that offers an interface for package managing.</p>
+
+    <pre class="box snippet">sudo apt install <em>package</em></pre>
+    <p>To view history, logs of all operations are kept by the system. For a debian system, they will likely be located under <code>/var/log/apt/history.log</code>. This file is kept limited in time scope, and older logs are stored az zipped files in the same directory.</p>
+
     <p class="addme">apt package utility and package sources.</p>
     <p class="addme">how to install, repair or modify packages</p>
     <p class="addme">How to remove, purge or uninstall packages</p>
