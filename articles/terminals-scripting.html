@@ -4,24 +4,42 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li id="bash"><a href="#bash">Bash</a></li>
+        <li id="bash"><a href="#bash">BASH</a></li>
+        <li id="bash"><a href="#command-prompt">COMMAND PROMPT</a></li>
       </ul>
     </div>
-    <p>More content to follow...</p>
+    <p>Command lines and terminals are the true interface between computer and man.</p>
   </section>
 
-  <h2 id="bash">Bash</h2>
+  <h2 id="bash">BASH</h2>
   <section class="sub-section">
     <p>The <code>source</code> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
 
+    <h3 id="command-cheat-sheet">COMMAND CHEAT SHEET</h3>
+    <h4>source</h4>
     <pre class="box snippet">source FILENAME [ARGUMENTS]
 . FILENAME [ARGUMENTS]</pre>
 
     <p class="box attention">Note that a single period <code>.</code> expands to <code>source</code></p>
 
-    <p class="addme">This Paragraph should go into detail about the export command</p>
+    <h4>man & --help</h4>
+    <p>Internal documentation can usually be reached through using <code>man <em>&ltcommand&gt</em></code>. Essentially all packages have one or more docs associated with it.</p>
+    <p>By convention. Typing <code><em>&ltcommand&gt</em> -h</code> or <code><em>&ltcommand&gt</em> --help</code> will print a brief summary of usage for the command in question.</p>
 
-    <h3>Setting up .bashrc</h3>
+    <h4>NAVIGATION</h4>
+    <ul>
+      <li><code>pwd</code>: print working directory</li>
+      <li><code>cd <em>absolute path</em></code>: change directory to supplied path. Hitting only cd expands to <code>cd /home/<em>user</em></code>. Relative paths can be accessed with:</li>
+      <ul>
+        <li><code>.</code> this directory</li>
+        <li><code>..</code> parent directory</li>
+        <li><code>~</code> home directory</li>
+      </ul>
+      <li></li>
+    </ul>
+
+    <h3 id="setting-up-.bashrc">SETTING UP <em>.bashrc</em></h3>
+    <p>The config file <code>~/.bashrc</code> contains user space configurations for the bash environment, and is the go to place for customizing things</p>
     <p>Below follows an example of how to display the <strong>Git Branch</strong> in the command line.</p>
     <pre class="box snippet">parse_git_branch() {
 
@@ -38,6 +56,33 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 
 fi</pre>
+
+    <h3 id="file-interactions">FILE INTERACTION</h3>
+    <ul>
+      <li>
+        <p><code>&gt&gt</code> appends input into destination</p>
+        <pre class="box snippet">echo "<em>Any string of text</em>" &gt&gt <em>path/to/file.txt</em></pre>
+      </li>
+      <li>
+        <p><code>&gt</code> overwrites current content in the file, be careful with this one.</p>
+        <pre class="box snippet">echo "<em>Any new string of text</em>" &gt <em>path/to/file.txt</em></pre>
+      </li>
+      <li>
+        <p><code>|</code> redirects, or <em>pipes</em>, standard output from some command to the standard input of another</p>
+        <pre class="box snippet">ps -a | grep <em>regex</em></pre>
+      </li>
+    </ul>
+  </section>
+
+  <h2 id="command-prompt">COMMAND PROMPT</h2>
+  <section class="sub-section">
+    <p>Native terminal in the Microsoft Windows environment. It is itself essentially the DOS operating system. Commonly interchanged with the <em>Power Shell</em>. Some useful points to know:</p>
+    <ul>
+      <li>Directories are separated with the backward slash <code>\</code>.</li>
+      <li>To list the current working directory, use <code>cwd</code></li>
+      <li>options to commands or usually supplied with a starting forward slash <code>/</code></li>
+      <li><p class="addme">Some more on navigation and help could be added here.</p></li>
+    </ul>
   </section>
 
 </article>
