@@ -7,6 +7,7 @@
         <li><a href="#probability-fundamentals">PROBABILITY FUNDAMENTALS</a></li>
         <li><a href="#conditional-probability">CONDITIONAL PROBABILITY</a></li>
         <li><a href="#random-variables">RANDOM VARIABLES</a></li>
+        <li><a href="#multi-dim-random-variables">MULTI-DIMENSIONAL RANDOM VARIABLES</a></li>
         <li><a href="#distributions">DISTRIBUTIONS</a></li>
         <li><a href="#arithmetic-properties">ARITHMETIC PROPERTIES</a></li>
         <li><a href="#statistics">STATISTICS</a></li>
@@ -395,6 +396,71 @@
 
     <p>Given a intensity, the distribution function can be extracted by:</p>
     <div class="box math">F<sub>X</sub>(x) = 1 - exp{-∫<sub>t=0:x</sub> λ<sub>X</sub>(t)}</div>
+  </section>
+
+  <h2 id="multi-dim-random-variables">MULTI-DIMENSIONAL RANDOM VARIABLES</h2>
+  <section class="sub-section">
+    <p>When studying two or more random variables, then one is working with a <em>multi-dimensional random variable</em> or <em>random vector</em>. An example might be selecting a random person ω. We could let X(ω) represent height, Y(ω) represent weight and Z(ω) represent age. Together, they form the multi-dimensional random variable (X, Y ,Z)</p>
+
+    <h3 id="formal-definitions">FORMAL DEFINITIONS OF (X, Y)</h3>
+
+    <div class="box math-definition">
+      <p>For a pair of random variables <span class="inline-math">X & Y</span>, defined on the sample space <span class="inline-math">Ω = [ω<sub>1</sub>, ... ω<sub>n</sub>]</span>, the function <span class="inline-math">(X,Y)</span> is a <b>multi dimensional random variable</b> such that <span class="inline-math">(X(ω<sub>i</sub>), Y(ω<sub>i</sub>)) → Ω : ℝ<sub>2</sub></span>.</p>
+      <p>The random variables X and Y take on some value pair (x, y) which map the sample space onto the plane where the probability P(X = x, Y = y) is the value at (x, y)</p>
+      <figure>
+        <img src="rsc/prob-multi-random-omega-example.png" alt="image">
+        <figcaption>Example of the illustration of the probability mass dispersed over the x,y plane with the event A marked in grey. <a href="rsc/prob-multi-random-omega-example.xml">Download XML here</a></figcaption>
+      </figure>
+
+      <div class="box attention">Keep in mind that the actual probability mass is represented along the z-axis.</div>
+
+      <p>Generally speaking, the <b>simultaneous distribution function</b> <span class="inline-math">F<sub>X,Y</sub></span> is</p>
+      <div class="box math">F<sub>X,Y</sub>(x, y) = P(X ⋜ x, Y ⋜ y)</div>
+    </div>
+
+    <h4>DISCRETE CASE</h4>
+    <p>The probability function <span class="inline-math">ρ<sub>X,Y</sub>(j,k) = P(X = j, Y = k)</span> is the numerical value function that determines the probability at (j, k). Generally:</p>
+    <div class="box math">P((X, Y) ∈ A) = ∑<sub>{j,k ∈ A}</sub> ρ<sub>X,Y</sub> (j, k)</div>
+    <p>The probability function must be non-negative and sum to 1 over all mintegers (j, k).</p>
+
+    <h4>CONTINOUS CASE</h4>
+    <p>The density function <span class="inline-math">ƒ<sub>X,Y</sub> (x,y)</span> describes the probability mass density at (x, y) and:</p>
+    <div class="box math">P((X,Y) ∈ A) = ∫∫<sub>A</sub> ƒ<sub>X,Y</sub> (x, y)dxdy</div>
+
+    <p>There will also be a distribution function <span class="inline-math">F<sub>X,Y</sub> (x,y)</span> such that</p>
+    <div class="box math">F<sub>X,Y</sub>(x,y) = ∫<sub>{-∞:x}</sub>∫<sub>{-∞:y}</sub> ƒ<sub>X,Y</sub> (u, v)dudv  </div>
+
+    <h4>SPECIAL UNIFORM CASE</h4>
+    <p>In the event that random variables X and Y are both uniformly distributed in the area B, and any area A is a subset of B, then:</p>
+    <div class="box math">P((X,Y) ∈ A) = frac{area A}{area B}</div>
+    <figure>
+      <img src="rsc/prob-multi-random-uniform-areas.png" alt="image">
+      <figcaption>An example of random variables <span class="inline-math">X ∈ U(a, b)</span> and <span class="inline-math">Y ∈ U(c, d)</span> where the proportion of A's area to B represent the probability of X and Y both taking values i A. <a href="rsc/prob-multi-random-uniform-areas.xml">Download XML here</a></figcaption>
+    </figure>
+
+
+    <h3 id="independence">INDEPENDENCE</h3>
+    <p>As always, random variables are independent given some events if the probability of the intersection is equal to the product of the individual probabilites.</p>
+    <div class="box math">P(X ∈ H<sub>1</sub> ∩ Y ∈ H<sub>2</sub>) = P(X ∈ H<sub>1</sub>) × P(Y ∈ H<sub>2</sub>)</div>
+    <div class="box math-definition">
+      <p>The random variables X and Y are independent if and only if:</p>
+      <div class="box math">F<sub>X,Y</sub> (x, y) = F<sub>X</sub>(x) × F<sub>Y</sub>(y)</div>
+      <div class="box math">ρ<sub>X,Y</sub> (j,k) = ρ<sub>X</sub>(j) × ρ<sub>Y</sub>(k) for all (j, k)<br>ƒ<sub>X,Y</sub> (x, y) = ƒ<sub>X</sub>(x) × ƒ<sub>Y</sub>(y) for all (x, y)</div>
+    </div>
+
+    <h3 id="min-max">MIN-MAX VALUES</h3>
+    <p>Given independent random variables X and Y. We can study the random variable Z as the largest or smallest of the two by noting that</p>
+    <ul>
+      <li>
+        <p><span class="inline-math">Z = max(X,Y)</span>, i.e Z ⋜ z ⟺ both X and Y are ⋜ z</p>
+        <div class="box math">F<sub>Z</sub>(z) = P(X ⋜ z) × P(Y ⋜ z) = F<sub>X</sub>(z) × F<sub>Y</sub>(z)</div>
+      </li>
+      <li>
+        <p><span class="inline-math">Z = min(X,Y)</span>, i.e Z &gt z ⟺ both X and Y are greater than z</p>
+        <div class="box math">F<sub>Z</sub>(z) = 1 - P(Z &gt z) = 1 - P(X &gt z) × P(Y &gt z) = 1 - [1- F<sub>X</sub>(z)][1 - F<sub>Y</sub>(z)]</div>
+      </li>
+    </ul>
+    <div class="box attention">The random variable Z takes on the vallue z which represent the largest or smallest value that either X or Y will take. This means probability P(Z ⋜ z) gives a value for z being either the largest or smallest value.</div>
   </section>
 
   <h2 id="distributions">DISTRIBUTIONS</h2>
