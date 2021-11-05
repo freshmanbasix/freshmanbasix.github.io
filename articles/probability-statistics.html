@@ -518,6 +518,8 @@
 
     <p>Independent random variables X & Y give us <span class="inline-math">E(XY) = E(X)E(Y)</span>, and similarly, the expected value of arbitrary amounts of variables is the product of the individual ones.</p>
 
+    <div class="box math">E(XY) = ∑<sub>all j,k</sub> j × k × ρ<sub>XY</sub>(j, k)</div>
+
     <h3 id="variance">VARIANCE V(X)</h3>
     <p>A measure of how much the probability mass varies over the domain. It gives an idea of how much of the total mass that is concentrated around the expected value μ</p>
 
@@ -526,8 +528,6 @@
       <div class="box math">V(X) = E[(X - μ)<sup>2</sup>] = E(Y)<br>Formally:<br>V(X) = ∑<sub>k</sub>(k - μ)<sup>2</sup> × ρ<sub>X</sub>(k) <br>V(X) = ∫<sub>ℝ</sub>(x - μ)<sup>2</sup> ×  ƒ<sub>X</sub>(x)dx</div>
       <p>Simpler still, a very important relation is <span class="inline-math">V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>. It is important to keep in mind that when calculating <span class="inline-math">E(X <sup>2</sup>)</span>, you only quadrate the single x, and not the density function. I.e <span class="inline-math">E(X <sup>2</sup>) = ∑<sub>k</sub> k<sup>2</sup> × ρ<sub>X</sub>(k)</span>.</p>
 
-      <div class="box math">E(XY) = ∑<sub>all j,k</sub> j × k × ρ<sub>XY</sub>(j, k)</div>
-      <p>In the case of independent X and Y ⇒ <span class="inline-math">E(XY) = E(X)E(Y)</span></p>
     </div>
 
     <p>Generally, low variances indicate that the mass is concentrated in smaller areas. It will be 0 when its all gathered in a single point. There is also the useful concept of the <b>standard deviation D(X)</b>. One can consider D(X) <em>the order of magnitude of X's deviation from its expected value E(X)</em>.</p>
@@ -551,7 +551,7 @@
 
     <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> then expected value and variance is:</p>
 
-    <div class="box math">E(∑<sub>i</sub> a<sub>i</sub>×X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) <br>V(∑<sub>i</sub> a<sub>i</sub> × X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
+    <div class="box math">E(∑<sub>i</sub> a<sub>i</sub>×X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) <br>V(∑<sub>i</sub> a<sub>i</sub> × X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>) (if independent)</div>
 
     <p>Given independent random variables <span class="inline-math">X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline-math">E(X<sub>i</sub>) = μ</span>, <span class="inline-math">D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
     <div class="box math">X̅ = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
