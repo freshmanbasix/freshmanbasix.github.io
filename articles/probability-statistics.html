@@ -548,6 +548,20 @@
       <div class="box math">ρ(X,Y) = frac{C(X, Y)}{D(X) × D(Y)}</div>
     </div>
 
+    <h4>SYSTEMATIC AND RANDOM ERRORS δ, ε</h4>
+    <p>Given a set of measurements <span class="inline-math">m<sub>i</sub></span>, the random variable <span class="inline-math">X</span> take the values of the measurements. The "real" value can be called <span class="inline-math"><em>r</em></span>, nd the measurements will vary from <span class="inline-math">r</span> depending on <b>accuracy</b> and <b>precision</b>.</p>
+    <div class="box math-definition">
+      <p>A <span class="inline-math">systematic error δ</span>, a.k.a <em>bias</em> is a result of poor accuracy. It equals the difference between the measurement's estimated value and the real value.</p>
+      <div class="box math">δ = | E(X) - r |</div>
+      <div class="box attention">Using sharpshooting as an example, disregarding skill leaves all accuray up to the sight. Poor accuracy offset the resulting hit from the bullseye with the error delta.</div>
+
+      <p>A <span class="inline-math">random error ε</span> is a result of poor precision. It equals the difference between the measurement and it's estimated value</p>
+      <div class="box math">ε =| E(X) - m<sub>i</sub> |</div>
+      <div class="box attention">Precision is up to the quality of the rifle. Variance in precision will result in random scattering of the hit area.</div>
+    </div>
+    <p>If we let <span class="inline-math">Y</span> take on the measurement error where <span class="inline-math">Y = δ + ε</span> and the random error ε is a random variable. Then:</p>
+    <div class="box math">E(Y) = δ, D(Y) = σ <br>E(ε) = 0, D(ε) = σ</div>
+
     <h3 id="linear-combinations-expected">LINEAR COMBINATIONS WITH EXPECTED AND VARIANCE VALUES</h3>
 
     <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> then expected value and variance is:</p>
