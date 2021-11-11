@@ -8,6 +8,7 @@
         <li><a href="#history">HISTORY</a></li>
         <li><a href="#os-overview">OPERATING SYSTEM OVERVIEW</a></li>
         <li><a href="#users-groups">USERS & GROUPS</a></li>
+        <li><a href="#file-management">FILE MANAGEMENT</a></li>
         <li><a href="#resource-management">RESOURCE MANAGEMENT</a></li>
         <li><a href="#package-management">PACKAGE MANAGEMENT</a></li>
         <li><a href="#archives-compression">ARCHIVES & COMPRESSION</a></li>
@@ -76,6 +77,12 @@
       Of all the gods of mount olympus, The super user is the greatest, for his was the power to accidentally wipe away the entire world...
     </blockquote>
     <p>Every admin user technically has a dedicated password that elevates them to super user status. It however, not set by default and must be activated separately. There is no need to do it though, because <code>$ sudo su</code> will achieve the same results. Once in su mode, you will never be prompted for an admin confirmation again.</p>
+  </section>
+
+  <h2 id="file-management">FILE MANAGEMENT</h2>
+  <section class="sub-section">
+    <h3 id="file-links">FILE LINKS</h3>
+    <p><b>Hard links</b> are two separate files that share the same inode and the same data block. As long as any one of the linked files remain, the file will remain active. <b>Symbolic links</b>,  meanwhile, are files with their own inode that references another inode. In practice, it operates as a shortcut. Deleting the symbolic link has no effect on the original data.</p>
   </section>
 
   <h2 id="resource-management">RESOURCE MANAGEMENT</h2>
