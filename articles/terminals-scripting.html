@@ -13,20 +13,22 @@
 
   <h2 id="bash">BASH</h2>
   <section class="sub-section">
-    <p>The <code>source</code> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
-
+    <p><em>Bourne Again SHell</em>, a common standard terminal environment for linux systems.</p>
     <h3 id="command-cheat-sheet">COMMAND CHEAT SHEET</h3>
     <h4>FIRST LINE</h4>
     <p>For any shell, the first line must always be <code>#!/bin/bash</code> to tell the interpreter where the language used is located on the device.</p>
 
-    <h4>source</h4>
+    <h4>SOURCE</h4>
+    <p>The <code>source</code> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
     <pre class="box snippet">source FILENAME [ARGUMENTS]
 . FILENAME [ARGUMENTS]</pre>
 
     <p class="box attention">Note that a single period <code>.</code> expands to <code>source</code></p>
 
-    <h4>man & --help</h4>
-    <p>Internal documentation can usually be reached through using <code>man <em>&ltcommand&gt</em></code>. Essentially all packages have one or more docs associated with it.</p>
+    <h4>MAN, INFO & HELP</h4>
+    <p>Internal documentation can usually be reached through using <code>man <em>&ltcommand&gt</em></code> or <code><em>info &ltcommand&gt</em></code>. Essentially all packages have one or more files of documentation associated with it, designed to be accessed within the terminal emulator. The <em>man-pages</em> and the <em>info-pages</em> serve a somewhat overlapping purpose, but it is always useful to study the pages thoroughly. Even the <code>man</code> and <code>info</code> commands themselves have man-pages.</p>
+    <pre class="box snippet">man man <br>man info</pre>
+    <p>So far, the authors of this wiki haven't found a simple way to browse through all man-pages available for any particular command.</p>
     <p>By convention. Typing <code><em>&ltcommand&gt</em> -h</code> or <code><em>&ltcommand&gt</em> --help</code> will print a brief summary of usage for the command in question.</p>
 
     <h4>NAVIGATION</h4>
