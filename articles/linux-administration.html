@@ -82,7 +82,11 @@
   <h2 id="file-management">FILE MANAGEMENT</h2>
   <section class="sub-section">
     <h3 id="file-links">FILE LINKS</h3>
-    <p><b>Hard links</b> are two separate files that share the same inode and the same data block. As long as any one of the linked files remain, the file will remain active. <b>Symbolic links</b>,  meanwhile, are files with their own inode that references another inode. In practice, it operates as a shortcut. Deleting the symbolic link has no effect on the original data.</p>
+    <p><b>Hard links</b> are two separate files that share the same inode and the same data block. As long as any one of the linked files remain, the file will remain active.</p>
+    <pre class="box snippet">ln <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></pre>
+    <p><b>Symbolic links</b>,  meanwhile, are files with their own inode that references another inode. In practice, it operates as a shortcut. Deleting the symbolic link has no effect on the original data.</p>
+    <pre class="box snippet">ln -s <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></pre>
+    <p>Use <code>ls -l to see where any link is pointing</code></p>
   </section>
 
   <h2 id="resource-management">RESOURCE MANAGEMENT</h2>
