@@ -1,0 +1,57 @@
+<article id="editors" class="wiki-entry">
+  <h1 class="column-header">EDITORS</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <ul class="toc">
+        <li><a href="#atom">ATOM</a></li>
+        <li><a href="#vim">VIM</a></li>
+        <li><a href="#latex">LATEX</a></li>
+      </ul>
+    </div>
+    <p></p>
+  </section>
+
+  <h2 id="atom">ATOM</h2>
+  <section class="sub-section">
+    <p>Find the official manual in this <a href="https://flight-manual.atom.io/">Atom Flight Manual</a>.</p>
+    <p>Create custom macro snippets by adding them line by line in <code>~/.atom/snippets.cson</code>. Be sure to take care of the indentation and follow the general format. Read more in the <a href="https://flight-manual.atom.io/using-atom/sections/snippets/">atom snippet documentation</a></p>
+    <pre class="box snippet">
+'.text.<em>language-package-snippet-applies-to</em>':
+  '<em>first snippet name</em>':
+    'prefix': '<em>snippet macro shortcut</em>'
+    'body': '<em>content</em>'
+
+  '<em>second sippet name</em>':
+    'prefix': '<em>snippet macro shortcut</em>'
+    'body': """
+    <em>multi line content</em>
+    <em>tab to pointer at $1 first.</em>
+    <em>For prefilled content, use ${2:this format}</em>
+    """
+  </pre>
+    <p></p>
+  </section>
+
+  <h2 id="vim">VIM</h2>
+  <section class="sub-section">
+    <p>Check the <a href="https://www.vim.org/docs.php">official documentation right here</a>, and see this useful <a href="https://devhints.io/vim">cheat sheet</a>.</p>
+  </section>
+
+  <h2 id="latex">LATEX</h2>
+  <section class="sub-section">
+    <p>Formally a layout language, rather than an editor. The primary place to use latex for making documents is the <a href="https://www.overleaf.com">overleaf web editor</a>.</p>
+    <table>
+      <caption>practical resources for latex</caption>
+      <colgroup span="2"></colgroup>
+      <tr>
+        <td>Overleaf documentation for Math package</td>
+        <td><a href="https://www.overleaf.com/learn/latex/Mathematical_expressions">https://www.overleaf.com/learn/latex/Mathematical_expressions</a></td>
+      </tr>
+      <tr>
+        <td>Latex Project main site</td>
+        <td><a href="https://www.latex-project.org/help/documentation/#general-documentation">https://www.latex-project.org/help/documentation/#general-documentation</a></td>
+      </tr>
+    </table>
+  </section>
+</article>
