@@ -87,6 +87,15 @@
     <p><b>Symbolic links</b>,  meanwhile, are files with their own inode that references another inode. In practice, it operates as a shortcut. Deleting the symbolic link has no effect on the original data.</p>
     <pre class="box snippet">ln -s <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></pre>
     <p>Use <code>ls -l to see where any link is pointing</code></p>
+
+    <h3 id="move-rename">MOVE & RENAME</h3>
+    <p>Files are moved basically by using the <code>mv</code> command</p>
+    <pre class="box snippet">mv <em>path/to/source.file</em> <em>path/to/destination.file</em></pre>
+    <p>Multiple files matching regex can be moved in a single command</p>
+    <pre class="box snippet">mv <em>path/*</em> <em>dest/directory/</em></pre>
+    <p>By omitting the filename in the destination, bash will use the existing by default. A file can be <strong>renamed</strong> by simply choosing a new filename as the destination</p>
+    <p>The perl <code>rename</code> command is excellent for adjusting filenames of multiple files. Note that it isn't native in bash. To <b>remove</b> a particular substring from all filenames in a certain directory, use:</p>
+    <pre class="box snippet">rename 's/<em>string-to-remove</em>//;' <em>path/to/directory/*</em></pre>
   </section>
 
   <h2 id="resource-management">RESOURCE MANAGEMENT</h2>
