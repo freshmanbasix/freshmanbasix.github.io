@@ -505,50 +505,57 @@
   <section class="sub-section">
     <p>Expected values, variance, standard deviation and co-variance.</p>
 
-    <h3 id="expected-values">EXPECTED VALUES</h3>
+    <h3 id="sub2-expected-values">EXPECTED VALUES</h3>
     <p>The expected value is projected average value per outcome for multiple attempts. It describes the <b>mean</b> position of the probability mass</p>
 
-    <div class="box math">E(X) = ∑<sub>k</sub> k × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> x × ƒ<sub>X</sub>(x)dx (continuous case)</div>
+    <div class="box math">E(X) = {discrete} = ∑<sub>k</sub> k × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> x × ƒ<sub>X</sub>(x)dx</div>
 
-    <div class="box math">For the random variable Y = g(x) <br>E(Y) = ∑<sub>i</sub> g(k) × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> g(k) × ƒ<sub>X</sub>(x)dx (continuous case)</div>
+    <p>For the random variable <span class="inline-math">Y = g(X)</span></p>
 
-    <p>The above is important to consider when determining the value of E(X<sup>2</sup>) as it is not quite as natural as one might expect. Only the extra coefficient is quadrated. To clarify:</p>
+    <div class="box math">E(Y) = {discrete} = ∑<sub>i</sub> g(k) × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> g(k) × ƒ<sub>X</sub>(x)dx</div>
 
-    <div class="box math">E(X<sup>2</sup>) = ∑<sub>k</sub> k<sup>2</sup>  × ρ<sub>X</sub>(k) (discrete case) <br>E(X) = ∫<sub>ℝ</sub> x<sup>2</sup> × ƒ<sub>X</sub>(x)dx (continuous case)</div>
+    <p>If random variables <span class="inline-math">X, Y</span> are associated in a third variable <span class="inline-math">Z = g(X, Y)</span>, then:</p>
 
-    <p>Independent random variables X & Y give us <span class="inline-math">E(XY) = E(X)E(Y)</span>, and similarly, the expected value of arbitrary amounts of variables is the product of the individual ones.</p>
+    <div class="box math">E(Z) = {discrete} = ∑<sub>(j,k)</sub> g(j, k) × ρ<sub>XY</sub> (j, k)<br>E(Z) = {continuous} = ∫<sub>ℝ</sub> g(x, y) × ƒ<sub>XY</sub> (x, y)dxdy</div>
+
+    <p>The above in turns instructs us how to calculate the common <span class="inline-math">E(XY)</span>. Note that independent random variables X & Y give us <span class="inline-math">E(XY) = E(X)E(Y)</span>. Lastly, it will also instruct us how to determine <span class="inline-math">E(XX) = E(X<sup>2</sup>)</span></p>
 
     <div class="box math">E(XY) = ∑<sub>all j,k</sub> j × k × ρ<sub>XY</sub>(j, k)</div>
 
-    <h3 id="variance">VARIANCE V(X)</h3>
+    <p></p>
+    <div class="box math">E(X<sup>2</sup>) = {discrete} = ∑<sub>k</sub> k<sup>2</sup>  × ρ<sub>X</sub> (k)<br>E(X<sup>2</sup>) = {continuous} = ∫<sub>ℝ</sub> x<sup>2</sup> × ƒ<sub>X</sub> (x)dx  </div>
+
+    <h3 id="sub2-variance">VARIANCE V(X)</h3>
     <p>A measure of how much the probability mass varies over the domain. It gives an idea of how much of the total mass that is concentrated around the expected value μ</p>
 
     <div class="box math-definition">
       <p>Given the random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span>, where <span class="inline-math">E(X) = μ</span> and Y = (X - μ)<sup>2</sup>, then:</p>
       <div class="box math">V(X) = E[(X - μ)<sup>2</sup>] = E(Y)<br>Formally:<br>V(X) = ∑<sub>k</sub>(k - μ)<sup>2</sup> × ρ<sub>X</sub>(k) <br>V(X) = ∫<sub>ℝ</sub>(x - μ)<sup>2</sup> ×  ƒ<sub>X</sub>(x)dx</div>
-      <p>Simpler still, a very important relation is <span class="inline-math">V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>. It is important to keep in mind that when calculating <span class="inline-math">E(X <sup>2</sup>)</span>, you only quadrate the single x, and not the density function. I.e <span class="inline-math">E(X <sup>2</sup>) = ∑<sub>k</sub> k<sup>2</sup> × ρ<sub>X</sub>(k)</span>.</p>
-
+      <p>Simpler still, a very important relation is <span class="inline-math">V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>.</p>
     </div>
 
     <p>Generally, low variances indicate that the mass is concentrated in smaller areas. It will be 0 when its all gathered in a single point. There is also the useful concept of the <b>standard deviation D(X)</b>. One can consider D(X) <em>the order of magnitude of X's deviation from its expected value E(X)</em>.</p>
     <div class="box math">D(X) = sqrt{ V(X) }</div>
 
-    <h4>COVARIANCE</h4>
-    <p>One absolutely horrible concept, is the covariance and it characterizes two random variables together. Independent random variables will always give a covariance of 0</p>
+    <h3 id="sub2-covariance">COVARIANCE</h3>
+    <p>One absolutely horrible concept, is the covariance and it characterizes two random variables together.</p>
     <div class="box math-definition">
       <p>Random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span> have a covariance <span class="inline-math">C(X, Y)</span> such that:</p>
       <div class="box math">C(X, Y) = E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] <br>C(X, Y) = E(XY) - E(X)E(Y)</div>
       <div class="box math">E(XY) = ∑<sub>(j, k) </sub> j × k × ρ<sub>XY</sub>(j, k)<br>E(XY) = ∫<sub>(x, y)</sub> x × y × ƒ<sub>XY</sub>(x, y)</div>
+      <p>If we expand the formal definition we get a alternative equation that may proove useful, but probably won't...</p>
+      <div class="box math">E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] = E(XY - Xμ<sub>Y</sub> - Yμ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub>) =<br>= E(XY) - E(X)μ<sub>Y</sub> - E(Y)μ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub></div>
+
     </div>
 
-    <p>If the value of <span class="inline-math">C(X, Y) = 0</span>, then X and Y are said to be <b>uncorrelated</b>. Independent variables ⇒ uncorrelated variables.</p>
+    <p>If the value of <span class="inline-math">C(X, Y) = 0</span>, then X and Y are said to be <b>uncorrelated</b>.<br><em>Independent</em> variables ⇒ <em>uncorrelated</em> variables.</p>
 
     <div class="box math-definition">
       <p>The so called <b>correlation coefficient</b> <span class="inline-math">ρ(X,Y)</span>, not to be confused with the probability function is:</p>
       <div class="box math">ρ(X,Y) = frac{C(X, Y)}{D(X) × D(Y)}</div>
     </div>
 
-    <h4>SYSTEMATIC AND RANDOM ERRORS δ, ε</h4>
+    <h3 id="sub2-systematic-errors">SYSTEMATIC AND RANDOM ERRORS δ, ε</h3>
     <p>Given a set of measurements <span class="inline-math">m<sub>i</sub></span>, the random variable <span class="inline-math">X</span> take the values of the measurements. The "real" value can be called <span class="inline-math"><em>r</em></span>, nd the measurements will vary from <span class="inline-math">r</span> depending on <b>accuracy</b> and <b>precision</b>.</p>
     <div class="box math-definition">
       <p>A <span class="inline-math">systematic error δ</span>, a.k.a <em>bias</em> is a result of poor accuracy. It equals the difference between the measurement's estimated value and the real value.</p>
