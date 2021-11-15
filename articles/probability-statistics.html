@@ -571,16 +571,16 @@
 
     <h3 id="linear-combinations-expected">LINEAR COMBINATIONS WITH EXPECTED AND VARIANCE VALUES</h3>
 
-    <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> then expected value and variance is:</p>
+    <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> and a linear combination of them <span class="inline-math">L = ∑<sub>i</sub> a<sub>i</sub> × X<sub>1</sub> + c</span> then expected value and variance is:</p>
 
-    <div class="box math">E(∑<sub>i</sub> a<sub>i</sub>×X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) <br>V(∑<sub>i</sub> a<sub>i</sub> × X<sub>i</sub> + b) = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>) (if independent)</div>
+    <div class="box math">E(L) = {regardless of dependence} = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) + c <br>V(L) = {if independent} = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
 
     <p>Given independent random variables <span class="inline-math">X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline-math">E(X<sub>i</sub>) = μ</span>, <span class="inline-math">D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
     <div class="box math">X̅ = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
 
-    <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value. It should be denoted with a capital X bar and should not be confused the mean of numerical values x̄, or with a vector.</div>
-
     <p>... then <span class="inline-math">E(X̅) = μ, V(X̅) = σ<sup>2</sup>/n, D(X̅) = σ / sqrt{ n }</span></p>
+
+    <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value. It should be denoted with a capital X bar and should not be confused the mean of numerical values x̄, or with a vector.</div>
   </section>
 
   <h2 id="statistics">STATISTICS</h2>
