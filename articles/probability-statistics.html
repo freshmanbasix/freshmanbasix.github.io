@@ -497,7 +497,9 @@
     <div class="box math">Random variable <span class="inline-math">X ∈ N(μ, σ)</span> ⟺ frac{ X - μ }{ σ } ∈ N(0,1)</div>
     <p>The above allows for a very useful method of standardizing any random variable. This can be achieved through the following</p>
     <div class="box math">P(X ⋜ x) = P(frac{ X - μ }{ σ } ⋜ frac{ x - μ }{ σ }) = Φ(frac{ x - μ }{ σ })</div>
-    <p>If the right constants can be determined, a probability can very easily be determined without difficult calculation needed.</p>
+    <p>If the right constants can be determined, a probability can very easily be determined without difficult calculation needed. Sometimes, you will need to throw the signs around a bit to collect the correct value from the table. Take note of <span class="inline-math">Φ(-x) = 1 - Φ(x)</span> when given a value <span class="inline-math">P(X &lt -x) = β</span>.</p>
+    <div class="box math">P(X &lt -x) = Φ(-x) = β ⟺ P(X &lt x) = 1 - β <br>P(X &gt x) = 1 - P(X &lt x) = 1 - (1 - β) = β</div>
+    <p>You let <span class="inline-math">β</span> take the appropriate <span class="inline-math">α-value</span> in the table and from there, let our desired <span class="inline-math">x</span> equal the corresponding <span class="inline-math">λ<sub>α</sub></span>.</p>
 
   </section>
 
