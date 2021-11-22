@@ -34,15 +34,16 @@
       |-style.css
       |-CNAME
       |-README.md
-      |-<b>scripts/</b>---
-      |           |-main.js
+      |-<b>scripts/</b>-
+      |         |-script.js
       |
-      |-<b>rsc/</b>-------
-      |           |-diagram.xml
-      |           |-image.png
+      |-<b>rsc/</b>-
+      |     |-<b>article</b>-
+      |              |-<b>section</b>-
+      |                       |-file.format
       |
-      |-<b>articles/</b>--
-                  |-article.html
+      |-<b>articles/</b>-
+                 |-article.html
 </pre>
 
     <ul>
@@ -52,7 +53,7 @@
       <li><b>CNAME</b> is for the CNAME record at the domain name registrar.</li>
       <li>All js scripts are located under the <b>scripts/</b> directory. Remember that each added scripts must be imported with a script element in index.html.</li>
       <li>The <b>articles/</b> folder contain the primary content of each article. The article IDs correspond to the name of the file exactly, subtracting the file ending.</li>
-      <li>Every file, image or other visual resource useed somewhere in the wiki should be stored under the <b>rsc/</b> directory. Be sure to name the file in a consise and clear way.</li>
+      <li>Every file, image or other visual resource useed somewhere in the wiki should be stored under the <b>rsc/</b> directory. Create subdirectories in the suggested manner to avoid long file names and be sure to name the file in a consise and clear way.</li>
     </ul>
   </section>
 
@@ -61,8 +62,8 @@
     <p>The core content of the wiki is contained within a CSS flexbox dividing itself into 3 columns where the central columns contains the main article and is 4 times as wide as the outer ones.</p>
 
     <figure>
-      <img src="rsc/wiki-html-structure.png" alt="image missing">
-      <figcaption>Diagram describing the general element hierarchy of wiki.freshmanbasix.com. <a href="rsc/wiki-html-structure.xml">Download XML file</a>.</figcaption>
+      <img src="rsc/site/wiki-html-structure.png" alt="image missing">
+      <figcaption>Diagram describing the general element hierarchy of wiki.freshmanbasix.com. <a href="rsc/site/wiki-html-structure.xml">Download XML file</a>.</figcaption>
     </figure>
 
     <h3>Navigation Bar</h3>
@@ -78,8 +79,8 @@
     <p>The article itself is contained within the <em>main</em> element with id <em>wiki-column</em>. The whole article itself is stored inside a <em>article</em> element which has an id value corresponding to the article file name, as found in the <em>/articles</em> directory. It also has the class value <em>wiki-entry</em>. In general, the article is divided into several <em>section</em> elements, the first of which also contains the table of contents. Below follows a diagram along with core example code to illustrate how the hierarchy of a article must be structured to render properly.</p>
 
     <figure>
-      <img src="rsc/wiki-article-diagram.png" alt="image">
-      <figcaption>Diagram illustrating the core hierarchy of the a wiki article. <a href="rsc/wiki-article-diagram.xml">Download XML file</a></figcaption>
+      <img src="rsc/site/wiki-article-diagram.png" alt="image">
+      <figcaption>Diagram illustrating the core hierarchy of the a wiki article. <a href="rsc/site/wiki-article-diagram.xml">Download XML file</a></figcaption>
     </figure>
 
     <pre class="box snippet">
@@ -166,8 +167,8 @@
 &lt/figure&gt
     </pre>
     <figure>
-      <img src="rsc/logo-hjallium.jpg" alt="image">
-      <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/logo-hjallium.jpg">downloaded directly here</a></figcaption>
+      <img src="rsc/site/logo-hjallium.jpg" alt="image">
+      <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/site/logo-hjallium.jpg">downloaded directly here</a></figcaption>
     </figure>
     <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
 
