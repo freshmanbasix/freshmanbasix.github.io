@@ -599,19 +599,29 @@
     </ul>
 
     <h3 id="sample-estimation">SAMPLE ESTIMATION</h3>
-    <p>This becomes relevant when examples of outcomes from experiements have been gathered by physically performing them.</p>
 
     <div class="box math-definition">
       <p>A <b>point sample estimate</b> <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline-math">θ</span> is a function of measurement data <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline-math">θ</span>. The observation <span class="inline-math">θ<sub>obs</sub><sup>*</sup></span> is itself an outcome of the sample variable <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
+
+      <div class="box attention">The observation here, θ<sub>obs</sub><sup>*</sup>, is our actual guess as to the real value of the parameter θ. It is based on actual observed data, hence the <em>obs</em>. Since we know what we are measuring, we will have some insight into which distribution our measurments fall under, but not the specific parameter itself.</div>
     </div>
     <p>Some important distinctions to keep straight here:</p>
     <ul>
-      <li>The random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> each represent one potential measurement. They don't have to share the same <span class="inline-math">Ω<sub>X</sub></span>, but generally they will. It can be the possible answers to a poll, of possible colors in a bag. Each variable correspond to one draw from the bag.</li>
-      <li>The random variables <span class="inline-math">X<sub>i</sub></span> will in turn be dependent on some parameter <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> that plays a big role in the distribution. They don't necessarily have to share distributions. If they do, then θ will likely be one of the common parameters for different distributions, such as <em>p</em>, <em>μ</em>, <em>σ</em>, <em>λ</em> and so on.</li>
-      <li>Out datapoints <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span> are numerical outcomes of the random variable <span class="inline-math">θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span>. They are a function of the random variables <span class="inline-math">X<sub>i</sub></span>.</li>
-      <li>The random variable <span class="inline-math">θ<sup>*</sup></span> has a outcome space <span class="inline-math">Ω<sub>θ<sup>*</sup></sub></span> that essentially describe ALL POSSIBLE DATAPOINTS that a random sample might produce.</li>
-      <li>Lastly, we have an observed numerical value <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> that represents a known and observed representative of θ. In the case where the <span class="inline-math">E(θ<sup>*</sup>) = θ</span> for all <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> then our observation is <b>in line with the expected value</b>.</li>
+      <li>The <span class="inline-math">random variable X<sub>i</sub> = x<sub>i</sub></span> represents a measurement. <span class="inline-math">X ∈ Ω<sub>X</sub></span>, i.e X takes any of the possible values that a measurement can take given the context.  </li>
+
+      <li>All <em>random variables X<sub>i</sub></em> are dependent on some <span class="inline-math">distribution parameter θ ∈ Ω<sub>Θ</sub></span>, which is unknown to us. The distribution itself, along with some of its characteristics might not be, but the real value for the parameter is.</li>
+
+      <li>The <span class="inline-math">real value measurement x<sub>i</sub></span>, is one among the real valued measurements themselves. This is an observed datapoint, with the <span class="inline-math">set of datapoints (x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>) ∈ (X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span> making up a sample of empirical data when making <span class="inline-math">n</span> measurements/observations.</li>
+
+      <li>Based on the measurements and known facts about the distribution, the <span class="inline-math">random sample variable θ<sup>*</sup></span> is itself a random variable taking on the possible values of <em>the parameter θ</em>. It is a function of the random variables X such that <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></li>
+
+      <li>The <span class="inline-math">point sample estimate θ<sub>obs</sub><sup>*</sup> ∈ θ<sup>*</sup></span> is an outcome of the random sample variable, dependent on the datapoints, such that <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span>. This is a real valued guess of the actual value θ based on the observed data.</li>
     </ul>
+
+    <p>One way to evaluate how accurate the sample estimate is:</p>
+    <div class="box math-definition">
+      <p>In the case where the <span class="inline-math">E(θ<sup>*</sup>) = θ</span> for all <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> then our observation is said to be <b>in line with the expected value</b>.</p>
+    </div>
 
     <h4>COMMON OBSERVATIONS IN TYPICAL DISTRIBUTIONS</h4>
     <p>Given the typical distributions, the following estimates are relevant values for θ<sub>obs</sub><sup>*</sup>.</p>
@@ -621,7 +631,7 @@
       <li>Measurements assumed to be ffg(p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x̄</span></li>
       <li>Measurements assumed to be Po(μ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span></li>
       <li>Measurements assumed to be Exp(λ) → <span class="inline-math">λ<sub>obs</sub><sup>*</sup> = 1 / x̄</span></li>
-      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span>  and <span class="inline-math">σ<sub>obs</sub><sup>*</sup> = s</span> , i.e the sample standard deviation s (see above).</li>
+      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span>  and <span class="inline-math">σ<sub>obs</sub><sup>*</sup> = s</span> , i.e the sample standard deviations (see above).</li>
     </ul>
 
   </section>
