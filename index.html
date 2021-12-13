@@ -5,12 +5,15 @@
     <title>freshman basix wiki</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" defer src="scripts/main.js"></script>
+    <script type="text/javascript" defer src="scripts/route.js"></script>
+    <script type="text/javascript" defer src="scripts/router.js"></script>
+    <script type="text/javascript" defer src="scripts/wiki-column.js"></script>
   </head>
 
   <body>
     <header>
-      <pre id="banner" onclick="javascript:openArticle('welcome')">   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
+      <a href="#welcome">
+        <pre id="banner">   /$$      /$$ /$$$$$$ /$$   /$$ /$$$$$$
   | $$  /$ | $$|_  $$_/| $$  /$$/|_  $$_/
 | $$ /$$$| $$  | $$  | $$ /$$/   | $$
 | $$/$$ $$ $$  | $$  | $$$$$/    | $$
@@ -18,6 +21,7 @@
 | $$$/ \  $$$  | $$  | $$\  $$   | $$
   | $$/   \  $$ /$$$$$$| $$ \  $$ /$$$$$$
   |__/     \__/|______/|__/  \__/|______/</pre>
+      </a>
     </header>
 
     <div class="flex-container">
@@ -28,17 +32,15 @@
           <nav id="navbar">
             <h1 class="column-header">ARTICLES</h1>
             <ul id="nav-items">
-              <li class="nav-item"><a href="javascript:openArticle('encryption')">ENCRYPTION</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('servers')">SERVERS</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('web')">WEB</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('terminals')">TERMINALS</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('linux')">LINUX</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('version-control')">VERSION CONTROL</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('editors')">EDITORS</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('probability-statistics')">PROBABILITY & STATISTICS</a></li>
-              <li class="nav-item"><a href="javascript:openArticle('contribute')">CONTRIBUTE</a></li>
-              <!-- <li class="nav-item"><a href="javascript:openArticle('chicken-project-management')">Chicken Project Management</a></li> -->
-              <!-- <li class="nav-item"><a href="javascript:openArticle('kista-mentorspace')">Kista Mentorspace</a></li> -->
+              <li class="nav-item"><a href="#encryption">ENCRYPTION</a></li>
+              <li class="nav-item"><a href="#servers">SERVERS</a></li>
+              <li class="nav-item"><a href="#web">WEB</a></li>
+              <li class="nav-item"><a href="#terminals">TERMINALS</a></li>
+              <li class="nav-item"><a href="#linux">LINUX</a></li>
+              <li class="nav-item"><a href="#version-control">VERSION CONTROL</a></li>
+              <li class="nav-item"><a href="#editors">EDITORS</a></li>
+              <li class="nav-item"><a href="#probability-statistics">PROBABILITY & STATISTICS</a></li>
+              <li class="nav-item"><a href="#contribute">CONTRIBUTE</a></li>
             </ul>
           </nav>
         </div>
