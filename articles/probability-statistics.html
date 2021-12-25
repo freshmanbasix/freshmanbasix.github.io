@@ -601,9 +601,9 @@
     <h3 id="sample-estimation">SAMPLE ESTIMATION</h3>
 
     <div class="box math-definition">
-      <p>A <b>point sample estimate</b> <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline-math">θ</span> is a function of measurement data <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline-math">θ</span>. The observation <span class="inline-math">θ<sub>obs</sub><sup>*</sup></span> is itself an outcome of the sample variable <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
+      <p>A <b>point sample estimate</b> <span class="inline-math">θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline-math">θ</span> is a function of measurement data <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline-math">θ</span>. The observation <span class="inline-math">θ<sup>*</sup><sub>obs</sub></span> is itself an outcome of the sample variable <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
 
-      <div class="box attention">The observation here, θ<sub>obs</sub><sup>*</sup>, is our actual guess as to the real value of the parameter θ. It is based on actual observed data, hence the <em>obs</em>. Since we know what we are measuring, we will have some insight into which distribution our measurments fall under, but not the specific parameter itself.</div>
+      <div class="box attention">The observation here, θ<sup>*</sup><sub>obs</sub>, is our actual guess as to the real value of the parameter θ. It is based on actual observed data, hence the <em>obs</em>. Since we know what we are measuring, we will have some insight into which distribution our measurements fall under, but not the specific parameter itself.</div>
     </div>
     <p>Some important distinctions to keep straight here:</p>
     <ul>
@@ -615,7 +615,7 @@
 
       <li>Based on the measurements and known facts about the distribution, the <span class="inline-math">random sample variable θ<sup>*</sup></span> is itself a random variable taking on the possible values of <em>the parameter θ</em>. It is a function of the random variables X such that <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></li>
 
-      <li>The <span class="inline-math">point sample estimate θ<sub>obs</sub><sup>*</sup> ∈ θ<sup>*</sup></span> is an outcome of the random sample variable, dependent on the datapoints, such that <span class="inline-math">θ<sub>obs</sub><sup>*</sup> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span>. This is a real valued guess of the actual value θ based on the observed data.</li>
+      <li>The <span class="inline-math">point sample estimate θ<sup>*</sup><sub>obs</sub> ∈ θ<sup>*</sup></span> is an outcome of the random sample variable, dependent on the datapoints, such that <span class="inline-math">θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span>. This is a real valued guess of the actual value θ based on the observed data.</li>
     </ul>
 
     <p>One way to evaluate how accurate the sample estimate is:</p>
@@ -624,15 +624,89 @@
     </div>
 
     <h4>COMMON OBSERVATIONS IN TYPICAL DISTRIBUTIONS</h4>
-    <p>Given the typical distributions, the following estimates are relevant values for θ<sub>obs</sub><sup>*</sup>.</p>
+    <p>Given the typical distributions, the following estimates are relevant values for θ<sup>*</sup><sub>obs</sub>.</p>
     <ul>
-      <li>Measurements assumed to be Bin(n, p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x / n</span></li>
-      <li>Measurements assumed to be Hyp(N, n, p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x / n</span></li>
-      <li>Measurements assumed to be ffg(p) → <span class="inline-math">p<sub>obs</sub><sup>*</sup> = x̄</span></li>
-      <li>Measurements assumed to be Po(μ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span></li>
-      <li>Measurements assumed to be Exp(λ) → <span class="inline-math">λ<sub>obs</sub><sup>*</sup> = 1 / x̄</span></li>
-      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sub>obs</sub><sup>*</sup> = x̄</span>  and <span class="inline-math">σ<sub>obs</sub><sup>*</sup> = s</span> , i.e the sample standard deviations (see above).</li>
+      <li>Measurements assumed to be Bin(n, p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x / n</span></li>
+      <li>Measurements assumed to be Hyp(N, n, p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x / n</span></li>
+      <li>Measurements assumed to be ffg(p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x̄</span></li>
+      <li>Measurements assumed to be Po(μ) → <span class="inline-math">μ<sup>*</sup><sub>obs</sub> = x̄</span></li>
+      <li>Measurements assumed to be Exp(λ) → <span class="inline-math">λ<sup>*</sup><sub>obs</sub> = 1 / x̄</span></li>
+      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sup>*</sup><sub>obs</sub> = x̄</span>  and <span class="inline-math">σ<sup>*</sup><sub>obs</sub> = s</span> , i.e the sample standard deviations (see above).</li>
     </ul>
 
+    <h4>THE MAXIMUM LIKELIHOOD METHOD</h4>
+    <p>In a situation where we have information about the probability or density function of a distribution, then we can express a general equation expressing the probability of some outcome given a set of measurements. This probabilty is defined as the <b>likelihood function</b>, commonly denoted <span class="inline-math">L(θ)</span>, where θ represents the unknown parameter that the distribution is dependent on. This assumes that we can express ρ<sub>X</sub>(x) or ƒ<sub>X</sub>(x) in general terms, and that they themselves are dependent on theta in terms. Given some arbitrary set of measurements x<sub>i</sub></p>
+
+    <div class="box math-definition">
+      <p>The real value θ<sup>*</sup><sub>obs</sub> that maximizes the likelihood function L(θ) is called the <b>maximum likelihood estimate, ML-estimate, of θ</b></p>
+
+      <div class="box math">
+        L(θ) = P(X<sub>1</sub> = x<sub>1</sub>, ..., X<sub>n</sub> = x<sub>n</sub> ; θ)<br>
+        <em>discrete</em> L(θ) = ρ<sub>X1, ... , Xn</sub> (x<sub>1</sub>, ... , x<sub>n</sub>) = {if independent} = ↩ <br>ρ<sub>X1</sub> (x<sub>1</sub>) × ... × ρ<sub>Xn</sub> (x<sub>n</sub>)<br>
+        <em>continuous</em> L(θ) = ƒ<sub>X1, ... , Xn</sub> (x<sub>1</sub>, ... , x<sub>n</sub>) = {if independent} = ↩ <br>ƒ<sub>X1</sub> (x<sub>1</sub>) × ... × ƒ<sub>Xn</sub> (x<sub>n</sub>)
+      </div>
+      <div class="box attention">A θ is added after a semicolon here to avoid ambiguity and clarify that these are functions dependent on the measurements x<sub>i</sub>, but are also defined with respect to the parameter. </div>
+      <div class="box attention">A practical note when calculating this value is that the value for θ that maximise L(θ) is usually the same one that maximizes the logarithmic function <span class="inline-math"><em>l</em>(θ) = ln( L(θ) )</span>. This is due to the fact that logarithmic functions are always strictly increasing when traversing the positive numberline. The differentials of <em>l</em> (θ) is almost always much easier to determine than that of L(θ).</div>
+    </div>
+
+    <h4>THE LEAST SQUARE METHOD</h4>
+    <p>For situations when we instead have information about the expected value and variance of a random variable dependent on some unknown variable θ, we can instead seek to minimize the differences between measurements and theoretical expectations. The principle holds that for each measurement, there is a deviation from the expected value.</p>
+    <div class="box math-definition">
+      <p>These differences are all dependent on the unknown parameter, and finding the value θ<sup>*</sup><sub>obs</sub> which minimizes them is our estimated value for the parameter itself. The function expressing these differences is usually denoted <span class="inline-math"><em>Q(θ)</em></span> and is called the <b>least square function</b>.</p>
+
+      <div class="box math">Q(θ) = ∑<sub>i</sub> [x<sub>i</sub> - μ<sub>i</sub>(θ)]^{2}<br>μ<sub>i</sub>(θ) = E(X<sub>i</sub>)</div>
+
+      <div class="box attention">A thing to note here is that while Q, like L, is technically dependent on both the parameter θ and the the variables x<sub>i</sub>, we are only determining a value for our estimate once we have actual measurements. As such, it is not interesting to maximize or minimize with respect to the observations.</div>
+    </div>
+
+    <figure>
+      <img src="rsc/probability-statistics/point-estimates/least-square-diagram.png" alt="image">
+      <figcaption>Diagram illustrating how observed datapoints are offset from the theorized "true" line.</figcaption>
+    </figure>
+
+
+    <h3 id="sample-variance-and-deviation">SAMPLE VARIANCE AND DEVIATIONS</h3>
+    <p>Keeping in mind that the <span class="inline-math">random sample variable θ<sup>*</sup></span> is a random variable, this is the relevant variable used when determining the <b>estimated value and variance of our</b> <span class="inline-math">estimated parameter θ</span>. Using the example of where we have some random variable <span class="inline-math">X ∈ Po(μ)</span>. The context could be anything, but we know from above that the standard point sample estimate <span class="inline-math">mu<sup>*</sup><sub>obs</sub> = x̄</span>, i.e the arithmetic mean. This implies that the random sample variable <span class="inline-math">μ<sup>*</sup> = X̅</span>. In short, calculating the mean x̄, given any number of observed measurements will give us a real value for our guess as to what μ actually is. Similarly, by calculating the expected value, variance and deviations, we can further analyze the quality of our guess. In this example:</p>
+
+
+    <div class="box math">
+      E(μ<sup>*</sup>) = E(X̅) = frac{1}{n} × n × E(X) = μ<br>
+      V(μ<sup>*</sup>) = V(X̅) = frac{1}{n} × n × V(X) = μ<br>
+      D(μ<sup>*</sup>) = sqrt{ V(X̅) } = sqrt{ μ }
+    </div>
+
+    <p>Something to note, the closer our expected value is to the theoretical real value of the parameter, the better the estimate. Additionally, the lower the real value of the variance is, the more effective the estimate.</p>
+
+    <div class="box math-definition">
+      <p>When calculating a real value of the standard deviation <span class="inline-math">D(θ<sup>*</sup>)</span>, we determine the <b>average error of θ<sup>*</sup></b>, which is denoted <span class="inline-math"><em>d</em>(θ<sup>*</sup>)</span></p>
+      <p>In practice, this entails determining the deviation as above, and letting the parameter θ take the real value θ<sup>*</sup><sub>obs</sub>. In the example above, we would let <em>μ = x/n</em>.</p>
+    </div>
+
+    <h3 id="intervals">CONFIDENCE INTERVAL</h3>
+    <p>Estimated intervals are used to determine a level of certainty to which a point estimation exists within some particular range. Generally speaking, we want to make sure that our θ<sup>*</sup><sub>obs</sub> is within acceptable margins.</p>
+    <div class="box math">P(θ - k &lt θ<sup>*</sup> &lt θ + k) = 1 - α</div>
+    <p>The expression above state that our observed random variable falls within the interval <span class="inline-math">I<sub>θ</sub> ∈ θ<sup>*</sup><sub>obs</sub> ± k</span> with a probability level of 1 - α.</p>
+
+    <p>Generally speaking, the more observations the more reliable the estimatino will be, which tightens the interval. For the normal distribution, a smaller value for σ will also correspond with a smaller interval. When using multiple observed data, with variables X<sub>i</sub> ∈ N(μ, σ), it is useful to remember that:</p>
+
+    <div class="box math">X̅ ∈ N(μ, frac{σ}{ sqrt{n} }) </div>
+
+    <h4>λ-METHOD</h4>
+    <p>For a case where <span class="inline-math">θ<sup>*</sup> ∈ N(θ, D)</span> and D is a known quantity, alpha-quantiles can be utilized with a the standard normalization as follows:</p>
+    <div class="box math">P( -λ<sub>α/2</sub> &lt frac{θ<sup>*</sup> - θ}{D} &lt λ<sub>α/2</sub> ) = 1 - α</div>
+    <div class="box math">θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × λ<sub>α/2 <br>has the confidence level of 1 - α</div>
+
+    <h4><em>t</em>-METHOD</h4>
+    <p>The t-distribution can be used in a similar fashion when the standard deviation is unknown and must be estimated. If <span class="inline-math">θ<sup>*</sup> ∈ N(θ, D)</span> and <span class="inline-math">D<sup>*</sup><sub>obs</sub></span> is a estimate such that <span class="inline-math">(θ<sup>*</sup> - θ) / D <sup>*</sup> ∈ <em>t</em>(ƒ)</span>, then:</p>
+    <div class="box math">P( -<em>t</em><sub>α/2</sub> (ƒ) &lt frac{θ<sup>*</sup> - θ}{D} &lt <em>t</em><sub>α/2</sub> (ƒ) ) = 1 - α</div>
+    <div class="box math">θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × <em>t</em><sub>α/2</sub> (ƒ) <br>has the confidence level of 1 - α</div>
+
+    <p>Commonly, it is useful to remember that <span class="inline-math">frac{X̅ - μ}{S / sqrt{n} } ∈ t(n - 1)</span>, when σ<sup>*</sup> is S. The standard deviation parameter must not be dependent on θ here, or the criteria will not be fullfilled.</p>
+
+    <h4>χ-METHOD</h4>
+    <p>In the more general case of a parameter θ being estimated with θ<sup>*</sup><sub>obs</sub> such that <span class="inline-math">ƒ × ( θ<sup>*</sup> / θ )<sup>2</sup> ∈ χ<sup>2</sup> (ƒ)</span>, then:</p>
+    <div class="box math">( θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>α/2</sub> (ƒ)}, θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>1 - α/2</sub> (ƒ) } )</div>
+    <p>Is a confidence interval to the level of 1 - α</p>
+    <p>One practical fact to keep in mind is that <span class="inline-math">frac{(n - 1) × S<sup>2</sup>}{ σ<sup>2</sup> } ∈ χ<sup>2</sup> (n - 1)</span>.</p>
   </section>
 </article>
