@@ -200,7 +200,7 @@ strong {
 
 .attention {
   background: var(--pink);
-  border-left: 3px solid var(--red);
+  /* border-left: 3px solid var(--red); */
 }
 
 .snippet {
@@ -220,30 +220,27 @@ strong {
   white-space: pre-wrap;
 }
 
-.math {
+.formula {
   background: var(--bwhite);
   border-left: 3px solid var(--blue);
   text-align: center;
-  font-style: italic;
 }
 
-.inline-math {
-  display: inline;
-  font-style: italic;
-  color: var(--red);
-}
-
-.math-definition {
-  /* background: var(--bwhite); */
+.definition {
   border-left: 3px solid var(--red);
 }
 
-figure.math-formula {
-  border-left: 3px solid var(--blue);
-  background: var(--bwhite);
+.math {
+  font-style: italic;
+  font-family: "Garamond";
 }
 
-figure.math-formula > img {
+.inline{
+  display: inline;
+  color: var(--red);
+}
+
+figure.formula > img {
   margin: 0 auto;
 }
 

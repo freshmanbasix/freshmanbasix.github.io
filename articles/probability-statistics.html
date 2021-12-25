@@ -25,69 +25,63 @@
     <h3 id="probability-triple">PROBABILITY TRIPLE</h3>
     <p>An initial concept that will be absolute key for establishing a language to use in all coming sections, is the <strong>Probability Triple</strong> or <strong>Probability Space</strong>. More formal information can be found on the <a href="https://en.wikipedia.org/wiki/Probability_space">Probability Space Wikipedia page</a>. Before anything else though, two extremely central terms need to be established.</p>
     <ul>
-      <li>An <b>outcome</b> is the result from a randomized expermient. E.g the throwing of a die, flip of a coin or random selection out of a hat. The symbol for outcomes is commonly lower-case omega (<span class="inline-math">ω</span>)</li>
-      <li>An <b>event</b> is a general set of outcomes that usually fulfill some kind of criteria. An event can include zero or more outcomes from an experiment. Most commonly denoted using upper-case alphabetical letters (<span class="inline-math">H</span>)</li>
+      <li>An <b>outcome</b> is the result from a randomized expermient. E.g the throwing of a die, flip of a coin or random selection out of a hat. The symbol for outcomes is commonly lower-case omega (<span class="inline math" >ω</span>)</li>
+      <li>An <b>event</b> is a general set of outcomes that usually fulfill some kind of criteria. An event can include zero or more outcomes from an experiment. Most commonly denoted using upper-case alphabetical letters (<span class="inline math" >H</span>)</li>
     </ul>
-    <p> The triple is a mathematical construct made up of three elements, denoted <strong>(Ω, F, P)</strong>, that allow us to make a formal model of a <em>"random process or 'experiment'"</em>. The concept only makes internal sense in the context of a particular experiment. Using the example of a single throw of a 6 sided die, the three elements <span class="inline-math">(Ω, F, P)</span> are defined further in the subsections below</p>
+    <p> The triple is a mathematical construct made up of three elements, denoted <strong>(Ω, F, P)</strong>, that allow us to make a formal model of a <em>"random process or 'experiment'"</em>. The concept only makes internal sense in the context of a particular experiment. Using the example of a single throw of a 6 sided die, the three elements <span class="inline math" >(Ω, F, P)</span> are defined further in the subsections below</p>
 
     <h4 id="sample-space">SAMPLE SPACE Ω</h4>
-    <p>The <b>sample space</b> represent ALL POSSIBLE OUTCOMES of the experiment. In this case it is the set <span class="inline-math">[1, 2, 3, 4, 5, 6]</span>.</p>
+    <p>The <b>sample space</b> represent ALL POSSIBLE OUTCOMES of the experiment. In this case it is the set <span class="inline math" >[1, 2, 3, 4, 5, 6]</span>.</p>
 
     <h4 id="event-space">EVENT SPACE F</h4>
-    <p>The <b>Event Space</b> is a set of possible <b>events</b>. In general terms, the event space will be the set of subsets of the sample space. In the case of the example above, a multitude of subsets, but not all sets in the event space will make any kind of natural sense. A more realistic example would be the event where the result of the experiment is an odd number. This is represented by the subset <span class="inline-math">[1, 3, 5]</span>.</p>
+    <p>The <b>Event Space</b> is a set of possible <b>events</b>. In general terms, the event space will be the set of subsets of the sample space. In the case of the example above, a multitude of subsets, but not all sets in the event space will make any kind of natural sense. A more realistic example would be the event where the result of the experiment is an odd number. This is represented by the subset <span class="inline math" >[1, 3, 5]</span>.</p>
 
     <h4 id="probability-function">PROBABILITY FUNCTION P</h4>
-    <p>The <b>Probability function</b> assigns probability values to all events in the event space between 0 and 1. When looking for the probability of any certain set of circumstances, the basic way to refer to it, given a defined Probability Space, is <span class="inline-math">P of H</span>, <span class="inline-math">P(H)</span>, or more formally <em>Probability of outcomes in event H occuring</em>.</p>
+    <p>The <b>Probability function</b> assigns probability values to all events in the event space between 0 and 1. When looking for the probability of any certain set of circumstances, the basic way to refer to it, given a defined Probability Space, is <span class="inline math" >P of H</span>, <span class="inline math" >P(H)</span>, or more formally <em>Probability of outcomes in event H occuring</em>.</p>
 
-    <p><span class="inline-math">P(ω<sub>i</sub>)</span> is the probability of the particular outcome <span class="inline-math">ω<sub>i</sub></span>, where one important sum is that of the probabilities of all outcomes, which must amount to 1.</p>
-    <figure class="box math-formula">
-      <img src="rsc/probability-statistics/eq/sumofoutcomes.png" alt="image">
-    </figure>
+    <p><span class="inline math" >P(ω<sub>i</sub>)</span> is the probability of the particular outcome <span class="inline math" >ω<sub>i</sub></span>, where one important sum is that of the probabilities of all outcomes, which must amount to 1.</p>
+
+    <div class="box formula math">∑<sub>{i=1:n}</sub>P( ω<sub>i</sub> ) = 1</div>
 
     <h4>KOLMOGOROVS THEOREM</h4>
     <p>Regarding the probability function P, <b>Kolmogorovs Theorem</b> establish three very useful axioms:</p>
     <ol>
-      <li><div class="box math">0 ≤ P ≤ 1</div></li>
-      <li><div class="box math">P(Ω) = 1 & P(∅) = 0</div></li>
-      <li><p>For any finite or enumarably infinite set of events <span class="inline-math">[H<sub>1</sub>,...]</span>, where all events are mutually, exclusive the following equation is fullfilled</p>
-        <div class="box math">P(H<sub>1</sub> ∪ H<sub>2</sub> ∪ ...) = P(H<sub>1</sub>) + P(H<sub>2</sub>) + ...</div></li>
+      <li><div class="box formula math" >0 ≤ P ≤ 1</div></li>
+      <li><div class="box formula math" >P(Ω) = 1 & P(∅) = 0</div></li>
+      <li><p>For any finite or enumarably infinite set of events <span class="inline math" >[H<sub>1</sub>,...]</span>, where all events are mutually, exclusive the following equation is fullfilled</p>
+        <div class="box formula math" >P(H<sub>1</sub> ∪ H<sub>2</sub> ∪ ...) = P(H<sub>1</sub>) + P(H<sub>2</sub>) + ...</div></li>
       </ol>
 
     <h3 id="core-principles">PRINCIPLES & THEOREMS</h3>
     <p>A few very important theorems merit a bit of additional focus without occupying their own sections.</p>
 
     <h4>UNIFORM PROBABILITY DISTRIBUTION</h4>
-    <p>For sample spaces where the probability of all outcomes are the same have a <b>uniform probability distribution</b>. Formally the following equation must be satisfied for all outcomes <span class="inline-math">ω<sub>i</sub></span> and <span class="inline-math">ω<sub>j</sub></span></p>
-    <div class="box math">P(ω<sub>i</sub>) = P(ω<sub>j</sub>) : i,j ∈ [1,n]</div>
+    <p>For sample spaces where the probability of all outcomes are the same have a <b>uniform probability distribution</b>. Formally the following equation must be satisfied for all outcomes <span class="inline math" >ω<sub>i</sub></span> and <span class="inline math" >ω<sub>j</sub></span></p>
+    <div class="box formula math" >P(ω<sub>i</sub>) = P(ω<sub>j</sub>) : i,j ∈ [1,n]</div>
     <p>The number of outcomes is commonly set to <em>n</em>. In real terms, the probability function for a uniform distribution means that the probability for all outcomes ω will satisfy the following:</p>
-    <figure class="box math-formula">
-      <img src="rsc/probability-statistics/eq/uniform-distribution.png" alt="image">
-    </figure>
+
+    <div class="box formula math">P( ω ) = frac{1}{n}</div>
 
     <h4>THE CLASSICAL PROBABILITY THEOREM</h4>
     <p>Given a uniform probability distribution, the probability for some event A will follow the <b>Classical Probability Theorem</b>:</p>
-    <div class="box math">P(A) = number of beneficial outcomes / number of possible outcomes </div>
+    <div class="box formula math" >P(A) = number of beneficial outcomes / number of possible outcomes </div>
 
     <h4>MULTIPLICATION PRINCIPLE</h4>
-    <p>The <b>Multiplication Principle</b> states that given <span class="inline-math">n</span> separate sets of objects <span class="inline-math">[S<sub>1</sub>, ..., S<sub>n</sub>]</span>, the number of ways you can create combinations with one object from each set is <span class="inline-math">|S<sub>1</sub>| x ... x   |S<sub>n</sub>|</span>. This is a very often recurring principle when dealing with uniform probability distribution. As an example, the figure below illustrates the principle visually, with the combination of of the two sets <span class="inline-math">F</span> and <span class="inline-math">V</span>, with 2 and 3 members respectively</p>
+    <p>The <b>Multiplication Principle</b> states that given <span class="inline math" >n</span> separate sets of objects <span class="inline math" >[S<sub>1</sub>, ..., S<sub>n</sub>]</span>, the number of ways you can create combinations with one object from each set is <span class="inline math" >|S<sub>1</sub>| x ... x   |S<sub>n</sub>|</span>. This is a very often recurring principle when dealing with uniform probability distribution. As an example, the figure below illustrates the principle visually, with the combination of of the two sets <span class="inline math" >F</span> and <span class="inline math" >V</span>, with 2 and 3 members respectively</p>
     <figure>
       <img src="rsc/probability-statistics/basic/multiplication-principle.png" alt="image">
       <figcaption>A tree diagram where each path illustrates one unique combination of sets F and V. The number of leafs in the tree is the product of the cardinality of the two sets. <a href="rsc/probability-statistics/basic/multiplication-principle.xml">Download XML here</a></figcaption>
     </figure>
 
     <h3 id="combinatorics-drawing-tokens">COMBINATORICS, DRAWING TOKENS</h3>
-    <p>Drawing tokens at random from a bag can be used as an illustration to exemplify a great many different probabilistic scenarios. Generally, the concept assumes a set <span class="inline-math">T</span> of <span class="inline-math">p</span> tokens, <span class="inline-math">[t<sub>1</sub>,...,t<sub>p</sub>]</span>. From the set T, we will draw <span class="inline-math">n</span> tokens at random where each token has a uniform chance of being drawn.</p>
+    <p>Drawing tokens at random from a bag can be used as an illustration to exemplify a great many different probabilistic scenarios. Generally, the concept assumes a set <span class="inline math" >T</span> of <span class="inline math" >p</span> tokens, <span class="inline math" >[t<sub>1</sub>,...,t<sub>p</sub>]</span>. From the set T, we will draw <span class="inline math" >n</span> tokens at random where each token has a uniform chance of being drawn.</p>
     <p>The <b>order</b> of the tokens can make a difference depending on the context that the Probability Space defines. For example, a hand of cards is the same no matter in which the cards appear. If the tokens are letters however, only certain orders will form actual words. If you're not counting with respect to order, that means that there are several duplicate permutations of the beneficial outcomes. That means the absolute number will be smaller.</p>
-    <p>This gives rise to 4 general formulas for calculating the <b>possible ways to draw the <span class="inline-math">n</span> tokens</b>.</p>
+    <p>This gives rise to 4 general formulas for calculating the <b>possible ways to draw the <span class="inline math" >n</span> tokens</b>.</p>
     <ul>
       <li>We <b>DO RETURN</b> the token to the bag.</li>
       <ul>
         <li>
-          <p>The order of the token <b>IS CONSIDERED</b>. For each draw, there are <span class="inline-math">p</span> possible options.</p>
-          <figure class="box math-formula">
-            <img src="rsc/probability-statistics/eq/tokens-yreturn-yorder.png" alt="image">
-          </figure>
-          <!-- <div class="box math">p<sup>n</sup></div> -->
+          <p>The order of the token <b>IS CONSIDERED</b>. For each draw, there are <span class="inline math" >p</span> possible options. This makes a total of <span class="inline math" >p<sup>n</sup> potential selections.</span></p>
         </li>
         <li>When the order of the tokens <b>IS NOT CONSIDERED</b>, the author has as of yet been unable to find the general formula.</li>
       </ul>
@@ -95,13 +89,13 @@
       <ul>
         <li>
           <p>The order of the token <b>IS CONSIDERED</b>. Now the number of possible options decrease by one on each draw.</p>
-          <figure class="box math-formula">
+          <figure class="box formula" >
             <img src="rsc/probability-statistics/eq/tokens-nreturn-yorder.png" alt="image">
           </figure>
         </li>
         <li>
-          <p>The order of the token <b>IS NOT CONSIDERED</b>. We must now keep in mind that each group of <span class="inline-math">n</span> selected tokens have <span class="inline-math">n!</span> permutations that represent the same outcome. Another way of expressing it is that there are one n!-th as many unique outcomes.</p>
-          <figure class="box math-formula">
+          <p>The order of the token <b>IS NOT CONSIDERED</b>. We must now keep in mind that each group of <span class="inline math" >n</span> selected tokens have <span class="inline math" >n!</span> permutations that represent the same outcome. Another way of expressing it is that there are one n!-th as many unique outcomes.</p>
+          <figure class="box formula" >
             <img src="rsc/probability-statistics/eq/tokens-nreturn-norder.png" alt="image">
           </figure>
           <p class="box attention">Note that this expression is called <b>"p choose n"</b> because it models the number of ways we can choose n members from a list of p total items.</p>
@@ -110,55 +104,55 @@
     </ul>
 
     <h4>EXAMPLE - PROBABILITY OF DRAWING K WHITE TOKENS</h4>
-    <p>Consider that there are <span class="inline-math">w</span> white, and <span class="inline-math">b</span> black tokens in T such that <span class="inline-math">w + b = p</span>. When drawing <span class="inline-math">n</span> tokens, what is the probability that <span class="inline-math">k</span> out of the drawn tokens are white?</p>
+    <p>Consider that there are <span class="inline math" >w</span> white, and <span class="inline math" >b</span> black tokens in T such that <span class="inline math" >w + b = p</span>. When drawing <span class="inline math" >n</span> tokens, what is the probability that <span class="inline math" >k</span> out of the drawn tokens are white?</p>
 
     <p class="box attention">This scenario means we do not consider the order of the tokens since any selection of black or white tokens are indistinguishable from the next. We care only for the color, not the individual token itself.</p>
 
-    <p>In the first case, the tokens get <b>put back in the bag</b>. From the equations above, we can determine that the number of possible outcomes is <span class="inline-math">p<sup>n</sup></span>. Remember though, that <span class="inline-math">p = w + b</span>, which in turn means that we can express it as <span class="inline-math">(w + b) <sup>n</sup></span>. Take note of the similarity with the <a href="#general-calculation-rules">binomial theorem below</a>.</p>
+    <p>In the first case, the tokens get <b>put back in the bag</b>. From the equations above, we can determine that the number of possible outcomes is <span class="inline math" >p<sup>n</sup></span>. Remember though, that <span class="inline math" >p = w + b</span>, which in turn means that we can express it as <span class="inline math" >(w + b) <sup>n</sup></span>. Take note of the similarity with the <a href="#general-calculation-rules">binomial theorem below</a>.</p>
 
-    <p>The number of beneficial outcomes is determined by multiplying first the number of times we can select <span class="inline-math">k out of w</span> white tokens, then the remaining <span class="inline-math">n-k out of b</span> black tokens and lastly this is combined with the number of times k tokens can be drawn from a n large selection.</p>
+    <p>The number of beneficial outcomes is determined by multiplying first the number of times we can select <span class="inline math" >k out of w</span> white tokens, then the remaining <span class="inline math" >n-k out of b</span> black tokens and lastly this is combined with the number of times k tokens can be drawn from a n large selection.</p>
 
-    <figure class="box math-formula">
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/tokens-kwhite-yreturn.png" alt="image">
     </figure
 
-    <p>In the second case, where the tokens are <b>not returned into the bag</b>, the number of possible outcomes correspond exactly to <span class="inline-math">p choose n</span>, since now we are just grabbing <span class="inline-math">n</span>  tokens out of the bag. </p>
-    <p>Meanwhile, the beneficial outcomes is determined by multiplying the number of ways that <span class="inline-math">k</span> tokens can be selected from <span class="inline-math">w</span> white tokens, times the way <span class="inline-math">n - k</span> remaining tokens can be selected from <span class="inline-math">b</span> black ones:</p>
-    <figure class="box math-formula">
+    <p>In the second case, where the tokens are <b>not returned into the bag</b>, the number of possible outcomes correspond exactly to <span class="inline math" >p choose n</span>, since now we are just grabbing <span class="inline math" >n</span>  tokens out of the bag. </p>
+    <p>Meanwhile, the beneficial outcomes is determined by multiplying the number of ways that <span class="inline math" >k</span> tokens can be selected from <span class="inline math" >w</span> white tokens, times the way <span class="inline math" >n - k</span> remaining tokens can be selected from <span class="inline math" >b</span> black ones:</p>
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/tokens-kwhite-nreturn.png" alt="image">
     </figure>
 
     <h3 id="general-calculation-rules">GENERAL CALCULATION RULES</h3>
 
     <p>When inverting the unions and intersections of multiple events, <b>De Morgans Law</b> is very practical</p>
-    <figure class="box math-formula">
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/demorgans-law.png" alt="image">
     </figure>
 
     <p><b>The Multiplicative Property</b> shows us that set operations behave essentially the same way as multiplying factors in natural algebra.</p>
-    <div class="box math">A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div>
+    <div class="box formula math" >A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div>
 
     <p>To practically determine the <b>resulting probability of a union</b>, the following formula is useful. You simply add the probabilities for each event and then subtract the overlap so that it is not added twice. Keep in mind that it effectivelly expands to the union of any number of events in the same manner.</p>
-    <div class="box math">P(A ∪ B) = P(A) + P(B) - (A ∩ B)</div>
-    <div class="box math">P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - (A ∩ B) - (A ∩ C) - (B ∩ C) + (A ∩ B ∩ C)</div>
+    <div class="box formula math" >P(A ∪ B) = P(A) + P(B) - (A ∩ B)</div>
+    <div class="box formula math" >P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - (A ∩ B) - (A ∩ C) - (B ∩ C) + (A ∩ B ∩ C)</div>
     <p></p>
 
     <p>Related to the above, in accordance with <b>Booles Inequality</b>, it can be meaningful to consider that the probability of a union can be no larger than the sum of it's constituent parts.</p>
-    <div class="box math">P(A ∪ B) ≤ P(A) + P(B)</div>
+    <div class="box formula math" >P(A ∪ B) ≤ P(A) + P(B)</div>
 
     <p>The <b>Complemental Theorem</b> shows how the complement, or inverse probability of an event must be the event itself subtracted from the sample space.</p>
-    <div class="box math">P(A<sup>*</sup>) = P(Ω) - P(A) = 1 - P(A)</div>
+    <div class="box formula math" >P(A<sup>*</sup>) = P(Ω) - P(A) = 1 - P(A)</div>
 
     <p>The <b>Binomial Theorem</b> state that for any positive integer <em>n</em> and arbitrary numbers <em>x, y</em> the following holds true:</p>
-    <figure class="box math-formula">
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/binomial-theorem.png" alt="image">
     </figure>
 
     <p>Two concepts that are easily conflated are <b>independent</b> and <b>mutually exclusive</b> sets. See the <a href="#independence-exclusivity">conditional probability</a> section for more details on both. For events that SHARE NO COMMON OUTCOMES, the events are said to be <b>mutually exclusive</b>. </p>
-    <div class="box math">if A ∩ B = ∅ i.e P(A ∩ B) = 0 ⟺ A & B are mutually exclusive, i.e disjoint</div>
+    <div class="box formula math" >if A ∩ B = ∅ i.e P(A ∩ B) = 0 ⟺ A & B are mutually exclusive, i.e disjoint</div>
 
     <p>When outcomes in one event give no information about the outcomes of another, they are said to be <b>independent</b>.</p>
-    <div class="box math">if P(A ∩ B) = P(A) * P(B) ⟺ A & B are independent</div>
+    <div class="box formula math" >if P(A ∩ B) = P(A) * P(B) ⟺ A & B are independent</div>
 
     <div class="box attention">Note that mutually exclusive sets cannot be independent, and vice versa.</div>
 
@@ -180,9 +174,9 @@
   <h2 id="conditional-probability">CONDITIONAL PROBABILITY</h2>
   <section class="sub-section">
     <p>Depending on the probability space that has been defined, two events can be tightly intertwined in a fundamental way. This is expressed in a situation where we know that the outcome analyzed falls under event A. If this can be assumed, what does that tell us about the probability of the outcome also belonging to event B?</p>
-    <div class="box math-definition">
+    <div class="box definition" >
       <p>Given the two arbitrary events A and B, the equation ...</p>
-      <figure class="box math-formula">
+      <figure class="box formula" >
         <img src="rsc/probability-statistics/eq/conditional-probability.png" alt="image">
       </figure
       <p>... is known as the <b>conditional probability of B, given A</b>. It establishes that an outcome belongs to A for certain, and now seeks the probability of B. Visually, one can imagine the sample space being shrunk down to the event A. The definition thereby follows the <em>classical probability theorem</em> as P(A) becomes the sample space, i.e all possible outcomes, and the beneficial outcomes exist inside A∩B.</p>
@@ -190,26 +184,26 @@
         <img src="rsc/probability-statistics/conditional/b-given-a.png" alt="image">
         <figcaption>Diagram illustrating how the sample space is cropped into the event A. <a href="rsc/probability-statistics/conditional/b-given-a.xml">Download XML here</a></figcaption>
       </figure>
-      <p>If <span class="inline-math">P(A) = 0</span>, then <span class="inline-math">P(B | A)</span> is undefined. Be <b>careful not to confuse P(A | B) and P(B | A)</b>. The following complementary theorem also applies:</p>
-      <div class="box math">P(B<sup>*</sup> | A) = 1 - P(B | A)</div>
+      <p>If <span class="inline math" >P(A) = 0</span>, then <span class="inline math" >P(B | A)</span> is undefined. Be <b>careful not to confuse P(A | B) and P(B | A)</b>. The following complementary theorem also applies:</p>
+      <div class="box formula math" >P(B<sup>*</sup> | A) = 1 - P(B | A)</div>
     </div>
 
     <div class="box attention">The <b>conditional</b> probability makes an active assumption about where exactly the outcome is. It is different from the <b>intersection</b> because the outcomes exist ONLY within both events whereas the conditional outcomes are only certain to be contained within one of them.  </div>
 
-    <p>Multiplying out the fraction in the definition above, we get <span class="inline-math">P(A ∩ B) = P(A)P(B | A) = P(B)P(A | B)</span>. The below equation illustrates how the expression can be expanded for multiple events</p>
-    <div class="box math">P(A ∩ B ∩ C) = P(A ∩ B)P(C | A ∩ B)↩ <br>P(A)P(B | A)P(C | A ∩ B)</div>
+    <p>Multiplying out the fraction in the definition above, we get <span class="inline math" >P(A ∩ B) = P(A)P(B | A) = P(B)P(A | B)</span>. The below equation illustrates how the expression can be expanded for multiple events</p>
+    <div class="box formula math" >P(A ∩ B ∩ C) = P(A ∩ B)P(C | A ∩ B)↩ <br>P(A)P(B | A)P(C | A ∩ B)</div>
 
     <h3 id="independence-exclusivity">INDEPENDENCE & EXCLUSIVITY</h3>
     <h4>INDEPENDENT EVENTS</h4>
-    <div class="box math-definition">
-      <p>Events in a sample space are independent from each other if knowing an outcome has fallen in event A gives us no concrete information about whether the outcome also falls in event B. Following the definition for conditional probability above, the indepence occurs when <span class="inline-math">P(B | A) = P(B)</span>. This in turn means we can multiply both sides by <span class="inline-math">P(A)</span> resulting in the following:</p>
-      <div class="box math">P(B) * P(A) = P(A ∩ B)</div>
-      <p>The defintion requires <span class="inline-math">P(A) ≠ 0 & P(B) ≠ 0</span>.</p>
+    <div class="box definition" >
+      <p>Events in a sample space are independent from each other if knowing an outcome has fallen in event A gives us no concrete information about whether the outcome also falls in event B. Following the definition for conditional probability above, the indepence occurs when <span class="inline math" >P(B | A) = P(B)</span>. This in turn means we can multiply both sides by <span class="inline math" >P(A)</span> resulting in the following:</p>
+      <div class="box formula math" >P(B) * P(A) = P(A ∩ B)</div>
+      <p>The defintion requires <span class="inline math" >P(A) ≠ 0 & P(B) ≠ 0</span>.</p>
     </div>
 
-    <p>In the set of independent events <span class="inline-math">H = [H<sub>1</sub>, ... , H<sub>n</sub>]</span> each member <span class="inline-math">H<sub>i</sub></span> will be independent from <span class="inline-math">H<sub>j</sub></span> as long as complete independence holds. It also means that any combination of members and complements will also be independent. For example, If A and B are independent, then so are A<sup>*</sup> and B<sup>*</sup> as well as A and B<sup>*</sup> etc.</p>
-    <div class="box math">P(B) = P(A ∪ B) + P(A<sup>*</sup> ∪ B) = P(A)P(B) + P(A<sup>*</sup> ∪ B)<br>P(A<sup>*</sup> ∪ B) = P(B) - P(A)P(B) ⟺ P(A<sup>*</sup> ∪ B) = P(B)(1-P(A)) = P(A<sup>*</sup>)P(B) </div>
-    <div class="box math">
+    <p>In the set of independent events <span class="inline math" >H = [H<sub>1</sub>, ... , H<sub>n</sub>]</span> each member <span class="inline math" >H<sub>i</sub></span> will be independent from <span class="inline math" >H<sub>j</sub></span> as long as complete independence holds. It also means that any combination of members and complements will also be independent. For example, If A and B are independent, then so are A<sup>*</sup> and B<sup>*</sup> as well as A and B<sup>*</sup> etc.</p>
+    <div class="box formula math" >P(B) = P(A ∪ B) + P(A<sup>*</sup> ∪ B) = P(A)P(B) + P(A<sup>*</sup> ∪ B)<br>P(A<sup>*</sup> ∪ B) = P(B) - P(A)P(B) ⟺ P(A<sup>*</sup> ∪ B) = P(B)(1-P(A)) = P(A<sup>*</sup>)P(B) </div>
+    <div class="box formula math" >
       P(A<sup>*</sup> ∩ B<sup>*</sup>) = P((A ∪ B)<sup>*</sup>) = 1 - P(A ∪ B) = ↩ <br>
       = 1 - (P(A) + P(B) - P(A ∩ B)) = 1 - P(A) - P(B) + P(A)P(B) = ↩ <br>
       (1 - P(A))(1 - P(B)) = P(A<sup>*</sup>)P(B<sup>*</sup>)
@@ -217,7 +211,7 @@
 
     <div class="box attention">
       <p>Note that pairwise indepence does not necessarily mean complete indepence. Only when the following 4 equations holds will events A, B AND C be independent:</p>
-      <div class="box math">
+      <div class="box formula math" >
         P(A ∩ B) = P(A)P(B)<br>
         P(A ∩ C) = P(A)P(C)<br>
         P(B ∩ C) = P(B)P(C)<br>
@@ -231,12 +225,12 @@
       <figcaption>Example of a situation where three pairwise independent sets are not all independent from each other as <br> P(A ∩ B ∩ C) ≠ P(A)P(B)P(C). <br><a href="rsc/probability-statistics/conditional/independent.set.xml">Download XML here</a></figcaption>
     </figure>
 
-    <p>For a group of independent events <span class="inline-math">[A<sub>1</sub>, ..., A<sub>n</sub>]</span> where <span class="inline-math">P(A<sub>i</sub>) = p<sub>i</sub></span> then:</p>
-    <div class="box math">P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p<sub>1</sub>) × ... × (1-p<sub>n</sub>)</div>
-    <p>In the simplified case where <span class="inline-math">P(A<sub>i</sub>) = p</span> this expression takes a simpler form</p>
-    <div class="box math">P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p)<sup>n</sup></div>
+    <p>For a group of independent events <span class="inline math" >[A<sub>1</sub>, ..., A<sub>n</sub>]</span> where <span class="inline math" >P(A<sub>i</sub>) = p<sub>i</sub></span> then:</p>
+    <div class="box formula math" >P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p<sub>1</sub>) × ... × (1-p<sub>n</sub>)</div>
+    <p>In the simplified case where <span class="inline math" >P(A<sub>i</sub>) = p</span> this expression takes a simpler form</p>
+    <div class="box formula math" >P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - (1-p)<sup>n</sup></div>
     <p>Two practical type examples for sets of independent events are:</p>
-    <div class="box math">
+    <div class="box formula math" >
       P(A<sub>1</sub> ∩ ... ∩ A<sub>n</sub>) = P(A<sub>1</sub>) × ... × P(A<sub>n</sub>) = p<sub>1</sub> × ... × p<sub>n</sub><br>
       P(A<sub>1</sub> ∪ ... ∪ A<sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub> ∩ ... ∩ A<sup>*</sup><sub>n</sub>) = 1 - P(A<sup>*</sup><sub>1</sub>) × ... × P(A<sup>*</sup><sub>n</sub>)
     </div>
@@ -244,7 +238,7 @@
 
 
     <h4>MUTUALLY EXCLUSIVE EVENTS</h4>
-    <p>Mutually exclusive events are those that SHARE NO OUTCOMES. This means <span class="inline-math">A ∩ B = ∅</span> and in turn <span class="inline-math">P(A ∩ B) = 0</span></p>
+    <p>Mutually exclusive events are those that SHARE NO OUTCOMES. This means <span class="inline math" >A ∩ B = ∅</span> and in turn <span class="inline math" >P(A ∩ B) = 0</span></p>
     <figure>
       <img src="rsc/probability-statistics/conditional/disjoint-events.png" alt="image">
       <figcaption>A venn diagram illustrating disjoint sets, i.e mutually exclusive events and independent sets.</figcaption>
@@ -253,10 +247,10 @@
     <p></p>
 
     <h3 id="law-of-total-probability">LAW OF TOTAL PROBABILITY</h3>
-    <div class="box math-definition">
-      <p>Given the set of mutually exlusive events <span class="inline-math">[H<sub>1</sub>, ..., H<sub>n</sub>]</span> such that <span class="inline-math">H<sub>1</sub> ∪ ... ∪ H<sub>n</sub> = Ω</span>:</p>
+    <div class="box definition" >
+      <p>Given the set of mutually exlusive events <span class="inline math" >[H<sub>1</sub>, ..., H<sub>n</sub>]</span> such that <span class="inline math" >H<sub>1</sub> ∪ ... ∪ H<sub>n</sub> = Ω</span>:</p>
       <p>Then for the event A:</p>
-      <figure class="box math-formula">
+      <figure class="box formula" >
         <img src="rsc/probability-statistics/eq/law-otp.png" alt="image">
       </figure>
     </div>
@@ -265,28 +259,28 @@
       <img src="rsc/probability-statistics/conditional/law-otp.png" alt="image">
       <figcaption>A venn diagram illustrating the set of mutually exclusive events<a href="rsc/probability-statistics/conditional/law-otp.xml">Download XML here</a></figcaption>
     </figure>
-    <figure class="box math-formula">
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/law-otp-derive.png" alt="image">
     </figure>
     <h4>BAYES THEOREM</h4>
-    <figure class="box math-formula">
+    <figure class="box formula" >
       <img src="rsc/probability-statistics/eq/bayes-theorem.png" alt="image">
     </figure>
   </section>
 
   <h2 id="random-variables">RANDOM VARIABLES</h2>
   <section class="sub-section">
-    <div class="box math-definition">
-      <p>Assuming an existing sample space <span class="inline-math">Ω = {ω<sub>1</sub>, ω<sub>2</sub>, ...}</span>, then:</p>
-      <p>A random variable X is a <span class="inline-math">real value numbered function</span> defined on the sample space. By convention, capital letters from the end of the alphabet are commonly used to denote a random variable.</p>
-      <p>The random variable <span class="inline-math">X(ω<sub>i</sub>) → Ω : ℝ</span> is the mapping function from the sample space to the real number line.</p>
+    <div class="box definition" >
+      <p>Assuming an existing sample space <span class="inline math" >Ω = {ω<sub>1</sub>, ω<sub>2</sub>, ...}</span>, then:</p>
+      <p>A random variable X is a <span class="inline math" >real value numbered function</span> defined on the sample space. By convention, capital letters from the end of the alphabet are commonly used to denote a random variable.</p>
+      <p>The random variable <span class="inline math" >X(ω<sub>i</sub>) → Ω : ℝ</span> is the mapping function from the sample space to the real number line.</p>
       <figure>
         <img src="rsc/probability-statistics/random/function-map.png" alt="image">
         <figcaption>Illustration of how the outcomes of a sample space maps on to the real number line. <a href="rsc/probability-statistics/random/omega-to-real.xml">Download XML here</a></figcaption>
       </figure>
-      <p>Each random variable X distributes the sample space onto the real number line. This is called a <span class="inline-math">probability distribution on X</span>, and it is characterised by a <span class="inline-math">probability function</span>.</p>
-      <p>Random variables can be <span class="inline-math">one or multi dimensional</span>, that is X(ω) assumes one or multiple values.</p>
-      <p>A random variable is <span class="inline-math">discrete</span> when the number of possible values for X is a finite or enumerably infinite, i.e <span class="inline-math">X(ω) ∈ ℤ</span>. Alternately, it can be <span class="inline-math">continuous</span>.</p>
+      <p>Each random variable X distributes the sample space onto the real number line. This is called a <span class="inline math" >probability distribution on X</span>, and it is characterised by a <span class="inline math" >probability function</span>.</p>
+      <p>Random variables can be <span class="inline math" >one or multi dimensional</span>, that is X(ω) assumes one or multiple values.</p>
+      <p>A random variable is <span class="inline math" >discrete</span> when the number of possible values for X is a finite or enumerably infinite, i.e <span class="inline math" >X(ω) ∈ ℤ</span>. Alternately, it can be <span class="inline math" >continuous</span>.</p>
       <div class="box attention">Take note that <em>ω</em> and <em>a</em> are two different things. The correct relationship is X(ω) = a. An experiment outcome is mapped onto the real number line.</div>
       <div class="box attention">Be aware that the random variable X is a variable, and not a set.</div>
     </div>
@@ -296,11 +290,11 @@
       <li><b>The weight of a randomly selected person</b>. The sample space is every single person in the world. The values assumed by the random variable range between a few pounds, up to whatever the heaviest person on earth weights.</li>
     </ul>
     <h3 id="discrete-random-variables">DISCRETE RANDOM VARIABLES</h3>
-    <p>Given a finite or enumarably infinite set of values <span class="inline-math">k</span>. Then X is a <b>discrete random variable</b> that can take on the value <span class="inline-math">k</span>. We let <span class="inline-math">ρ<sub>X</sub>(k) = P(X = k)</span> be called The <b>probability function</b> of the random variable X. The variable <span class="inline-math">k</span> takes on all possible values for X, which is defined by the experiement and formally expressed as <span class="inline-math">k ∈ Ω<sub>X</sub></span>. The following criteria must be met to qualify as a probability function for a discrete random variable.</p>
-    <div class="box math">ρ<sub>X</sub>(k) ⋝ 0 for all k & ∑<sub>k=0:∞</sub> = 1</div>
+    <p>Given a finite or enumarably infinite set of values <span class="inline math" >k</span>. Then X is a <b>discrete random variable</b> that can take on the value <span class="inline math" >k</span>. We let <span class="inline math" >ρ<sub>X</sub>(k) = P(X = k)</span> be called The <b>probability function</b> of the random variable X. The variable <span class="inline math" >k</span> takes on all possible values for X, which is defined by the experiement and formally expressed as <span class="inline math" >k ∈ Ω<sub>X</sub></span>. The following criteria must be met to qualify as a probability function for a discrete random variable.</p>
+    <div class="box formula math" >ρ<sub>X</sub>(k) ⋝ 0 for all k & ∑<sub>k=0:∞</sub> = 1</div>
     <div class="box attention">When determining the probability function, it will either fit one of the common distribution, or it will be calculated manually for all values of k.</div>
 
-    <p>Given the discrete set <span class="inline-math">A = {a<sub>1</sub>, a<sub>2</sub>, ...}</span>, some different interpretation examples for X follow:</p>
+    <p>Given the discrete set <span class="inline math" >A = {a<sub>1</sub>, a<sub>2</sub>, ...}</span>, some different interpretation examples for X follow:</p>
     <ul>
       <li>ρ<sub>X</sub>(a<sub>2</sub>) is the <b>probability that X takes on the value a<sub>2</sub></b>, i.e P(X = a<sub>2</sub>)</li>
       <li>The probability of X taking on a value between a<sub>2</sub> through a<sub>4</sub> is the <b>sum of the probabilities</b> ρ<sub>X</sub>(a<sub>2</sub>) + ρ<sub>X</sub>(a<sub>3</sub>) + ρ<sub>X</sub>(a<sub>4</sub>), i.e P(a<sub>2</sub> ⋜ X ⋜ a<sub>4</sub>)</li>
@@ -312,14 +306,14 @@
     </figure>
 
     <p>Some generally useful truths. Keep in mind that the different values for k are mutually exclusive.</p>
-    <div class="box math">P(X ∈ A) = ∑<sub>k∈A</sub> ρ<sub>X</sub>(k)</div>
+    <div class="box formula math" >P(X ∈ A) = ∑<sub>k∈A</sub> ρ<sub>X</sub>(k)</div>
     <div class="box attention">Note that X(ω) doesn not necessarily need to be defined for all outcomes. Furthermore, the set A does not have to be the same as Ω<sub>X</sub>. As such, the probability of X taking a value in the set A doesn't have to sum to 1.</div>
-    <div class="box math">P(X = [0, 1, 2, ...)) = ∑<sub>k∈∞</sub> ρ<sub>X</sub>(k) = 1 (special case where X∈ℕ)</div>
-    <div class="box math">P(w ⋜ X ⋜ y) = ∑<sub>k=w:y</sub> ρ<sub>X</sub>(k)</div>
-    <div class="box math">P(w &lt X ⋜ y) = ∑<sub>k=w+1:y</sub> ρ<sub>X</sub>(k)</div>
+    <div class="box formula math" >P(X = [0, 1, 2, ...)) = ∑<sub>k∈∞</sub> ρ<sub>X</sub>(k) = 1 (special case where X∈ℕ)</div>
+    <div class="box formula math" >P(w ⋜ X ⋜ y) = ∑<sub>k=w:y</sub> ρ<sub>X</sub>(k)</div>
+    <div class="box formula math" >P(w &lt X ⋜ y) = ∑<sub>k=w+1:y</sub> ρ<sub>X</sub>(k)</div>
 
     <h4>EXAMPLE</h4>
-    <p>One very illustrative example is letting a person throw a single die. A result of one gives 1 point. A result of two or three gives 2 points, and lastly four to six gives 4 points. This gives a sample space <span class="inline-math">Ω = {ω<sub>1</sub> = one, ω<sub>2</sub> = two, ω<sub>3</sub> = three, ω<sub>4</sub> = four, ω<sub>5</sub> = five, ω<sub>6</sub> = six}</span>. and our random variable function <span class="inline-math">X(ω) ∈ {1, 2, 4}</span></p>
+    <p>One very illustrative example is letting a person throw a single die. A result of one gives 1 point. A result of two or three gives 2 points, and lastly four to six gives 4 points. This gives a sample space <span class="inline math" >Ω = {ω<sub>1</sub> = one, ω<sub>2</sub> = two, ω<sub>3</sub> = three, ω<sub>4</sub> = four, ω<sub>5</sub> = five, ω<sub>6</sub> = six}</span>. and our random variable function <span class="inline math" >X(ω) ∈ {1, 2, 4}</span></p>
     <figure>
       <img src="rsc/probability-statistics/random/discrete-example.png" alt="image">
       <figcaption>Diagram of the 6 faces of a die mapped onto three values on the real number line along with a chart of the probability function ρ<sub>X</sub>(x) <a href="rsc/probability-statistics/random/discrete-example.xml">Download XML here</a></figcaption>
@@ -335,35 +329,35 @@
     </figure>
 
     <h4>DENSITY FUNCTION ƒ(x)</h4>
-    <div class="box math-definition">
-      <p>For a continuous random variable X, the probability mass is mapped onto ℝ with a <b>density function</b> <span class="inline-math">ƒ<sub>X</sub>(x)</span>, for <span class="inline-math">x ∈ ℝ</span>. This describes the <b>probability mass per interval-unit at the point x</b>.</p>
+    <div class="box definition" >
+      <p>For a continuous random variable X, the probability mass is mapped onto ℝ with a <b>density function</b> <span class="inline math" >ƒ<sub>X</sub>(x)</span>, for <span class="inline math" >x ∈ ℝ</span>. This describes the <b>probability mass per interval-unit at the point x</b>.</p>
 
       <div class="box attention">Note that the value for any ƒ is a rate of change. It does not make sense to determine the probability for a particular value x as P(X = x) = ƒ<sub>X</sub>(x). Remember your calculus. For a function F(x) with a differential dF(x)/dx, the summation of all values of the derivative from the bottom of the domain, up until x equal the value for F at x. When you sum up the changes made, you arrive at the destination.</div>
 
       <p>Any function meeting the criteria below is sufficient as a density function for X:</p>
-      <div class="box math">ƒ<sub>X</sub>(x) ⋝ 0 for all x ∈ ℝ AND ∫<sub>{-∞:∞} </sub>ƒ<sub>X</sub>(x)dx = 1</div>
+      <div class="box formula math" >ƒ<sub>X</sub>(x) ⋝ 0 for all x ∈ ℝ AND ∫<sub>{-∞:∞} </sub>ƒ<sub>X</sub>(x)dx = 1</div>
 
       <p>Determining the probability that X takes on a value inside a particular range is done by calculating the integral for ƒ on the interval:</p>
-      <div class="box math">P(a &lt X ⋜ b) = ∫<sub>a:b</sub> ƒ<sub>X</sub>(x)dx</div>
+      <div class="box formula math" >P(a &lt X ⋜ b) = ∫<sub>a:b</sub> ƒ<sub>X</sub>(x)dx</div>
 
       <p>Note that X is continuous ONLY if there exists a function ƒ<sub>X</sub>(x) such that:</p>
-      <div class="box math">P(X ∈ A) = ∫<sub>A</sub> ƒ<sub>X</sub>(x)dx</div>
+      <div class="box formula math" >P(X ∈ A) = ∫<sub>A</sub> ƒ<sub>X</sub>(x)dx</div>
 
       <div class="box attention">As no positive probability can be given for any single point x, i.e P(X = x) = 0 for all x. As such, the ranges (a &lt X &lt b) is the same as (a ⋜ X ⋜ b). In practice, we do not differentiate between open and closed intervalls.</div>
     </div>
 
     <h3 id="DISTRIBUTION FUNCTION F(x)"></h3>
-    <p>The particular range A = (-∞, ..., x] gives root to the <span class="inline-math">distribution function</span> <b>F<sub>X</sub>(x)</b>, which is essentially the function expressing the probability mass from the negative infinite end up until the value for x. In that sense, it determines the probability that X takes a value less than or equal to x, i.e P(X ⋜ x). The distribution function can be a mix of discrete and continuous models.</p>
+    <p>The particular range A = (-∞, ..., x] gives root to the <span class="inline math" >distribution function</span> <b>F<sub>X</sub>(x)</b>, which is essentially the function expressing the probability mass from the negative infinite end up until the value for x. In that sense, it determines the probability that X takes a value less than or equal to x, i.e P(X ⋜ x). The distribution function can be a mix of discrete and continuous models.</p>
 
     <div class="box attention">Keep in mind that the F(x) does not determine the probability AT x, but UP TO AND INCLUDING x.</div>
 
     <h4>THE DISCRETE CASE</h4>
     <p>For the discrete random variable, the distribution function becomes a step function, summing up the probabilities over the range</p>
 
-    <div class="box math">F(x) = ∑<sub>j⋜x</sub> ρ<sub>X</sub>(j) for j ∈ ℤ</div>
+    <div class="box formula math" >F(x) = ∑<sub>j⋜x</sub> ρ<sub>X</sub>(j) for j ∈ ℤ</div>
 
     <h4>CONTINUOUS CASE</h4>
-    <p>Generally, A function <span class="inline-math">F(x)</span> that is the general integral of <span class="inline-math">ƒ<sub>X</sub>(x)</span> will be the distribution function for a random variable X. Technically, any F<sub>X</sub>(x) that fullfills the following will be an acceptable distribution function.</p>
+    <p>Generally, A function <span class="inline math" >F(x)</span> that is the general integral of <span class="inline math" >ƒ<sub>X</sub>(x)</span> will be the distribution function for a random variable X. Technically, any F<sub>X</sub>(x) that fullfills the following will be an acceptable distribution function.</p>
     <ul>
       <li>F<sub>X</sub>(x) → 0 when x → -∞</li>
       <li>F<sub>X</sub>(x) → 1 when x → +∞</li>
@@ -372,30 +366,30 @@
     </ul>
 
     <p>Some useful truisms</p>
-    <div class="box math">F<sub>X</sub>(x) = P(X ⋜ x) = P(-∞ &lt X ⋜ x) = ∫<sub>-∞:x</sub> ƒ<sub>X</sub>(x)dx</div>
-    <div class="box math">(d/dx)F<sub>X</sub>(x) = ƒ<sub>X</sub>(x)</div>
+    <div class="box formula math" >F<sub>X</sub>(x) = P(X ⋜ x) = P(-∞ &lt X ⋜ x) = ∫<sub>-∞:x</sub> ƒ<sub>X</sub>(x)dx</div>
+    <div class="box formula math" >(d/dx)F<sub>X</sub>(x) = ƒ<sub>X</sub>(x)</div>
 
     <p>for constants a & b where a &lt b:</p>
-    <div class="box math">P(a &lt X ⋜ b = ∫<sub>a:b</sub> ƒ<sub>X</sub>(t)dt = F<sub>X</sub>(b) - F<sub>X</sub>(a)</div>
+    <div class="box formula math" >P(a &lt X ⋜ b = ∫<sub>a:b</sub> ƒ<sub>X</sub>(t)dt = F<sub>X</sub>(b) - F<sub>X</sub>(a)</div>
 
     <div class="box attention">Important. In the continuous case, P(X &lt x) = P(X ⋜ x) so when determining the limits of the integral, keep that in mind!</div>
 
     <h4>QUANTILES</h4>
-    <p>The probability mass of a random variable can always be split into a number of evenly spaced quantiles, i.e halves, thirds, quartiles etc. These all represent a fraction of the total probability mass(area under the graph), 1/2, 1/3, 1/4 etc. If we let the variable α represent the area to the right of x, then we achieve the so called <span class="inline-math">α-quantile</span>. by solving the x = x<sub>α</sub> such that:</p>
-    <div class="box math">F<sub>X</sub>(x) = 1 - α</div>
-    <p>One basic quantile is the <b>quartile</b>, i.e determining three dividers splitting the mass in 4 parts of 25%. These three divisors are known as the <span class="inline-math">lower quartile</span>, <span class="inline-math">median</span>, and <span class="inline-math">upper quartile</span>.</p>
+    <p>The probability mass of a random variable can always be split into a number of evenly spaced quantiles, i.e halves, thirds, quartiles etc. These all represent a fraction of the total probability mass(area under the graph), 1/2, 1/3, 1/4 etc. If we let the variable α represent the area to the right of x, then we achieve the so called <span class="inline math" >α-quantile</span>. by solving the x = x<sub>α</sub> such that:</p>
+    <div class="box formula math" >F<sub>X</sub>(x) = 1 - α</div>
+    <p>One basic quantile is the <b>quartile</b>, i.e determining three dividers splitting the mass in 4 parts of 25%. These three divisors are known as the <span class="inline math" >lower quartile</span>, <span class="inline math" >median</span>, and <span class="inline math" >upper quartile</span>.</p>
 
     <h3 id="intensity">INTENSITY</h3>
     <p>Intensity can be perceived as the probability per unit of time. Whateer the hell that means... It can be read about more in section 3.8 of the literature, but more or less describes the lifespan of things.</p>
 
-    <div class="box math-definition">
-      <p>For a random variable <span class="inline-math">X</span> with density function <span class="inline-math">ƒ<sub>X</sub>(x)</span> and distribution function <span class="inline-math">F<sub>X</sub>(x)</span>, there is a <b>intensity</b> to X, <span class="inline-math">λ<sub>X</sub>(x)</span>, defined by:</p>
+    <div class="box definition" >
+      <p>For a random variable <span class="inline math" >X</span> with density function <span class="inline math" >ƒ<sub>X</sub>(x)</span> and distribution function <span class="inline math" >F<sub>X</sub>(x)</span>, there is a <b>intensity</b> to X, <span class="inline math" >λ<sub>X</sub>(x)</span>, defined by:</p>
 
-      <div class="box math">λ<sub>X</sub>(x) = ƒ<sub>X</sub>(x)/(1 - F<sub>X</sub>(x)), x &gt 0</div>
+      <div class="box formula math" >λ<sub>X</sub>(x) = ƒ<sub>X</sub>(x)/(1 - F<sub>X</sub>(x)), x &gt 0</div>
     </div>
 
     <p>Given a intensity, the distribution function can be extracted by:</p>
-    <div class="box math">F<sub>X</sub>(x) = 1 - exp{-∫<sub>t=0:x</sub> λ<sub>X</sub>(t)}</div>
+    <div class="box formula math" >F<sub>X</sub>(x) = 1 - exp{-∫<sub>t=0:x</sub> λ<sub>X</sub>(t)}</div>
   </section>
 
   <h2 id="multi-dim-random-variables">MULTI-DIMENSIONAL RANDOM VARIABLES</h2>
@@ -404,8 +398,8 @@
 
     <h3 id="formal-definitions">FORMAL DEFINITIONS OF (X, Y)</h3>
 
-    <div class="box math-definition">
-      <p>For a pair of random variables <span class="inline-math">X & Y</span>, defined on the sample space <span class="inline-math">Ω = [ω<sub>1</sub>, ... ω<sub>n</sub>]</span>, the function <span class="inline-math">(X,Y)</span> is a <b>multi dimensional random variable</b> such that <span class="inline-math">(X(ω<sub>i</sub>), Y(ω<sub>i</sub>)) → Ω : ℝ<sub>2</sub></span>.</p>
+    <div class="box definition" >
+      <p>For a pair of random variables <span class="inline math" >X & Y</span>, defined on the sample space <span class="inline math" >Ω = [ω<sub>1</sub>, ... ω<sub>n</sub>]</span>, the function <span class="inline math" >(X,Y)</span> is a <b>multi dimensional random variable</b> such that <span class="inline math" >(X(ω<sub>i</sub>), Y(ω<sub>i</sub>)) → Ω : ℝ<sub>2</sub></span>.</p>
       <p>The random variables X and Y take on some value pair (x, y) which map the sample space onto the plane where the probability P(X = x, Y = y) is the value at (x, y)</p>
       <figure>
         <img src="rsc/probability-statistics/multi-random/omega-example.png" alt="image">
@@ -414,50 +408,50 @@
 
       <div class="box attention">Keep in mind that the actual probability mass is represented along the z-axis.</div>
 
-      <p>Generally speaking, the <b>simultaneous distribution function</b> <span class="inline-math">F<sub>X,Y</sub></span> is</p>
-      <div class="box math">F<sub>X,Y</sub>(x, y) = P(X ⋜ x, Y ⋜ y)</div>
+      <p>Generally speaking, the <b>simultaneous distribution function</b> <span class="inline math" >F<sub>X,Y</sub></span> is</p>
+      <div class="box formula math" >F<sub>X,Y</sub>(x, y) = P(X ⋜ x, Y ⋜ y)</div>
     </div>
 
     <h4>DISCRETE CASE</h4>
-    <p>The probability function <span class="inline-math">ρ<sub>X,Y</sub>(j,k) = P(X = j, Y = k)</span> is the numerical value function that determines the probability at (j, k). Generally:</p>
-    <div class="box math">P((X, Y) ∈ A) = ∑<sub>{j,k ∈ A}</sub> ρ<sub>X,Y</sub> (j, k)</div>
+    <p>The probability function <span class="inline math" >ρ<sub>X,Y</sub>(j,k) = P(X = j, Y = k)</span> is the numerical value function that determines the probability at (j, k). Generally:</p>
+    <div class="box formula math" >P((X, Y) ∈ A) = ∑<sub>{j,k ∈ A}</sub> ρ<sub>X,Y</sub> (j, k)</div>
     <p>The probability function must be non-negative and sum to 1 over all mintegers (j, k).</p>
 
     <h4>CONTINOUS CASE</h4>
-    <p>The density function <span class="inline-math">ƒ<sub>X,Y</sub> (x,y)</span> describes the probability mass density at (x, y) and:</p>
-    <div class="box math">P((X,Y) ∈ A) = ∫∫<sub>A</sub> ƒ<sub>X,Y</sub> (x, y)dxdy</div>
+    <p>The density function <span class="inline math" >ƒ<sub>X,Y</sub> (x,y)</span> describes the probability mass density at (x, y) and:</p>
+    <div class="box formula math" >P((X,Y) ∈ A) = ∫∫<sub>A</sub> ƒ<sub>X,Y</sub> (x, y)dxdy</div>
 
-    <p>There will also be a distribution function <span class="inline-math">F<sub>X,Y</sub> (x,y)</span> such that</p>
-    <div class="box math">F<sub>X,Y</sub>(x,y) = ∫<sub>{-∞:x}</sub>∫<sub>{-∞:y}</sub> ƒ<sub>X,Y</sub> (u, v)dudv  </div>
+    <p>There will also be a distribution function <span class="inline math" >F<sub>X,Y</sub> (x,y)</span> such that</p>
+    <div class="box formula math" >F<sub>X,Y</sub>(x,y) = ∫<sub>{-∞:x}</sub>∫<sub>{-∞:y}</sub> ƒ<sub>X,Y</sub> (u, v)dudv  </div>
 
     <h4>SPECIAL UNIFORM CASE</h4>
     <p>In the event that random variables X and Y are both uniformly distributed in the area B, and any area A is a subset of B, then:</p>
-    <div class="box math">P((X,Y) ∈ A) = frac{area A}{area B}</div>
+    <div class="box formula math" >P((X,Y) ∈ A) = frac{area A}{area B}</div>
     <figure>
       <img src="rsc/probability-statistics/multi-random/uniform-areas.png" alt="image">
-      <figcaption>An example of random variables <span class="inline-math">X ∈ U(a, b)</span> and <span class="inline-math">Y ∈ U(c, d)</span> where the proportion of A's area to B represent the probability of X and Y both taking values i A. <a href="rsc/probability-statistics/multi-random/uniform-areas.xml">Download XML here</a></figcaption>
+      <figcaption>An example of random variables <span class="inline math" >X ∈ U(a, b)</span> and <span class="inline math" >Y ∈ U(c, d)</span> where the proportion of A's area to B represent the probability of X and Y both taking values i A. <a href="rsc/probability-statistics/multi-random/uniform-areas.xml">Download XML here</a></figcaption>
     </figure>
 
 
     <h3 id="independence">INDEPENDENCE</h3>
     <p>As always, random variables are independent given some events if the probability of the intersection is equal to the product of the individual probabilites.</p>
-    <div class="box math">P(X ∈ H<sub>1</sub> ∩ Y ∈ H<sub>2</sub>) = P(X ∈ H<sub>1</sub>) × P(Y ∈ H<sub>2</sub>)</div>
-    <div class="box math-definition">
+    <div class="box formula math" >P(X ∈ H<sub>1</sub> ∩ Y ∈ H<sub>2</sub>) = P(X ∈ H<sub>1</sub>) × P(Y ∈ H<sub>2</sub>)</div>
+    <div class="box definition" >
       <p>The random variables X and Y are independent if and only if:</p>
-      <div class="box math">F<sub>X,Y</sub> (x, y) = F<sub>X</sub>(x) × F<sub>Y</sub>(y)</div>
-      <div class="box math">ρ<sub>X,Y</sub> (j,k) = ρ<sub>X</sub>(j) × ρ<sub>Y</sub>(k) for all (j, k)<br>ƒ<sub>X,Y</sub> (x, y) = ƒ<sub>X</sub>(x) × ƒ<sub>Y</sub>(y) for all (x, y)</div>
+      <div class="box formula math" >F<sub>X,Y</sub> (x, y) = F<sub>X</sub>(x) × F<sub>Y</sub>(y)</div>
+      <div class="box formula math" >ρ<sub>X,Y</sub> (j,k) = ρ<sub>X</sub>(j) × ρ<sub>Y</sub>(k) for all (j, k)<br>ƒ<sub>X,Y</sub> (x, y) = ƒ<sub>X</sub>(x) × ƒ<sub>Y</sub>(y) for all (x, y)</div>
     </div>
 
     <h3 id="min-max">MIN-MAX VALUES</h3>
     <p>Given independent random variables X and Y. We can study the random variable Z as the largest or smallest of the two by noting that</p>
     <ul>
       <li>
-        <p><span class="inline-math">Z = max(X,Y)</span>, i.e Z ⋜ z ⟺ both X and Y are ⋜ z</p>
-        <div class="box math">F<sub>Z</sub>(z) = P(X ⋜ z) × P(Y ⋜ z) = F<sub>X</sub>(z) × F<sub>Y</sub>(z)</div>
+        <p><span class="inline math" >Z = max(X,Y)</span>, i.e Z ⋜ z ⟺ both X and Y are ⋜ z</p>
+        <div class="box formula math" >F<sub>Z</sub>(z) = P(X ⋜ z) × P(Y ⋜ z) = F<sub>X</sub>(z) × F<sub>Y</sub>(z)</div>
       </li>
       <li>
-        <p><span class="inline-math">Z = min(X,Y)</span>, i.e Z &gt z ⟺ both X and Y are greater than z</p>
-        <div class="box math">F<sub>Z</sub>(z) = 1 - P(Z &gt z) = 1 - P(X &gt z) × P(Y &gt z) = 1 - [1- F<sub>X</sub>(z)][1 - F<sub>Y</sub>(z)]</div>
+        <p><span class="inline math" >Z = min(X,Y)</span>, i.e Z &gt z ⟺ both X and Y are greater than z</p>
+        <div class="box formula math" >F<sub>Z</sub>(z) = 1 - P(Z &gt z) = 1 - P(X &gt z) × P(Y &gt z) = 1 - [1- F<sub>X</sub>(z)][1 - F<sub>Y</sub>(z)]</div>
       </li>
     </ul>
     <div class="box attention">The random variable Z takes on the vallue z which represent the largest or smallest value that either X or Y will take. This means probability P(Z ⋜ z) gives a value for z being either the largest or smallest value.</div>
@@ -470,36 +464,36 @@
     <h3 id="binomial-distribution">THE BINOMIAL DISTRIBUTION</h3>
     <p>Relevant for random selections from an urn where the tokens are placed back into the urn. In this distribution, the probability of one selection may not have an effect on the next. I.e the draws must be independenp from each other.</p>
 
-    <div class="box math">A random variable is X ∈ Bin(n, p) om ρ<sub>X</sub>(k) = (n choose k) × p<sup>k</sup> × (1-p)<sup>n-k</sup> <br>for k = 0, 1, ..., n and 0 &lt p &lt 1</div>
-    <div class="box math">For X ∈ Bin(n, p) ⇒ E(X) = np, V(X) = np(1-p)</div>
+    <div class="box formula math" >A random variable is X ∈ Bin(n, p) om ρ<sub>X</sub>(k) = (n choose k) × p<sup>k</sup> × (1-p)<sup>n-k</sup> <br>for k = 0, 1, ..., n and 0 &lt p &lt 1</div>
+    <div class="box formula math" >For X ∈ Bin(n, p) ⇒ E(X) = np, V(X) = np(1-p)</div>
 
     <h3 id="hypergeometric-distribution">THE HYPERGEOMETRIC DISTRIBUTION</h3>
     <p>Very similar to the binomial dist, but used for the case where a clear dependence exist between values for X. So drawing tokens from urn without putting them back is the natural base case.</p>
 
-    <div class="box math">The random variable X ∈ Hyp(N, n, p) ⟺ <br>ρ<sub>X</sub>(k) = frac{ (Np choose k) × (N(1-p) choose (n-k)) }{ (N choose n) }<br> where 0 ⋜ k ⋜ Np, 0 ⋜ n-k ⋜ N(1-p). N, Np & n are positive integers and N ⋝ 2, n &lt N & 0 &lt p &lt 1.</div>
+    <div class="box formula math" >The random variable X ∈ Hyp(N, n, p) ⟺ <br>ρ<sub>X</sub>(k) = frac{ (Np choose k) × (N(1-p) choose (n-k)) }{ (N choose n) }<br> where 0 ⋜ k ⋜ Np, 0 ⋜ n-k ⋜ N(1-p). N, Np & n are positive integers and N ⋝ 2, n &lt N & 0 &lt p &lt 1.</div>
 
-    <p><span class="inline-math">N</span> is the number of total tokens available to draw from. <span class="inline-math">n</span> is the number actually drawn. <span class="inline-math">p</span> is the fraction of tokens of one color, <span class="inline-math">n/N</span>, of which the equation asks that we draw <span class="inline-math">k</span>.</p>
+    <p><span class="inline math" >N</span> is the number of total tokens available to draw from. <span class="inline math" >n</span> is the number actually drawn. <span class="inline math" >p</span> is the fraction of tokens of one color, <span class="inline math" >n/N</span>, of which the equation asks that we draw <span class="inline math" >k</span>.</p>
 
-    <div class="box math">In the hypergeometric case,<br>E(X) = np <br>V(X) = np(1-p) × frac{ N - n }{ N - 1 }</div>
+    <div class="box formula math" >In the hypergeometric case,<br>E(X) = np <br>V(X) = np(1-p) × frac{ N - n }{ N - 1 }</div>
 
     <h3 id="normal-distribution">THE NORMAL DISTRIBUTION</h3>
     <p>The typical bell-curve distribution. Makes up a HUGE part of all statistics, probably because most things in the universe can be modelled by the gaussian bitch.</p>
 
-    <div class="box math">Random variable X ∈ N(μ, σ) ⟺ <br> ƒ<sub>X</sub>(x) = frac{ exp{ -(x - μ)<sup>2</sup>  × 1/2σ <sup>2</sup> } }{ σ × sqrt{2π} }, x ∈ ℝ and σ &gt 0 <br>E(X) = μ, V(X) = σ <sup>2</sup>, D(X) = σ</div>
+    <div class="box formula math" >Random variable X ∈ N(μ, σ) ⟺ <br> ƒ<sub>X</sub>(x) = frac{ exp{ -(x - μ)<sup>2</sup>  × 1/2σ <sup>2</sup> } }{ σ × sqrt{2π} }, x ∈ ℝ and σ &gt 0 <br>E(X) = μ, V(X) = σ <sup>2</sup>, D(X) = σ</div>
 
     <div class="box attention">A linear combination of normally distributed and independent random variables will also be normally distributed.</div>
 
-    <div class="box math">Given the independent random variables X ∈ N(μ<sub>X</sub>, σ<sub>X</sub>), and Y ∈ N(μ<sub>Y</sub>, σ<sub>Y</sub>) then: <br>X + Y ∈ N( μ<sub>X</sub> + μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )<br>X - Y ∈ N( μ<sub>X</sub> - μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )</div>
+    <div class="box formula math" >Given the independent random variables X ∈ N(μ<sub>X</sub>, σ<sub>X</sub>), and Y ∈ N(μ<sub>Y</sub>, σ<sub>Y</sub>) then: <br>X + Y ∈ N( μ<sub>X</sub> + μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )<br>X - Y ∈ N( μ<sub>X</sub> - μ<sub>Y</sub>, sqrt{ σ<sub>X</sub><sup>2</sup> + σ<sub>Y</sub><sup>2</sup> } )</div>
 
     <h4>THE STANDARD DISTRIBUTION</h4>
-    <p>Given a random variable <span class="inline-math">Z ∈ N(0, 1)</span> will have a distribution function Φ(x) of which values can usually be found in a table.</p>
+    <p>Given a random variable <span class="inline math" >Z ∈ N(0, 1)</span> will have a distribution function Φ(x) of which values can usually be found in a table.</p>
 
-    <div class="box math">Random variable <span class="inline-math">X ∈ N(μ, σ)</span> ⟺ frac{ X - μ }{ σ } ∈ N(0,1)</div>
+    <div class="box formula math" >Random variable <span class="inline math" >X ∈ N(μ, σ)</span> ⟺ frac{ X - μ }{ σ } ∈ N(0,1)</div>
     <p>The above allows for a very useful method of standardizing any random variable. This can be achieved through the following</p>
-    <div class="box math">P(X ⋜ x) = P(frac{ X - μ }{ σ } ⋜ frac{ x - μ }{ σ }) = Φ(frac{ x - μ }{ σ })</div>
-    <p>If the right constants can be determined, a probability can very easily be determined without difficult calculation needed. Sometimes, you will need to throw the signs around a bit to collect the correct value from the table. Take note of <span class="inline-math">Φ(-x) = 1 - Φ(x)</span> when given a value <span class="inline-math">P(X &lt -x) = β</span>.</p>
-    <div class="box math">P(X &lt -x) = Φ(-x) = β ⟺ P(X &lt x) = 1 - β <br>P(X &gt x) = 1 - P(X &lt x) = 1 - (1 - β) = β</div>
-    <p>You let <span class="inline-math">β</span> take the appropriate <span class="inline-math">α-value</span> in the table and from there, let our desired <span class="inline-math">x</span> equal the corresponding <span class="inline-math">λ<sub>α</sub></span>.</p>
+    <div class="box formula math" >P(X ⋜ x) = P(frac{ X - μ }{ σ } ⋜ frac{ x - μ }{ σ }) = Φ(frac{ x - μ }{ σ })</div>
+    <p>If the right constants can be determined, a probability can very easily be determined without difficult calculation needed. Sometimes, you will need to throw the signs around a bit to collect the correct value from the table. Take note of <span class="inline math" >Φ(-x) = 1 - Φ(x)</span> when given a value <span class="inline math" >P(X &lt -x) = β</span>.</p>
+    <div class="box formula math" >P(X &lt -x) = Φ(-x) = β ⟺ P(X &lt x) = 1 - β <br>P(X &gt x) = 1 - P(X &lt x) = 1 - (1 - β) = β</div>
+    <p>You let <span class="inline math" >β</span> take the appropriate <span class="inline math" >α-value</span> in the table and from there, let our desired <span class="inline math" >x</span> equal the corresponding <span class="inline math" >λ<sub>α</sub></span>.</p>
 
   </section>
 
@@ -510,77 +504,77 @@
     <h3 id="sub2-expected-values">EXPECTED VALUES</h3>
     <p>The expected value is projected average value per outcome for multiple attempts. It describes the <b>mean</b> position of the probability mass</p>
 
-    <div class="box math">E(X) = {discrete} = ∑<sub>k</sub> k × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> x × ƒ<sub>X</sub>(x)dx</div>
+    <div class="box formula math" >E(X) = {discrete} = ∑<sub>k</sub> k × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> x × ƒ<sub>X</sub>(x)dx</div>
 
-    <p>For the random variable <span class="inline-math">Y = g(X)</span></p>
+    <p>For the random variable <span class="inline math" >Y = g(X)</span></p>
 
-    <div class="box math">E(Y) = {discrete} = ∑<sub>i</sub> g(k) × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> g(k) × ƒ<sub>X</sub>(x)dx</div>
+    <div class="box formula math" >E(Y) = {discrete} = ∑<sub>i</sub> g(k) × ρ<sub>X</sub>(k)<br>E(X) = {continuous} = ∫<sub>ℝ</sub> g(k) × ƒ<sub>X</sub>(x)dx</div>
 
-    <p>If random variables <span class="inline-math">X, Y</span> are associated in a third variable <span class="inline-math">Z = g(X, Y)</span>, then:</p>
+    <p>If random variables <span class="inline math" >X, Y</span> are associated in a third variable <span class="inline math" >Z = g(X, Y)</span>, then:</p>
 
-    <div class="box math">E(Z) = {discrete} = ∑<sub>(j,k)</sub> g(j, k) × ρ<sub>XY</sub> (j, k)<br>E(Z) = {continuous} = ∫<sub>ℝ</sub> g(x, y) × ƒ<sub>XY</sub> (x, y)dxdy</div>
+    <div class="box formula math" >E(Z) = {discrete} = ∑<sub>(j,k)</sub> g(j, k) × ρ<sub>XY</sub> (j, k)<br>E(Z) = {continuous} = ∫<sub>ℝ</sub> g(x, y) × ƒ<sub>XY</sub> (x, y)dxdy</div>
 
-    <p>The above in turns instructs us how to calculate the common <span class="inline-math">E(XY)</span>. Note that independent random variables X & Y give us <span class="inline-math">E(XY) = E(X)E(Y)</span>. Lastly, it will also instruct us how to determine <span class="inline-math">E(XX) = E(X<sup>2</sup>)</span></p>
+    <p>The above in turns instructs us how to calculate the common <span class="inline math" >E(XY)</span>. Note that independent random variables X & Y give us <span class="inline math" >E(XY) = E(X)E(Y)</span>. Lastly, it will also instruct us how to determine <span class="inline math" >E(XX) = E(X<sup>2</sup>)</span></p>
 
-    <div class="box math">E(XY) = ∑<sub>all j,k</sub> j × k × ρ<sub>XY</sub>(j, k)</div>
+    <div class="box formula math" >E(XY) = ∑<sub>all j,k</sub> j × k × ρ<sub>XY</sub>(j, k)</div>
 
     <p></p>
-    <div class="box math">E(X<sup>2</sup>) = {discrete} = ∑<sub>k</sub> k<sup>2</sup>  × ρ<sub>X</sub> (k)<br>E(X<sup>2</sup>) = {continuous} = ∫<sub>ℝ</sub> x<sup>2</sup> × ƒ<sub>X</sub> (x)dx  </div>
+    <div class="box formula math" >E(X<sup>2</sup>) = {discrete} = ∑<sub>k</sub> k<sup>2</sup>  × ρ<sub>X</sub> (k)<br>E(X<sup>2</sup>) = {continuous} = ∫<sub>ℝ</sub> x<sup>2</sup> × ƒ<sub>X</sub> (x)dx  </div>
 
     <h3 id="sub2-variance">VARIANCE V(X)</h3>
     <p>A measure of how much the probability mass varies over the domain. It gives an idea of how much of the total mass that is concentrated around the expected value μ</p>
 
-    <div class="box math-definition">
-      <p>Given the random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span>, where <span class="inline-math">E(X) = μ</span> and Y = (X - μ)<sup>2</sup>, then:</p>
-      <div class="box math">V(X) = E[(X - μ)<sup>2</sup>] = E(Y)<br>Formally:<br>V(X) = ∑<sub>k</sub>(k - μ)<sup>2</sup> × ρ<sub>X</sub>(k) <br>V(X) = ∫<sub>ℝ</sub>(x - μ)<sup>2</sup> ×  ƒ<sub>X</sub>(x)dx</div>
-      <p>Simpler still, a very important relation is <span class="inline-math">V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>.</p>
+    <div class="box definition" >
+      <p>Given the random variables <span class="inline math" >X</span> and <span class="inline math" >Y</span>, where <span class="inline math" >E(X) = μ</span> and Y = (X - μ)<sup>2</sup>, then:</p>
+      <div class="box formula math" >V(X) = E[(X - μ)<sup>2</sup>] = E(Y)<br>Formally:<br>V(X) = ∑<sub>k</sub>(k - μ)<sup>2</sup> × ρ<sub>X</sub>(k) <br>V(X) = ∫<sub>ℝ</sub>(x - μ)<sup>2</sup> ×  ƒ<sub>X</sub>(x)dx</div>
+      <p>Simpler still, a very important relation is <span class="inline math" >V(X) = E(X <sup>2</sup>) - [E(X)] <sup>2</sup></span>.</p>
     </div>
 
     <p>Generally, low variances indicate that the mass is concentrated in smaller areas. It will be 0 when its all gathered in a single point. There is also the useful concept of the <b>standard deviation D(X)</b>. One can consider D(X) <em>the order of magnitude of X's deviation from its expected value E(X)</em>.</p>
-    <div class="box math">D(X) = sqrt{ V(X) }</div>
+    <div class="box formula math" >D(X) = sqrt{ V(X) }</div>
 
     <h3 id="sub2-covariance">COVARIANCE</h3>
     <p>One absolutely horrible concept, is the covariance and it characterizes two random variables together.</p>
-    <div class="box math-definition">
-      <p>Random variables <span class="inline-math">X</span> and <span class="inline-math">Y</span> have a covariance <span class="inline-math">C(X, Y)</span> such that:</p>
-      <div class="box math">C(X, Y) = E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] <br>C(X, Y) = E(XY) - E(X)E(Y)</div>
-      <div class="box math">E(XY) = ∑<sub>(j, k) </sub> j × k × ρ<sub>XY</sub>(j, k)<br>E(XY) = ∫<sub>(x, y)</sub> x × y × ƒ<sub>XY</sub>(x, y)</div>
+    <div class="box definition" >
+      <p>Random variables <span class="inline math" >X</span> and <span class="inline math" >Y</span> have a covariance <span class="inline math" >C(X, Y)</span> such that:</p>
+      <div class="box formula math" >C(X, Y) = E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] <br>C(X, Y) = E(XY) - E(X)E(Y)</div>
+      <div class="box formula math" >E(XY) = ∑<sub>(j, k) </sub> j × k × ρ<sub>XY</sub>(j, k)<br>E(XY) = ∫<sub>(x, y)</sub> x × y × ƒ<sub>XY</sub>(x, y)</div>
       <p>If we expand the formal definition we get a alternative equation that may proove useful, but probably won't...</p>
-      <div class="box math">E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] = E(XY - Xμ<sub>Y</sub> - Yμ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub>) =<br>= E(XY) - E(X)μ<sub>Y</sub> - E(Y)μ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub></div>
+      <div class="box formula math" >E[ (X - μ<sub>X</sub>) × (Y - μ<sub>Y</sub>)] = E(XY - Xμ<sub>Y</sub> - Yμ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub>) =<br>= E(XY) - E(X)μ<sub>Y</sub> - E(Y)μ<sub>X</sub> + μ<sub>Y</sub>μ<sub>X</sub></div>
 
     </div>
 
-    <p>If the value of <span class="inline-math">C(X, Y) = 0</span>, then X and Y are said to be <b>uncorrelated</b>.<br><em>Independent</em> variables ⇒ <em>uncorrelated</em> variables.</p>
+    <p>If the value of <span class="inline math" >C(X, Y) = 0</span>, then X and Y are said to be <b>uncorrelated</b>.<br><em>Independent</em> variables ⇒ <em>uncorrelated</em> variables.</p>
 
-    <div class="box math-definition">
-      <p>The so called <b>correlation coefficient</b> <span class="inline-math">ρ(X,Y)</span>, not to be confused with the probability function is:</p>
-      <div class="box math">ρ(X,Y) = frac{C(X, Y)}{D(X) × D(Y)}</div>
+    <div class="box definition" >
+      <p>The so called <b>correlation coefficient</b> <span class="inline math" >ρ(X,Y)</span>, not to be confused with the probability function is:</p>
+      <div class="box formula math" >ρ(X,Y) = frac{C(X, Y)}{D(X) × D(Y)}</div>
     </div>
 
     <h3 id="sub2-systematic-errors">SYSTEMATIC AND RANDOM ERRORS δ, ε</h3>
-    <p>Given a set of measurements <span class="inline-math">m<sub>i</sub></span>, the random variable <span class="inline-math">X</span> take the values of the measurements. The "real" value can be called <span class="inline-math"><em>r</em></span>, nd the measurements will vary from <span class="inline-math">r</span> depending on <b>accuracy</b> and <b>precision</b>.</p>
-    <div class="box math-definition">
-      <p>A <span class="inline-math">systematic error δ</span>, a.k.a <em>bias</em> is a result of poor accuracy. It equals the difference between the measurement's estimated value and the real value.</p>
-      <div class="box math">δ = | E(X) - r |</div>
+    <p>Given a set of measurements <span class="inline math" >m<sub>i</sub></span>, the random variable <span class="inline math" >X</span> take the values of the measurements. The "real" value can be called <span class="inline math" ><em>r</em></span>, nd the measurements will vary from <span class="inline math" >r</span> depending on <b>accuracy</b> and <b>precision</b>.</p>
+    <div class="box definition" >
+      <p>A <span class="inline math" >systematic error δ</span>, a.k.a <em>bias</em> is a result of poor accuracy. It equals the difference between the measurement's estimated value and the real value.</p>
+      <div class="box formula math" >δ = | E(X) - r |</div>
       <div class="box attention">Using sharpshooting as an example, disregarding skill leaves all accuray up to the sight. Poor accuracy offset the resulting hit from the bullseye with the error delta.</div>
 
-      <p>A <span class="inline-math">random error ε</span> is a result of poor precision. It equals the difference between the measurement and it's estimated value</p>
-      <div class="box math">ε =| E(X) - m<sub>i</sub> |</div>
+      <p>A <span class="inline math" >random error ε</span> is a result of poor precision. It equals the difference between the measurement and it's estimated value</p>
+      <div class="box formula math" >ε =| E(X) - m<sub>i</sub> |</div>
       <div class="box attention">Precision is up to the quality of the rifle. Variance in precision will result in random scattering of the hit area.</div>
     </div>
-    <p>If we let <span class="inline-math">Y</span> take on the measurement error where <span class="inline-math">Y = δ + ε</span> and the random error ε is a random variable. Then:</p>
-    <div class="box math">E(Y) = δ, D(Y) = σ <br>E(ε) = 0, D(ε) = σ</div>
+    <p>If we let <span class="inline math" >Y</span> take on the measurement error where <span class="inline math" >Y = δ + ε</span> and the random error ε is a random variable. Then:</p>
+    <div class="box formula math" >E(Y) = δ, D(Y) = σ <br>E(ε) = 0, D(ε) = σ</div>
 
     <h3 id="linear-combinations-expected">LINEAR COMBINATIONS WITH EXPECTED AND VARIANCE VALUES</h3>
 
-    <p>For the linear combinations of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> and a linear combination of them <span class="inline-math">L = ∑<sub>i</sub> a<sub>i</sub> × X<sub>1</sub> + c</span> then expected value and variance is:</p>
+    <p>For the linear combinations of random variables <span class="inline math" >X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> and a linear combination of them <span class="inline math" >L = ∑<sub>i</sub> a<sub>i</sub> × X<sub>1</sub> + c</span> then expected value and variance is:</p>
 
-    <div class="box math">E(L) = {regardless of dependence} = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) + c <br>V(L) = {if independent} = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
+    <div class="box formula math" >E(L) = {regardless of dependence} = ∑<sub>i</sub> a<sub>i</sub> × E(X<sub>i</sub>) + c <br>V(L) = {if independent} = ∑<sub>i</sub> a<sub>i</sub><sup>2</sup> × V(X<sub>i</sub>)</div>
 
-    <p>Given independent random variables <span class="inline-math">X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline-math">E(X<sub>i</sub>) = μ</span>, <span class="inline-math">D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
-    <div class="box math">X̅ = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
+    <p>Given independent random variables <span class="inline math" >X<sub>1</sub>, ... , X<sub>n</sub></span> with <span class="inline math" >E(X<sub>i</sub>) = μ</span>, <span class="inline math" >D(X<sub>i</sub>) = σ</span> with a arithmetic mean of:</p>
+    <div class="box formula math" >X̅ = ∑<sub>i=1:n</sub> X<sub>i</sub>/n</div>
 
-    <p>... then <span class="inline-math">E(X̅) = μ, V(X̅) = σ<sup>2</sup>/n, D(X̅) = σ / sqrt{ n }</span></p>
+    <p>... then <span class="inline math" >E(X̅) = μ, V(X̅) = σ<sup>2</sup>/n, D(X̅) = σ / sqrt{ n }</span></p>
 
     <div class="box attention">Take note that the arithmetic mean of random variables is in fact a linear combination, rather than a value. It should be denoted with a capital X bar and should not be confused the mean of numerical values x̄, or with a vector.</div>
   </section>
@@ -593,68 +587,68 @@
 
     <p>Some important measures of location when dealing with statistics are:</p>
     <ul>
-      <li>The <b>arithmetic mean</b> <span class="inline-math">x̄ = ∑<sub>i=1:n</sub>x<sub>j</sub> × frac{ 1 }{ n }</span></li>
-      <li>The <b>sample variance</b> <span class="inline-math">s<sup>2</sup> = frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup></span></li>
-      <li>The <b>sample standard deviation</b> <span class="inline-math">s = sqrt{ frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup> }</span></li>
+      <li>The <b>arithmetic mean</b> <span class="inline math" >x̄ = ∑<sub>i=1:n</sub>x<sub>j</sub> × frac{ 1 }{ n }</span></li>
+      <li>The <b>sample variance</b> <span class="inline math" >s<sup>2</sup> = frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup></span></li>
+      <li>The <b>sample standard deviation</b> <span class="inline math" >s = sqrt{ frac{ 1 }{ n - 1 } × ∑<sub>i=1:n</sub>(x<sub>i</sub> - x̄)<sup>2</sup> }</span></li>
     </ul>
 
     <h3 id="sample-estimation">SAMPLE ESTIMATION</h3>
 
-    <div class="box math-definition">
-      <p>A <b>point sample estimate</b> <span class="inline-math">θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline-math">θ</span> is a function of measurement data <span class="inline-math">x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline-math">X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline-math">θ</span>. The observation <span class="inline-math">θ<sup>*</sup><sub>obs</sub></span> is itself an outcome of the sample variable <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
+    <div class="box definition" >
+      <p>A <b>point sample estimate</b> <span class="inline math" >θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span> of a parameter <span class="inline math" >θ</span> is a function of measurement data <span class="inline math" >x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub></span>. These datapoints are outcomes of random variables <span class="inline math" >X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub></span> whose distribution is dependent on <span class="inline math" >θ</span>. The observation <span class="inline math" >θ<sup>*</sup><sub>obs</sub></span> is itself an outcome of the sample variable <span class="inline math" >θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></p>
 
       <div class="box attention">The observation here, θ<sup>*</sup><sub>obs</sub>, is our actual guess as to the real value of the parameter θ. It is based on actual observed data, hence the <em>obs</em>. Since we know what we are measuring, we will have some insight into which distribution our measurements fall under, but not the specific parameter itself.</div>
     </div>
     <p>Some important distinctions to keep straight here:</p>
     <ul>
-      <li>The <span class="inline-math">random variable X<sub>i</sub> = x<sub>i</sub></span> represents a measurement. <span class="inline-math">X ∈ Ω<sub>X</sub></span>, i.e X takes any of the possible values that a measurement can take given the context.  </li>
+      <li>The <span class="inline math" >random variable X<sub>i</sub> = x<sub>i</sub></span> represents a measurement. <span class="inline math" >X ∈ Ω<sub>X</sub></span>, i.e X takes any of the possible values that a measurement can take given the context.  </li>
 
-      <li>All <em>random variables X<sub>i</sub></em> are dependent on some <span class="inline-math">distribution parameter θ ∈ Ω<sub>Θ</sub></span>, which is unknown to us. The distribution itself, along with some of its characteristics might not be, but the real value for the parameter is.</li>
+      <li>All <em>random variables X<sub>i</sub></em> are dependent on some <span class="inline math" >distribution parameter θ ∈ Ω<sub>Θ</sub></span>, which is unknown to us. The distribution itself, along with some of its characteristics might not be, but the real value for the parameter is.</li>
 
-      <li>The <span class="inline-math">real value measurement x<sub>i</sub></span>, is one among the real valued measurements themselves. This is an observed datapoint, with the <span class="inline-math">set of datapoints (x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>) ∈ (X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span> making up a sample of empirical data when making <span class="inline-math">n</span> measurements/observations.</li>
+      <li>The <span class="inline math" >real value measurement x<sub>i</sub></span>, is one among the real valued measurements themselves. This is an observed datapoint, with the <span class="inline math" >set of datapoints (x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>) ∈ (X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span> making up a sample of empirical data when making <span class="inline math" >n</span> measurements/observations.</li>
 
-      <li>Based on the measurements and known facts about the distribution, the <span class="inline-math">random sample variable θ<sup>*</sup></span> is itself a random variable taking on the possible values of <em>the parameter θ</em>. It is a function of the random variables X such that <span class="inline-math">θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></li>
+      <li>Based on the measurements and known facts about the distribution, the <span class="inline math" >random sample variable θ<sup>*</sup></span> is itself a random variable taking on the possible values of <em>the parameter θ</em>. It is a function of the random variables X such that <span class="inline math" >θ<sup>*</sup> = θ<sup>*</sup>(X<sub>1</sub>, X<sub>2</sub>, ... , X<sub>n</sub>)</span></li>
 
-      <li>The <span class="inline-math">point sample estimate θ<sup>*</sup><sub>obs</sub> ∈ θ<sup>*</sup></span> is an outcome of the random sample variable, dependent on the datapoints, such that <span class="inline-math">θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span>. This is a real valued guess of the actual value θ based on the observed data.</li>
+      <li>The <span class="inline math" >point sample estimate θ<sup>*</sup><sub>obs</sub> ∈ θ<sup>*</sup></span> is an outcome of the random sample variable, dependent on the datapoints, such that <span class="inline math" >θ<sup>*</sup><sub>obs</sub> = θ<sup>*</sup>(x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</span>. This is a real valued guess of the actual value θ based on the observed data.</li>
     </ul>
 
     <p>One way to evaluate how accurate the sample estimate is:</p>
-    <div class="box math-definition">
-      <p>In the case where the <span class="inline-math">E(θ<sup>*</sup>) = θ</span> for all <span class="inline-math">θ ∈ Ω<sub>Θ</sub></span> then our observation is said to be <b>in line with the expected value</b>.</p>
+    <div class="box definition" >
+      <p>In the case where the <span class="inline math" >E(θ<sup>*</sup>) = θ</span> for all <span class="inline math" >θ ∈ Ω<sub>Θ</sub></span> then our observation is said to be <b>in line with the expected value</b>.</p>
     </div>
 
     <h4>COMMON OBSERVATIONS IN TYPICAL DISTRIBUTIONS</h4>
     <p>Given the typical distributions, the following estimates are relevant values for θ<sup>*</sup><sub>obs</sub>.</p>
     <ul>
-      <li>Measurements assumed to be Bin(n, p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x / n</span></li>
-      <li>Measurements assumed to be Hyp(N, n, p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x / n</span></li>
-      <li>Measurements assumed to be ffg(p) → <span class="inline-math">p<sup>*</sup><sub>obs</sub> = x̄</span></li>
-      <li>Measurements assumed to be Po(μ) → <span class="inline-math">μ<sup>*</sup><sub>obs</sub> = x̄</span></li>
-      <li>Measurements assumed to be Exp(λ) → <span class="inline-math">λ<sup>*</sup><sub>obs</sub> = 1 / x̄</span></li>
-      <li>Measurements assumed to be N(μ, σ) → <span class="inline-math">μ<sup>*</sup><sub>obs</sub> = x̄</span>  and <span class="inline-math">σ<sup>*</sup><sub>obs</sub> = s</span> , i.e the sample standard deviations (see above).</li>
+      <li>Measurements assumed to be Bin(n, p) → <span class="inline math" >p<sup>*</sup><sub>obs</sub> = x / n</span></li>
+      <li>Measurements assumed to be Hyp(N, n, p) → <span class="inline math" >p<sup>*</sup><sub>obs</sub> = x / n</span></li>
+      <li>Measurements assumed to be ffg(p) → <span class="inline math" >p<sup>*</sup><sub>obs</sub> = x̄</span></li>
+      <li>Measurements assumed to be Po(μ) → <span class="inline math" >μ<sup>*</sup><sub>obs</sub> = x̄</span></li>
+      <li>Measurements assumed to be Exp(λ) → <span class="inline math" >λ<sup>*</sup><sub>obs</sub> = 1 / x̄</span></li>
+      <li>Measurements assumed to be N(μ, σ) → <span class="inline math" >μ<sup>*</sup><sub>obs</sub> = x̄</span>  and <span class="inline math" >σ<sup>*</sup><sub>obs</sub> = s</span> , i.e the sample standard deviations (see above).</li>
     </ul>
 
     <h4>THE MAXIMUM LIKELIHOOD METHOD</h4>
-    <p>In a situation where we have information about the probability or density function of a distribution, then we can express a general equation expressing the probability of some outcome given a set of measurements. This probabilty is defined as the <b>likelihood function</b>, commonly denoted <span class="inline-math">L(θ)</span>, where θ represents the unknown parameter that the distribution is dependent on. This assumes that we can express ρ<sub>X</sub>(x) or ƒ<sub>X</sub>(x) in general terms, and that they themselves are dependent on theta in terms. Given some arbitrary set of measurements x<sub>i</sub></p>
+    <p>In a situation where we have information about the probability or density function of a distribution, then we can express a general equation expressing the probability of some outcome given a set of measurements. This probabilty is defined as the <b>likelihood function</b>, commonly denoted <span class="inline math" >L(θ)</span>, where θ represents the unknown parameter that the distribution is dependent on. This assumes that we can express ρ<sub>X</sub>(x) or ƒ<sub>X</sub>(x) in general terms, and that they themselves are dependent on theta in terms. Given some arbitrary set of measurements x<sub>i</sub></p>
 
-    <div class="box math-definition">
+    <div class="box definition" >
       <p>The real value θ<sup>*</sup><sub>obs</sub> that maximizes the likelihood function L(θ) is called the <b>maximum likelihood estimate, ML-estimate, of θ</b></p>
 
-      <div class="box math">
+      <div class="box formula math" >
         L(θ) = P(X<sub>1</sub> = x<sub>1</sub>, ..., X<sub>n</sub> = x<sub>n</sub> ; θ)<br>
         <em>discrete</em> L(θ) = ρ<sub>X1, ... , Xn</sub> (x<sub>1</sub>, ... , x<sub>n</sub>) = {if independent} = ↩ <br>ρ<sub>X1</sub> (x<sub>1</sub>) × ... × ρ<sub>Xn</sub> (x<sub>n</sub>)<br>
         <em>continuous</em> L(θ) = ƒ<sub>X1, ... , Xn</sub> (x<sub>1</sub>, ... , x<sub>n</sub>) = {if independent} = ↩ <br>ƒ<sub>X1</sub> (x<sub>1</sub>) × ... × ƒ<sub>Xn</sub> (x<sub>n</sub>)
       </div>
       <div class="box attention">A θ is added after a semicolon here to avoid ambiguity and clarify that these are functions dependent on the measurements x<sub>i</sub>, but are also defined with respect to the parameter. </div>
-      <div class="box attention">A practical note when calculating this value is that the value for θ that maximise L(θ) is usually the same one that maximizes the logarithmic function <span class="inline-math"><em>l</em>(θ) = ln( L(θ) )</span>. This is due to the fact that logarithmic functions are always strictly increasing when traversing the positive numberline. The differentials of <em>l</em> (θ) is almost always much easier to determine than that of L(θ).</div>
+      <div class="box attention">A practical note when calculating this value is that the value for θ that maximise L(θ) is usually the same one that maximizes the logarithmic function <span class="inline math" ><em>l</em>(θ) = ln( L(θ) )</span>. This is due to the fact that logarithmic functions are always strictly increasing when traversing the positive numberline. The differentials of <em>l</em> (θ) is almost always much easier to determine than that of L(θ).</div>
     </div>
 
     <h4>THE LEAST SQUARE METHOD</h4>
     <p>For situations when we instead have information about the expected value and variance of a random variable dependent on some unknown variable θ, we can instead seek to minimize the differences between measurements and theoretical expectations. The principle holds that for each measurement, there is a deviation from the expected value.</p>
-    <div class="box math-definition">
-      <p>These differences are all dependent on the unknown parameter, and finding the value θ<sup>*</sup><sub>obs</sub> which minimizes them is our estimated value for the parameter itself. The function expressing these differences is usually denoted <span class="inline-math"><em>Q(θ)</em></span> and is called the <b>least square function</b>.</p>
+    <div class="box definition" >
+      <p>These differences are all dependent on the unknown parameter, and finding the value θ<sup>*</sup><sub>obs</sub> which minimizes them is our estimated value for the parameter itself. The function expressing these differences is usually denoted <span class="inline math" ><em>Q(θ)</em></span> and is called the <b>least square function</b>.</p>
 
-      <div class="box math">Q(θ) = ∑<sub>i</sub> [x<sub>i</sub> - μ<sub>i</sub>(θ)]^{2}<br>μ<sub>i</sub>(θ) = E(X<sub>i</sub>)</div>
+      <div class="box formula math" >Q(θ) = ∑<sub>i</sub> [x<sub>i</sub> - μ<sub>i</sub>(θ)]^{2}<br>μ<sub>i</sub>(θ) = E(X<sub>i</sub>)</div>
 
       <div class="box attention">A thing to note here is that while Q, like L, is technically dependent on both the parameter θ and the the variables x<sub>i</sub>, we are only determining a value for our estimate once we have actual measurements. As such, it is not interesting to maximize or minimize with respect to the observations.</div>
     </div>
@@ -666,10 +660,10 @@
 
 
     <h3 id="sample-variance-and-deviation">SAMPLE VARIANCE AND DEVIATIONS</h3>
-    <p>Keeping in mind that the <span class="inline-math">random sample variable θ<sup>*</sup></span> is a random variable, this is the relevant variable used when determining the <b>estimated value and variance of our</b> <span class="inline-math">estimated parameter θ</span>. Using the example of where we have some random variable <span class="inline-math">X ∈ Po(μ)</span>. The context could be anything, but we know from above that the standard point sample estimate <span class="inline-math">mu<sup>*</sup><sub>obs</sub> = x̄</span>, i.e the arithmetic mean. This implies that the random sample variable <span class="inline-math">μ<sup>*</sup> = X̅</span>. In short, calculating the mean x̄, given any number of observed measurements will give us a real value for our guess as to what μ actually is. Similarly, by calculating the expected value, variance and deviations, we can further analyze the quality of our guess. In this example:</p>
+    <p>Keeping in mind that the <span class="inline math" >random sample variable θ<sup>*</sup></span> is a random variable, this is the relevant variable used when determining the <b>estimated value and variance of our</b> <span class="inline math" >estimated parameter θ</span>. Using the example of where we have some random variable <span class="inline math" >X ∈ Po(μ)</span>. The context could be anything, but we know from above that the standard point sample estimate <span class="inline math" >mu<sup>*</sup><sub>obs</sub> = x̄</span>, i.e the arithmetic mean. This implies that the random sample variable <span class="inline math" >μ<sup>*</sup> = X̅</span>. In short, calculating the mean x̄, given any number of observed measurements will give us a real value for our guess as to what μ actually is. Similarly, by calculating the expected value, variance and deviations, we can further analyze the quality of our guess. In this example:</p>
 
 
-    <div class="box math">
+    <div class="box formula math" >
       E(μ<sup>*</sup>) = E(X̅) = frac{1}{n} × n × E(X) = μ<br>
       V(μ<sup>*</sup>) = V(X̅) = frac{1}{n} × n × V(X) = μ<br>
       D(μ<sup>*</sup>) = sqrt{ V(X̅) } = sqrt{ μ }
@@ -677,36 +671,36 @@
 
     <p>Something to note, the closer our expected value is to the theoretical real value of the parameter, the better the estimate. Additionally, the lower the real value of the variance is, the more effective the estimate.</p>
 
-    <div class="box math-definition">
-      <p>When calculating a real value of the standard deviation <span class="inline-math">D(θ<sup>*</sup>)</span>, we determine the <b>average error of θ<sup>*</sup></b>, which is denoted <span class="inline-math"><em>d</em>(θ<sup>*</sup>)</span></p>
+    <div class="box definition" >
+      <p>When calculating a real value of the standard deviation <span class="inline math" >D(θ<sup>*</sup>)</span>, we determine the <b>average error of θ<sup>*</sup></b>, which is denoted <span class="inline math" ><em>d</em>(θ<sup>*</sup>)</span></p>
       <p>In practice, this entails determining the deviation as above, and letting the parameter θ take the real value θ<sup>*</sup><sub>obs</sub>. In the example above, we would let <em>μ = x/n</em>.</p>
     </div>
 
     <h3 id="intervals">CONFIDENCE INTERVAL</h3>
     <p>Estimated intervals are used to determine a level of certainty to which a point estimation exists within some particular range. Generally speaking, we want to make sure that our θ<sup>*</sup><sub>obs</sub> is within acceptable margins.</p>
-    <div class="box math">P(θ - k &lt θ<sup>*</sup> &lt θ + k) = 1 - α</div>
-    <p>The expression above state that our observed random variable falls within the interval <span class="inline-math">I<sub>θ</sub> ∈ θ<sup>*</sup><sub>obs</sub> ± k</span> with a probability level of 1 - α.</p>
+    <div class="box formula math" >P(θ - k &lt θ<sup>*</sup> &lt θ + k) = 1 - α</div>
+    <p>The expression above state that our observed random variable falls within the interval <span class="inline math" >I<sub>θ</sub> ∈ θ<sup>*</sup><sub>obs</sub> ± k</span> with a probability level of 1 - α.</p>
 
     <p>Generally speaking, the more observations the more reliable the estimatino will be, which tightens the interval. For the normal distribution, a smaller value for σ will also correspond with a smaller interval. When using multiple observed data, with variables X<sub>i</sub> ∈ N(μ, σ), it is useful to remember that:</p>
 
-    <div class="box math">X̅ ∈ N(μ, frac{σ}{ sqrt{n} }) </div>
+    <div class="box formula math" >X̅ ∈ N(μ, frac{σ}{ sqrt{n} }) </div>
 
     <h4>λ-METHOD</h4>
-    <p>For a case where <span class="inline-math">θ<sup>*</sup> ∈ N(θ, D)</span> and D is a known quantity, alpha-quantiles can be utilized with a the standard normalization as follows:</p>
-    <div class="box math">P( -λ<sub>α/2</sub> &lt frac{θ<sup>*</sup> - θ}{D} &lt λ<sub>α/2</sub> ) = 1 - α</div>
-    <div class="box math">θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × λ<sub>α/2 <br>has the confidence level of 1 - α</div>
+    <p>For a case where <span class="inline math" >θ<sup>*</sup> ∈ N(θ, D)</span> and D is a known quantity, alpha-quantiles can be utilized with a the standard normalization as follows:</p>
+    <div class="box formula math" >P( -λ<sub>α/2</sub> &lt frac{θ<sup>*</sup> - θ}{D} &lt λ<sub>α/2</sub> ) = 1 - α</div>
+    <div class="box formula math" >θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × λ<sub>α/2 <br>has the confidence level of 1 - α</div>
 
     <h4><em>t</em>-METHOD</h4>
-    <p>The t-distribution can be used in a similar fashion when the standard deviation is unknown and must be estimated. If <span class="inline-math">θ<sup>*</sup> ∈ N(θ, D)</span> and <span class="inline-math">D<sup>*</sup><sub>obs</sub></span> is a estimate such that <span class="inline-math">(θ<sup>*</sup> - θ) / D <sup>*</sup> ∈ <em>t</em>(ƒ)</span>, then:</p>
-    <div class="box math">P( -<em>t</em><sub>α/2</sub> (ƒ) &lt frac{θ<sup>*</sup> - θ}{D} &lt <em>t</em><sub>α/2</sub> (ƒ) ) = 1 - α</div>
-    <div class="box math">θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × <em>t</em><sub>α/2</sub> (ƒ) <br>has the confidence level of 1 - α</div>
+    <p>The t-distribution can be used in a similar fashion when the standard deviation is unknown and must be estimated. If <span class="inline math" >θ<sup>*</sup> ∈ N(θ, D)</span> and <span class="inline math" >D<sup>*</sup><sub>obs</sub></span> is a estimate such that <span class="inline math" >(θ<sup>*</sup> - θ) / D <sup>*</sup> ∈ <em>t</em>(ƒ)</span>, then:</p>
+    <div class="box formula math" >P( -<em>t</em><sub>α/2</sub> (ƒ) &lt frac{θ<sup>*</sup> - θ}{D} &lt <em>t</em><sub>α/2</sub> (ƒ) ) = 1 - α</div>
+    <div class="box formula math" >θ ∈ θ<sup>*</sup><sub>obs</sub> ± D × <em>t</em><sub>α/2</sub> (ƒ) <br>has the confidence level of 1 - α</div>
 
-    <p>Commonly, it is useful to remember that <span class="inline-math">frac{X̅ - μ}{S / sqrt{n} } ∈ t(n - 1)</span>, when σ<sup>*</sup> is S. The standard deviation parameter must not be dependent on θ here, or the criteria will not be fullfilled.</p>
+    <p>Commonly, it is useful to remember that <span class="inline math" >frac{X̅ - μ}{S / sqrt{n} } ∈ t(n - 1)</span>, when σ<sup>*</sup> is S. The standard deviation parameter must not be dependent on θ here, or the criteria will not be fullfilled.</p>
 
     <h4>χ-METHOD</h4>
-    <p>In the more general case of a parameter θ being estimated with θ<sup>*</sup><sub>obs</sub> such that <span class="inline-math">ƒ × ( θ<sup>*</sup> / θ )<sup>2</sup> ∈ χ<sup>2</sup> (ƒ)</span>, then:</p>
-    <div class="box math">( θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>α/2</sub> (ƒ)}, θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>1 - α/2</sub> (ƒ) } )</div>
+    <p>In the more general case of a parameter θ being estimated with θ<sup>*</sup><sub>obs</sub> such that <span class="inline math" >ƒ × ( θ<sup>*</sup> / θ )<sup>2</sup> ∈ χ<sup>2</sup> (ƒ)</span>, then:</p>
+    <div class="box formula math" >( θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>α/2</sub> (ƒ)}, θ<sup>*</sup><sub>obs</sub> × sqrt{ ƒ / χ<sup>2</sup><sub>1 - α/2</sub> (ƒ) } )</div>
     <p>Is a confidence interval to the level of 1 - α</p>
-    <p>One practical fact to keep in mind is that <span class="inline-math">frac{(n - 1) × S<sup>2</sup>}{ σ<sup>2</sup> } ∈ χ<sup>2</sup> (n - 1)</span>.</p>
+    <p>One practical fact to keep in mind is that <span class="inline math" >frac{(n - 1) × S<sup>2</sup>}{ σ<sup>2</sup> } ∈ χ<sup>2</sup> (n - 1)</span>.</p>
   </section>
 </article>
