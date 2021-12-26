@@ -40,28 +40,28 @@
     <p>While the Kernel Layer controls distribution of resources and access at the hardware level, the User Layer offers <i>users</i> and <i>groups</i> as a means of delimiting and segregating access to a device in the linux environment. Essentially, a user, or a group of users get some level of access to each resource and directory available at the user level. This is all in turn controlled by the <i>super user</i>, providing a hierarchy of access. In most cases, a user will be a person, and groups will be particular extra priviliges that users can be given. On most computers, there will be a very limited number of users, if even more than one, but for a server or network device, there may be a large pool of users with a multitude of groups.</p>
 
     <h3>USER & GROUP DATA</h3>
-    <p><code>/etc/passwd</code> contains all users on a system. Each line represent a user, with data fields being separated with colon <code>:</code> with fields containing the following information</p>
+    <p><span class="inline code">/etc/passwd</span> contains all users on a system. Each line represent a user, with data fields being separated with colon, <span class="inline code">:</span>, with fields containing the following information</p>
 
     <p><strong>&ltUsername&gt : &ltpassword&gt : &ltUID&gt : &ltGID&gt : &ltComment&gt : &lthome directory&gt : &ltshell used&gt</strong></p>
 
-    <p>If the password is x → it is encrypted. Encrypted passwords are stored in <code>/etc/shadow</code></p>
+    <p>If the password is x → it is encrypted. Encrypted passwords are stored in <span class="inline code">/etc/shadow</span></p>
 
-    <p>Similarly, all groups are listed in <code>/etc/group</code> on the following format:</p>
+    <p>Similarly, all groups are listed in <span class="inline code">/etc/group</span> on the following format:</p>
     <p><strong>&ltgroup name&gt : &ltpassword&gt : &ltGID&gt : &ltusers in the group used&gt</strong></p>
 
-    <p>One very practical way of printing basic user info to the terminal is by piping the content of passwd into cut, which will use : as separator, and only output the first field per line. <code>-d</code> signifies the separator wanted, <code>-f</code> sets the range of fields that should be printed.</p>
+    <p>One very practical way of printing basic user info to the terminal is by piping the content of passwd into cut, which will use : as separator, and only output the first field per line. <span class="inline code">-d</span> signifies the separator wanted, <span class="inline code">-f</span> sets the range of fields that should be printed.</p>
 
-    <pre class="box snippet">$ cat /etc/passwd | cut -d: -f1</pre>
+    <div class="box snippet code">$ cat /etc/passwd | cut -d: -f1</div>
 
     <h3>MODIFYING USERS</h3>
-    <p><code>useradd</code>,<code>userdel</code>,<code>usermod</code> are low level command line tools which can be used to create, delete and modify users on a machine. Respectively, <code>groupadd</code>, <code>groupdel</code>, and <code>groupmod</code> are all corresponding tools for groups.</p>
-    <p>Meanwhile, <code>adduser</code>,<code>deluser</code>, <code>addgroup</code> and <code>delgroup</code> offer somewhat more versatile versions of the same utility which depending on the desired outcome might be a more appropriate option.</p>
+    <p><span class="inline code">useradd</span>,<span class="inline code">userdel</span>,<span class="inline code">usermod</span> are low level command line tools which can be used to create, delete and modify users on a machine. Respectively, <span class="inline code">groupadd</span>, <span class="inline code">groupdel</span>, and <span class="inline code">groupmod</span> are all corresponding tools for groups.</p>
+    <p>Meanwhile, <span class="inline code">adduser</span>,<span class="inline code">deluser</span>, <span class="inline code">addgroup</span> and <span class="inline code">delgroup</span> offer somewhat more versatile versions of the same utility which depending on the desired outcome might be a more appropriate option.</p>
     <p>Here is a forum post discussing the<a href="https://unix.stackexchange.com/questions/80277/whats-the-difference-between-a-normal-user-and-a-system-user">difference between a normal and system user</a>. Meanwhile, this article give a good initial <a href="https://unix.stackexchange.com/questions/80277/whats-the-difference-between-a-normal-user-and-a-system-user">initial introduction to the passwd file</a>.</p>
 
     <h3>PERMISSIONS</h3>
-    <p>Viewing permissions of any file or directory is essentially achieved with <code>ls -la</code></p>
-    <pre class="box snippet">-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.txt
-(    1   )    2      3      4    5     (     6    ) (   7   )</pre>
+    <p>Viewing permissions of any file or directory is essentially achieved with <span class="inline code">ls -la</span></p>
+    <div class="box snippet code">-rwxrw-r--    1    root   root 2048    Jan 13 07:11 afile.txt
+(    1   )    2      3      4    5     (     6    ) (   7   )</div>
     <ol>
       <li>Permission Mode bits. In order of owner, group, other</li>
       <li>Number of hard links</li>
@@ -76,26 +76,26 @@
     <blockquote class="q" cite="">
       Of all the gods of mount olympus, The super user is the greatest, for his was the power to accidentally wipe away the entire world...
     </blockquote>
-    <p>Every admin user technically has a dedicated password that elevates them to super user status. It however, not set by default and must be activated separately. There is no need to do it though, because <code>$ sudo su</code> will achieve the same results. Once in su mode, you will never be prompted for an admin confirmation again.</p>
+    <p>Every admin user technically has a dedicated password that elevates them to super user status. It however, not set by default and must be activated separately. There is no need to do it though, because <span class="inline code">$ sudo su</span> will achieve the same results. Once in su mode, you will never be prompted for an admin confirmation again.</p>
   </section>
 
   <h2 id="file-management">FILE MANAGEMENT</h2>
   <section class="sub-section">
     <h3 id="file-links">FILE LINKS</h3>
     <p><b>Hard links</b> are two separate files that share the same inode and the same data block. As long as any one of the linked files remain, the file will remain active.</p>
-    <pre class="box snippet">ln <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></pre>
+    <div class="box snippet code">ln <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></div>
     <p><b>Symbolic links</b>,  meanwhile, are files with their own inode that references another inode. In practice, it operates as a shortcut. Deleting the symbolic link has no effect on the original data.</p>
-    <pre class="box snippet">ln -s <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></pre>
-    <p>Use <code>ls -l to see where any link is pointing</code></p>
+    <div class="box snippet code">ln -s <em>&lttarget file&gt</em> <em>&ltlink name&gt</em></div>
+    <p>Use <span class="inline code">ls -l</span> to see where any link is pointing</p>
 
     <h3 id="move-rename">MOVE & RENAME</h3>
-    <p>Files are moved basically by using the <code>mv</code> command</p>
-    <pre class="box snippet">mv <em>path/to/source.file</em> <em>path/to/destination.file</em></pre>
+    <p>Files are moved basically by using the <span class="inline code">mv</span> command</p>
+    <div class="box snippet code">mv <em>path/to/source.file</em> <em>path/to/destination.file</em></div>
     <p>Multiple files matching regex can be moved in a single command</p>
-    <pre class="box snippet">mv <em>path/*</em> <em>dest/directory/</em></pre>
+    <div class="box snippet code">mv <em>path/*</em> <em>dest/directory/</em></div>
     <p>By omitting the filename in the destination, bash will use the existing by default. A file can be <strong>renamed</strong> by simply choosing a new filename as the destination</p>
-    <p>The perl <code>rename</code> command is excellent for adjusting filenames of multiple files. Note that it isn't native in bash. To <b>remove</b> a particular substring from all filenames in a certain directory, use:</p>
-    <pre class="box snippet">rename 's/<em>string-to-remove</em>//;' <em>path/to/directory/*</em></pre>
+    <p>The perl <span class="inline code">rename</span> command is excellent for adjusting filenames of multiple files. Note that it isn't native in bash. To <b>remove</b> a particular substring from all filenames in a certain directory, use:</p>
+    <div class="box snippet code">rename 's/<em>string-to-remove</em>//;' <em>path/to/directory/*</em></div>
   </section>
 
   <h2 id="resource-management">RESOURCE MANAGEMENT</h2>
@@ -103,27 +103,27 @@
     <h3>Disk Usage</h3>
     <p>To get started, check out this primer for <a href="https://alligator.io/workflow/command-line-basics-analyzing-disk-usage/">command line disk usage analysis</a>.</p>
 
-    <p><code>df -h</code> prints summary of each mounted partition and how much available space is left for each. The <code>-h</code> or <code>--human-readable</code> option designates output about file system usage to be in powers of 1024 bytes</p>
+    <p><span class="inline code">df -h</span> prints a summary of each mounted partition and how much available space is left for each. The <span class="inline code">-h</span> or <span class="inline code">--human-readable</span> option designates output about file system usage to be in powers of 1024 bytes</p>
 
-    <p><code>fdisk</code> is the standard command utility used to <strong>create, delete, list</strong> and <strong>analyze disk partitions</strong></p>
+    <p><span class="inline code">fdisk</span> is the standard command utility used to <strong>create, delete, list</strong> and <strong>analyze disk partitions</strong></p>
 
     <p>Output partitions of a given device:</p>
-    <pre class="box snippet">$ sudo fdisk -l &ltdevice&gt</pre>
+    <div class="box snippet code">$ sudo fdisk -l &ltdevice&gt</div>
 
     <p>To <strong>edit partitions</strong> you might use the <strong>interactive utility tools</strong> giving &ltdevice&gt as the argument:</p>
-    <pre class="box snippet">$ sudo fdisk /dev/sda</pre>
+    <div class="box snippet code">$ sudo fdisk /dev/sda</div>
 
     <h3>Memory & Processor Usage</h3>
-    <p><code>htop</code>. Go get it.</p>
+    <p><span class="inline code">htop</span>. Go get it.</p>
 
   </section>
 
   <h2 id="package-management">PACKAGE MANAGEMENT</h2>
   <section class="sub-section">
-    <p>Packages, i.e applications, libraries, plugins and other resources, are commonly installed with a <b>package manager</b> in Linux. Distros often offer software center shipped in the box which perform a similar task. <code>apt</code> is a command line tool that offers an interface for package managing.</p>
+    <p>Packages, i.e applications, libraries, plugins and other resources, are commonly installed with a <b>package manager</b> in Linux. Distros often offer software center shipped in the box which perform a similar task. <span class="inline code">apt</span> is a command line tool that offers an interface for package managing.</p>
 
-    <pre class="box snippet">sudo apt install <em>package</em></pre>
-    <p>To view history, logs of all operations are kept by the system. For a debian system, they will likely be located under <code>/var/log/apt/history.log</code>. This file is kept limited in time scope, and older logs are stored az zipped files in the same directory.</p>
+    <div class="box snippet code">sudo apt install <em>package</em></div>
+    <p>To view history, logs of all operations are kept by the system. For a debian system, they will likely be located under <span class="inline code">/var/log/apt/history.log</span>. This file is kept limited in time scope, and older logs are stored as zipped files in the same directory.</p>
 
     <p class="addme">apt package utility and package sources.</p>
     <p class="addme">how to install, repair or modify packages</p>
@@ -132,13 +132,13 @@
 
   <h2 id="archives-compression">ARCHIVES & COMPRESSION</h2>
   <section class="sub-section">
-    <p>The <code>tar</code> utility is basically all you'll need to compress, decompress and otherwise deal with archives. The <b>full documentation</b> is available in the manpages or via the following link <a href="http://www.gnu.org/software/tar/manual">http://www.gnu.org/software/tar/manual</a>. Primarily, the main idea is to make files and/or directories smaller to make management and transfer easier.</p>
+    <p>The <span class="inline code">tar</span> utility is basically all you'll need to compress, decompress and otherwise deal with archives. The <b>full documentation</b> is available in the manpages or via the following link <a href="http://www.gnu.org/software/tar/manual">http://www.gnu.org/software/tar/manual</a>. Primarily, the main idea is to make files and/or directories smaller to make management and transfer easier.</p>
 
     <p>The tar utility is extremely versatile and can be applied to a ton of different tasks. This also makes it a bit complicated to find clear information on how to do very simple things. Examples on how the create and extract (i.e compress and decompress) archives follow below. </p>
 
-    <pre class="box snippet">tar -czvf &ltcompressed archive path&gt &ltinput directory&gt
+    <div class="box snippet code">tar -czvf &ltcompressed archive path&gt &ltinput directory&gt
 
-tar -zxvf &ltarchive path&gt</pre>
+tar -zxvf &ltarchive path&gt</div>
     <ul>
       <li><b>-c</b> is the command for <em>creating</em> an arhive.</li>
       <li><b>-x</b> is the command for <em>extracting</em> data out of the archive</li>
@@ -146,7 +146,7 @@ tar -zxvf &ltarchive path&gt</pre>
       <li><b>-v</b> is the option selecting verbose output during execution.</li>
       <li><b>-f</b> is the option for selecting the archive to work with. In the creation case, it designate the archive that will be crated and where it will be located. In the extraction case, it selects the archive that will be uncompressed.</li>
     </ul>
-    <p>Generally speaking, the basic command will <em>"extract here"</em> in the <code>pwd</code>.</p>
+    <p>Generally speaking, the basic command will <em>"extract here"</em> in the <span class="inline code">pwd</span>.</p>
   </section>
 
   <h2 id="device-management">DEVICE MANAGEMENT</h2>

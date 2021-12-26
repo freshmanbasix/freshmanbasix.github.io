@@ -28,7 +28,7 @@
   <section class="sub-section">
     <p>Under the <b>root</b>, the wiki is organized into a few simple folders. The complexity remains quite low which allows for the website directory to consist only a small number of files.</p>
 
-    <pre class="box snippet">
+    <div class="box snippet code">
 <b>root/</b>--
       |-index.html
       |-style.css
@@ -44,7 +44,7 @@
       |
       |-<b>articles/</b>-
                  |-article.html
-</pre>
+</div>
 
     <ul>
       <li><b>index.html</b> is the core of the website, being loaded as the default on a web request. This file should ONLY contain the primary framework of the website, leaving the actual content distributed elsewhere.</li>
@@ -69,9 +69,9 @@
     <h3>Navigation Bar</h3>
     <p>The leftmost column offers an overview and navigation of articles. Under the nav element with <b>id="nav-bar"</b> is an unordered list, with each <em>li</em> formated as follows:</p>
 
-    <pre class="box snippet">&ltli class="nav-item"&gt
+    <div class="box snippet code">&ltli class="nav-item"&gt
   &lta href="javascript:openArticle('<em>article-file-name</em>')"&gt<em>Title</em>&lt/a&gt
-&lt/li&gt</pre>
+&lt/li&gt</div>
 
     <p>Each list-item must have the class attribute set to <b>nav-item</b> and contain an anchor element with the href attribute set to call the javascript function <em>openArticle()</em>.</p>
 
@@ -83,7 +83,7 @@
       <figcaption>Diagram illustrating the core hierarchy of the a wiki article. <a href="rsc/site/wiki-article-diagram.xml">Download XML file</a></figcaption>
     </figure>
 
-    <pre class="box snippet">
+    <div class="box snippet code">
 &ltarticle id="<em>file-name</em>" class="wiki-entry"&gt
 
   &lth1 class="column-header"&gt<em>Title</em>&lt/h1&gt
@@ -110,7 +110,7 @@
   &lt/section&gt
 
 &lt/article&gt
-    </pre>
+    </div>
 
     <p class="box attention">Note that each <b>h2</b> header preceeds the <b>section</b> element for each sub-section. This was chosen because it made it simpler to reliably make the margins larger for the text content than the header itself. It does feel slightly unintuitive though, so an alternate solution is being worked on. </p>
 
@@ -136,22 +136,23 @@
     <p>The plain <b>&ltp&gt</b> element is all you need to create a correctly styled <strong>Paragraph</strong>. Each paragraph of text need an element on its own. Manual linebreaks inside p elements are to be avoided</p>
 
     <p>To mark out points where future <strong>TODOs</strong> should be added, there is a dedicated &ltp&gt element with the class attribute set to <em>addme</em>. It will render a very eyecathcing and pretty ugly object. Use them mainly to quickly mark out the general idea of what should be added.</p>
-    <pre class="box snippet">&ltp class="addme"&gt&lt/p&gt</pre>
+    <div class="box snippet code">&ltp class="addme"&gt&lt/p&gt</div>
     <p class="addme">The todos will look like this.</p>
 
     <h3>Inline blocks</h3>
     <p>Only a couple of inline elements will be relevant for articles. In the order of eyecathing, the &ltstrong&gt tag will make text stick out <strong>VERY</strong> much. The &ltb&gt tag is just plain <b>boldface</b> and lastly the &ltem&gt is used for <em>cursive</em> text.</p>
-    <p>For marking out programming keywords or general code-adjacent words the <code>&ltcode&gt</code> element can be used. Be aware that the &ltcode&gt tag has a tendency to violate the width set by the parent element. As such, longer words might not wrap as desired. </p>
+    <p>For marking out programming keywords or general code-adjacent words, a <b>span</b> element can be used as in the example below.</p>
+    <div class="box snippet code">&ltspan class="inline code"&gt <em>Place inline code here</em> &lt/span&gt</div>
 
     <h3>Empasized Blocks</h3>
     <p><strong>Blockquotes</strong> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
-    <pre class="box snippet">
+    <div class="box snippet code">
 &ltfigure class="blockquote"&gt
   &ltblockquote cite="<em>optional link to source</em>"&gt
     &ltp&gt<em>Actual quote</em>&lt/p&gt
   &lt/blockquote&gt
   &ltfigcaption&gt- <em>source</em>, &ltcite&gt&lta href="<em>link to source</em>"&gt<em>link text</em>&lt/a&gt&lt/cite&gt&lt/figcaption&gt
-&lt/figure&gt</pre>
+&lt/figure&gt</div>
     <figure class="blockquote">
       <blockquote cite="">
         <p>This is what the blockquote will look like</p>
@@ -160,12 +161,12 @@
     </figure>
 
     <p><strong>Figures & Images</strong> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
-    <pre class="box snippet">
+    <div class="box snippet code">
 &ltfigure&gt
 &ltimg src="<em>filepath</em>" alt=""&gt
 &ltfigcaption&gt<em>Caption</em>&lt/figcaption&gt
 &lt/figure&gt
-    </pre>
+    </div>
     <figure>
       <img src="rsc/site/logo-hjallium.jpg" alt="image">
       <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/site/logo-hjallium.jpg">downloaded directly here</a></figcaption>
@@ -173,16 +174,16 @@
     <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
 
     <p><strong>Code snippets</strong> are simple boxes with example code. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render the box correctly.</p>
-    <pre class="box snippet">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</pre>
+    <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
     <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
 
     <p><strong>Attention blocks</strong> are a good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.</p>
-    <pre class="box snippet">&ltp class="box attention"&gt <em>Write important info here...</em>&lt/p&gt</pre>
+    <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
     <p class="box attention">... and the info will render like this</p>
 
     <h3>Tables</h3>
     <p><strong>Tables</strong> are currently only supported in two-column form, with each column eating up 50% of the width. The most appropriate use is to simply make visually appealing lists of resource and link pairs.</p>
-    <pre class="box snippet">
+    <div class="box snippet code">
 &lttable&gt
   &ltcaption&gt<em>top caption</em>&lt/caption&gt
   &ltcolgroup span="2"&gt&lt/colgroup&gt
@@ -190,20 +191,20 @@
     &lttd&gt<em>description</em>&lt/td&gt
     &lttd&gt<em>link</em>&lt/td&gt
   &lt/tr&gt
-&lt/table&gt</pre>
+&lt/table&gt</div>
 
   <h3 id="math">MATH</h3>
   Several classes have been designed specifically for mathematical notes. They are all described below.
 
   <h4>INLINE MATH EXPRESSIONS</h4>
   This inline block will look a lot like the inline code element, but they should not be used interchangeably.
-  <pre class="box snippet">&ltspan class="inline math"&gt <em>insert math here</em> &lt/span&gt</pre>
+  <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
 
   <h4>MATH FORMULA BLOCK</h4>
-  <pre class="box snippet">&ltdiv class="box formula math"&gt <em>write formula here</em> &lt/div&gt</pre>
+  <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
 
   <h4>THEORY DEFINITION BLOCK</h4>
-  <pre class="box snippet">&ltdiv class="box definition math&gt <em>write definitions here</em> &lt/div&gt</pre>
+  <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
   </section>
 
   <!--              -->

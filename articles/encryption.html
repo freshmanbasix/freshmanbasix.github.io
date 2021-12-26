@@ -39,40 +39,40 @@
 
     <h3>USAGE</h3>
 
-    <p>Below follows a number of examples of how one might use <code>gpg</code> to achieve some serious privacy with key-pairs. If questions pop up, it is always good practice to take a look in the manpages, found either in your terminal, or <a href="http://manpages.org/gpg">right here</a>.</p>
+    <p>Below follows a number of examples of how one might use <span class="inline code">gpg</span> to achieve some serious privacy with key-pairs. If questions pop up, it is always good practice to take a look in the manpages, found either in your terminal, or <a href="http://manpages.org/gpg">right here</a>.</p>
 
     <h4>CREATE KEYS</h4>
-    <p>To partake in any kind of encrypted communication, you need to <b>generate a pair of keys</b>. These need to be generated on the own computer. The <code>--generate-key</code> command is the standard one intended for creating a new key. The <code>--full-generate-key</code> command is another alternative. Both prompt the user for input for the different parameters, but the latter will prompt for <em>all</em> options.</p>
-    <pre class="box snippet">gpg --generate-key</pre>
+    <p>To partake in any kind of encrypted communication, you need to <b>generate a pair of keys</b>. These need to be generated on the own computer. The <span class="inline code">--generate-key</span> command is the standard one intended for creating a new key. The <span class="inline code">--full-generate-key</span> command is another alternative. Both prompt the user for input for the different parameters, but the latter will prompt for <em>all</em> options.</p>
+    <div class="box snippet code">gpg --generate-key</div>
     <div class="box attention">For SSH keys, take a look at the <a href="https://www.ssh.com/academy/ssh/keygen">ssh-keygen</a> tool instead</div>
 
 
     <h4>ENCRYPT/DECRYPT</h4>
     <p> First you will want to <b>encrypt a file</b> intended to be read only by the <b>designated recipient</b> <i>UID</i>s.</p>
 
-    <pre class="box snippet">$ gpg --encrypt <em>original-file</em> --armor --recipient <em>UID</em> --output <em>encrypted-file</em> </pre>
+    <div class="box snippet code">$ gpg --encrypt <em>original-file</em> --armor --recipient <em>UID</em> --output <em>encrypted-file</em> </div>
 
     <p>When you've received a <b>encrypted-message</b>, you're going to want to <b>decrypt</b> it and output the unencrypted message to an appropriate <b>output-file</b>.</p>
 
-    <pre class="box snippet">$ gpg --decrypt --output <em>decrypted-file</em> <em>encrypted-file</em></pre>
+    <div class="box snippet code">$ gpg --decrypt --output <em>decrypted-file</em> <em>encrypted-file</em></div>
 
     <div class="box attention">The <b>--armor</b> option makes sure the resulting file uses a compatability friendly character set so no issues occur inbetween language environments.</div>
 
     <h4>SHARE & IMPORT KEYS</h4>
     <p>In order to <b>share</b> your own key with other people, <b>export it into a file</b> that can be sent through any prefered means. </p>
 
-    <pre class="box snippet">$ gpg --export <em>UID</em> --armor --output <em>output-file</em></pre>
+    <div class="box snippet code">$ gpg --export <em>UID</em> --armor --output <em>output-file</em></div>
 
     <p>Given a file with a key, <b>import it into your keychain</b></p>
-    <pre class="box snippet">gpg --import <em>key-file</em></pre>
+    <div class="box snippet code">gpg --import <em>key-file</em></div>
 
-    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <code>--list-keys</code> command. Optionally, the <code>--fingerprint</code> command gives a similar output. Both commands can take a UID argument to single out a particular key which is useful when automating verification.</p>
+    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <span class="inline code">--list-keys</span> command. Optionally, the <span class="inline code">--fingerprint</span> command gives a similar output. Both commands can take a UID argument to single out a particular key which is useful when automating verification.</p>
 
-    <pre class="box snippet">$ gpg --list-keys [UID]</pre>
-    <pre class="box snippet">$ gpg --fingerprint [UID]</pre>
+    <div class="box snippet code">$ gpg --list-keys [UID]</div>
+    <div class="box snippet code">$ gpg --fingerprint [UID]</div>
 
     <p>When a key has been confirmed beyond all reasonable doubt, the trust value can be edited. The command below will prompt the user to input a new trust value</p>
-    <pre class="box snippet">gpg --edit-key <em>UID</em> trust</pre>
+    <div class="box snippet code">gpg --edit-key <em>UID</em> trust</div>
 
   </section>
 </article>

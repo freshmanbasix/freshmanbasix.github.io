@@ -209,7 +209,6 @@ strong {
   border-left: 3px solid var(--orange);
   color: var(--dgrey);
   page-break-inside: avoid;
-  font: 18px/20px "Courier New";
   text-align: left;
   line-height: 1.0;
   max-width: 100%;
@@ -218,6 +217,10 @@ strong {
   overflow: auto;
   overflow-x: auto;
   white-space: pre-wrap;
+}
+
+.code {
+  font-family: "Courier New";
 }
 
 .formula {
@@ -274,12 +277,6 @@ figure.blockquote figcaption {
   font-style: normal;
   text-align: right;
   margin: 0 auto;
-}
-
-code {
-  background-color: var(--lgrey);
-  color: var(--red);
-  padding: 0px 3px 0px 3px;
 }
 
 figure {
