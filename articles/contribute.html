@@ -2,19 +2,19 @@
   <h1 class="column-header">CONTRIBUTE</h1>
   <section class="sub-section">
     <div id="toc-container">
-      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <h1 class="column-header toc-header">TABLE OF CONTENTS</h1>
       <ul class="toc">
-        <li><a href="#external-resources">External Resources</a></li>
-        <li><a href="#directory-hierarchy">Directory Hierarchy</a></li>
-        <li><a href="#html-map-overview">HTML Map Overview</a></li>
-        <li><a href="#formating-style-rules">Formating and style-rules</a></li>
-        <li><a href="#attribution">Attribution</a></li>
+        <li><a href="#external-resources">EXTERNAL RESOURCES</a></li>
+        <li><a href="#directory-hierarchy">DIRECTORY HIERARCHY</a></li>
+        <li><a href="#html-map-overview">HTML MAP OVERVIEW</a></li>
+        <li><a href="#formating-style-rules">FORMATING AND STYLE-RULES</a></li>
+        <li><a href="#attribution">ATTRIBUTION</a></li>
       </ul>
     </div>
     <p>In this article, complete instructions on how to practically go about making a contribution to the wiki will be documented. For the foreseeable future, it will be required by an author to get aquainted with the particular way that the website is designed and styled. Be aware that these particular solutions might not always be optimal, or even very good, from a conventional perspective. This does leave a great deal of room to make contributions that improve on these rag-tag, homemade design decitions. If you find something on this wiki that is crap and you have a good idea on how it might become less so, then keep reading this article and submit your suggestions.</p>
   </section>
 
-  <h2 id="external-resources">External Resources</h2>
+  <h2 id="external-resources">EXTERNAL RESOURCES</h2>
   <section class="sub-section">
     <p>The wiki is compeletely stored on a Git repository, meaning any change is done through pull requests. This offers an existing open source framework for managing, moderating and administrating the wiki without any need for user accounts. The repo is currently publicly hosted on Github and you'll find it <a href="https://github.com/freshmanbasix/freshmanbasix.github.io">right here</a>.</p>
 
@@ -24,7 +24,7 @@
 
   </section>
 
-  <h2 id="directory-hierarchy">Directory Hierarchy</h2>
+  <h2 id="directory-hierarchy">DIRECTORY HIERARCHY</h2>
   <section class="sub-section">
     <p>Under the <b>root</b>, the wiki is organized into a few simple folders. The complexity remains quite low which allows for the website directory to consist only a small number of files.</p>
 
@@ -57,7 +57,7 @@
     </ul>
   </section>
 
-  <h2 id="html-map-overview">HTML Map Overview</h2>
+  <h2 id="html-map-overview">HTML MAP OVERVIEW</h2>
   <section class="sub-section">
     <p>The core content of the wiki is contained within a CSS flexbox dividing itself into 3 columns where the central columns contains the main article and is 4 times as wide as the outer ones.</p>
 
@@ -66,7 +66,7 @@
       <figcaption>Diagram describing the general element hierarchy of wiki.freshmanbasix.com. <a href="rsc/site/wiki-html-structure.xml">Download XML file</a>.</figcaption>
     </figure>
 
-    <h3>Navigation Bar</h3>
+    <h3>NAVIGATION BAR</h3>
     <p>The leftmost column offers an overview and navigation of articles. Under the nav element with <b>id="nav-bar"</b> is an unordered list, with each <em>li</em> formated as follows:</p>
 
     <div class="box snippet code">&ltli class="nav-item"&gt
@@ -75,7 +75,7 @@
 
     <p>Each list-item must have the class attribute set to <b>nav-item</b> and contain an anchor element with the href attribute set to call the javascript function <em>openArticle()</em>.</p>
 
-    <h3>Wiki Article Column</h3>
+    <h3>WIKI ARTICLE COLUMN</h3>
     <p>The article itself is contained within the <em>main</em> element with id <em>wiki-column</em>. The whole article itself is stored inside a <em>article</em> element which has an id value corresponding to the article file name, as found in the <em>/articles</em> directory. It also has the class value <em>wiki-entry</em>. In general, the article is divided into several <em>section</em> elements, the first of which also contains the table of contents. Below follows a diagram along with core example code to illustrate how the hierarchy of a article must be structured to render properly.</p>
 
     <figure>
@@ -114,13 +114,13 @@
 
     <p class="box attention">Note that each <b>h2</b> header preceeds the <b>section</b> element for each sub-section. This was chosen because it made it simpler to reliably make the margins larger for the text content than the header itself. It does feel slightly unintuitive though, so an alternate solution is being worked on. </p>
 
-    <h3>Calendar</h3>
+    <h3>CALENDAR</h3>
 
     <p class="addme">This section is under construction but will one day contain a calendar for events related to the Kista Mentorspace.</p>
   </section>
 
   <!-- STYLE RULES -->
-  <h2 id="formating-style-rules">Formating and style-rules</h2>
+  <h2 id="formating-style-rules">FORMATING AND STYLE-RULES</h2>
   <section class="sub-section">
     <p>The styling in the wiki is built on the assumption that all articles are written and formated in a consistent way. It does not make use of any kind of third party documentation framework or software. It is simply done completely by hand. There are a number of predefined blocks that can be used to present information in a effective way. Below follows the available elements that can be used, along with descriptions and examples.</p>
 
@@ -130,7 +130,7 @@
 
     <p class="box attention">Note that each<b>&ltli&gt</b> elements do not have to contain a paragraph element. Only this list items containing multiple paragraphs will need the content wrapped further.</p>
 
-    <h3>Regular blocks</h3>
+    <h3>REGULAR BLOCKS</h3>
     <p>Two levels of <strong>Sub-sub-sections</strong> are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that are needed.</p>
 
     <p>The plain <b>&ltp&gt</b> element is all you need to create a correctly styled <strong>Paragraph</strong>. Each paragraph of text need an element on its own. Manual linebreaks inside p elements are to be avoided</p>
@@ -139,49 +139,50 @@
     <div class="box snippet code">&ltp class="addme"&gt&lt/p&gt</div>
     <p class="addme">The todos will look like this.</p>
 
-    <h3>Inline blocks</h3>
+    <h3>INLINE BLOCKS</h3>
     <p>Only a couple of inline elements will be relevant for articles. In the order of eyecathing, the &ltstrong&gt tag will make text stick out <strong>VERY</strong> much. The &ltb&gt tag is just plain <b>boldface</b> and lastly the &ltem&gt is used for <em>cursive</em> text.</p>
     <p>For marking out programming keywords or general code-adjacent words, a <b>span</b> element can be used as in the example below.</p>
     <div class="box snippet code">&ltspan class="inline code"&gt <em>Place inline code here</em> &lt/span&gt</div>
 
-    <h3>Empasized Blocks</h3>
-    <p><strong>Blockquotes</strong> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
-    <div class="box snippet code">
-&ltfigure class="blockquote"&gt
+    <h3>EMPASIZED BLOCKS</h3>
+    <ul>
+      <li><p><strong>Blockquotes</strong> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
+      <div class="box snippet code">&ltfigure class="blockquote"&gt
   &ltblockquote cite="<em>optional link to source</em>"&gt
     &ltp&gt<em>Actual quote</em>&lt/p&gt
   &lt/blockquote&gt
   &ltfigcaption&gt- <em>source</em>, &ltcite&gt&lta href="<em>link to source</em>"&gt<em>link text</em>&lt/a&gt&lt/cite&gt&lt/figcaption&gt
 &lt/figure&gt</div>
-    <figure class="blockquote">
-      <blockquote cite="">
-        <p>This is what the blockquote will look like</p>
-      </blockquote>
-      <figcaption>- Hjalle <cite><a href="https://hjallesoft.com">Hjallesoft homepage</a></cite></figcaption>
-    </figure>
+      <figure class="blockquote">
+        <blockquote cite="">
+          <p>This is what the blockquote will look like</p>
+        </blockquote>
+        <figcaption>- Hjalle <cite><a href="https://hjallesoft.com">Hjallesoft homepage</a></cite></figcaption>
+      </figure></li>
 
-    <p><strong>Figures & Images</strong> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
-    <div class="box snippet code">
+      <li><p><strong>Figures & Images</strong> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
+      <div class="box snippet code">
 &ltfigure&gt
 &ltimg src="<em>filepath</em>" alt=""&gt
 &ltfigcaption&gt<em>Caption</em>&lt/figcaption&gt
 &lt/figure&gt
-    </div>
-    <figure>
-      <img src="rsc/site/logo-hjallium.jpg" alt="image">
-      <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/site/logo-hjallium.jpg">downloaded directly here</a></figcaption>
-    </figure>
-    <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p>
+      </div>
+      <figure>
+        <img src="rsc/site/logo-hjallium.jpg" alt="image">
+        <figcaption>An example of what an image will look in a sub-section. The file can be <a href="rsc/site/logo-hjallium.jpg">downloaded directly here</a></figcaption>
+      </figure>
+      <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p></li>
 
-    <p><strong>Code snippets</strong> are simple boxes with example code. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render the box correctly.</p>
-    <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
-    <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
+      <li><p><strong>Code snippets</strong> are simple boxes with example code. A <b>&ltpre&gt</b> element with the class attribute set to <em>"box snippet"</em> will render the box correctly.</p>
+      <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
+      <p class="box attention">Be aware that the <em>pre</em> element renders text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p></li>
 
-    <p><strong>Attention blocks</strong> are a good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.</p>
-    <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
-    <p class="box attention">... and the info will render like this</p>
+      <li><p><strong>Attention blocks</strong> are a good way to make some important information stick out like a smack in the face is the attention block. It is achieved by adding a class value to a <em>p</em> element.</p>
+      <div class="box snippet code">&ltpre class="box snippet"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/pre&gt</div>
+      <p class="box attention">... and the info will render like this</p></li>
+    </ul>
 
-    <h3>Tables</h3>
+    <h3>TABLES</h3>
     <p><strong>Tables</strong> are currently only supported in two-column form, with each column eating up 50% of the width. The most appropriate use is to simply make visually appealing lists of resource and link pairs.</p>
     <div class="box snippet code">
 &lttable&gt
@@ -214,7 +215,7 @@
 
   <!--              -->
   <!-- ATTRIBUTIONS -->
-  <h2 id="attribution">Attribution</h2>
+  <h2 id="attribution">ATTRIBUTION</h2>
   <section class="sub-section">
     <p>Any and all resources fetched from somewhere else need to be clearly attributed, prefereably in direct proximity to the material itself. The most appropriate method is to a variant of the Harvard model. It is best to introduce the source and link it properly so that the reader understands clearly how the reference relates to the discussed material. For standard literature references, author and year as a hyperlink will do.</p>
 
