@@ -70,7 +70,7 @@
     <p>The leftmost column offers an overview and navigation of articles. Under the nav element with <b>id="nav-bar"</b> is an unordered list, with each <em>li</em> formated as follows:</p>
 
     <div class="box snippet code">&ltli class="nav-item"&gt
-  &lta href="javascript:openArticle('<em>article-file-name</em>')"&gt<em>Title</em>&lt/a&gt
+  &lta href="#<em>article-route</em>"&gt<em>ARTICLE-NAME</em>&lt/a&gt
 &lt/li&gt</div>
 
     <p>Each list-item must have the class attribute set to <b>nav-item</b> and contain an anchor element with the href attribute set to call the javascript function <em>openArticle()</em>.</p>
@@ -117,6 +117,19 @@
     <h3>CALENDAR</h3>
 
     <p class="addme">This section is under construction but will one day contain a calendar for events related to the Kista Mentorspace.</p>
+
+    <h3 id="routing">ROUTING</h3>
+    <p>The site uses a simple implementation of page routing designed by Santiago García da Rosa, original github repository <a href="https://github.com/SantiagoGdaR/vanilla-spa">is located here</a>. It uses a simple combination of hashchange and XMLHttpRequest.</p>
+
+    <figure>
+      <img src="rsc/site/routing-diagram.png" alt="image">
+      <figcaption>Diagram describing the flow of routing procedures. <a href="rsc/site/routing-diagram.xml">Download XML here</a></figcaption>
+    </figure>
+
+
+    <p>For an article to be navigable, an entry must be manually added in the constructor call in <span class="inline code">/scripts/wiki-column.js</span> on the format:</p>
+    <div class="box snippet code">new Route('<em>article-name</em>', '<em>article-name</em>.html')</div>
+
   </section>
 
   <!-- STYLE RULES -->
