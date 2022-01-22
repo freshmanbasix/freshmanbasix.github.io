@@ -1,17 +1,15 @@
-<article id="version-control" class="wiki-entry">
-  <h1 class="column-header">VERSION CONTROL</h1>
+<article id="git" class="wiki-entry">
+  <h1 class="column-header">GIT</h1>
   <section class="sub-section">
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li><a href="#git">Git</a></li>
+        <li><a href="#primer">PRIMER</a></li>
+        <li><a href="#usage">USAGE</a></li>
       </ul>
     </div>
     <p>Version control software serve the purpose of systematically organizing different versions of a project through history. The benefit is making work history parsable, which is turn means that progress can be applied methodically and rolled back when thigs go tits up. There are multiple different tools for this purpose, the most ubiquitous one being <strong>Git</strong>.</p>
-  </section>
 
-  <h2 id="#git">Git</h2>
-  <section class="sub-section">
     <figure class="blockquote">
       <blockquote cite="https://git-scm.com/docs/git">
         <p>Git - The stupid content tracker</p>
@@ -42,7 +40,10 @@
       </tr>
     </table>
 
-    <h3 id="git-glossary-primer">Git Glossary Primer</h3>
+  </section>
+
+  <h2 id="primer">PRIMER</h2>
+  <section class="sub-section">
     <p>One excellent place to start, along with this section, is the git introduction chapter of <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Pro Git 2ed (Chacon & Straub)</a>. This is all to set git in context. There will be a fair deal of taxonomy that takes a while to learn before one can make sense of what's happening. The concepts mentioned in this section should set you well on your way to start grasping how git fits together.</p>
 
     <p>First, we must talk about the <strong>repository</strong>. Git is the program and the interface we use to achieve version control. But it operates on top of the existing filesystem. Git doesn't set up a complicated environment but is rather designed to operate on top of whatever else you're already doing. Any directory can become a designated repository. The root of the repo is where git stores all it's configuration metadata, and all sub folders will be recognized and handled by git. Anything above the repo root however will mean nothing, which is why you can move repositories around very freely. When you move through the project history, you will actually rewrite the files in the physical memory.</p>
@@ -75,5 +76,38 @@
       <li>Don't use git with cloud sync software. It will give you all kinds of wacky back and forths as both git and the cloud software tries to sort out what happened every time you checkout a new branch.</li>
       <li>Make good use of the gitignore file. It allows you to instruct git to ignore certain files that don't need shared with others, e.g executables, locals tests etc. You'll find an intro in section <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">2.2 <em>Ignoring Files</em></a> of the book.</li>
     </ol>
+  </section>
+
+  <h2 id="usage">USAGE</h2>
+  <section class="sub-section">
+    <p>This section aims to gather a few common but useful instructions on how to practically use git, where digging deep in the documentation often is could be avoided.</p>
+
+    <h3 id="stashing">STASHING</h3>
+    <p>Used to store away partially finished work that is not yet ready for a commit. It uses a simple push and pop structure where we simply cram any changes we want into a box. This allows us to start working on something completely different from the latest established commit. This can be particularly useful when doing work in a branch, but you quickly need to hop over to another to fix something else. For details, use <span class="inline code">man git stash</span> or check out the <a href="https://git-scm.com/docs/git-stash">official docs page</a></p>
+    <table>
+      <caption>Common git stash examples</caption>
+      <colgroup span="2"></colgroup>
+      <tr>
+        <td><span class="inline code">git stash</span></td>
+        <td>Stash all untracked changes. </td>
+      </tr>
+      <tr>
+        <td><span class="inline code">git stash pop</span></td>
+        <td>Pop the most recently stashed entry</td>
+      </tr>
+      <tr>
+        <td><span class="inline code">git stash push -m <em>&ltmessage&gt</em> <em>&ltfiles&gt</em></span></td>
+        <td>Push the specified files along with the associated message onto the stack</td>
+      </tr>
+    </table>
+    <p>Use the <span class="inline code">-u</span> option to include untracked changes. The <span class="inline code">-p</span> option can also be added to create a patched stash entry.</p>
+    <div class="box attention">
+      <p>By using stash before pulling new changes into a repository will simplify potential conflicts.</p>
+    </div>
+
+    <h3 id="rebasing">REBASING</h3>
+    <p>Instead of merging branches, rebasing can be used to simply place all changes in some branch on top of another. The benefits here is a more streamlined and traversable log, along with less headache with merge conflicts.</p>
+    <div class="box snippet code">git rebase <em>&ltsome branch&gt</em></div>
+    <p>The above will simply relocate all changes in "some branch" on top of the current branch. Use git stash if any uncommited changes have a chance to create conflicts that require resolving.</p>
   </section>
 </article>

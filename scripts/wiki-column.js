@@ -15,7 +15,7 @@
             new Route('email', 'email.html'),
             new Route('terminals', 'terminals.html'),
             new Route('linux', 'linux.html'),
-            new Route('version-control', 'version-control.html'),
+            new Route('git', 'git.html'),
             new Route('editors', 'editors.html'),
             new Route('electronics', 'electronics.html'),
             new Route('radio', 'radio.html'),
