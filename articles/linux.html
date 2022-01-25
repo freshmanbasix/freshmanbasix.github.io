@@ -57,6 +57,7 @@
     <p><span class="inline code">useradd</span>,<span class="inline code">userdel</span>,<span class="inline code">usermod</span> are low level command line tools which can be used to create, delete and modify users on a machine. Respectively, <span class="inline code">groupadd</span>, <span class="inline code">groupdel</span>, and <span class="inline code">groupmod</span> are all corresponding tools for groups.</p>
     <p>Meanwhile, <span class="inline code">adduser</span>,<span class="inline code">deluser</span>, <span class="inline code">addgroup</span> and <span class="inline code">delgroup</span> offer somewhat more versatile versions of the same utility which depending on the desired outcome might be a more appropriate option.</p>
     <p>Here is a forum post discussing the<a href="https://unix.stackexchange.com/questions/80277/whats-the-difference-between-a-normal-user-and-a-system-user">difference between a normal and system user</a>. Meanwhile, this article give a good initial <a href="https://unix.stackexchange.com/questions/80277/whats-the-difference-between-a-normal-user-and-a-system-user">initial introduction to the passwd file</a>.</p>
+    <div class="box attention">The user commands often not added to the <b>PATH variable</b> by default and need to be explicitly invoked with their full paths, which are <b>/usr/sbin/<em>command</em></b>.</div>
 
     <h3>PERMISSIONS</h3>
     <p>Viewing permissions of any file or directory is essentially achieved with <span class="inline code">ls -la</span></p>
@@ -73,10 +74,19 @@
     </ol>
 
     <h3>SUPER USERS</h3>
-    <blockquote class="q" cite="">
-      Of all the gods of mount olympus, The super user is the greatest, for his was the power to accidentally wipe away the entire world...
-    </blockquote>
-    <p>Every admin user technically has a dedicated password that elevates them to super user status. It however, not set by default and must be activated separately. There is no need to do it though, because <span class="inline code">$ sudo su</span> will achieve the same results. Once in su mode, you will never be prompted for an admin confirmation again.</p>
+    <p>The <span class="inline code">super user</span> has the highest level of permissions on the system. ALL operations are permitted for the super user, no questions asked. All systems have a <span class="inline code">super user password</span>, which can be input from any user session.</p>
+
+    <h4>EXECUTING IN SU MODE</h4>
+    <div class="box snippet code">$ su</div>
+    <p>A terminal session is elevated to super user mode by invoking the <span class="inline code">su</span> command. This will be a separate session that is left by using the <span class="inline code">exit</span> command.</p>
+    <p>If the super user password is unknown, any admin can sneak themselves into su mode by typing</p>
+    <div class="box snippet code">$ sudo su</div>
+    <p>Individual commands can be executed as if by the super user by prefacing any command with the <span class="inline code">sudo</span> command. Almost all commands can be authorized this way, with a few exceptions, in which case the su command is required.</p>
+    <div class="box snippet code">$ sudo <em>some-command</em></div>
+    <h4>ADD SUDO USER</h4>
+    <p>A admin user will be a member of the <span class="inline code">sudo group</span>. Any user can be <b>added as an admin</b> by adding them to the sudo group using <em>usermod</em>.</p>
+    <div class="box snippet code">$ sudo usermod --append --groups sudo <em>user</em></div>
+    <p>The <em>--append</em> or <em>-a</em> option are necessary here or the user will be moved from any current group to the ones listed through the <em>--groups</em> or <em>-g</em> option.</p>
   </section>
 
   <h2 id="file-management">FILE MANAGEMENT</h2>

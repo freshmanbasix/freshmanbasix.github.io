@@ -77,6 +77,14 @@ fi</div>
         <div class="box snippet code">ps -a | grep <em>regex</em></div>
       </li>
     </ul>
+
+    <h3 id="path-variable">THE PATH VARIABLE</h3>
+    <p>The <span class="inline code">$PATH</span> variable is an environmental variable in most unix based system terminals which define the list of directories that will be automatically searched when entering commands. Any executable program binary located within any PATH directory will not need the full path to be run.</p>
+    <div class="box snippet code"># Display contents of the PATH variable <br>$ echo $PATH</div>
+    <p>New directories can be appended to the the PATH by using the export command</p>
+    <div class="box snippet code">$ export PATH=$PATH:<em>/path/to/binaries</em></div>
+    <p>By adding the above snippet in <em>.bashrc</em>, the directory will be added on terminal startup.</p>
+
   </section>
 
   <h2 id="command-prompt">COMMAND PROMPT</h2>
