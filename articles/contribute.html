@@ -154,9 +154,12 @@
     <p class="addme">The todos will look like this.</p>
 
     <h3>INLINE BLOCKS</h3>
-    <p>Only a couple of inline elements will be relevant for articles. In the order of eyecathing, the &ltstrong&gt tag will make text stick out <strong>VERY</strong> much. The &ltb&gt tag is just plain <b>boldface</b> and lastly the &ltem&gt is used for <em>cursive</em> text.</p>
-    <p>For marking out programming keywords or general code-adjacent words, a <b>span</b> element can be used as in the example below.</p>
+    <p>Basic boldface and italic text can be used with the native &ltb&gt tag for plain <b>boldface</b> and &ltem&gt is for <em>cursive</em> text.</p>
+    <div class="box attention">Math has dedicated styling objects, see the <a href="#math-styling">math styling section below</a></div>
+    <p>For specialized styling, there are earmarked styling rules that can be used with a <b>span</b> element to achieve particular inline blocks. For marking out programming snippets or general <span class="inline code">code-adjacent terms</span>, use the example below.</p>
     <div class="box snippet code">&ltspan class="inline code"&gt <em>Place inline code here</em> &lt/span&gt</div>
+    <p>For general <span class="keyword">keywords</span> or concepts that have special importance and need to stick out of the paragraph, use the following example.</p>
+    <div class="box snippet code">&ltspan class="keyword"&gt <em>Place inline keyword here</em> &lt/span&gt</div>
 
     <h3>EMPASIZED BLOCKS</h3>
     <ul>

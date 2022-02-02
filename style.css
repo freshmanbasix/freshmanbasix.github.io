@@ -11,6 +11,7 @@
   --white:  #F8F8F8;
   --bwhite:  #FFFFFF;
   --yellow: #FFFF00;
+  --purple: #631296;
 }
 
 body {
@@ -241,6 +242,12 @@ strong {
 .inline{
   display: inline;
   color: var(--red);
+}
+
+.keyword {
+  display: inline;
+  color: var(--purple);
+  font-weight: bold;
 }
 
 figure.formula > img {
