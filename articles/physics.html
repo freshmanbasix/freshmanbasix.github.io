@@ -1,0 +1,42 @@
+<article id="physics" class="wiki-entry">
+  <h1 class="column-header">PHYSICS</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <ul class="toc">
+        <li><a href="#system-of-units">SYSTEM OF UNITS</a></li>
+        <li><a href="#newtonian-mechanics">NEWTONIAN MECHANICS</a></li>
+      </ul>
+    </div>
+    <p>For most engineering diciplines, only a subset of physics need specialized competencies that might motivate their own articles. In the case of data science, that special field is electronics, which will be covered, among other places, in the <a href="wiki.freshmanbasix.com/#electronics">electronics article</a> on this wiki. For most of the fundamental basics that will still be relevant and useful to revise from time to time is going to be gathered here. </p>
+  </section>
+
+  <h2 id="system-of-units">SYSTEM OF UNITS</h2>
+  <section class="sub-section">
+    <p>When measuring physical objects, each <span class="keyword">quantity</span> needs a <span class="keyword">unit</span>, both of which are designated by standard <span class="keyword">symbols</span> to give a complete notational characteristic of what is being measured.</p>
+    <ul>
+      <li><em>Quantities</em> are properties that can exist as a multitude or magnitude. Examples are <em>lenght, mass, time</em> etc.</li>
+      <li><em>Units</em> are the numerical amounts of things being measured. E.g <em>metres, kilograms, seconds</em>.</li>
+      <li>Each quantity and unit comes with a <em>designation symbol</em> which is an abbreviated shorthand for the quantity / unit itself. In the quantity case symbols generally take form of a stand-in variable which is a placeholder for the numerical value i calculations. Unit symbols are there to signify and represent the unit itself.</li>
+    </ul>
+
+    <div class="box snippet code">      time               (<em>t</em>)             [s]          seconds <br>&ltquantity name&gt (&ltquantity symbol&gt) [&ltunit symbol&gt] &ltunit name&gt</div>
+    <p>A international standard of units and notation has been established in the <span class="keyword">SI-unit</span> system, which is the modern implementation of the <em>metric system</em>. A list of the base units can be found on the <a href="https://en.wikipedia.org/wiki/International_System_of_Units#Base_units">International System of Units Wikipedia page</a>. The base units are a subset of core quantities, from which all other, <em>derived units</em>, are created.</p>
+
+    <p>When doing calculations, <span class="keyword">unit analysis</span> is a technique where one removes the quantity symbols from an expression, leaving only the unit symbols. This is a way to quickly visualize how an expression can be simplified into another quantity or derived unit, deriving a proof that some operation gives the expected result. </p>
+  </section>
+
+  <h2 id="newtonian-mechanics">NEWTONIAN MECHANICS</h2>
+  <section class="sub-section">
+    <p>This section will cover the standard Newtonian laws of motion in the ocean.</p>
+    <h3 id="circular-motion">CIRCULAR MOTIONS</h3>
+    <figure>
+      <img src="rsc/physics/newtonian-mechanics/circular-motion-diagram.png" alt="image">
+      <figcaption>Diagram describing the forces and velocities involved in motion orbiting a central origin point</figcaption>
+    </figure>
+    <p>Given any orbital motion, there is a <span class="keyword">period</span> <span class="inline math">T [s]</span> (i.e seconds per rotation), and a <span class="keyword">orbital radius</span> <span class="inline math">r [m]</span>, which in turn give rise to a reciprocal <span class="keyword">frequency</span> <span class="inline math">ƒ [Hz] = 1 / T</span>, i.e <em>rotations per second</em>.</p>
+    <p>The <span class="keyword">angular velocity</span> <span class="inline math">v [m/s]</span> is the instantaneous movement in metres per second in a direction tangential to the circumference of the circle.</p>
+    <div class="box formula math">v = frac{ 2π }{ T } × r = 2πƒr</div>
+    <p>A closely related quantity is the <span class="keyword">angular frequency</span> <span class="inline math">ω = 2πƒ</span> (radians per second).</p>
+  </section>
+</article>

@@ -17,6 +17,7 @@
             new Route('linux', 'linux.html'),
             new Route('git', 'git.html'),
             new Route('editors', 'editors.html'),
+            new Route('physics', 'physics.html'),
             new Route('electronics', 'electronics.html'),
             new Route('radio', 'radio.html'),
             new Route('probability-statistics', 'probability-statistics.html'),
