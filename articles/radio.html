@@ -4,12 +4,286 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li><a href="#principles">PRINCIPLES</a></li>
-        <li><a href="#modulation">MODULATION</a></li>
+        <li><a href="#signal">SIGNAL</li>
         <li><a href="#antennas">ANTENNAS</a></li>
-        <li><a href="#rules">RULES</a></li>
+        <li><a href="#transmission-lines">TRANSMISSION LINES</a></li>
+        <li><a href="#matching">MATCHING</a></li>
+        <li><a href="#modulation">MODULATION</a></li>
+        <li><a href="#rules-safety">RULES & SAFETY</a></li>
       </ul>
     </div>
-    <p>How do radios work, how do they communicate and so on.</p>
+    <p>This article is intended to contain any and all knowledge needed to operate a radio transmitter/receiver on an amateur level. It is closely linked with the <b>Electronics</b> article, meaning that this article will focus only on the concepts that are especially, or only, relevant to the RF field. It will also contain a section on rules and regulations concerning radio transmission.</p>
+  </section>
+
+  <h2 id="signal">SIGNAL</h2>
+  <section class="sub-section">
+    <p>The <span class="keyword">Signal</span> generally refers to the connection between a actively transmitting and receiving antenna. In terms of power, it is the received power at the receiver. </p>
+
+
+    <h3>ISOTROPIC RADIATED POWER</h3>
+    <p>The <span class="keyword">Isotropic Radiation Case</span> is a common reference case that sets up a fundamental starting point from which real examples are derived. It imagines the <span class="keyword">Transmitted Power P<sub>TX</sub> [W]</span> radiating from a single point monopole antenna in a perfect sphere with area <span class="inline math">A = 4πd<sup> 2</sup></span>. At the recipient end, the <span class="keyword">Received Power P<sub>RX</sub> [W]</span> is some portion of the transmitted power being induced in the receiving antenna.</p>
+
+    <h4>INTENSITY</h4>
+    <p><span class="inline math">P<sub>TX</sub></span> will always be evenly distributed over the area of this sphere at a distance d. The power per m<sup>2</sup> is contained in the <span class="keyword">Power Flux Density S[W / m<sup>2</sup>]</span>.</p>
+    <div class="box formula math">S = frac{ P<sub>TX</sub> }{ A } = frac{ |E|<sup>2</sup> }{ Z<sub>fs</sub> }</div>
+    <p><span class="inline math">Z<sub>fs</sub> ≈ 377Ω</span> is the <span class="keyword">free space impedance</span>.</p>
+
+    <h4>APERTURE</h4>
+    <p>The <span class="keyword">Antenna Aperture A<sub>e</sub> [m<sup>2</sup>]</span> is the area projection of the receiving antenna on the plane normal to the incident signal wave. In the isotropic case, the aperture is a simplified:</p>
+    <div class="box formula math">A<sub>e,iso</sub> = frac{ λ<sup>2</sup> }{ 4π }</div>
+    <p>The relationship between the aperture and the physical size will be slightly missaligned. If <span class="inline math">A<sub>e</sub> = A<sub>phys</sub></span>, that would imply that the aperture efficiency is 100% which cannot be achieved in reality. In practice, the actuaaperture is determined by measuring the ratio between received power to what should theoretically be received.</p>
+    <div class="box formula math">A<sub>e</sub> = frac{ P<sub>RX</sub> }{ S }</div>
+
+    <h3>GAIN</h3>
+    <p>Antenna design can achieve variations of antenna amplification factors. For example, a directional antenna will redistribute the even density into particular regions. As such, the <span class="keyword">Antenna Gain G</span> is a multiplier which can exist on both transmitting and receiving end. One thing to note is that real antenna aperture is proportional to the gain and isotropic aperture:</p>
+    <div class="box formula math">A<sub>e</sub> = G<sub>RX</sub> × A<sub>e,iso</sub></div>
+    <p>The received power is a result of transmitted power and gains:</p>
+    <div class="box formula math">P<sub>RX</sub> = P<sub>TX</sub> × G<sub>TX</sub> × G<sub>RX</sub> × A<sub>e,iso</sub></div>
+    <div class="box formula math">(P<sub>RX</sub>)<sub>dBW</sub> = (P<sub>TX</sub>)<sub>dBW</sub> + (G<sub>TX</sub>)<sub>dBi</sub> + (G<sub>RX</sub>)<sub>dBi</sub> + (A<sub>e,iso</sub>)<sub>dB</sub></div>
+
+    <h4>EFFECTIVE ISOTROPIC RADIATED POWER</h4>
+    <p>A important value is the <span class="keyword">EIRP</span>, which is a conversion from a real transmitted power to the level it would be if the transmitter actually was isotropic. It is important to know as local regulations often limit the transmission effects in EIRP.</p>
+    <div class="box formula math">P<sub>EIRP</sub> = P<sub>TX</sub> × G<sub>TX</sub></div>
+
+    <h3>NOISE</h3>
+    <p><span class="keyword">Noise</span> is simply attenuating factors decreasing the quality of the signal. Some general sources are:</p>
+    <ul>
+      <li><span class="keyword">Interference</span> from other transmitting antennas in the same range.</li>
+      <li><span class="keyword">Man made noise</span>, generated by electrical devices. Mostly only relevant at lower frequency bands.</li>
+      <li><span class="keyword">Galactic noise</span>, coming from space. Mainly relevant in higher frequency ranges.</li>
+    </ul>
+
+    <h4>THERMAL NOISE</h4>
+    <p><span class="keyword">Thermal Noise</span> is the most important noise factor which originates from Brownian motion in the components. It is dependent on temperature and is proportional to <span class="keyword">Boltzmans constant k</span>. For a given frequency, the <span class="keyword">Noise Figure F</span> is a factor representing how much larger the <span class="keyword">Total Noise Level N</span> is compared to the thermal noise of the receiver.</p>
+    <div class="box formula math">N = F × k × T<sub>0</sub> × B</div>
+    <p><span class="inline math">kT<sub>0</sub></span> is the <span class="keyword">spectral density [W / Hz]</span> and the temperature needs to be given i Kelvins. <span class="inline math">k = 1.38 × 10<sup>-23</sup></span></p>
+
+    <h3>RECEIVED POWER</h3>
+    <p> What arrives at the recipient antenna will always be a fraction of the transmitted power directly proportional to the ratio between aperture and area. Received power is measured in watts, meaning that given some intensity (watts per metres squared) at the point of the antenna, times the aperture (metres squared) will equal the power. </p>
+    <div class="box formula math">P<sub>RX</sub> = A<sub>e</sub> × S = P<sub>TX</sub> × frac{ A<sub>e</sub> }{ A }</div>
+
+    <h4>PATH LOSS</h4>
+    <p>The <span class="keyword">Path Loss L</span> is a known factor by which the signal quality is attenuated. It originates from physical effects in the traversal medium, such as thick walls or other wave absorbing/reflecting items. In the isotropic case:</p>
+    <div class="box formula math">P<sub>RX,iso</sub> = P<sub>TX,iso</sub> × frac{ A<sub>e,iso</sub> }{ A } = P<sub>TX,iso</sub> × frac{ 1 }{ L<sub>fs</sub> }</div>
+    <p>Here, <span class="inline math">L<sub>fs</sub> = (4πdλ)<sup>2</sup></span> is the free space path loss.</p>
+
+    <h4>SIGNAL TO NOISE RATIO</h4>
+    <p>The <span class="keyword">Signal to Noise Ratio</span>, denoted SNR or S/N is the relationship between Signal strenght, i.e received power, to noise. </p>
+    <div class="box formula math">Signal = P<sub>RX</sub> = frac{ P<sub>TX</sub> }{ Path Loss L}</div>
+
+    <h3>SERVICE REQUIREMENTS</h3>
+    <p>Depending on the kind of information we wish to transmit, a given bandwidth will require a certain SNR in order to be successfully interpreted. This value is generally read from a table.</p>
+
+    <h4>LINK BUDGET</h4>
+    <p>With given values for the variables described above, a value can be determined for the SNR, allowing us to determine whether it is within the range necessary for the circumstance. The actual value of the <span class="keyword">Signal S</span>, not to be confused with intensity, is the received power:</p>
+    <div class="box formula math">frac{ Signal }{ Noise } = frac{ P<sub>TX</sub> }{ Path Loss × Noise }</div>
+    <div class="box formula math">(S / N)<sub>dB</sub> = (P<sub>TX</sub>)<sub>dBW</sub> - (Loss)<sub>dB</sub> - (F)<sub>dB</sub> - (k × T<sub>0</sub>)<sub>dB</sub> - (Bandwidth)<sub>dB</sub></div>
+
+    <div class="box attention">Converting values to a logarithmic scale makes calculation much easier. Just keep in mind which reference point is used, i.e 1mW (dBm), 1W (dBW), isotropic (dBi) etc.</div>
+
+    <div class="box formula math">(P<sub>TX</sub>)<sub>dBm</sub> = 10 × Log<sub>10</sub> ( P<sub>TX</sub> / 0.001 )</div>
+    <div class="box formula math">(P<sub>TX</sub>)<sub>dBW</sub> = 10 × Log<sub>10</sub> ( P<sub>TX, W</sub> / 1 )</div>
+    <div class="box formula math">(P<sub>TX</sub>)<sub>dBi</sub> = 10 × Log<sub>10</sub> ( S<sub>real</sub> / S<sub>iso</sub> )</div>
+
+  </section>
+
+  <h2 id="antennas">ANTENNAS</h2>
+  <section class="sub-section">
+    <p>There are several properties of antennas that are relevant to its performance. There are also many different types of antennas suitable for different purposes. These antenna types and properties will be discussed in this section.</p>
+    <p>For designing antennas, plenty of high quality simulation softwares are available. On a linux machine, <span class="keyword">xnec2c</span> is one such software that comes packaged and ready to go on at least Debain/Ubuntu distributions. Official documentation is <a href="https://www.xnec2c.org/">right here</a>. One might also find this <a href="https://www.linuxjournal.com/content/antennas-linux">introductory article</a> on the software. The program comes with multiple example program located around <span class="inline code">/usr/share/doc/xnec2c/examples</span>.</p>
+
+    <h3>OMNIDIRECTIONAL ANTENNAS</h3>
+    <p>A <span class="keyword">omni-directional</span> antenna transmits in all directions. While no real antenna is physically capable of transmitting completely uniformly, most directions will do.</p>
+
+    <h4>HALF-λ DIPOLE ANTENNAS</h4>
+    <p>Over a standard dipole fed through the mid-point, the current distribution has a maximum over the feedpoint. The voltage meanwhile has opposite maximums at the end points. A dipole antenna can be fed from any point but the impedance is at its lowest in the middle.</p>
+    <p>If the antenna wavelength is some even multiple of another wavelength, there are several practical effects on the radiation pattern can be achieved. E.e the antenna wavelenght λ/2 = 3λ<sub>0</sub> / 2 etc.</p>
+
+    <h4>QUARTER λ VERTICAL ANTENNAS</h4>
+    <h4>RESONANT LOOP ANTENNAS</h4>
+
+    <h3>DIRECTIONAL ANTENNAS</h3>
+    <p>Properties and specifications of directional antennas will be summarized here.</p>
+    <h4>YAGI DIRECTIONAL ANTENNAS</h4>
+    <p>Sawtooth Shark antenna</p>
+    <h4>APERTURE ANTENNAS</h4>
+    <p>Usually known as <span class="keyword">Parabolic Reflectors</span>, that concentrate the incoming wave onto the actual antenna. The parabolic dish needs to be approximately 5 times larger than the wavelength. With a diameter <span class="inline math">D > 5 × λ</span>. The aperture is approximately <span class="inline math">A<sub>e</sub> ≈ 0.5 × frac{ πD<sup>2</sup> }{ 4 } ≈ 0.4D<sup>2</sup></span>. What we know about the aperture being proportional to the gain:</p>
+    <div class="box formula math">G(D) ≈ 1.6 × π( frac{ D }{ λ } )<sup>2</sup></div>
+
+    <h3>POLARIZATION</h3>
+    <p><span class="keyword">Polarization</span> describe the orientation of the oscillations in a transverse wave. This means the orientation of the antenna matters and if the receiving antenna has a different polarization than the incoming wave, some or all of the signal will be lost. In the case of <em>line-of-sight</em> transmission, the antennas must have the same polarization. The <em>Ionosphere</em> rotates the polarization of a wave, meaning that bouncing a signal of it, or transmitting through it needs to take that into account.</p>
+
+    <h4>CIRCULAR POLARIZATION</h4>
+    <p>Designing two orthogonal antennas fed by a quarter wave delay will achieve a polarization that rotates.</p>
+
+    <h3 id="electromagnetic-field-properties">ELECTROMAGNETIC FIELD PROPERTIES</h3>
+    <p>The <b>Electronic Field E</b> or <b>Magnetic Field H</b> might be dominant depending on the type of antenna. Dipoles will usually be E-dominant, while small loop antennas will be H-dominant. <b>Electric field strength</b> is measured in <em>volts per meter (V/m)</em>, and <b>magnetic field strenght</b> is measured in <em>amperes per meter (A/m)</em>.</p>
+
+    <h4>NEAR & FAR FIELD</h4>
+    <p>When measuring antenna properties, there are two categories of fields:</p>
+    <ul>
+      <li>The <span class="keyword">Near Field</span> is the area around the antenna that falls <em>within a small fraction of the antennas wavelength</em>. In this area, it is very difficult to determine field strengths.</li>
+      <li>The <b>Far Field</b> is the distance on a <em>order of wavelength</em> AWAY from the antenna. This area is more relevant for RF communication and it is easier to determine field strenghts here.</li>
+    </ul>
+
+
+    <h4>FIELD STRENGHT</h4>
+    <p>The strenght of EM fields from an antenna depend on a set of factors. The first of which is <b>distance d</b>. Field strenght is inversely proportional to the distance. This means is will change rapidly depending on the distance from the antenna.</p>
+    <p>Less impactful, but still important is the <b>Power P</b>. Field strength increase with the square root of the power, meaning the cranking the power up is not especially optimal to achieve a increased effective output. The effective transmitted power has several components listed below. Combining them all give a value for the average transmitted power <span class="inline math">P<sub>avg</sub> = P<sub>TX</sub> × M × I × k</span></p>
+    <ul>
+      <li>The <b>peak power P<sub>TX</sub></b>, i.e the concrete peak power output of the transmitting antenna. Usually listed in dB.</li>
+      <li>The <b>Modulation (Duty) Factor M</b>, which is a factor representing the effect of the modulation type on the output power. This value is generally an estimated constant aquired from a reference table.</li>
+      <li>The <b>Intermittency Factor I</b>, which is the averaged proportion of the time over 6 minutes that is spent transmitting, i.e talking vs listening.</li>
+      <li>The attenuation i the feeding cable, i.e <b>cable loss k</b> is a factor between 1 and 0 that represent how much transmitted power actually reach the antenna.</li>
+    </ul>
+    <p><b>Antenna Gain G</b> is a factor multiplying the effect of the field. It is commonly given in dB, and represent the worst case in exposure calculations.</p>
+    <p>The value of the Electric Field strength E is a function of distance, power and gain.</p>
+    <div class="box formula math">E = frac{ sqrt{ 30 × P × G } }{ d }</div>
+    <div class="box attention">Note that all units must be in linear space for this formula to work.</div>
+    <p>Provided the electric or magnetic field os known, this can be used to determine the <b>Radiation Intensity S (W/m<sup>2</sup></b> by applying the <b>intrinsic impedance of free space</b> <span class="inline math">Z<sub>0</sub> ≈ 120π ≈ 377Ω </span></p>
+    <div class="box formula math">|S| = frac{ |E|<sup>2</sup> }{ Z<sub>0</sub> } = Z<sub>0</sub> × |H|<sup>2</sup></div>
+
+  </section>
+
+  <h2 id="transmission-lines">TRANSMISSION LINES</h2>
+  <section class="sub-section">
+    <p>The <span class="keyword">Transmission line</span>, a.k.a <span class="keyword">Feeder line</span> is the physical medium through which the energy is transported between trnasmitter and antenna. This can be a cable, a more rigid element, or even a intrinsic part of the antenna itself.</p>
+    <h3 id="cables">CABLES</h3>
+    <figure>
+      <img src="https://3.bp.blogspot.com/-Mhx389ce-b8/V-FJQ-I1rDI/AAAAAAAAHPs/peFEpX_nZQkCtVDFLyS7dx9X-jIB-FbDgCLcB/s1600/1.jpg" alt="image">
+      <figcaption>Simple overview of different coaxial cable types and the appropriate Frequency range. Image is hosted on this <a href="https://indiadailyeye.blogspot.com/2016/09/technical-updatesrf-coaxial-cables.html">personal blog</a>.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://www.electricaltechnology.org/wp-content/uploads/2018/06/Coaxial-cable.png" alt="image">
+      <figcaption>Cross section of a coax cable, taken from this <a href="https://www.electricaltechnology.org/2018/07/types-of-control-communication-cables.html">electronics tutorial page</a>.</figcaption>
+    </figure>
+
+
+    <h3>NON-COAX</h3>
+    <p>The <span class="keyword">ladder line</span> is a rigid construction that separates the positive and negative lead of the transmission lite with a constant physical distance. This makes it immune to noise as the magnetic field effects cancel each other out. It commonly has a much higher characteristic impedance, making it unpractical in some situation</p>
+
+    <h3>VELOCITY FACTOR</h3>
+    <p>The speed of light inside depends on the medium it travels through. For any physical cable. The <span class="keyword">Veolcity Factor <em>v</em></span> is the ratio of the speed through a cable to the ideal speed in a vacuum. The real speed through the cable is thereby defined as <span class="inline math">c<sub>cable</sub> = v × c<sub>vacuum</sub></span>. The physical length that properly represent one single wavelenght is defined as <span class="inline math">λ<sub>cable</sub> = v × λ</span>.</p>
+
+  </section>
+
+  <h2 id="matching">MATCHING</h2>
+  <section class="sub-section">
+    <p><span class="keyword">Impedance Matching</span> a.k.a <span class="keyword">Antenna Tuning</span> is the process of matching up the impedances between the <em>transmitter</em> and the <em>load</em>, i.e antenna. Impedances are complex values where we want to separate two factors; the first being <span class="keyword">source impedance</span> <span class="inline math">Z<sub>0</sub> = R<sub>0</sub> + j0</span>, which is the impedance in the transmitter. This impedance is, most of the time, purely real, i.e no reactance component. The second factor is the <span class="keyword">load impedance</span> <span class="inline math">Z<sub>l</sub> = (R<sub>l</sub> + R<sub>rad</sub>) + jX<sub>l</sub></span> , make sure to not confuse the load impedance with the inductive reactance.</p>
+    <div class="box attention">Note that antenna reactance is highly dependent on frequency and we are only "tuning" it for a particular sub-range close to <span class="inline math">ƒ = frac{1}{ sqrt{ 4π<sup>2</sup>LC} }</span>.</div>
+
+    <figure>
+      <img src="rsc/radio/antennas/antenna-resistance-diagram.png" alt="image">
+      <figcaption>Overview of the impedance components of transmitter / receiver and antennas.</figcaption>
+    </figure>
+    <ul>
+      <li><b>R<sub>0</sub></b> is the internal resistance of the transmitter.</li>
+      <li><b>R<sub>l</sub></b> is the resistive loss of the antenna. Energy dissipated over this resistance element will be lost as heat in the antenna.</li>
+      <li><b>R<sub>rad</sub></b> is the <em>antenna radiation resistance</em> which is the desired effective element. The energy dissipated here is useful electromagnetic radiation beamed into space.</li>
+      <li><b>X<sub>l</sub></b> is the complex component, reactance, of the antennas impedance</li>
+    </ul>
+
+    <p>Matching is achieved when the impedances are the same in transmitter, transmission line and antenna. <span class="inline math">R<sub>transmitter</sub> = R<sub>feeder cable</sub> = R<sub>antenna</sub></span> and <span class="inline math">X<sub>antenna</sub> = |X<sub>L</sub>| - |X<sub>C</sub>| = 0</span> will fullfill this criteria. This relationship will give a VSWR of 1, which is the optimal value. Texas Instruments have compiled a very useful pdf on <a href="https://www.ti.com/lit/an/scba034/scba034.pdf">tuning HF Antennas</a> which describe the matching process in further detail.</p>
+
+    <div class="box attention">Connecting a very poorly matched antenna can damage the transmitter.</div>
+
+    <h3>SIGNAL REFLECTION</h3>
+    <p>The relationship between power transmitted through the transmission line, <span class="keyword">forward power</span>, and the possible <span class="keyword">reflected power</span> is important to achieving matching. When impedances are not even, power is reflected back instead of radiated out into space, effectively being wasted.</p>
+
+    <figure>
+      <img src="https://broadbandlibrary.com/wp-content/uploads/2017/02/Primary-Source-Chart.500x.1058.jpg" alt="image">
+      <figcaption>Conversion table for return loss and VSWR values colected from this <a href="https://broadbandlibrary.com/return-loss/">article on return loss by Ron Hranac</a>.</figcaption>
+    </figure>
+
+    <h4>RETURN LOSS</h4>
+    <p>The <span class="keyword">Return Loss</span> describes the arithmetic difference between transmitted and reflected power to an antenna in dBm, <span class="inline math">P <sub>forward</sub> - P <sub>reflected</sub> = return loss</span>. Larger values for the return loss ⇒ less power wasted.</p>
+
+    <h4>REFLECTION COEFFICIENT Γ</h4>
+    <p>The <span class="keyword">reflection coefficient Γ</span> is the ratio between the difference in impedances to the total impedance. This is the value we want to be 0. One can also determine Γ by ratio of the reflected and forward amplitudes <span class="inline math">V<sub>r</sub></span>:<span class="inline math">V<sub>f</sub></span></p>
+    <div class="box formula math">Γ = frac{ Z<sub>load</sub> - Z<sub>source</sub> }{ Z<sub>load</sub> + Z<sub>source</sub> } = frac{ V<sub>r</sub> }{ V<sub>f</sub> }</div>
+
+
+    <h4>VOLTAGE STANDING WAVE RATIO</h4>
+    <p>The <span class="keyword">Voltage Standing Wave Ratio (VSWR)</span> is the ratio of the peak and bottom of the standing wave that appear when a transmitted <span class="keyword">forward voltage wave v<sub>f</sub>(t)</span>, <span class="inline math">V<sub>f</sub> sin(ωt + ϕ<sub>1</sub>)</span>, is superimposed by a <span class="keyword">reflected voltage wave v<sub>r</sub>(t)</span>, <span class="inline math">V<sub>r</sub> sin(ωt + ϕ<sub>2</sub>)</span>.</p>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Standing_wave_2.gif/525px-Standing_wave_2.gif" alt="image">
+      <figcaption>Animation illustrating the transmission voltage(blue), added to the reflected voltage(red), resulting in a sum voltage(black). In this case, the voltage is completely reflected, resulting in a Γ = -1, and a VSWR = ∞. Animation sourced from <a href="https://en.wikipedia.org/wiki/Standing_wave_ratio#Relationship_to_the_reflection_coefficient">the Wikipedia article on SWR</a>.</figcaption>
+    </figure>
+    <p>The standing wave is the resulting sum of the forward and reflected voltages, with a maximum <span class="inline math">V<sub>PEAK</sub></span>, and bottom <span class="inline math">V<sub>MIN</sub></span>.</p>
+    <div class="box formula math">VSWR = frac{ V<sub>PEAK</sub> }{ V<sub>MIN</sub> } = frac{ 1 + |Γ| }{ 1 - |Γ| }</div>
+
+    <h3>SMITH CHARTS</h3>
+    <p>A <span class="keyword">Smith Chart</span> is a graphical method to illustrate the relative difference between source and load impedance. It uses a normalized scale and bends the vertical axis of a cartesian plane into a circle that folds over itself with the planar origin in the centre of the circle with R = 1.</p>
+    <ul>
+      <li>The horizontal axis represents the resistive component. Each vertical gridline circle represents a resistive ratio value.</li>
+      <li>The vertical axis represents the reactance component. The top half inductive, bottom half capacitive. Each vertical gridline curve flowing from the right out towards the circumference represent a ractance ratio value.</li>
+      <li>
+        <p>Each point on the chart takes the relative complex value, <span class="inline math">frac{ Z<sub>l</sub> }{ Z<sub>0</sub> }</span>, i.e</p>
+        <div class="box formula math">( x, y ) = frac{ R<sub>l</sub> + jX<sub>l</sub> }{ R<sub>0</sub> + jX<sub>0</sub> }</div></li>
+    </ul>
+    <p>A high resolution pdf, hosted by www.leleivre.com, <a href="https://www.leleivre.com/downloadables/smith_chart.pdf">can be downloaded here</a>.</p>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Smith_chart3.svg/375px-Smith_chart3.svg.png" alt="image">
+      <figcaption>Thumbnail from the <a href="https://en.wikipedia.org/wiki/Smith_chart">Wikipedia article on Smith Charts</a></figcaption>
+    </figure>
+
+    <h3>ONLINE RESOURCES</h3>
+    <p>University of San Diego offers a simple <a href="https://home.sandiego.edu/~ekim/e194rfs01/jwmatcher/matcher2.html">web interface calculator</a> for designing a matching network which will serve sufficiently in most instances.</p>
+
+  </section>
+
+  <h2 id="modulation">MODULATION</h2>
+  <section class="sub-section">
+    <p>A wave of light in any spectrum contain only three mutable components, each of these represent one method of modulating a radio signal.</p>
+    <div class="box formula math">A × sin( ωt + ϕ )</div>
+    <ul>
+      <li><span class="inline math">A</span> is the <span class="keyword">amplitude</span>, i.e the magnitude of the strenght of the wave peaks</li>
+      <li><span class="inline math">ω = 2πƒ</span> is the <span class="keyword">frequency</span>. The <span class="inline math">t</span> represent time in seconds.</li>
+      <li><span class="inline math">ϕ</span> represents the <span class="keyword">phase</span> of the wave, i.e it's offset</li>
+    </ul>
+    <h3 id="amplitude-modulation">AMPLITUDE MODULATION</h3>
+    <p class="addme">AM mod.</p>
+    <h3 id="FREQUENCY-modulation">FREQUENCY MODULATION</h3>
+    <p class="addme">FM mod</p>
+    <h3 id="PHASE-modulation">PHASE MODULATION</h3>
+    <p class="addme">the last one</p>
+  </section>
+
+  <h2 id="rules-safety">RULES & SAFETY</h2>
+  <section class="sub-section">
+    <p>Transmitting RF waves is a legislated activity in all countries. This is mainly due to the need for controlling for interference and safety. These two aspects will be covered in this section.</p>
+    <h3 id="laws-regulations">LAWS & REGULATIONS</h3>
+    <p>Radio amateurs are partly exempt from the regulations regarding constructing electrical devices and transmitting devices. You as the designer are solely responsible for your devices being safe to operate, and not a cause of interference. You may NOT build and sell mains-operated home-built equipment on the market on a commercial basis.</p>
+    <p>Furthermore, the Radio Amateur may NOT:</p>
+    <ul>
+      <li>Build transmitters for use outside the amateur frequency bands.</li>
+      <li>Modify an amateur radio transmitter for use outside the amateur radio frequency bands.</li>
+      <li>Alter a CE labeled transmitter to work outside the amateur radio frequency bands.</li>
+      <li>Restore a CE labeled transmitter to original function, after it has been modified for use within the amateur radio frequency bands.</li>
+    </ul>
+
+    <p>Laws regulating the requirements on security when operating powered devices are the <a href="https://lagen.nu/2016:732">Elsäkerhetslag (2016:732)</a>, and <a href="https://lagen.nu/2017:218">Elsäkerhetsförordning (2017:218)</a>. The laws regulating use of radio transmitters on are the <a href="https://lagen.nu/2016:392">Radioutrustningslag (2016:392)</a>, and the <a href="https://lagen.nu/2016:394">Radioutrustningsförordning (2016:394)</a>.</p>
+
+    <h3 id="emf-antenna-safety">EMF & ANTENNA SAFETY</h3>
+    <p>Some consideration need to be made when operating long-range or outdoors antennas. Some general safety guidelines are summarized below.</p>
+    <ul>
+      <li>Weather, even just a fog or light rain, can potentially build up significant static charges which create a risk for electrocution and falling (due to the antenna usually being elevated).</li>
+      <li>A antenna MAY NOT be connected to an existing lightning rod for a building, but must rather be protected separately against lightning.</li>
+      <li>The best protection for connected devices is to sever contact with the antenna during bad weather.</li>
+    </ul>
+
+    <p>Radio antennas emit non-ionizing radiation, with established exposure limits to protect the public. Radiation at the radio band frequencies can potentially heat up materials and cause harmful effects. The unit used to measure harmful exposure is the <b>SAR</b>(Specific Absorption Rate)[W/kg]. It is generally difficult to effectively measure in the field and <b>corresponding electrical or magnetic field strengths</b> have been tabulated. The formal <b>exposure limits</b> are set at 2% of the level that has been shown to cause harm. It also represents the average power over 6 minute intervals due to heating from radiation is a slow process.</p>
+    <p>Important regulations are the <a href="https://op.europa.eu/en/publication-detail/-/publication/9509b04f-1df0-4221-bfa2-c7af77975556/language-en">EU Council Recommendation 1999/519/EC</a>. In Sweden, the <a href="https://www.stralsakerhetsmyndigheten.se/contentassets/c4057ae5e05b4bf198e9fc8e6ae78bcb/ssmfs-200818-stralsakerhetsmyndighetens-allmanna-rad-om-begransning-av-allmanhetens-exponering-for-elektromagnetiska-falt.pdf">Strålsäkerhetsmyndighetens Allmänna Råd SSMFS 2008:18</a> give a good overview of the relevant levels. Furthermore, Arbetsmiljöverket in Sweden have issued recommendations and information on their website regarding<a href="https://www.av.se/halsa-och-sakerhet/elektromagnetiska-falt">electromagnetic fields in the workplace</a>.</p>
+
+    <p>Some quick useful pointers on EMF safety are:</p>
+    <ul>
+      <li>In the frequency range of 10-400 MHz the exposure limits are extra low due to a resonance phenomenon associated with the size of the human body.</li>
+      <li>Balcony and indoor antennas can give rise to unexpectedly high field strengths where people live.</li>
+      <li>Directional antennas can generate very high field strengths in the main direction of the antenna.</li>
+      <li>Feedlines for non-symmetric antennas can radiate considerably and cause high field strengths at the transmission site.</li>
+      <li>Power amplifiers and antenna matching units without proper shielding rise to strong fields at the transmission site.</li>
+    </ul>
+
   </section>
 </article>
