@@ -4,26 +4,115 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">Table Of Contents</h1>
       <ul class="toc">
-        <li><a href="#the-laws">THE LAWS</a></li>
-        <li><a href="#linear-non-linear">LINEAR & NON-LINEAR</a></li>
-        <li><a href="#harmonics">HARMONICS</a></li>
+        <li><a href="#the-law">THE LAW</a></li>
+        <li><a href="#ac-circuits">AC CIRCUITS</a></li>
+        <li><a href="#resistance-to-flow">RESISTANCE TO CURRENT</a></li>
+        <li><a href="#resonance">RESONANCE</a></li>
         <li><a href="#field-theory">FIELD THEORY</a></li>
+        <li><a href="#linear-non-linear">LINEAR & NON-LINEAR</a></li>
         <li><a href="#components">COMPONENTS</a></li>
+        <li><a href="#safety">SAFETY</a></li>
       </ul>
     </div>
-    <p>Physical electronics, the components and physics</p>
+    <p>This article aims to contain both physical theory and practical application of the field of electronics. It is an expansion from the main <a href="https://wiki.freshmanbasix.com/#physics">physics article</a>, but goes into further details in the specific area. Some niche application areas will be served with articles of their own.</p>
   </section>
 
-  <h2 id="the-laws">THE LAWS</h2>
+  <h2 id="the-law">THE LAW</h2>
   <section class="sub-section">
-    <p>There is no shortage of important physical axioms in the field of electronics. Some of the most essential ones are gathered in this section.</p>
-
+    <p>Essential laws of basic electronics and its fundamental theory will be summarized in this section.</p>
     <h3 id="ohms-law">OHMS LAW</h3>
-    <p class="addme">pic of ohms law wheel</p>
-    <p class="addme">list of the different units and their SI definitions.</p>
-    <p class="addme">some background theory of the real ohms law</p>
+    <p>One of the fundamental core laws defining the relationship between <span class="keyword">voltage V</span>, <span class="keyword">current I</span>, and <span class="keyword">resistance R</span>.</p>
+
+    <figure>
+      <img src="rsc/electronics/laws/ohms-law-relationships.png" alt="image">
+      <figcaption>Diagram outlining the relationships derived from Ohms law. It details the properties of Power, Voltage, Current and Resistance, and lists the function of each as a variable of the other three.</figcaption>
+    </figure>
+
 
     <h3 id="kirchoffs-law">KIRCHOFFS LAW</h3>
+    <p class="addme">what goes in, must come out</p>
+
+    <h3 id="other-laws">OTHERS LAWS</h3>
+    <p class="addme">induction, magnetic field etc</p>
+  </section>
+
+  <h2 id="ac-circuits">AC CIRCUITS</h2>
+  <section class="sub-section">
+    <p><span class="keyword">Alternating Current (AC)</span> is a current induced by a periodically oscillating voltage. It takes the form of a sinusoid waveform, with alternating positive and negative peaks of amplitude. The induced current is a function of the alternating voltage and time. The two will follow each other with some <span class="keyword">phaseshift</span> determined by resistance and reactance, see this <a href="http://www.philsherrod.com/hamradio/Impedance_and_Phase_Shift.pdf">practical paper on phase shift</a>. AC allows for information transmission by encoding data in the sinusiod pattern.</p>
+
+    <h3 id="ac-values">AC VALUES</h3>
+    <p>Generally, any equation in ohms law holds true in AC, but one needs to keep in mind calculating either the effective or instantaneous values.</p>
+
+    <h4>INSTANTANEOUS VALUES</h4>
+    <p>The <em>instantaneous voltage or current as a function of time</em> (<span class="inline math">v(t)</span> and <span class="inline math">i(t)</span>) are defined as</p>
+    <div class="box formula math">v(t) = V<sub>PEAK</sub> × sin(ωt + ϕ) <br>i(t) = I<sub>PEAK</sub> × frac{ v(t)    }{ R }</div>
+    <p>The phaseshift fullfills the following relationship <span class="inline math">tan ϕ = frac{ X<sub>L</sub> - X<sub>C</sub> }{ R } </span></p>
+
+    <h4>EFFECTIVE VALUES</h4>
+    <p>Over time, the voltage will reach an effective value <span class="inline math">V<sub>rms</sub></span> , i.e the <span class="keyword">root mean square</span>, which will depend on the shape of the wave, some mathematical background can be found on the <a href="https://en.wikipedia.org/wiki/Alternating_current#Root_mean_square_voltage">wikipedia page for AC</a>. The long and short of it is:</p>
+    <div class="box formula math">V<sub>rms</sub> = frac{ V<sub>PEAK</sub> }{ sqrt{2} (sinusoidal) <br>V<sub>rms</sub> = frac{ V<sub>PEAK</sub> }{ sqrt{3} (triangle) <br>V<sub>rms</sub> = V<sub>PEAK</sub> (square)</div>
+  </section>
+
+
+  <h2 id="resistance-to-flow">RESISTANCE TO CURRENT</h2>
+  <section class="sub-section">
+    <p>Several properties of both material and construction can have a real effect on how readily a electrical current is allowed to flow through components. This section will describe the concepts relevant to this factor.</p>
+
+    <h3>RESISTIVITY</h3>
+    <p><span class="keyword">Resistivity</span> is a characterization of how freely electrical current will flow through a medium. It is measured in Ohm meters [Ωm] and is commonly denoted <span class="inline math">ρ</span>. Its reciprocal concept is <span class="keyword">conductivity</span>.</p>
+    <p>Resistivity is usually used to describe the actual resistance per volume of a conducive path, for example a wire.</p>
+
+    <h3>IMPEDANCE</h3>
+    <p><span class="keyword">Impedance Z</span> is the <em>opposition to alternating current</em>. It constitutes the <span class="keyword">Resistance R</span> and <span class="keyword">Reactance X</span>. The two together form a complex quantity, <span class="inline math">Z = R + jX = |Z| × e <sup>jθ</sup></span>. It is made up of the total effects on the flow of current by magnetic fields(inductors), electric fields(capacitors) and insulation properties(resistors). The polar form is made up of <span class="keyword">magnitude |Z|</span> which is the ratio of the voltage difference amplitude to the current amplitude, and <span class="keyword">phase difference ϕ</span> between voltage and current.</p>
+
+    <div class="box attention">One might consider the classic notion of resistance in a DC circuit as an impedance where the imaginary component is nullified due to <span class="inline math">j = 0</span>. This happens because inductance and capacitance only "<em>impede</em>" the <b>change in flow</b> of current and voltage.</div>
+
+    <figure>
+      <img src="rsc/electronics/impedance/cartesian-z.svg" alt="image">
+      <figcaption>Diagram illustrating the impedance Z in a cartesian plane, and the relationship of both complex and polar factors.</figcaption>
+    </figure>
+
+    <div class="box formula math">Z = sqrt{ R<sup>2</sup> + (X<sub>L</sub> - |X<sub>C</sub>|)<sup>2</sup> }</div>
+
+    <h4>REAL COMPONENT - RESISTANCE</h4>
+    <p><span class="keyword">Resistance</span> is the purely real component of impedance, <span class="inline math">R = Re(Z)</span>, which exist due to resistors. A resistor has an impedance <span class="inline math">Z<sub>R</sub> = R</span>. Its reciprocal property, i.e inverse concept, is <span class="keyword">conductance</span> <span class="inline math">G = frac{1}{ R }</span>. In a simplified sense, resistance is analogous to friction. See the <a href="#ohms-law">Ohms law section</a> above for details on the physical properties.</p>
+    <p>Resistance is a strictly linear property achieved by passing current through materials that have poor conductive qualities, e.g ceramics, glas etc. Resistance will behave the same in both AC and DC circuits.</p>
+
+    <h4>IMAGINARY COMPONENT - REACTANCE</h4>
+    <p>A circuits ability to readjust to changes in voltages make up its <span class="keyword">reactance</span> <span class="inline math">X[Ω]</span>. It is the purely imaginary component of impedance, <span class="inline math">X = Im(Z)</span>, which exist due to a <span class="keyword">inductive reactance</span> <span class="inline math">X<sub>L</sub> = ωL</span>, (from inductors), and <span class="keyword">capacitive reactance</span> <span class="inline math">X<sub>C</sub> = frac{ 1 }{ ωC }</span>, (from capacitors), in an AC circuit.</p>
+
+    <div class="box formula math">X = X<sub>L</sub> - |X<sub>C</sub>|</div>
+
+    <div class="box attention">It is important to note that the phase shift of the voltage over the inductive or capacitive component is ±π/2. voltage over inductors <em>lead</em> the current, and <em>lags</em> the current over capacitors. This is why X<sub>C</sub> is subtracted, because its magnitude is of the opposite direction to X<sub>L</sub>.</div>
+
+    <p> An ideal inductor has a purely imaginary impedance <span class="inline math">Z<sub>L</sub> = jX<sub>L</sub> = j × ωL = ωLe <sup>j(π/2)</sup></span>. This is proportional to the frequency and is a positive value on the imaginary axis (+j) because of its opposition to a <em>change in current</em>.</p>
+    <p>An ideal capacitor has a purely conductive impedance <span class="inline math">Z<sub>C</sub>= frac{ 1 }{ jωC } = frac{ 1 }{ ωC } × e <sup>-j(π/2)</sup></span>. This is inversely proportional to the frequency and a negative value on the imaginary axis, (-j), because of its resistance to a <em>change in voltage</em>.</p>
+
+    <div class="box attention">Defining capacitive reactance as a positive or negative varies in literature, </div>
+
+    <p>In the DC circuit, reactance will appear as a non-linear behaviour when turning power on and off.</p>
+
+  </section>
+
+  <h2 id="resonance">RESONANCE</h2>
+  <section class="sub-section">
+    <p class="addme">LC circuits and the basics of frequency resonance</p>
+  </section>
+
+  <h2 id="field-theory">FIELD THEORY</h2>
+  <section class="sub-section">
+    <p>Core to understanding most things electronic is the theory of the fields and electromagnetic radiation that they persist of.</p>
+    <h3>ELECTRIC FIELDS 𝔼</h3>
+    <p>Electric fields appear between all items that have different electrical charge</p>
+    <h3>MAGNETIC FIELDS 𝔹</h3>
+    <p><span class="keyword">Oerstedts law</span> state that current running through a conductor induces a magnetic field. The surface area of the field with respect to the conductor length is proportional to the current.</p>
+    <div class="box formula math">∮𝔹 × d<b>l</b> = μ × I</div>
+    <p><span class="keyword">Magnetic Flux</span> <span class="inline math">Φ(Weber)[kg × m<sup>2</sup> × s<sup>-2</sup> × A<sup>-1</sup>] (Volt seconds)</span>, is the amount of change in a magnetic field.</p>
+    <p><span class="keyword">Magnetic Flux Density</span> <span class="inline math">𝔹(Tesla)[kg × s<sup>-2</sup>] (Webers per area)</span> is the density distribution of the field.</p>
+
+    <p>The <span class="keyword">Power to Area Ratio (PAR)</span> is always constant, meaning that the power is evenly distributed over the magnetic field surface area, in the isotropic case. It will be inversely proportional to the the distance squared.</p>
+    <div class="box formula math">PAR = frac{P}{4πr<sup>2</sup>}</div>
+
   </section>
 
   <h2 id="linear-non-linear">LINEAR & NON-LINEAR</h2>
@@ -31,27 +120,75 @@
     <p class="addme">theory on what separates the two types of circuits, use <a href="https://www.youtube.com/watch?v=vTB4FdXiigY&ab_channel=GauravJ-TheElectricalGuy">this link</a></p>
   </section>
 
-  <h2 id="harmonics">HARMONICS</h2>
-  <section class="sub-section">
-    <p class="addme">harmonic resonance and the basic idea of alternating electric/magnetic fields</p>
-  </section>
-
-  <h2 id="field-theory">FIELD THEORY</h2>
-  <section class="sub-section">
-    <p class="addme">electric fields, magnetic fields, their amplitudes and effects</p>
-  </section>
-
   <h2 id="components">COMPONENTS</h2>
   <section class="sub-section">
     <p>This section lists individual electronic components and breaks them down to describe how they work and what important theory is relevant. It also aspires to collect hands on tips on how theory might deviate from reality and how components must be used to achieve a desired result.</p>
 
     <h3 id="resistors">RESISTORS</h3>
-    <p class="addme">resistance and conductivity</p>
+    <p class="addme">resistance, conductivity and impedance</p>
 
     <h3 id="capacitors">CAPACITORS</h3>
     <h3 id="inductors">INDUCTORS</h3>
     <h3 id="op-amps">OPERATIONAL AMPLIFIERS</h3>
     <h3 id="transistors">TRANSISTORS</h3>
     <h3 id="diodes">DIODES</h3>
+  </section>
+
+  <h2 id="safety">SAFETY</h2>
+  <section class="sub-section">
+    <p>100-200mA of current will kill an adult human being. Do not fuck around with electricity. When performing repairs or work on circuits connected to the mains, see some security 101 tips below.</p>
+    <ul>
+      <li>Unplug the device AND shut it off completely before tinkering with its inside.</li>
+      <li>Put a layer of proper insulation between yourself and the floor.</li>
+      <li>Don't tinker while tired.</li>
+      <li>Don't work with wired headphones connected to the device that is being repaired.</li>
+      <li>Use insulated tools.</li>
+    </ul>
+    <p>In Sweden, a useful resource for information on what is considered legal is <a href="https://elsakerhetsverket.se/">Elsäkerhetsverkets homepage</a>.</p>
+
+    <h3 id="certifications">CERTIFICATIONS</h3>
+    <p>Any commercially available electrical product sold in the European Economic Area must be marked with the CЄ certification. The marking affirms that the products <b>conformity with European health, safety, and environmental protection standards</b>. The certification is used outside Europe as well, but originated there. Specifications can be found on the <a href="http://ec.europa.eu/growth/single-market/ce-marking/">official CЄ marking homepage</a></p>
+    <figure>
+      <img src="rsc/electronics/safety/ce-marking.png" alt="image">
+      <figcaption>Symbol for the CЄ marking</figcaption>
+    </figure>
+
+
+    <h3 id="security-mechanisms">SECURITY MECHANISMS</h3>
+    <p>Below are descriptions of some of the most important security systems in place in modern electrical devices, how they work and what protections they don't offer. Additionally, this Youtube video on <a href="https://www.youtube.com/watch?v=al_G_8LwTf4">safety for radio amateurs</a> might offer some further information.</p>
+
+    <h4>FUSES</h4>
+    <p>Fuses are current sensing elements located at the input of the live wire. They are designed to open the circuit if a current threshhold is crossed. A fuse will protect from shorts between live and neutral.</p>
+
+    <h4>RESIDUAL CURRENT DETECTION</h4>
+    <p>An RCD, <em>"Jordfelsbrytare"</em> in Swedish, is a current sensor circuit connected over the live and neutral wire at the mains level, essentially at the wall socket. It responds if the current running through the live wire is different from the one running through the netural wire.</p>
+    <figure>
+      <img src="rsc/electronics/safety/rcd-circuit.png" alt="image">
+      <figcaption>A general implementation of an RCD. The live and neutral wires are spooled around a separate wire, magnetically inducing new opposing currents. The relay responds when the net current is separate from 0.</figcaption>
+    </figure>
+    <p>This system protects from ground leakage. It does NOT protect devices from short circuits between live and neutral.</p>
+
+    <h4>PROTECTIVE GROUND</h4>
+    <p>Protective Ground/Earth (PE/PG) is used to divert energy into a safe direction in the case of a faulty wire that might connect a chassis to the live wire. It limits the risk of serious injury and electrocution. By modern safety standards, all outlets must be equipped with protective ground pins.</p>
+    <p>One important note is that it only connects the chassis itself to ground. When doing repairs, faults in the internal circuitry may still pose a risk of unexpected electrocution unless personal protection is used, i.e insulated floor cover</p>
+    <figure>
+      <img src="rsc/electronics/safety/main-wire-color-coding.jpeg" alt="image">
+      <figcaption>Common IEC regulation color coding for wires connected to the mains in. Further information and National standards can be found on this <a href="https://www.electronicshub.org/electrical-wiring-color-codes/">Electronics Hub page</a>.</figcaption>
+    </figure>
+
+    <h4>DOUBLE INSULATION</h4>
+    <p>Primarily an alternative to <em>protective ground</em>. By doubling down on the insulation, a circuit can be protected from any ground leakage. Any parts that might electrify the chassis or other parts of the device by mistake are thoroughly insulated, decreasing the danger considerably. This measure is most commonly applied to deviced used outdoors.</p>
+    <figure>
+      <img src="rsc/electronics/safety/double-insulation-symbol.png" alt="image">
+      <figcaption>Symbol specifying a device is double insulated</figcaption>
+    </figure>
+
+    <h3 id="batteries">BATTERIES</h3>
+    <p>While commonly operating at low voltages, e.g 12VDC, low inner resistance can induce very large currents (1000+ Amps) on a short circuit. On top of electrocution and fire, batteries contain chemicals that may cause additional harm. Some useful safety precautions are:</p>
+    <ul>
+      <li>Be sure to use properly <b>insulated tools</b> when working on battery powered equipment and devices.</li>
+      <li>Never wear rings or metal objects on your hands.</li>
+    </ul>
+
   </section>
 </article>
