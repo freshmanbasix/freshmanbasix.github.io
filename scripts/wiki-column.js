@@ -13,7 +13,7 @@
             new Route('servers', 'servers.html'),
             new Route('web', 'web.html'),
             new Route('email', 'email.html'),
-            new Route('terminals', 'terminals.html'),
+            new Route('bash', 'bash.html'),
             new Route('linux', 'linux.html'),
             new Route('git', 'git.html'),
             new Route('editors', 'editors.html'),
