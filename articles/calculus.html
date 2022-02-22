@@ -1,0 +1,131 @@
+<article id="calculus" class="wiki-entry">
+  <h1 class="column-header">CALCULUS</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <ul class="toc">
+        <li><a href="#arithmetic">ARITHMETIC</a></li>
+        <li><a href="#geometry">GEOMETRY</a></li>
+        <li><a href="#trigonometry">TRIGONOMETRY</a></li>
+        <li><a href="#discrete-mathematics">DISCRETE MATHEMATICS</a></li>
+      </ul>
+    </div>
+    <p>This article will contain purely mathematical theory, starting from the very basic high school level, and focusing on a calculus oriented subset of the field. Over time, it will capture most of the spectrum that one studies during the course of any general engineering program. Some niche fields will warrant individual articles in turn.</p>
+    <p>Calculus is primarily oriented at expanding the field of algebra into more complex territories and multiple dimensional analysis. Some basic arithmetic and notational convention are also served here due to the area being so fundamental to all subsequent fields.</p>
+    <p>Several concepts in this article will technically belong to fields of their own, but until such a time that enough material warrants a new article, it will remain in here.</p>
+  </section>
+
+  <h2 id="arithmetic">ARITHMETIC</h2>
+  <section class="sub-section">
+    <p>Arithmetic is the general rules for calculating numbers. In this section, some very fundamental rules, theorems and useful defintions will be gathered, along with some descriptions of the notation that will be used in this article.</p>
+    <h3>NUMBER SYSTEMS & BASES</h3>
+
+    <h3>EXPONENTS</h3>
+    <p><span class="keyword">Exponents</span> are a notational method to express <span class="keyword">powers</span>, <span class="inline math">base <sup>exponent</sup></span>, which is to say some <span class="keyword">base</span> is <em>raised to the n-th power</em>.</p>
+    <h4>IDENTITIES</h4>
+    <div class="box formula math">a<sup>n</sup> = a × ... × a (n times)</div>
+    <div class="box formula math">a<sup>1</sup> = a</div>
+    <div class="box formula math">a<sup>0</sup> = 1</div>
+    <div class="box formula math">a<sup>-1</sup> = frac{ 1 }{ a }</div>
+    <h3>LOGARITHMS</h3>
+    <div class="box definition">
+      <p>The inverse function to the exponential. Logarithms give slightly different values depending on the base b.</p>
+      <p>The range of any base logarithm is <span class="inline math">0  &lt domain( log(x) ) &lt ℝ<sup>+</sup></span>, and <span class="inline math">range( log(x) ) = ℝ</span> The following identities apply</p>
+      <div class="box formula math">y = log<sub>b</sub> (x) ⟺ b<sup> y</sup> = x</div>
+      <div class="box formula math">Log<sup>b</sup> (b) = 1, Log<sup>b</sup> (1) = 0</div>
+      <div class="box attention">The numerical magnitude of a logarithm maps ratios and relationships. Note that doubling the value of x will always correspond to exactly +1 on the y-axis</div>
+    </div>
+    <figure>
+      <img src="rsc/calculus/arithmetic/log.png" alt="image">
+      <figcaption>Chart describing the common log functions of base 2, base 10 and base e, a.k.a the natural logarithm ln(x)</figcaption>
+    </figure>
+    <h4>LOGARITHM CALCULATION RULES</h4>
+    <div class="box formula math">Log(A × B) = Log(A) + Log(B)</div>
+    <div class="box formula math">Log(A ÷ B) = Log(A) - Log(B)</div>
+    <div class="box formula math">Log(x) <sup>p</sup> = p × Log(x)</div>
+    <div class="box formula math">Log<sup>b</sup> (a) = frac{Log<sup>c</sup> (a)}{Log<sup>c</sup> (b)}</div>
+  </section>
+
+  <h2 id="geometry">GEOMETRY</h2>
+  <section class="sub-section">
+    <p>Geometry is the mathematical field concerned with space, dimensions, shapes, size and distances.</p>
+
+    <h3>COORDINATE SYSTEMS</h3>
+    <p>A coordinate system is a organized set of numerical values representing a point in a space of some dimensions. Three such system are the <span class="keyword">Cartesian</span>, <span class="keyword">cylindrical</span> and <span class="keyword">Spehrical</span> coordinate systems. Different systems have differing benefits and drawbacks, mainly depending on what is being depicted, and what kind of operations are being performed.</p>
+    <figure>
+      <img src="rsc/calculus/geometry/coordinate-conversion-chart.png" alt="image">
+      <figcaption>Simple conversion chart in ℝ <sup>3</sup> between <em>Cartesian</em> and the two forms of <em>Polar</em> coordinates, i.e cylindrical and spherical. </figcaption>
+    </figure>
+
+    <h4>CARTESIAN COORDINATES</h4>
+    <p><span class="keyword">Cartesian Coordinates</span> is the common standard of representing space by letting each point in  <span class="inline math">P = [x<sub>1</sub>, ..., x<sub>n</sub>] ∈ ℝ<sup>n</sup></span> be represented by a multiple of 1 on n orthoganal axis. The regular xy-plane is often refered to as the <em>cartesian plane</em>. <span class="keyword">Euclidean Standard Space</span> ℝ<sup>3</sup>, i.e physical 3D space, is usually represented as <span class="inline math">[x, y, z]</span> in cartesian coordinates.</p>
+    <p>It is used as the basis as the common <span class="keyword">right-hand system</span>, which is a method to standardize direction in a system. It is defined by taking your right hand and letting:</p>
+    <ul>
+      <li>the thumb be the positive x-axis</li>
+      <li>the index finger be the positive y-axis</li>
+      <li>the long finger be the positive z-axis</li>
+      <li>The circular rotation around the z-axis, from the positive x-axis to the negative, is considered to be of a positive magnitude</li>
+    </ul>
+    <p>Positive rotation around the z axis represents position movement along the z-axis. A common example is the common threaded screw, which is screwed into a material by rotating it clockwise when the screw faces away from you.</p>
+
+    <h4>POLAR COORDINATES</h4>
+    <p>In a polar system, a ray between the point <span class="inline math">P</span> is set as a polar axis, and the line through that pole has a single angle. The magnitude of this line from point to origin and the angle make up the polar coordinates. This system is usually best used for <span class="keyword">Cylindrical [r, θ, z]</span> and <span class="keyword">Spherical [R, θ, ϕ]</span> objects in space. This can be used to very easily calculate points of a spherical or cylindrical surface, or determine volumes etc.</p>
+    <figure>
+      <img src="rsc/calculus/geometry/polar-coordinate-system.png" alt="image">
+      <figcaption>Illustrations of spherical and cylindrical objects in 3D space with a radius of r. The point P existing somewhere on the surface area of the objects </figcaption>
+    </figure>
+
+    <h3>COMPLEX NUMBERS ℂ</h3>
+    <p><span class="keyword">Complex Numbers</span> are numbers with both real and imaginary components. The <span class="keyword">Imaginary Number Set 𝕀</span> is defined as all multiples of the <span class="keyword">Imaginary Unit i</span>, <span class="inline math">𝕀 = [∀(i × x)]</span> such that <span class="inline math">x ∈ ℝ</span> and <span class="inline math">i = sqrt{ -1 }</span>. The square root of minus one, or any negative number, does not exist in the real number space, and as such lack a definition. The number 𝑖 was created to model the circumstances where real numbers are insufficient. Common applications are <a href="https://en.wikipedia.org/wiki/Complex_number#Applications">listed on the wikipedia page for the concept</a>. Generally, any polynomial expression whose range does not contain y = 0 will require a complex solution, i.e any parabola completely above or below the x-axis.</p>
+    <p>Complex numbers are a special case of two dimensional vectors, existing as a point on the <span class="keyword">Imaginary Numberplane</span>, which is made up of all linear combinations of the orthogonal Real and Imaginary Number lines. This space has the standard basis <span class="inline math">[1, i]</span>. Commonly, complex numbers are denoted with the variable <span class="inline math"><b>Z</b></span>, with the boldface emphasising its vector properties. Each complex number <b>Z</b> will also have a <span class="keyword">Complex Conjugate</span>, which exists on the mirror image, i.e opposite side, of the real line, commonly denoted with a bar.</p>
+
+    <figure>
+      <img src="rsc/calculus/geometry/complex-plane.png" alt="image">
+      <figcaption>Cartesian illustration of a complex number and its associated notation</figcaption>
+    </figure>
+
+    <p>There are several forms of the complex number, all offering different benefits when performing calculations</p>
+    <div class="box formula math"><b>Z</b> = α + 𝑖 × β &#9&#9&#9(Cartesian Form) <br><b>Z</b> |<b>Z</b>|(cos θ, 𝑖 × in θ) &#9&#9(Polar Form) <br><b>Z</b> = |<b>Z</b>| × e <sup>𝑖 × θ</sup>&#9&#9&#9(Euler Form)</div>
+
+    <p>The different components of a complex number have some particular noation. The <span class="keyword">Imaginary component</span> <span class="inline math">Im(<b>Z</b>) = β</span>, The <span class="keyword">Real component</span> <span class="inline math">Re(<b>Z</b>) = α</span>. And lastly the <span class="keyword">Argument</span> <span class="inline math">Arg(<b>Z</b>) = θ</span>. The argument has a few special rules similar to that of the logarithm rules.</p>
+    <div class="box formula math">Arg(<b>Z</b> × <b>W</b>) = Arg(<b>Z</b>) + Arg(<b>W</b>) <br>Arg(<b>Z</b> ÷ <b>W</b>) = Arg(<b>Z</b>) - Arg(<b>W</b>)</div>
+
+  </section>
+
+  <h2 id="trigonometry">TRIGONOMETRY</h2>
+  <section class="sub-section">
+    <p>Trigonometry is the field pertaining to periodical functions.</p>
+
+    <h3>TRIGONOMETRIC FUNCTIONS</h3>
+    <div class="box definition">
+      <p>The <span class="keyword">Trigonometric Functions</span> describe real mathematical relationships between the hypotenuse and one of the sides of a right-angle triangle. By this definition, it maps the non-right angle in the triangle to a corresponding numerical value.</p>
+      <figure>
+        <img src="rsc/calculus/trigonometry/right-angle-relationship.png" alt="image">
+        <figcaption>Illustration of the relative angles and relationships for a right angle triangle</figcaption>
+      </figure>
+
+      <p>The primary functions are the <span class="keyword">sine</span>, <span class="keyword">cosine</span> and <span class="keyword">tangent</span> functions.</p>
+      <p>They each have respective reciprocal functions <span class="keyword">secant</span>, <span class="keyword">cosecant</span> and <span class="keyword">cotangent</span>. </p>
+      <p>The reverse concept of translating a real numerical value to an angle is achieved with the <span class="keyword">arc function</span>.</p>
+    </div>
+    <figure>
+      <img src="rsc/calculus/trigonometry/function-chart.png" alt="image">
+      <figcaption>XY-plane illustration of the basic trigonometric functions, sin, cos and tan</figcaption>
+    </figure>
+
+    <h3>UNIT CIRCLE</h3>
+    <p>The unit circle is a fundamental illustration of a multitude of trigonometric identities. It is a very useful resource to memorize the </p>
+    <figure>
+      <img src="rsc/calculus/trigonometry/unit-circle.png" alt="image">
+      <figcaption>Diagram illustrating the <em>unit circle</em>, consisting of a circle with a radius of 1</figcaption>
+    </figure>
+  </section>
+
+  <h2 id="discrete-mathematics">DISCRETE MATHEMATICS</h2>
+  <p>The beautiful field of mathematics, essentially built completely on integers. It's a wonderful thing.</p>
+  <h3>MODULAR ARITHMETIC</h3>
+  <p></p>
+  <section class="sub-section">
+
+  </section>
+</article>
