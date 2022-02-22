@@ -228,6 +228,7 @@ strong {
   background: var(--bwhite);
   border-left: 3px solid var(--blue);
   text-align: center;
+  white-space: pre;
 }
 
 .definition {
