@@ -24,6 +24,8 @@ body {
   background-repeat: repeat;
 
   font-family: "Fira Sans";
+  line-height: 35px;
+  font-size: 22px;
 }
 
 /*********************
@@ -45,6 +47,7 @@ pre#banner {
   padding: 2vh 0;
   background-color: var(--black);
   color: var(--white);
+  line-height: 25px;
 }
 
 /*********************
@@ -73,7 +76,6 @@ h1.column-header {
   margin: 0;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: xx-large;
 }
 
 /*********************
@@ -130,10 +132,10 @@ main#wiki-column {
   margin: 0 1vw 0 0;
   width: 30%;
   float: left;
+  line-height: 20px;
 }
 
 h1.toc-header {
-  font-size: large;
   margin-bottom: 0;
 }
 
@@ -156,7 +158,6 @@ ul.toc {
 
 section.sub-section {
   margin: 1.5vh 2.5vw;
-  font-size: 20px;
   overflow: hidden;
 }
 
