@@ -1,0 +1,76 @@
+<article id="programming" class="wiki-entry">
+  <h1 class="column-header">PROGRAMMING</h1>
+  <section class="sub-section">
+    <div id="toc-container">
+      <h1 class="column-header toc-header">CONTENT</h1>
+      <ul class="toc">
+        <li><a href="#c-programming-language">C LANGUAGE</a></li>
+        <li><a href="#c++">C++ LANGUAGE</a></li>
+      </ul>
+    </div>
+    <p>Rather than creating a single article for each possible programming language, this article aims to serve a point of quick reference when getting started with, or getting back to a language after a long break. It will aim to primarily comprehensively list good sources of documentation. Secondly, a few useful concepts, that have proven to be particularly niche, can be summarized herein. </p>
+  </section>
+
+  <h2 id="c-programming-language">C LANGUAGE</h2>
+  <section class="sub-section">
+    <p><span class="keyword">The C Programming Language</span>, designed by <em>Dennis Richie</em> in 1973. It's an imperative language, designed for use close to the hardware level. Still supported and developed to this day. Primarily standardized by as <a href="https://en.wikipedia.org/wiki/ANSI_C">ANSI C</a>.</p>
+
+    <h3>DOCUMENTATION</h3>
+    <ul>
+      <li><a href="https://www.gnu.org/software/libc/manual/pdf/libc.pdf">GNU project complete reference documentation website</a></li>
+      <li><a href="https://devdocs.io/">Advanced Level technical documentation hosted at <em>devdocs.io</em></a>. useful lookup reference for users with a fair familiarity</li>
+      <li><a href="https://www.tutorialspoint.com/cprogramming/index.htm">Beginner Level tutorial at <em>Tutorialspoint.com</em></a>. Good initial overview of components and syntax. Primarily useful for beginners.</li>
+      <li><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language"><em>The C Programming Language, 2ed, Kernighan & Richie</em></a>. A useful fundamental reference for the language co-authored by the language's designer.</li>
+    </ul>
+
+    <h3>BASIC FILE LAYOUT</h3>
+    <p>In order for a C file to compile at all, first make it look like this:</p>
+    <div class="box snippet code">#include &lt<em>header-file</em>.h&gt
+#include '<em>library-file.c</em>'
+
+/*
+  <em>declare functions before defining them up here</em>
+*/
+
+int main(int argc, char const *argv[]){
+
+  <em>//Main program code goes here</em>
+
+  return some_int;
+}</div>
+
+  <h3>COMPILING</h3>
+  <p>In a linux environment, the goto compiler is <span class="inline code">gcc</span>, easily invoked with:</p>
+
+  <div class="box snippet code">gcc <em>path/to/program.c</em> -o <em>path/to/executable</em></div>
+
+  <div class="box attention">Note that if the input does not have a file ending, the language must be specified with the <b>-x</b> option.</div>
+  </section>
+
+  <h2 id="c++">C++ LANGUAGE</h2>
+  <section class="sub-section">
+    <p>According to the author, C++ was always meant to be an expansion to C, and not a separate language. As it is, C++ is a object oriented compiled language that works real fast and introduces a significant amount of very useful native functionality that significantly modernizes the C language. A great deal of overlap exist, where considerable support for C programs, syntax and resources exist directly in the language itself.</p>
+
+    <h3>DOCUMENTATION</h3>
+    <p>For beginners, the <a href="https://www.tutorialspoint.com/cplusplus/index.htm">tutorialspoint</a> wiki might be the appropriate starting point. The official reference is hosted on the <a href="https://www.cplusplus.com/reference/">horrendously ugly</a> main website. A slightly more attractive documentation is avalable at <a href="https://devdocs.io/cpp/">devdocs.io</a>. Microsoft have also compiled a fairly nice <a href="https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170">language reference</a>.</p>
+
+    <h3>FILE LAYOUT</h3>
+    <div class="box snippet code">
+#include &ltcstdlib&gt
+#include &ltiostream&gt
+
+using namespace std;
+
+int main(int argc, char const *argv[]){
+
+  <em>/*Program content*/</em>
+
+  return <em>some_int</em>;
+}
+</div>
+    <h3>COMPILING</h3>
+    <p>c++ files can be compiled using gcc. It requires a link specification, but otherwise works essentially the same way a c program would</p>
+    <div class="box snippet code">gcc <em>path/to/program.cpp</em> -lstdc++ -o <em>path/to/executable</em></div>
+    <div class="box attention">The <b>-lstdc++</b> option is necessary to appropriately link the c++ standard libraries.</div>
+  </section>
+</article>
