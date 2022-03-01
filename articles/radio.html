@@ -1,38 +1,60 @@
-<article id="radio" class="wiki-entry">
+/communication-model/shannon-weaver-model.<article id="radio" class="wiki-entry">
   <h1 class="column-header">RADIO</h1>
   <section class="sub-section">
     <div id="toc-container">
-      <h1 class="column-header toc-header">Table Of Contents</h1>
+      <h1 class="column-header toc-header">CONTENT</h1>
       <ul class="toc">
-        <li><a href="#signal">SIGNAL</li>
+        <li><a href="#communication-model">COMMUNICATION MODEL</a></li>
+        <li><a href="#the-channel">THE CHANNEL</li>
+        <li><a href="#modulation">MODULATION</a></li>
+        <li><a href="#message-encoding">MESSAGE ENCODING</a></li>
+        <li><a href="#frequency-bands">FREQUENCY BANDS</a></li>
         <li><a href="#antennas">ANTENNAS</a></li>
         <li><a href="#transmission-lines">TRANSMISSION LINES</a></li>
         <li><a href="#matching">MATCHING</a></li>
-        <li><a href="#modulation">MODULATION</a></li>
         <li><a href="#rules-safety">RULES & SAFETY</a></li>
       </ul>
     </div>
-    <p>This article is intended to contain any and all knowledge needed to operate a radio transmitter/receiver on an amateur level. It is closely linked with the <b>Electronics</b> article, meaning that this article will focus only on the concepts that are especially, or only, relevant to the RF field. It will also contain a section on rules and regulations concerning radio transmission.</p>
+    <p>This article is intended to contain any and all knowledge needed to operate a radio transmitter/receiver on an amateur level. It is closely linked with the <b>Electronics</b> and <b>Physics</b> article, meaning that this article will focus only on the concepts that are especially, or only, relevant to the RF field. It will also contain a section on rules and regulations concerning radio transmission.</p>
   </section>
 
-  <h2 id="signal">SIGNAL</h2>
+  <h2 id="communication-model">COMMUNICATION MODEL</h2>
   <section class="sub-section">
-    <p>The <span class="keyword">Signal</span> generally refers to the connection between a actively transmitting and receiving antenna. In terms of power, it is the received power at the receiver. </p>
+    <p>A classical model for communication, devised in 1948 by <a href="https://en.wikipedia.org/wiki/Shannon%E2%80%93Weaver_model">Shannon & Weaver</a> illustrates the moving parts of sending messages through space. Its constituent parts are explained in detail, but it is introduced here. As seen in the figure below, the model identifies a <span class="keyword">Transmitted Message MSG<sub>in</sub></span>. A <span class="keyword">Modulation</span> and <span class="keyword">Demodulation</span> step. Inbetween them is the <span class="keyword">Channel</span>, i.e space through which the <span class="keyword">Signal S</span> travels. Within the channel, the signal will be affected by <span class="keyword">Noise</span>, which attenuates it, giving rise to a <span class="keyword">Path Loss L<sub>p</sub></span>.</p>
+    <figure>
+      <img src="rsc/radio/communication-model/shannon-weaver-model.png" alt="image">
+      <figcaption>Simple diagram illustrating the <a href="https://en.wikipedia.org/wiki/Shannon%E2%80%93Weaver_model">Shannon Weaver Communication Model</a></figcaption>
+    </figure>
+  </section>
 
+  <h2 id="the-channel">THE CHANNEL</h2>
+  <section class="sub-section">
+    <p>As per the <em>communication model</em> decribed previously, this section will go into details regarding the <span class="keyword">Channel</span> through which data is transmitted.</p>
 
     <h3>ISOTROPIC RADIATED POWER</h3>
-    <p>The <span class="keyword">Isotropic Radiation Case</span> is a common reference case that sets up a fundamental starting point from which real examples are derived. It imagines the <span class="keyword">Transmitted Power P<sub>TX</sub> [W]</span> radiating from a single point monopole antenna in a perfect sphere with area <span class="inline math">A = 4πd<sup> 2</sup></span>. At the recipient end, the <span class="keyword">Received Power P<sub>RX</sub> [W]</span> is some portion of the transmitted power being induced in the receiving antenna.</p>
+    <p>The <span class="keyword">Isotropic Radiation Case</span> is a common reference case that sets up a fundamental starting point from which real examples are derived. It imagines the <span class="keyword">Transmitted Power P<sub>TX</sub> [W]</span> radiating from a single point monopole antenna in a perfect sphere with area <span class="inline math">A = 4πd<sup> 2</sup></span>. </p>
 
-    <h4>INTENSITY</h4>
-    <p><span class="inline math">P<sub>TX</sub></span> will always be evenly distributed over the area of this sphere at a distance d. The power per m<sup>2</sup> is contained in the <span class="keyword">Power Flux Density S[W / m<sup>2</sup>]</span>.</p>
-    <div class="box formula math">S = frac{ P<sub>TX</sub> }{ A } = frac{ |E|<sup>2</sup> }{ Z<sub>fs</sub> }</div>
-    <p><span class="inline math">Z<sub>fs</sub> ≈ 377Ω</span> is the <span class="keyword">free space impedance</span>.</p>
+    <figure>
+      <img src="rsc/radio/channel/isotropic-radiation.png" alt="image">
+      <figcaption>Illustration of the isotropic radiation sphere</figcaption>
+    </figure>
 
-    <h4>APERTURE</h4>
-    <p>The <span class="keyword">Antenna Aperture A<sub>e</sub> [m<sup>2</sup>]</span> is the area projection of the receiving antenna on the plane normal to the incident signal wave. In the isotropic case, the aperture is a simplified:</p>
-    <div class="box formula math">A<sub>e,iso</sub> = frac{ λ<sup>2</sup> }{ 4π }</div>
-    <p>The relationship between the aperture and the physical size will be slightly missaligned. If <span class="inline math">A<sub>e</sub> = A<sub>phys</sub></span>, that would imply that the aperture efficiency is 100% which cannot be achieved in reality. In practice, the actuaaperture is determined by measuring the ratio between received power to what should theoretically be received.</p>
-    <div class="box formula math">A<sub>e</sub> = frac{ P<sub>RX</sub> }{ S }</div>
+    <p>Along the surface area of the sphere at distance d, the transmitted power is <em>uniformly distributed</em>. This means that the amount of power per metre squared along the spheres surface is constant. This gives rise to the <span class="keyword">Irradiance I[W / m<sup>2</sup>]</span>, sometimes refered to as <span class="keyword">Power Flux Density</span> or <span class="keyword">Intensity</span>. More information can be found at the <a href="https://en.wikipedia.org/wiki/Irradiance">wikipedia article on the subject</a></p>
+
+    <div class="box formula math">I = frac{ P<sub>TX</sub> }{ A } = frac{ |E|<sup>2</sup> }{ Z<sub>fs</sub> }</div>
+
+    <div class="box attention"><span class="inline math">Z<sub>fs</sub> ≈ 377Ω</span> is the <span class="keyword">free space impedance</span>. Note also that intensity is sometimes abreviated as S, so be careful not to confuse it with the symbol for signal.</div>
+
+    <p>The <span class="keyword">Antenna Aperture A<sub>e</sub> [m<sup>2</sup>]</span> is the area projection of the receiving antenna on the plane normal to the incident signal wave. In the isotropic case, the aperture is a simplified <span class="inline math">A<sub>e,iso</sub> = λ<sup>2</sup> / 4π</span>. The relationship between the aperture and the physical size will be slightly missaligned. If <span class="inline math">A<sub>e</sub> = A<sub>phys</sub></span>, that would imply that the aperture efficiency is 100% which cannot be achieved in reality. In practice, the actual aperture is determined by measuring the ratio between received power to what should theoretically be received.</p>
+    <div class="box formula math">A<sub>e</sub> = frac{ P<sub>RX</sub> }{ I }</div>
+
+    <p>The power that actually arrives at the receiving antenna is denoted the <span class="keyword">Received Power P<sub>RX</sub>[W]</span>. This will ALWAYS be a fraction of the transmitted power, directly proportional to aperture and area. <span class="inline math">P<sub>TX</sub> = P<sub>RX</sub></span> is impossible to achieve in reality. Received power is measured in watts, meaning that given some intensity (watts per metres squared) at the point of the antenna, times the aperture (metres squared) will equal the power. We also refer to this received power as the <span class="keyword">Signal S</span>.</p>
+    <div class="box formula math">P<sub>RX</sub> = A<sub>e</sub> × I = P<sub>TX</sub> × frac{ A<sub>e</sub> }{ A }</div>
+
+    <p>The difference between transmitted and received power is what makes up the <span class="keyword">Path Loss L<sub>p</sub></span>. Loss has no unit and is given in <em>decibels</em>. It originates from any and all things that exist and interfere along the path between transmitter and receiver.</p>
+    <div class="box formula math">P<sub>RX,iso</sub> = P<sub>TX,iso</sub> × frac{ A<sub>e,iso</sub> }{ A } = P<sub>TX,iso</sub> × frac{ 1 }{ L<sub>fs</sub> }</div>
+    <div class="box formula math">L<sub>path</sub> = frac{P<sub>TX</sub> }{P<sub>RX</sub> }</div>
+    <div class="box attention">Here, <span class="inline math">L<sub>fs</sub> = (4πdλ)<sup>2</sup></span> is the <span class="keyword">free space path loss</span>.</div>
 
     <h3>GAIN</h3>
     <p>Antenna design can achieve variations of antenna amplification factors. For example, a directional antenna will redistribute the even density into particular regions. As such, the <span class="keyword">Antenna Gain G</span> is a multiplier which can exist on both transmitting and receiving end. One thing to note is that real antenna aperture is proportional to the gain and isotropic aperture:</p>
@@ -58,16 +80,8 @@
     <div class="box formula math">N = F × k × T<sub>0</sub> × B</div>
     <p><span class="inline math">kT<sub>0</sub></span> is the <span class="keyword">spectral density [W / Hz]</span> and the temperature needs to be given i Kelvins. <span class="inline math">k = 1.38 × 10<sup>-23</sup></span></p>
 
-    <h3>RECEIVED POWER</h3>
-    <p> What arrives at the recipient antenna will always be a fraction of the transmitted power directly proportional to the ratio between aperture and area. Received power is measured in watts, meaning that given some intensity (watts per metres squared) at the point of the antenna, times the aperture (metres squared) will equal the power. </p>
-    <div class="box formula math">P<sub>RX</sub> = A<sub>e</sub> × S = P<sub>TX</sub> × frac{ A<sub>e</sub> }{ A }</div>
 
-    <h4>PATH LOSS</h4>
-    <p>The <span class="keyword">Path Loss L</span> is a known factor by which the signal quality is attenuated. It originates from physical effects in the traversal medium, such as thick walls or other wave absorbing/reflecting items. In the isotropic case:</p>
-    <div class="box formula math">P<sub>RX,iso</sub> = P<sub>TX,iso</sub> × frac{ A<sub>e,iso</sub> }{ A } = P<sub>TX,iso</sub> × frac{ 1 }{ L<sub>fs</sub> }</div>
-    <p>Here, <span class="inline math">L<sub>fs</sub> = (4πdλ)<sup>2</sup></span> is the free space path loss.</p>
-
-    <h4>SIGNAL TO NOISE RATIO</h4>
+    <h3>SIGNAL TO NOISE RATIO</h3>
     <p>The <span class="keyword">Signal to Noise Ratio</span>, denoted SNR or S/N is the relationship between Signal strenght, i.e received power, to noise. </p>
     <div class="box formula math">Signal = P<sub>RX</sub> = frac{ P<sub>TX</sub> }{ Path Loss L}</div>
 
@@ -85,6 +99,39 @@
     <div class="box formula math">(P<sub>TX</sub>)<sub>dBW</sub> = 10 × Log<sub>10</sub> ( P<sub>TX, W</sub> / 1 )</div>
     <div class="box formula math">(P<sub>TX</sub>)<sub>dBi</sub> = 10 × Log<sub>10</sub> ( S<sub>real</sub> / S<sub>iso</sub> )</div>
 
+  </section>
+
+  <h2 id="modulation">MODULATION</h2>
+  <section class="sub-section">
+    <p>This section contain summaries and background on the methods of <span class="keyword">Modulating</span>, i.e embedding discernable data into, a signal. For any electromagnetic wave, there are only three mutable components that can be changed to achieve a pattern. First is the waves magnitude, or peak power, denoted as the <span class="keyword">Amplitude</span> <span class="inline math">A</span>. The <span class="keyword">Angular Frequency</span> <span class="inline math">ω = 2πƒ</span> determines how many radians per second the wave oscillates. Lastly, the <span class="keyword">Phase Shift</span> <span class="inline math">ϕ</span> represent the offset. In the sinusoidal case, given these three components, any wave <span class="inline math">s</span> can be expressed as a function of time:</p>
+
+    <div class="box formula math">s(t) = A × sin( ωt + ϕ )</div>
+    <figure>
+      <img src="rsc/radio/modulation/sinusoidal-waves.png" alt="image">
+      <figcaption>Diagram illustrating the constituent parts of a sine wave</figcaption>
+    </figure>
+
+    <p>In short, the process of modulating a signal makes use of a <span class="keyword">Carrier Wave Signal</span>, which is the baseline that receivers align against, and then applying a <span class="keyword">Modulating Wave Signal</span>, which is the container for the data, achieving a <span class="keyword">Modulated Wave Signal</span>. The modulation process is known by both parties and is performed in reversed order to extract the data once the modulated wave signal has been received.</p>
+
+    <h3>ANALOG VS DIGITAL MODULATION</h3>
+    <p>Analog uses continous waveforms. Practical for voice in FM/AM bands. Discrete modulation applies a discrete combination of patterns to express a finite number of symbols that are transmitted at a certain symbol rate. Morse code, OnOff Keying etc. are examples of digital modulation.</p>
+
+    <h3>AMPLITUDE MODULATION</h3>
+    <p><span class="keyword">Amplitude Modulation AM</span> is a linear method of encoding a carrier wave with a modulating wave that varies in amplitude. The result is a modulated wave with the frequency of the carrier wave whose envelope is identical to the modulating wave. The amplitude variations carry the data.</p>
+
+    <h3>FREQUENCY & PHASE MODULATION FM/PM</h3>
+    <p>Here's an article <a href="https://electronicspost.com/difference-between-frequency-modulation-and-phase-modulation/">explaining the difference</a>.</p>
+
+  </section>
+
+  <h2 id="message-encoding">MESSAGE ENCODING</h2>
+  <section class="sub-section">
+    <p>How to translate variations in a wave into symbols of data.</p>
+  </section>
+
+  <h2 id="frequency-bands">FREQUENCY BANDS</h2>
+  <section class="sub-section">
+    <p>Section dedicated to the different bands, their main uses and relevant regulations</p>
   </section>
 
   <h2 id="antennas">ANTENNAS</h2>
@@ -231,23 +278,6 @@
     <h3>ONLINE RESOURCES</h3>
     <p>University of San Diego offers a simple <a href="https://home.sandiego.edu/~ekim/e194rfs01/jwmatcher/matcher2.html">web interface calculator</a> for designing a matching network which will serve sufficiently in most instances.</p>
 
-  </section>
-
-  <h2 id="modulation">MODULATION</h2>
-  <section class="sub-section">
-    <p>A wave of light in any spectrum contain only three mutable components, each of these represent one method of modulating a radio signal.</p>
-    <div class="box formula math">A × sin( ωt + ϕ )</div>
-    <ul>
-      <li><span class="inline math">A</span> is the <span class="keyword">amplitude</span>, i.e the magnitude of the strenght of the wave peaks</li>
-      <li><span class="inline math">ω = 2πƒ</span> is the <span class="keyword">frequency</span>. The <span class="inline math">t</span> represent time in seconds.</li>
-      <li><span class="inline math">ϕ</span> represents the <span class="keyword">phase</span> of the wave, i.e it's offset</li>
-    </ul>
-    <h3 id="amplitude-modulation">AMPLITUDE MODULATION</h3>
-    <p class="addme">AM mod.</p>
-    <h3 id="FREQUENCY-modulation">FREQUENCY MODULATION</h3>
-    <p class="addme">FM mod</p>
-    <h3 id="PHASE-modulation">PHASE MODULATION</h3>
-    <p class="addme">the last one</p>
   </section>
 
   <h2 id="rules-safety">RULES & SAFETY</h2>
