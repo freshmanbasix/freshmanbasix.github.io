@@ -4,18 +4,21 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">CONTENT</h1>
       <ul class="toc">
-        <li><a href="#c-programming-language">C LANGUAGE</a></li>
-        <li><a href="#c++">C++ LANGUAGE</a></li>
+        <li><a href="#c-cpp">C / C++</a></li>
+        <li><a href="#non-language-specific">NON-LANGUAGE SPECIFIC</a></li>
       </ul>
     </div>
     <p>Rather than creating a single article for each possible programming language, this article aims to serve a point of quick reference when getting started with, or getting back to a language after a long break. It will aim to primarily comprehensively list good sources of documentation. Secondly, a few useful concepts, that have proven to be particularly niche, can be summarized herein. </p>
   </section>
 
-  <h2 id="c-programming-language">C LANGUAGE</h2>
+  <h2 id="c-cpp">C / C++</h2>
   <section class="sub-section">
     <p><span class="keyword">The C Programming Language</span>, designed by <em>Dennis Richie</em> in 1973. It's an imperative language, designed for use close to the hardware level. Still supported and developed to this day. Primarily standardized by as <a href="https://en.wikipedia.org/wiki/ANSI_C">ANSI C</a>.</p>
 
+    <p>According to the creator of C++, Bjarne Stroustrup, C++ was always meant to be an expansion to C, and not a separate language. As it is, C++ is a object oriented compiled language that works real fast and introduces a significant amount of very useful native functionality that significantly modernizes the C language. A great deal of overlap exist, where considerable support for C programs, syntax and resources exist directly in the language itself.</p>
+
     <h3>DOCUMENTATION</h3>
+    <h4>C LANGUAGE DOCS</h4>
     <ul>
       <li><a href="https://www.gnu.org/software/libc/manual/pdf/libc.pdf">GNU project complete reference documentation website</a></li>
       <li><a href="https://devdocs.io/">Advanced Level technical documentation hosted at <em>devdocs.io</em></a>. useful lookup reference for users with a fair familiarity</li>
@@ -23,13 +26,20 @@
       <li><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language"><em>The C Programming Language, 2ed, Kernighan & Richie</em></a>. A useful fundamental reference for the language co-authored by the language's designer.</li>
     </ul>
 
-    <h3>BASIC FILE LAYOUT</h3>
-    <p>In order for a C file to compile at all, first make it look like this:</p>
+    <h4>C++ LANGUAGE DOCS</h4>
+    <p>For beginners, the <a href="https://www.tutorialspoint.com/cplusplus/index.htm">tutorialspoint</a> wiki might be the appropriate starting point. The official reference is hosted on the <a href="https://www.cplusplus.com/reference/">horrendously ugly</a> main website. A slightly more attractive documentation is avalable at <a href="https://devdocs.io/cpp/">devdocs.io</a>. Microsoft have also compiled a fairly nice <a href="https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170">language reference</a>.</p>
+
+    <h3>BASIC FILE STRUCTURE</h3>
+    <p>This section clarifies the very basics of how a program file needs to be organized in c/c++ for the compiler to successfully be able to parse it.</p>
+
+    <p>Conventionally, the file ending of a c file is <span class="inline code">.c</span>, and a c++ file is <span class="inline code">.cpp</span>.</p>
+
+    <h4>C LANG FILE EXAMPLE</h4>
     <div class="box snippet code">#include &lt<em>header-file</em>.h&gt
 #include '<em>library-file.c</em>'
 
 /*
-  <em>declare functions before defining them up here</em>
+<em>declare functions before defining them up here</em>
 */
 
 int main(int argc, char const *argv[]){
@@ -39,22 +49,7 @@ int main(int argc, char const *argv[]){
   return some_int;
 }</div>
 
-  <h3>COMPILING</h3>
-  <p>In a linux environment, the goto compiler is <span class="inline code">gcc</span>, easily invoked with:</p>
-
-  <div class="box snippet code">gcc <em>path/to/program.c</em> -o <em>path/to/executable</em></div>
-
-  <div class="box attention">Note that if the input does not have a file ending, the language must be specified with the <b>-x</b> option.</div>
-  </section>
-
-  <h2 id="c++">C++ LANGUAGE</h2>
-  <section class="sub-section">
-    <p>According to the author, C++ was always meant to be an expansion to C, and not a separate language. As it is, C++ is a object oriented compiled language that works real fast and introduces a significant amount of very useful native functionality that significantly modernizes the C language. A great deal of overlap exist, where considerable support for C programs, syntax and resources exist directly in the language itself.</p>
-
-    <h3>DOCUMENTATION</h3>
-    <p>For beginners, the <a href="https://www.tutorialspoint.com/cplusplus/index.htm">tutorialspoint</a> wiki might be the appropriate starting point. The official reference is hosted on the <a href="https://www.cplusplus.com/reference/">horrendously ugly</a> main website. A slightly more attractive documentation is avalable at <a href="https://devdocs.io/cpp/">devdocs.io</a>. Microsoft have also compiled a fairly nice <a href="https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170">language reference</a>.</p>
-
-    <h3>FILE LAYOUT</h3>
+    <h4>C++ FILE EXAMPLE</h4>
     <div class="box snippet code">
 #include &ltcstdlib&gt
 #include &ltiostream&gt
@@ -68,9 +63,37 @@ int main(int argc, char const *argv[]){
   return <em>some_int</em>;
 }
 </div>
+
+    <h3>DIRECTIVES</h3>
+    <p>Preprocessor commands are supplied at the top of the document and must be prepended with a <span class="inline code">#</span> character with no whitespace between it and the line start.</p>
+
+    <h4>FILE INCLUSION</h4>
+    <p>The core syntax offer only the very basic of primitive datatypes and flow control. Any level of advanced support requires the inlusion of libraries in one way or another.</p>
+    <p>The <span class="keyword">#include</span> statement added at the top of the file signifies which resources are to be included. <span class="inline code">#include &ltstdio.h&gt</span> will include the standard input output library. <span class="inline code">#include "<em>some/file.h</em>"</span> will instead include any arbitrary file with the path offered.</p>
+    <div class="box attention">Once a file has been included, any function or variable in its global scope will be available to the including file.</div>
+
+    <h4>DEFINITIONS</h4>
+    <p>Constant value can be defined for practical use later in a global scope. Use the <span class="keyword">define</span> directive like so: <span class="inline code">#define <em>CONSTANT</em> <em>value</em></span>. These defenitions will always be constant, they can't be written in runtime. They don't have to be named with capital letters, but the convention is such.</p>
+
     <h3>COMPILING</h3>
-    <p>c++ files can be compiled using gcc. It requires a link specification, but otherwise works essentially the same way a c program would</p>
+    <p>In a linux environment, a standard compiler, for c and c++ both, is the <span class="keyword">Gnu C Compiler</span> <span class="inline code">gcc</span>, easily invoked with:</p>
+
+    <div class="box snippet code">gcc <em>path/to/program.c</em> -o <em>path/to/executable</em></div>
+
+    <div class="box attention">Note that if the input does not have a file ending, the language must be specified with the <b>-x</b> option.</div>
+
+    <p>c++ programs are compiled in a similar fashion, but requires an explicit linking instruction to access the c++ libraries. This is achieved with the <span class="inline code">-lstdc++</span> flag.</p>
     <div class="box snippet code">gcc <em>path/to/program.cpp</em> -lstdc++ -o <em>path/to/executable</em></div>
-    <div class="box attention">The <b>-lstdc++</b> option is necessary to appropriately link the c++ standard libraries.</div>
   </section>
+
+  <h2 id="non-language-specific">NON-LANGUAGE SPECIFIC</h2>
+  <section class="sub-section">
+    <p>This is a section for concepts and knowledge that is not specific to any particular language. This will be a more general computer science section.</p>
+
+    <h3>FLOATING POINTS</h3>
+    <p><span class="keyword">Floating Points</span> are a formulaic representation of approximate fractions. The implementation of floating points give rise to a level of errors that which mean that two operations that are mathematically equivalent, might get different results in practice.</p>
+    <p>The datatypes <span class="inline code">float</span> or <span class="inline code">double</span> , FP32 and FP64 (bits) respectively, are both actually floating points, but with differing precision. Common terms are <em>half-precision</em>, <em>singe precision</em> and <em>double precision</em>.</p>
+    <p>A general overview is found <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">on the wikipedia page for floating point arithmetic</a>. Details on comparing from a programmers perspective is discussed on <a href="https://floating-point-gui.de/errors/comparison/">floating-point-gui.de</a> and <a href="https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">randomascii</a>. The, most common, standard is the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>. A very practical graphical illustration of how the bit representation becomes a real number can be found on this <a href="https://evanw.github.io/float-toy/">github pages site by Evan Wallace</a>.</p>
+  </section>
+
 </article>
