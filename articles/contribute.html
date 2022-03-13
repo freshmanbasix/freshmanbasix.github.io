@@ -33,6 +33,8 @@
 <b>root/</b>--
       |-index.html
       |-style.css
+      |-<b>style/</b>-
+      |       |-stylesheet_category.css
       |-CNAME
       |-README.md
       |-<b>scripts/</b>-
@@ -49,7 +51,7 @@
 
     <ul>
       <li><b>index.html</b> is the core of the website, being loaded as the default on a web request. This file should ONLY contain the primary framework of the website, leaving the actual content distributed elsewhere.</li>
-      <li><b>style.css</b> is the complete css style document.</li>
+      <li><b>style.css</b> is the general stylesheet, linked in index.html. This file imports all members under the <b>style/</b> directory, which individually contain the complete styling ruleset, categorized by function.</li>
       <li><b>README.md</b> is a github specific file that only corresponds to the github repo <em>Readme</em> section.</li>
       <li><b>CNAME</b> is for the CNAME record at the domain name registrar.</li>
       <li>All js scripts are located under the <b>scripts/</b> directory. Remember that each added scripts must be imported with a script element in index.html.</li>
