@@ -7,6 +7,7 @@
         <li> <a href="#keep-it-secret">KEEP IT SECRET</a> </li>
         <li> <a href="#encryption-methods">ENCRYPTION METHODS</a> </li>
         <li> <a href="#gnu-privacy-guard">GNU PRIVACY GUARD</a> </li>
+        <li> <a href="#virtual-private-network">VIRTUAL PRIVATE NETWORK</a> </li>
       </ul>
     </div>
     <p>Encryption covers the massive field of data science that endeavors to obfuscate information. It spans a long history and obviously has become of utmost importance in recent decades. This article aims to cover some historical and theoretical background on different methods and initiatives that have made an impact.</p>
@@ -75,4 +76,15 @@
     <div class="box snippet code">gpg --edit-key <em>UID</em> trust</div>
 
   </section>
+
+  <h2 id="virtual-private-network">VIRTUAL PRIVATE NETWORK</h2>
+  <section class="sub-section">
+    <p>A VPN tunnel connects the client computer directly to a dedicated server, and then funnels all communication through this server over a TLS connection. This improves obfuscation of data traffic. The VPN server itself reveals no data about the users and tracking data to and from it is meaningless since thousands of different(optimally) people use it simultaneously.</p>
+
+    <h3>OPENVPN</h3>
+    <p><a href="https://openvpn.net/">Open source VPN infrastructure</a>. Offers beginner friendly gui and command line interfaces, VPN service and self-hosting. The <span class="inline code">openvpn</span> command line tool is useful when a config file is provided by the VPN service provider.</p>
+    <div class="box snippet code">openvpn <em>file.ovpn</em></div>
+    <p>The example above will establish a connection configured by the file. ProtonVPN users can download finished config files, <a href="https://protonvpn.com/support/linux-openvpn/">instructions found here</a>.</p>
+  </section>
+
 </article>
