@@ -40,10 +40,10 @@
 
     <h3>USAGE</h3>
 
-    <p>Below follows a number of examples of how one might use <span class="inline code">gpg</span> to achieve some serious privacy with key-pairs. If questions pop up, it is always good practice to take a look in the manpages, found either in your terminal, or <a href="http://manpages.org/gpg">right here</a>.</p>
+    <p>Below follows a number of examples of how one might use <span class="inline-code">gpg</span> to achieve some serious privacy with key-pairs. If questions pop up, it is always good practice to take a look in the manpages, found either in your terminal, or <a href="http://manpages.org/gpg">right here</a>.</p>
 
     <h4>CREATE KEYS</h4>
-    <p>To partake in any kind of encrypted communication, you need to <b>generate a pair of keys</b>. These need to be generated on the own computer. The <span class="inline code">--generate-key</span> command is the standard one intended for creating a new key. The <span class="inline code">--full-generate-key</span> command is another alternative. Both prompt the user for input for the different parameters, but the latter will prompt for <em>all</em> options.</p>
+    <p>To partake in any kind of encrypted communication, you need to <b>generate a pair of keys</b>. These need to be generated on the own computer. The <span class="inline-code">--generate-key</span> command is the standard one intended for creating a new key. The <span class="inline-code">--full-generate-key</span> command is another alternative. Both prompt the user for input for the different parameters, but the latter will prompt for <em>all</em> options.</p>
     <div class="box snippet code">gpg --generate-key</div>
     <div class="box attention">For SSH keys, take a look at the <a href="https://www.ssh.com/academy/ssh/keygen">ssh-keygen</a> tool instead</div>
 
@@ -67,7 +67,7 @@
     <p>Given a file with a key, <b>import it into your keychain</b></p>
     <div class="box snippet code">gpg --import <em>key-file</em></div>
 
-    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <span class="inline code">--list-keys</span> command. Optionally, the <span class="inline code">--fingerprint</span> command gives a similar output. Both commands can take a UID argument to single out a particular key which is useful when automating verification.</p>
+    <p>Keep in mind that reliable trust is an essential part of the system. Make absolutely certain that the key you have received is the correct one. The simplest way is to compare fingerprints. To see an overview of all keys in your keyring and the respective UIDs and fingerprints, use the <span class="inline-code">--list-keys</span> command. Optionally, the <span class="inline-code">--fingerprint</span> command gives a similar output. Both commands can take a UID argument to single out a particular key which is useful when automating verification.</p>
 
     <div class="box snippet code">$ gpg --list-keys [UID]</div>
     <div class="box snippet code">$ gpg --fingerprint [UID]</div>
@@ -82,7 +82,7 @@
     <p>A VPN tunnel connects the client computer directly to a dedicated server, and then funnels all communication through this server over a TLS connection. This improves obfuscation of data traffic. The VPN server itself reveals no data about the users and tracking data to and from it is meaningless since thousands of different(optimally) people use it simultaneously.</p>
 
     <h3>OPENVPN</h3>
-    <p><a href="https://openvpn.net/">Open source VPN infrastructure</a>. Offers beginner friendly gui and command line interfaces, VPN service and self-hosting. The <span class="inline code">openvpn</span> command line tool is useful when a config file is provided by the VPN service provider.</p>
+    <p><a href="https://openvpn.net/">Open source VPN infrastructure</a>. Offers beginner friendly gui and command line interfaces, VPN service and self-hosting. The <span class="inline-code">openvpn</span> command line tool is useful when a config file is provided by the VPN service provider.</p>
     <div class="box snippet code">openvpn <em>file.ovpn</em></div>
     <p>The example above will establish a connection configured by the file. ProtonVPN users can download finished config files, <a href="https://protonvpn.com/support/linux-openvpn/">instructions found here</a>.</p>
   </section>

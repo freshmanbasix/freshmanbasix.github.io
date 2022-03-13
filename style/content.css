@@ -137,6 +137,16 @@ span.inline-math {
   font-family: "Garamond";
 }
 
+span.inline-code {
+  display: inline;
+  color: var(--red);
+  font-family: "Courier New";
+  background-color: var(--lgrey);
+  border: 1px solid var(--mgrey);
+  border-radius: 0.5vh;
+  padding: 0.2vh 0.2vw;
+}
+
 .keyword {
   display: inline;
   color: var(--purple);

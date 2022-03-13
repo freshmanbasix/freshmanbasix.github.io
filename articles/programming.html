@@ -32,7 +32,7 @@
     <h3>BASIC FILE STRUCTURE</h3>
     <p>This section clarifies the very basics of how a program file needs to be organized in c/c++ for the compiler to successfully be able to parse it.</p>
 
-    <p>Conventionally, the file ending of a c file is <span class="inline code">.c</span>, and a c++ file is <span class="inline code">.cpp</span>.</p>
+    <p>Conventionally, the file ending of a c file is <span class="inline-code">.c</span>, and a c++ file is <span class="inline-code">.cpp</span>.</p>
 
     <h4>C LANG FILE EXAMPLE</h4>
     <div class="box snippet code">#include &lt<em>header-file</em>.h&gt
@@ -65,24 +65,24 @@ int main(int argc, char const *argv[]){
 </div>
 
     <h3>DIRECTIVES</h3>
-    <p>Preprocessor commands are supplied at the top of the document and must be prepended with a <span class="inline code">#</span> character with no whitespace between it and the line start.</p>
+    <p>Preprocessor commands are supplied at the top of the document and must be prepended with a <span class="inline-code">#</span> character with no whitespace between it and the line start.</p>
 
     <h4>FILE INCLUSION</h4>
     <p>The core syntax offer only the very basic of primitive datatypes and flow control. Any level of advanced support requires the inlusion of libraries in one way or another.</p>
-    <p>The <span class="keyword">#include</span> statement added at the top of the file signifies which resources are to be included. <span class="inline code">#include &ltstdio.h&gt</span> will include the standard input output library. <span class="inline code">#include "<em>some/file.h</em>"</span> will instead include any arbitrary file with the path offered.</p>
+    <p>The <span class="keyword">#include</span> statement added at the top of the file signifies which resources are to be included. <span class="inline-code">#include &ltstdio.h&gt</span> will include the standard input output library. <span class="inline-code">#include "<em>some/file.h</em>"</span> will instead include any arbitrary file with the path offered.</p>
     <div class="box attention">Once a file has been included, any function or variable in its global scope will be available to the including file.</div>
 
     <h4>DEFINITIONS</h4>
-    <p>Constant value can be defined for practical use later in a global scope. Use the <span class="keyword">define</span> directive like so: <span class="inline code">#define <em>CONSTANT</em> <em>value</em></span>. These defenitions will always be constant, they can't be written in runtime. They don't have to be named with capital letters, but the convention is such.</p>
+    <p>Constant value can be defined for practical use later in a global scope. Use the <span class="keyword">define</span> directive like so: <span class="inline-code">#define <em>CONSTANT</em> <em>value</em></span>. These defenitions will always be constant, they can't be written in runtime. They don't have to be named with capital letters, but the convention is such.</p>
 
     <h3>COMPILING</h3>
-    <p>In a linux environment, a standard compiler, for c and c++ both, is the <span class="keyword">Gnu C Compiler</span> <span class="inline code">gcc</span>, easily invoked with:</p>
+    <p>In a linux environment, a standard compiler, for c and c++ both, is the <span class="keyword">Gnu C Compiler</span> <span class="inline-code">gcc</span>, easily invoked with:</p>
 
     <div class="box snippet code">gcc <em>path/to/program.c</em> -o <em>path/to/executable</em></div>
 
     <div class="box attention">Note that if the input does not have a file ending, the language must be specified with the <b>-x</b> option.</div>
 
-    <p>c++ programs are compiled in a similar fashion, but requires an explicit linking instruction to access the c++ libraries. This is achieved with the <span class="inline code">-lstdc++</span> flag.</p>
+    <p>c++ programs are compiled in a similar fashion, but requires an explicit linking instruction to access the c++ libraries. This is achieved with the <span class="inline-code">-lstdc++</span> flag.</p>
     <div class="box snippet code">gcc <em>path/to/program.cpp</em> -lstdc++ -o <em>path/to/executable</em></div>
   </section>
 
@@ -92,7 +92,7 @@ int main(int argc, char const *argv[]){
 
     <h3>FLOATING POINTS</h3>
     <p><span class="keyword">Floating Points</span> are a formulaic representation of approximate fractions. The implementation of floating points give rise to a level of errors that which mean that two operations that are mathematically equivalent, might get different results in practice.</p>
-    <p>The datatypes <span class="inline code">float</span> or <span class="inline code">double</span> , FP32 and FP64 (bits) respectively, are both actually floating points, but with differing precision. Common terms are <em>half-precision</em>, <em>singe precision</em> and <em>double precision</em>.</p>
+    <p>The datatypes <span class="inline-code">float</span> or <span class="inline-code">double</span> , FP32 and FP64 (bits) respectively, are both actually floating points, but with differing precision. Common terms are <em>half-precision</em>, <em>singe precision</em> and <em>double precision</em>.</p>
     <p>A general overview is found <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">on the wikipedia page for floating point arithmetic</a>. Details on comparing from a programmers perspective is discussed on <a href="https://floating-point-gui.de/errors/comparison/">floating-point-gui.de</a> and <a href="https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">randomascii</a>. The, most common, standard is the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>. A very practical graphical illustration of how the bit representation becomes a real number can be found on this <a href="https://evanw.github.io/float-toy/">github pages site by Evan Wallace</a>.</p>
   </section>
 

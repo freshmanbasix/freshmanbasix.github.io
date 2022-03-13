@@ -16,28 +16,28 @@
   <h2 id="scripting">SCRIPTING</h2>
   <section class="sub-section">
     <p>This section will be a quick primer on scripting</p>
-    <p>For any shell, the first line must always be <span class="inline code">#!/bin/bash</span> to tell the interpreter where the language used is located on the device.</p>
+    <p>For any shell, the first line must always be <span class="inline-code">#!/bin/bash</span> to tell the interpreter where the language used is located on the device.</p>
 
     <h3 id="file-interactions">FILE INTERACTION</h3>
     <ul>
       <li>
-        <p><span class="inline code">&gt&gt</span> appends input into destination</p>
+        <p><span class="inline-code">&gt&gt</span> appends input into destination</p>
         <div class="box snippet code">echo "<em>Any string of text</em>" &gt&gt <em>path/to/file.txt</em></div>
       </li>
       <li>
-        <p><span class="inline code">&gt</span> overwrites current content in the file, be careful with this one.</p>
+        <p><span class="inline-code">&gt</span> overwrites current content in the file, be careful with this one.</p>
         <div class="box snippet code">echo "<em>Any new string of text</em>" &gt <em>path/to/file.txt</em></div>
       </li>
       <li>
-        <p><span class="inline code">|</span> redirects, or <em>pipes</em>, standard output from some command to the standard input of another</p>
+        <p><span class="inline-code">|</span> redirects, or <em>pipes</em>, standard output from some command to the standard input of another</p>
         <div class="box snippet code">ps -a | grep <em>regex</em></div>
       </li>
     </ul>
 
     <h4>STANDARD IN & OUT</h4>
     <ul>
-      <li>using the <span class="inline code">|</span> operator will send the <span class="keyword">stdout</span> of one program into the <span class="keyword">stdin</span> of the other.</li>
-      <li><span class="inline code">-</span> is used to send stdin as a argument. For example <span class="inline code">diff <em>path/to/file</em> -</span> will make the comparison between the file and whatever comes through stdin.</li>
+      <li>using the <span class="inline-code">|</span> operator will send the <span class="keyword">stdout</span> of one program into the <span class="keyword">stdin</span> of the other.</li>
+      <li><span class="inline-code">-</span> is used to send stdin as a argument. For example <span class="inline-code">diff <em>path/to/file</em> -</span> will make the comparison between the file and whatever comes through stdin.</li>
     </ul>
   </section>
 
@@ -46,7 +46,7 @@
     <p>Within a system, there are plenty of customizable aspects for the end user, both on single-user and system level.</p>
 
     <h3 id="setting-up-.bashrc">SETTING UP <em>.bashrc</em></h3>
-    <p>The config file <span class="inline code">~/.bashrc</span> contains user space configurations for the bash environment, and is the go to place for customizing things</p>
+    <p>The config file <span class="inline-code">~/.bashrc</span> contains user space configurations for the bash environment, and is the go to place for customizing things</p>
     <p>Below follows an example of how to display the <strong>Git Branch</strong> in the command line.</p>
     <div class="box snippet code">parse_git_branch() {
 
@@ -65,7 +65,7 @@ else
 fi</div>
 
     <h3 id="path-variable">THE PATH VARIABLE</h3>
-    <p>The <span class="inline code">$PATH</span> variable is an environmental variable in most unix based system terminals which define the list of directories that will be automatically searched when entering commands. Any executable program binary located within any PATH directory will not need the full path to be run.</p>
+    <p>The <span class="inline-code">$PATH</span> variable is an environmental variable in most unix based system terminals which define the list of directories that will be automatically searched when entering commands. Any executable program binary located within any PATH directory will not need the full path to be run.</p>
     <div class="box snippet code"># Display contents of the PATH variable <br>$ echo $PATH</div>
     <p>New directories can be appended to the the PATH by using the export command</p>
     <div class="box snippet code">$ export PATH=$PATH:<em>/path/to/binaries</em></div>
@@ -77,26 +77,26 @@ fi</div>
     <p>This section will cover general usage when interacting with the shell for daily purposes.</p>
 
     <h3>SOURCE</h3>
-    <p>The <span class="inline code">source</span> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
+    <p>The <span class="inline-code">source</span> command is shell built-in that executes a file. Useful for reloading .bashrc when changes have been made, or otherwise activating scripts etc. <a href="https://linuxize.com/post/bash-source-command/">Read more about it here</a>.</p>
     <div class="box snippet code">source FILENAME [ARGUMENTS]
 . FILENAME [ARGUMENTS]</div>
 
-    <p class="box attention">Note that a single period <span class="inline code">.</span> expands to <span class="inline code">source</span></p>
+    <p class="box attention">Note that a single period <span class="inline-code">.</span> expands to <span class="inline-code">source</span></p>
 
     <h3>MAN, INFO & HELP</h3>
-    <p>Internal documentation can usually be reached through using <span class="inline code">man <em>&ltcommand&gt</em></span> or <span class="inline code"><em>info &ltcommand&gt</em></span>. Essentially all packages have one or more files of documentation associated with it, designed to be accessed within the terminal emulator. The <em>man-pages</em> and the <em>info-pages</em> serve a somewhat overlapping purpose, but it is always useful to study the pages thoroughly. Even the <span class="inline code">man</span> and <span class="inline code">info</span> commands themselves have man-pages.</p>
+    <p>Internal documentation can usually be reached through using <span class="inline-code">man <em>&ltcommand&gt</em></span> or <span class="inline-code"><em>info &ltcommand&gt</em></span>. Essentially all packages have one or more files of documentation associated with it, designed to be accessed within the terminal emulator. The <em>man-pages</em> and the <em>info-pages</em> serve a somewhat overlapping purpose, but it is always useful to study the pages thoroughly. Even the <span class="inline-code">man</span> and <span class="inline-code">info</span> commands themselves have man-pages.</p>
     <div class="box snippet code">man man <br>man info</div>
     <p>So far, the authors of this wiki haven't found a simple way to browse through all man-pages available for any particular command.</p>
-    <p>By convention. Typing <span class="inline code"><em>&ltcommand&gt</em> -h</span> or <span class="inline code"><em>&ltcommand&gt</em> --help</span> will print a brief summary of usage for the command in question.</p>
+    <p>By convention. Typing <span class="inline-code"><em>&ltcommand&gt</em> -h</span> or <span class="inline-code"><em>&ltcommand&gt</em> --help</span> will print a brief summary of usage for the command in question.</p>
 
     <h3>NAVIGATION</h3>
     <ul>
-      <li><span class="inline code">pwd</span>: print working directory</li>
-      <li><span class="inline code">cd <em>absolute path</em></span>: change directory to supplied path. Hitting only cd expands to <span class="inline code">cd /home/<em>user</em></span>. Relative paths can be accessed with:</li>
+      <li><span class="inline-code">pwd</span>: print working directory</li>
+      <li><span class="inline-code">cd <em>absolute path</em></span>: change directory to supplied path. Hitting only cd expands to <span class="inline-code">cd /home/<em>user</em></span>. Relative paths can be accessed with:</li>
       <ul>
-        <li><span class="inline code">.</span> this directory</li>
-        <li><span class="inline code">..</span> parent directory</li>
-        <li><span class="inline code">~</span> home directory</li>
+        <li><span class="inline-code">.</span> this directory</li>
+        <li><span class="inline-code">..</span> parent directory</li>
+        <li><span class="inline-code">~</span> home directory</li>
       </ul>
       <li></li>
     </ul>
@@ -108,9 +108,9 @@ fi</div>
     <h3>WINDOWS COMMAND PROMPT</h3>
     <p>Native terminal in the Microsoft Windows environment. It is itself essentially the DOS operating system. Commonly interchanged with the <em>Power Shell</em>. Some useful points to know:</p>
     <ul>
-      <li>Directories are separated with the backward slash <span class="inline code">\</span>.</li>
-      <li>To list the current working directory, use <span class="inline code">cwd</span></li>
-      <li>options to commands or usually supplied with a starting forward slash <span class="inline code">/</span></li>
+      <li>Directories are separated with the backward slash <span class="inline-code">\</span>.</li>
+      <li>To list the current working directory, use <span class="inline-code">cwd</span></li>
+      <li>options to commands or usually supplied with a starting forward slash <span class="inline-code">/</span></li>
     </ul>
   </section>
 

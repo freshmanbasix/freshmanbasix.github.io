@@ -67,13 +67,13 @@
     <h3>SYNTAX GLOSSARY</h3>
     <ol>
       <li>
-        First out is the HTML <b>ELEMENT</b>, exemplified below with a  <span class="inline code">&ltimg&gt</span> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element.
+        First out is the HTML <b>ELEMENT</b>, exemplified below with a  <span class="inline-code">&ltimg&gt</span> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element.
         <div class="box snippet code">&ltarticle class="wiki-article"&gt &lt/article&gt</div>
         Generally browsers can work around omitting the closing tag depending on the circumstances. It is usually best practice to thoroughly add both tags in order to avoid undefined behavior. Some elements are intended to hold no content, known as <b>Empty Elements</b>. These usually even <em>require</em> the closing tag to be left out.
       </li>
 
       <li>
-        Secondly comes the <b>ATTRIBUTE</b>. These are descriptors defining the meta data and presentation of the Element. Attributes are always located inside the opening tag and separated by white spaces. Generally speaking, most attributes use in practice are specific for the element. Styling is possible through attributes,  many CSS properties have attribute counter-parts, but it's a BAD IDEA! Two very important attributes are <span class="inline code">class</span> and <span class="inline code">id</span> which are both used to organize the HTML document and allow more intricate behaviour and style. Both CSS and JS make good use of classes and id's to effectively parse and access specific content for modification and interaction.
+        Secondly comes the <b>ATTRIBUTE</b>. These are descriptors defining the meta data and presentation of the Element. Attributes are always located inside the opening tag and separated by white spaces. Generally speaking, most attributes use in practice are specific for the element. Styling is possible through attributes,  many CSS properties have attribute counter-parts, but it's a BAD IDEA! Two very important attributes are <span class="inline-code">class</span> and <span class="inline-code">id</span> which are both used to organize the HTML document and allow more intricate behaviour and style. Both CSS and JS make good use of classes and id's to effectively parse and access specific content for modification and interaction.
         <div class="box snippet code">class="wiki-article"</div>
       </li>
       <li>
@@ -92,7 +92,7 @@
 
     <p>From the history that gave birth to it, HTML is naturally designed to generate a typical paper document conventionally structured like an academic essay or technical litterature. That means it has predefined pieces that can make up sections, headers, paragprahs and so on. This is because that was the intended use at first. With webpage design becoming a lot more colorful and ballsy, the old model doesn't quite fit anymore. Still, there have never been any realistic competitors and HTML was just so established by the time that internet speeds where high enough to support anything other than confetti colored walls of text that developers just made do. If anything, modern frameworks have been constructed on top of the HTML/CSS/JS combo to provide tools making current design a bit more streamlined. At the core though, they are all still just generating HTML.</p>
 
-    <p>Any HTML element will create a node in the DOM. Any natural hierarchical order of elements is only infered, with a fe exceptions. Syntactically, the browser isn't going to care that you place a <span class="inline code">&ltmain&gt</span> element inside a <span class="inline code">&lth1&gt</span> element. By default, it's going to look pretty weird, but as long as the diagram of nodes can be drawn, the page will work. The attributes are not the same for all elements of course. You can't make a <span class="inline code">&ltp&gt</span> element behave like an <span class="inline code">&ltimg&gt</span> element. This is true for styling properties as well, but in most cases, you can make one element look and feel like another. The reason we have multiple types of elements are to allow us to: </p>
+    <p>Any HTML element will create a node in the DOM. Any natural hierarchical order of elements is only infered, with a fe exceptions. Syntactically, the browser isn't going to care that you place a <span class="inline-code">&ltmain&gt</span> element inside a <span class="inline-code">&lth1&gt</span> element. By default, it's going to look pretty weird, but as long as the diagram of nodes can be drawn, the page will work. The attributes are not the same for all elements of course. You can't make a <span class="inline-code">&ltp&gt</span> element behave like an <span class="inline-code">&ltimg&gt</span> element. This is true for styling properties as well, but in most cases, you can make one element look and feel like another. The reason we have multiple types of elements are to allow us to: </p>
     <ol>
       <li>Embed external content, i.e images and the like</li>
       <li>Parse the document in a useful way</li>
@@ -187,9 +187,9 @@ body {
       <figcaption>A breakdown of the constituent parts of a ruleset. <a href="rsc/web/css/ruleset.xml">Download XML here</a></figcaption>
     </figure>
 
-    <p class="box attention">Note that each singular rule separates property and value with a <span class="inline code">:</span>, and ends each rule with the <span class="inline code">;</span> character.</p>
+    <p class="box attention">Note that each singular rule separates property and value with a <span class="inline-code">:</span>, and ends each rule with the <span class="inline-code">;</span> character.</p>
 
-    <p>Formally speaking, the syntax rules for rulesets are as follows. Note that any rule that is incorrectly formulated is simply ignored. One very important consequence of this is that a missed semicolon, <span class="inline code">;</span>, could possibly throw the syntax off enough to make the browser discard the entire ruleset.</p>
+    <p>Formally speaking, the syntax rules for rulesets are as follows. Note that any rule that is incorrectly formulated is simply ignored. One very important consequence of this is that a missed semicolon, <span class="inline-code">;</span>, could possibly throw the syntax off enough to make the browser discard the entire ruleset.</p>
 
 <div class="box snippet code">
 ruleset ::=
@@ -228,14 +228,14 @@ properties-list ::=
 
     <!-- Environment variables -->
     <h3 id="variables-environment">Variables and Environment</h3>
-    <p>Variables can be very effective in structuring a large ruleset, especially when establishing a color palette. Variables can be declared and defined in a separate ruleset with the <span class="inline code">:root</span> pseudo-class selector. This establishes the variable in the global scope and lets any ruleset access it.</p>
+    <p>Variables can be very effective in structuring a large ruleset, especially when establishing a color palette. Variables can be declared and defined in a separate ruleset with the <span class="inline-code">:root</span> pseudo-class selector. This establishes the variable in the global scope and lets any ruleset access it.</p>
 <div class="box snippet code">
 :root {
   --palette-orange: #f2951d;
 }
 </div>
-    <p class="box attention">All variables must begin with a double hyphen, <span class="inline code">--</span>. Variables can be declared inside any ruleset, but will only exist in that scope.</p>
-    <p>In order to use the variable the <span class="inline code">var()</span> function is used.</p>
+    <p class="box attention">All variables must begin with a double hyphen, <span class="inline-code">--</span>. Variables can be declared inside any ruleset, but will only exist in that scope.</p>
+    <p>In order to use the variable the <span class="inline-code">var()</span> function is used.</p>
 <div class="box snippet code">
 element {
   background-color: var(--palette-orange);
@@ -243,7 +243,7 @@ element {
 </div>
     <p>On top of custom defined variables, there are also some very practical environment and language defined variables that can be practical to know.</p>
     <ul>
-      <li>The <b>viewport</b> is the window used to render the website. The value of this variable is dependent on the client side screen as well as the actual window rendering the content, but can be accessed directly in the CSS code in several ways. For one, as a fractional value representing size with the <span class="inline code">vh</span> and <span class="inline code">vw</span> units.</li>
+      <li>The <b>viewport</b> is the window used to render the website. The value of this variable is dependent on the client side screen as well as the actual window rendering the content, but can be accessed directly in the CSS code in several ways. For one, as a fractional value representing size with the <span class="inline-code">vh</span> and <span class="inline-code">vw</span> units.</li>
       <li><p class="addme">discuss the different size values, i.e px, em etc</p></li>
       <li>... and many more.</li>
     </ul>
@@ -253,7 +253,7 @@ element {
   <section class="sub-section">
     <p>Javascript is an entire god damn language. It was designed to improve the functionality of web pages and has a ton of quirks, but its a full feature language nonetheless. Apart from a few extremely basic starter tips, this wiki will only refer to official documentation. Some excellent reading resources can be found at the <a href="https://developer.mozilla.org/en-US/docs/Web/javascript">MDN JavaScript pages</a>. One very useful book that might be of interest is <a href="https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/"><em>JavaScript: The Definitive Guide</em></a> by David Flanagan (O'Reilly Media). It is utterly pointless trying to establish any foundational knowledge here when it comes to JS, as it is utterly enormous comapred to HTML and CSS, but a few little pointers is likely meaningful to leave here for future quick reference.</p>
 
-    <p>Javascript code is embedded as the content of a <span class="inline code">&ltscript&gt</span> element which is most appropriately placed at the very bottom of the <span class="inline code">&ltbody&gt</span>. Through the <span class="inline code">src</span> attribute the actual content of the js code can be read from a separate file. For managability, this is usually the most appropriate method and allows the element content to be left empty.</p>
+    <p>Javascript code is embedded as the content of a <span class="inline-code">&ltscript&gt</span> element which is most appropriately placed at the very bottom of the <span class="inline-code">&ltbody&gt</span>. Through the <span class="inline-code">src</span> attribute the actual content of the js code can be read from a separate file. For managability, this is usually the most appropriate method and allows the element content to be left empty.</p>
 
     <div class="box snippet code">&ltscript type="text/javascript" src="file.js"&gt &lt/script&gt</div>
 
