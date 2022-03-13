@@ -47,7 +47,7 @@
 
     <h3 id="setting-up-.bashrc">SETTING UP <em>.bashrc</em></h3>
     <p>The config file <span class="inline-code">~/.bashrc</span> contains user space configurations for the bash environment, and is the go to place for customizing things</p>
-    <p>Below follows an example of how to display the <strong>Git Branch</strong> in the command line.</p>
+    <p>Below follows an example of how to display the <b>Git Branch</b> in the command line.</p>
     <div class="box snippet code">parse_git_branch() {
 
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

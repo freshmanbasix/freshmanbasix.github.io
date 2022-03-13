@@ -42,12 +42,12 @@
     <h3>USER & GROUP DATA</h3>
     <p><span class="inline-code">/etc/passwd</span> contains all users on a system. Each line represent a user, with data fields being separated with colon, <span class="inline-code">:</span>, with fields containing the following information</p>
 
-    <p><strong>&ltUsername&gt : &ltpassword&gt : &ltUID&gt : &ltGID&gt : &ltComment&gt : &lthome directory&gt : &ltshell used&gt</strong></p>
+    <p><b>&ltUsername&gt : &ltpassword&gt : &ltUID&gt : &ltGID&gt : &ltComment&gt : &lthome directory&gt : &ltshell used&gt</b></p>
 
     <p>If the password is x → it is encrypted. Encrypted passwords are stored in <span class="inline-code">/etc/shadow</span></p>
 
     <p>Similarly, all groups are listed in <span class="inline-code">/etc/group</span> on the following format:</p>
-    <p><strong>&ltgroup name&gt : &ltpassword&gt : &ltGID&gt : &ltusers in the group used&gt</strong></p>
+    <p><b>&ltgroup name&gt : &ltpassword&gt : &ltGID&gt : &ltusers in the group used&gt</b></p>
 
     <p>One very practical way of printing basic user info to the terminal is by piping the content of passwd into cut, which will use : as separator, and only output the first field per line. <span class="inline-code">-d</span> signifies the separator wanted, <span class="inline-code">-f</span> sets the range of fields that should be printed.</p>
 
@@ -103,7 +103,7 @@
     <div class="box snippet code">mv <em>path/to/source.file</em> <em>path/to/destination.file</em></div>
     <p>Multiple files matching regex can be moved in a single command</p>
     <div class="box snippet code">mv <em>path/*</em> <em>dest/directory/</em></div>
-    <p>By omitting the filename in the destination, bash will use the existing by default. A file can be <strong>renamed</strong> by simply choosing a new filename as the destination</p>
+    <p>By omitting the filename in the destination, bash will use the existing by default. A file can be <b>renamed</b> by simply choosing a new filename as the destination</p>
     <p>The perl <span class="inline-code">rename</span> command is excellent for adjusting filenames of multiple files. Note that it isn't native in bash. To <b>remove</b> a particular substring from all filenames in a certain directory, use:</p>
     <div class="box snippet code">rename 's/<em>string-to-remove</em>//;' <em>path/to/directory/*</em></div>
   </section>
@@ -115,12 +115,12 @@
 
     <p><span class="inline-code">df -h</span> prints a summary of each mounted partition and how much available space is left for each. The <span class="inline-code">-h</span> or <span class="inline-code">--human-readable</span> option designates output about file system usage to be in powers of 1024 bytes</p>
 
-    <p><span class="inline-code">fdisk</span> is the standard command utility used to <strong>create, delete, list</strong> and <strong>analyze disk partitions</strong></p>
+    <p><span class="inline-code">fdisk</span> is the standard command utility used to <b>create, delete, list</b> and <b>analyze disk partitions</b></p>
 
     <p>Output partitions of a given device:</p>
     <div class="box snippet code">$ sudo fdisk -l &ltdevice&gt</div>
 
-    <p>To <strong>edit partitions</strong> you might use the <strong>interactive utility tools</strong> giving &ltdevice&gt as the argument:</p>
+    <p>To <b>edit partitions</b> you might use the <b>interactive utility tools</b> giving &ltdevice&gt as the argument:</p>
     <div class="box snippet code">$ sudo fdisk /dev/sda</div>
 
     <h3>Memory & Processor Usage</h3>

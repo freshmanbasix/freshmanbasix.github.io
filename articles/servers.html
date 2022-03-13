@@ -75,14 +75,14 @@
     <ul>
       <li>Server Side</li>
       <ul>
-        <li><strong>deluged</strong> is the daemon running in the background and serves as the engine</li>
-        <li><strong>deluge-console</strong> is a command line interface with deluged that is used to manage torrents, files etc. In a minimal setup, these two programs are the only thing necessary to have a torrent server up and running and control it via ssh</li>
-        <li><strong>deluge-web</strong> is an additional application necessary to support deluge's web browser interface (web ui)</li>
+        <li><b>deluged</b> is the daemon running in the background and serves as the engine</li>
+        <li><b>deluge-console</b> is a command line interface with deluged that is used to manage torrents, files etc. In a minimal setup, these two programs are the only thing necessary to have a torrent server up and running and control it via ssh</li>
+        <li><b>deluge-web</b> is an additional application necessary to support deluge's web browser interface (web ui)</li>
       </ul>
       <li>Client Side</li>
       <ul>
-        <li><strong>deluge</strong> or <strong>deluge-gtk</strong> are the standard torrent clients that users install on their computers. Can be set to operate as <i>thin client</i> which is a completely networked based version. Both modes are built in out of the box</li>
-        <li><strong>deluge web</strong> ui is the browser based version of the normal gui</li>
+        <li><b>deluge</b> or <b>deluge-gtk</b> are the standard torrent clients that users install on their computers. Can be set to operate as <i>thin client</i> which is a completely networked based version. Both modes are built in out of the box</li>
+        <li><b>deluge web</b> ui is the browser based version of the normal gui</li>
       </ul>
     </ul>
 
@@ -102,19 +102,19 @@
   <section class="sub-section">
     <p>When making your own google drive solution, you'll want to achieve one or more out the following outcomes</p>
     <ul>
-      <li><strong>Synchronize Data</strong>: A server and client directory is updated live to match exactly and respond immediately to any changes on either end. All data is stored both on local machine and on server</li>
+      <li><b>Synchronize Data</b>: A server and client directory is updated live to match exactly and respond immediately to any changes on either end. All data is stored both on local machine and on server</li>
       <ul>
-        <li><strong>Rsync</strong></li>
+        <li><b>Rsync</b></li>
       </ul>
-      <li><strong>Network Drive Mapping</strong>: Data is only stored on the server side, but a easily accessible symbolic link is established on the local machine. Depending on latency, files can be executed directly over the network</li>
+      <li><b>Network Drive Mapping</b>: Data is only stored on the server side, but a easily accessible symbolic link is established on the local machine. Depending on latency, files can be executed directly over the network</li>
       <ul>
-        <li><strong>SMB Network Drive</strong></li>
-        <li><strong>NAS</strong></li>
+        <li><b>SMB Network Drive</b></li>
+        <li><b>NAS</b></li>
       </ul>
-      <li><strong>Backup</strong>: Serve as a complete copy of the system state at a given time. Used as fallback at times of failure.</li>
+      <li><b>Backup</b>: Serve as a complete copy of the system state at a given time. Used as fallback at times of failure.</li>
       <ul>
-        <li><strong>Bash Script & Crontab</strong></li>
-        <li><strong>3d party clients</strong></li>
+        <li><b>Bash Script & Crontab</b></li>
+        <li><b>3d party clients</b></li>
       </ul>
     </ul>
   </section>

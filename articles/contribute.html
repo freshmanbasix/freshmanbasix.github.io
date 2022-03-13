@@ -147,11 +147,11 @@
     <p class="box attention">Note that each<b>&ltli&gt</b> elements do not have to contain a paragraph element. Only this list items containing multiple paragraphs will need the content wrapped further.</p>
 
     <h3>REGULAR BLOCKS</h3>
-    <p>Two levels of <strong>Sub-sub-sections</strong> are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that are needed.</p>
+    <p>Two levels of <b>Sub-sub-sections</b> are supported by the css styling. <b>h3</b> and <b>h4</b> elements are all that are needed.</p>
 
-    <p>The plain <b>&ltp&gt</b> element is all you need to create a correctly styled <strong>Paragraph</strong>. Each paragraph of text need an element on its own. Manual linebreaks inside p elements are to be avoided</p>
+    <p>The plain <b>&ltp&gt</b> element is all you need to create a correctly styled <b>Paragraph</b>. Each paragraph of text need an element on its own. Manual linebreaks inside p elements are to be avoided</p>
 
-    <p>To mark out points where future <strong>TODOs</strong> should be added, there is a dedicated &ltp&gt element with the class attribute set to <em>addme</em>. It will render a very eyecathcing and pretty ugly object. Use them mainly to quickly mark out the general idea of what should be added.</p>
+    <p>To mark out points where future <b>TODOs</b> should be added, there is a dedicated &ltp&gt element with the class attribute set to <em>addme</em>. It will render a very eyecathcing and pretty ugly object. Use them mainly to quickly mark out the general idea of what should be added.</p>
     <div class="box snippet code">&ltp class="addme"&gt&lt/p&gt</div>
     <p class="addme">The todos will look like this.</p>
 
@@ -165,7 +165,7 @@
 
     <h3>EMPASIZED BLOCKS</h3>
     <ul>
-      <li><p><strong>Blockquotes</strong> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
+      <li><p><b>Blockquotes</b> can be created in a styled fashion by using the <b>&ltblockquote&gt</b> element inside i <b>&ltfigure&gt</b> element along with a added <b>&ltfigcaption&gt</b>.</p>
       <div class="box snippet code">&ltfigure class="blockquote"&gt
   &ltblockquote cite="<em>optional link to source</em>"&gt
     &ltp&gt<em>Actual quote</em>&lt/p&gt
@@ -179,7 +179,7 @@
         <figcaption>- Hjalle <cite><a href="https://hjallesoft.com">Hjallesoft homepage</a></cite></figcaption>
       </figure></li>
 
-      <li><p><strong>Figures & Images</strong> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
+      <li><p><b>Figures & Images</b> are added in a <em>Latex-esque</em> manner, using the <b>&ltfigure&gt</b> element as an environment, the <b>&ltimg&gt</b> as the image source, and lastly the <b>&ltfigcaption&gt</b> element used to pop on a nice image caption.</p>
       <div class="box snippet code">
 &ltfigure&gt
 &ltimg src="<em>filepath</em>" alt=""&gt
@@ -192,16 +192,16 @@
       </figure>
       <p class="box attention">Take note that for any diagram the caption should include a link to a xml file that can be used to edit the image itself without startng from scratch. Source files are all stored in the <b>/rsc</b> directory.</p></li>
 
-      <li><p><strong>Code snippets</strong> are simple boxes with example code. A <b>&ltdiv&gt</b> element with the class attribute set to <em>"box snippet code"</em> will render the box correctly. Be aware that the code cnippet box renders ALL text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
+      <li><p><b>Code snippets</b> are simple boxes with example code. A <b>&ltdiv&gt</b> element with the class attribute set to <em>"box snippet code"</em> will render the box correctly. Be aware that the code cnippet box renders ALL text as written in the html file, which includes the indentation. So if you don't push it back to the beginning of the line manually, it's going to look bonkers.</p>
       <div class="box snippet code">&ltdiv class="box snippet code"&gt<em>Put your example code here and it will be rendered like this box</em>&lt/div&gt</div>
 
-      <li><p><strong>Attention blocks</strong> are a good way to make some very important information stick out like a smack in the face.</p>
+      <li><p><b>Attention blocks</b> are a good way to make some very important information stick out like a smack in the face.</p>
       <div class="box snippet code">&ltdiv class="box attention"&gt<em>Put something extra important here...</em>&lt/div&gt</div>
       <div class="box attention">... and the info will render like this</div>
     </ul>
 
     <h3>TABLES</h3>
-    <p><strong>Tables</strong> are currently only supported in two-column form, with each column eating up 50% of the width. The most appropriate use is to simply make visually appealing lists of resource and link pairs.</p>
+    <p><b>Tables</b> are currently only supported in two-column form, with each column eating up 50% of the width. The most appropriate use is to simply make visually appealing lists of resource and link pairs.</p>
     <div class="box snippet code">
 &lttable&gt
   &ltcaption&gt<em>top caption</em>&lt/caption&gt
