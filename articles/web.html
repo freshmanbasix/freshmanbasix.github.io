@@ -4,11 +4,11 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">CONTENT</h1>
       <ul class="toc">
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#html">HyperText Markup Language</a></li>
-        <li><a href="#css">Cascading Style Sheets</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#frameworks">Frameworks</a></li>
+        <li><a href="#introduction">INTRODUCTION</a></li>
+        <li><a href="#html">HYPERTEXT MARKUP LANGUAGE</a></li>
+        <li><a href="#css">CASCADING STYLE SHEETS</a></li>
+        <li><a href="#javascript">JAVASCRIPT</a></li>
+        <li><a href="#frameworks">FRAMEWORKS</a></li>
       </ul>
     </div>
 
@@ -21,7 +21,7 @@
   <!--
   Introduction
  -->
-  <h2 id="introduction">Introduction</h2>
+  <h2 id="introduction">INTRODUCTION</h2>
   <section class="sub-section">
     <p>The key is in the name. It's called <em>markup</em>. The process of building a website is enclosing the actual content in predefined signifiers telling someone else exactly how to draw it up so that it looks nice. The HTLM code is the <b>skeleton</b>, essentially drawing up a diagram of all constituent parts. The CSS defines what all the <b>parts should look like and how they are formated</b> in relation to each other. Lastly, The JS is the tool that allows us to <b>dynamically change the content and structure</b> when the user interacts with the site. There are some very limited built-in support for interactivity in basic HTML, e.g clickable links and such, but JS opens up a whole new ballgame. It's especially adept at punching giant holes in the security.</p>
 
@@ -47,7 +47,7 @@
     <!--
       Document Object Model
     -->
-    <h3>Document Object Model</h3>
+    <h3>DOCUMENT OBJECT MODEL</h3>
     <p>Being a <em>markup</em> language, HTML is very much oriented towards generating documents. That history means that the term document has come to essentially refer to the root of any webpage. From the perspective of the network, the actual html file generating a webpage is called <b>the document</b>. In terms of scope, the document is the absolute root. The <b>Document Object Model</b>, DOM, is the formalized data representation to abstract all objects within a document. Each document can be comprised of one or more actual HTML files, so it can be important to point out that the <em>document</em> in definite form actually mean some kind of rendered web resource.</p>
 
     <p>The DOM abstracts a document into a hierarchical tree structure where each object is represented by a node. This does not only include the elements of the core file, but also multiple other attributes, properties and other stuff. The DOM can be discussed for hours, but some very useful reading can be done by beginners at the <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Document Object Model Wikipedia Page</a>. Furthermore, one might want to take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">MDN Introduction to the DOM pages</a>.</p>
@@ -59,12 +59,12 @@
   <!--
     HTML
   -->
-  <h2 id="html">HyperText Markup Language </h2>
+  <h2 id="html">HYPERTEXT MARKUP LANGUAGE</h2>
   <section class="sub-section">
     <p>God only knows what's so damn hyper about it, but the language is a syntax for marking up data to enable its presentation to be rendered by some other software. The complete language set is very small, consisting of a few central components making up the syntax glossary. There's just a few of them, illustrating how quick HTML truly is to review and start using</p>
 
     <!-- Syntax Glossary -->
-    <h3>Syntax Glossary</h3>
+    <h3>SYNTAX GLOSSARY</h3>
     <ol>
       <li>
         First out is the HTML <b>ELEMENT</b>, exemplified below with a  <span class="inline code">&ltimg&gt</span> element. This is the core building block if HTML, consisting of two <b>TAGS</b>, much like a set of parenthesees, who <em>OPEN</em> and <em>CLOSE</em> the element.
@@ -88,7 +88,7 @@
     </ol>
 
     <!-- Core Document Anatomy -->
-    <h3>Core Document Anatomy</h3>
+    <h3>CORE DOCUMENT ANATOMY</h3>
 
     <p>From the history that gave birth to it, HTML is naturally designed to generate a typical paper document conventionally structured like an academic essay or technical litterature. That means it has predefined pieces that can make up sections, headers, paragprahs and so on. This is because that was the intended use at first. With webpage design becoming a lot more colorful and ballsy, the old model doesn't quite fit anymore. Still, there have never been any realistic competitors and HTML was just so established by the time that internet speeds where high enough to support anything other than confetti colored walls of text that developers just made do. If anything, modern frameworks have been constructed on top of the HTML/CSS/JS combo to provide tools making current design a bit more streamlined. At the core though, they are all still just generating HTML.</p>
 
@@ -139,12 +139,12 @@
   <!--
     CSS
   -->
-  <h2 id="css">Cascading Style Sheets</h2>
+  <h2 id="css">CASCADING STYLE SHEETS</h2>
   <section class="sub-section">
     <p>CSS is a language in itself, claimed to be Turing complete by a classmate of this author once (citation needed). The only real use web developers have for it is however to set rules for how to style the content of a HTML document when rendering it in a browser. This section will present a few very central concepts that will be essential to understand how CSS works. It will also establish a complete <em>syntax taxonomy</em> to present all constituent parts of a CSS file. Lastly, the <em>Box Model</em>, which is how CSS represents objects will be discussed. This will be sufficient for any reader to move forwards with a sufficient understanding to start reading further on the topic.</p>
 
     <!-- sub-sub-section -->
-    <h3>Cascade, Specificity and Inheritance</h3>
+    <h3>CASCADE, SPECIFICITY AND INHERITANCE</h3>
     <p>There are three concept innate to CSS that are very important to grasp when working effectively with style sheets. These are <em>Cascading</em>, <em>Specificity</em>, and <em>Inheritance</em>. In essence, a CSS file is a long set of rules, defining how elements are to be rendered. These rules follow a general behaviour which will be discussed in this section, but can should be studied in much further detail by those who wish to be very skilled front end developers.</p>
 
     <p>The <b>cascading</b> part of the name comes from the fact that the rules are applied on a sequential cascading order, where each styling rule is read at a time, from top to bottom, and applied linearly. In short, this means that rules appearing later in the file will potentially overwrite the ones appearing earlier.</p>
@@ -154,7 +154,7 @@
     <p>The last major concept is that of <b>Inheritance</b>. All CSS rules work by defining properties. Some properties can be inherited from parent elements. Some apply only to the element itself and some will affect all its children. Knowing which is which is very important to achieve the intended outcome.</p>
 
     <!-- Ruleset -->
-    <h3 id="ruleset">The Ruleset</h3>
+    <h3 id="ruleset">THE RULESET</h3>
     <p>While HTML was a very simple language, the syntax of CSS is even more simple, even by far. There are two ways to include CSS styling in a HTML document:</p>
     <ol>
       <li>
@@ -219,7 +219,7 @@ properties-list ::=
     <p>The example above shows how one might define the values of all the margin properties in one. Each value, starting from the left, represent a clockwise movement from top, right, bottom and lastly left. Some shorthand support several combinations, for instance margin can take two values, which then applies to top/bottom and left/reft respectively. Check out MDN for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">a reference and more information</a>.</p>
 
     <!-- Box Model -->
-    <h3>The Box Model</h3>
+    <h3>THE BOX MODEL</h3>
     <p>Each block has 3 spacial properties that are very important to grasp in order to make a website appear as intended. The <b>margin</b> determines how much space there is between an element and it's parent. Meanwhile the <b>padding</b> is the space between the point where an element begins and where the content is displayed. The <b>border</b> is the line inbetween these spaces, which has a thickness of its own. The diagram below explain how these three fit together visually.</p>
     <figure>
       <img src="rsc/web/html/box-model.png" alt="image">
@@ -249,15 +249,19 @@ element {
     </ul>
   </section>
 
-  <h2 id="javascript">Javascript</h2>
+  <h2 id="javascript">JAVASCRIPT</h2>
   <section class="sub-section">
     <p>Javascript is an entire god damn language. It was designed to improve the functionality of web pages and has a ton of quirks, but its a full feature language nonetheless. Apart from a few extremely basic starter tips, this wiki will only refer to official documentation. Some excellent reading resources can be found at the <a href="https://developer.mozilla.org/en-US/docs/Web/javascript">MDN JavaScript pages</a>. One very useful book that might be of interest is <a href="https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/"><em>JavaScript: The Definitive Guide</em></a> by David Flanagan (O'Reilly Media). It is utterly pointless trying to establish any foundational knowledge here when it comes to JS, as it is utterly enormous comapred to HTML and CSS, but a few little pointers is likely meaningful to leave here for future quick reference.</p>
 
     <p>Javascript code is embedded as the content of a <span class="inline code">&ltscript&gt</span> element which is most appropriately placed at the very bottom of the <span class="inline code">&ltbody&gt</span>. Through the <span class="inline code">src</span> attribute the actual content of the js code can be read from a separate file. For managability, this is usually the most appropriate method and allows the element content to be left empty.</p>
 
     <div class="box snippet code">&ltscript type="text/javascript" src="file.js"&gt &lt/script&gt</div>
+
+    <h3>REGULAR EXPRESSIONS</h3>
+    <p>MDN has a very nice <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet">cheatsheet right here</a>.</p>
+
   </section>
-  <h2 id="frameworks">Frameworks</h2>
+  <h2 id="frameworks">FRAMEWORKS</h2>
   <section class="sub-section">
     <p>There are tons of them, and if you actually intend to develop for the web, you'll want to get aquainted. But until one of the authors of this wiki decide to care, this section will essentially be empty. The big three that you may want to start looking at are <a href="https://vuejs.org/">Vue.js</a>, <a href="https://angularjs.org/">Angular</a> and <a href="https://angularjs.org/">React</a>. One of those are independent, the other two are created and managed by Google and Facebook respectively. Then there are of course garbagetons of others, but who gives a crap.</p>
   </section>
