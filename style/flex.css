@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+  margin: 1vh 0;
+}
+
+.flex-item-outer {
+  flex: 1;
+}
+
+.flex-item-main {
+  flex: 4;
+}
+
+h1.column-header {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1vh 0;
+  margin: 0;
+  margin-bottom: 1vh;
+  text-align: center;
+}

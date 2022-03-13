@@ -1,0 +1,15 @@
+header {
+  width: 66.6%;
+  background-color: var(--black);
+  margin: 0 auto;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+pre#banner {
+  text-align: center;
+  padding: 2vh 0;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 25px;
+}
