@@ -131,6 +131,12 @@ strong {
   color: var(--red);
 }
 
+span.inline-math {
+  display: inline;
+  font-style: italic;
+  font-family: "Garamond";
+}
+
 .keyword {
   display: inline;
   color: var(--purple);

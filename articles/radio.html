@@ -32,7 +32,7 @@
     <p>As per the <em>communication model</em> decribed previously, this section will go into details regarding the <span class="keyword">Channel</span> through which data is transmitted.</p>
 
     <h3>ISOTROPIC RADIATED POWER</h3>
-    <p>The <span class="keyword">Isotropic Radiation Case</span> is a common reference case that sets up a fundamental starting point from which real examples are derived. It imagines the <span class="keyword">Transmitted Power P<sub>TX</sub> [W]</span> radiating from a single point monopole antenna in a perfect sphere with area <span class="inline math">A = 4πd<sup> 2</sup></span>. </p>
+    <p>The <span class="keyword">Isotropic Radiation Case</span> is a common reference case that sets up a fundamental starting point from which real examples are derived. It imagines the <span class="keyword">Transmitted Power P<sub>TX</sub> [W]</span> radiating from a single point monopole antenna in a perfect sphere with area <span class="inline-math">A = 4πd<sup> 2</sup></span>. </p>
 
     <figure>
       <img src="rsc/radio/channel/isotropic-radiation.png" alt="image">
@@ -43,18 +43,18 @@
 
     <div class="box formula math">I = frac{ P<sub>TX</sub> }{ A } = frac{ |E|<sup>2</sup> }{ Z<sub>fs</sub> }</div>
 
-    <div class="box attention"><span class="inline math">Z<sub>fs</sub> ≈ 377Ω</span> is the <span class="keyword">free space impedance</span>. Note also that intensity is sometimes abreviated as S, so be careful not to confuse it with the symbol for signal.</div>
+    <div class="box attention"><span class="inline-math">Z<sub>fs</sub> ≈ 377Ω</span> is the <span class="keyword">free space impedance</span>. Note also that intensity is sometimes abreviated as S, so be careful not to confuse it with the symbol for signal.</div>
 
-    <p>The <span class="keyword">Antenna Aperture A<sub>e</sub> [m<sup>2</sup>]</span> is the area projection of the receiving antenna on the plane normal to the incident signal wave. In the isotropic case, the aperture is a simplified <span class="inline math">A<sub>e,iso</sub> = λ<sup>2</sup> / 4π</span>. The relationship between the aperture and the physical size will be slightly missaligned. If <span class="inline math">A<sub>e</sub> = A<sub>phys</sub></span>, that would imply that the aperture efficiency is 100% which cannot be achieved in reality. In practice, the actual aperture is determined by measuring the ratio between received power to what should theoretically be received.</p>
+    <p>The <span class="keyword">Antenna Aperture A<sub>e</sub> [m<sup>2</sup>]</span> is the area projection of the receiving antenna on the plane normal to the incident signal wave. In the isotropic case, the aperture is a simplified <span class="inline-math">A<sub>e,iso</sub> = λ<sup>2</sup> / 4π</span>. The relationship between the aperture and the physical size will be slightly missaligned. If <span class="inline-math">A<sub>e</sub> = A<sub>phys</sub></span>, that would imply that the aperture efficiency is 100% which cannot be achieved in reality. In practice, the actual aperture is determined by measuring the ratio between received power to what should theoretically be received.</p>
     <div class="box formula math">A<sub>e</sub> = frac{ P<sub>RX</sub> }{ I }</div>
 
-    <p>The power that actually arrives at the receiving antenna is denoted the <span class="keyword">Received Power P<sub>RX</sub>[W]</span>. This will ALWAYS be a fraction of the transmitted power, directly proportional to aperture and area. <span class="inline math">P<sub>TX</sub> = P<sub>RX</sub></span> is impossible to achieve in reality. Received power is measured in watts, meaning that given some intensity (watts per metres squared) at the point of the antenna, times the aperture (metres squared) will equal the power. We also refer to this received power as the <span class="keyword">Signal S</span>.</p>
+    <p>The power that actually arrives at the receiving antenna is denoted the <span class="keyword">Received Power P<sub>RX</sub>[W]</span>. This will ALWAYS be a fraction of the transmitted power, directly proportional to aperture and area. <span class="inline-math">P<sub>TX</sub> = P<sub>RX</sub></span> is impossible to achieve in reality. Received power is measured in watts, meaning that given some intensity (watts per metres squared) at the point of the antenna, times the aperture (metres squared) will equal the power. We also refer to this received power as the <span class="keyword">Signal S</span>.</p>
     <div class="box formula math">P<sub>RX</sub> = A<sub>e</sub> × I = P<sub>TX</sub> × frac{ A<sub>e</sub> }{ A }</div>
 
     <p>The difference between transmitted and received power is what makes up the <span class="keyword">Path Loss L<sub>p</sub></span>. Loss has no unit and is given in <em>decibels</em>. It originates from any and all things that exist and interfere along the path between transmitter and receiver.</p>
     <div class="box formula math">P<sub>RX,iso</sub> = P<sub>TX,iso</sub> × frac{ A<sub>e,iso</sub> }{ A } = P<sub>TX,iso</sub> × frac{ 1 }{ L<sub>fs</sub> }</div>
     <div class="box formula math">L<sub>path</sub> = frac{P<sub>TX</sub> }{P<sub>RX</sub> }</div>
-    <div class="box attention">Here, <span class="inline math">L<sub>fs</sub> = (4πdλ)<sup>2</sup></span> is the <span class="keyword">free space path loss</span>.</div>
+    <div class="box attention">Here, <span class="inline-math">L<sub>fs</sub> = (4πdλ)<sup>2</sup></span> is the <span class="keyword">free space path loss</span>.</div>
 
     <h3>GAIN</h3>
     <p>Antenna design can achieve variations of antenna amplification factors. For example, a directional antenna will redistribute the even density into particular regions. As such, the <span class="keyword">Antenna Gain G</span> is a multiplier which can exist on both transmitting and receiving end. One thing to note is that real antenna aperture is proportional to the gain and isotropic aperture:</p>
@@ -78,7 +78,7 @@
     <h4>THERMAL NOISE</h4>
     <p><span class="keyword">Thermal Noise</span> is the most important noise factor which originates from Brownian motion in the components. It is dependent on temperature and is proportional to <span class="keyword">Boltzmans constant k</span>. For a given frequency, the <span class="keyword">Noise Figure F</span> is a factor representing how much larger the <span class="keyword">Total Noise Level N</span> is compared to the thermal noise of the receiver.</p>
     <div class="box formula math">N = F × k × T<sub>0</sub> × B</div>
-    <p><span class="inline math">kT<sub>0</sub></span> is the <span class="keyword">spectral density [W / Hz]</span> and the temperature needs to be given i Kelvins. <span class="inline math">k = 1.38 × 10<sup>-23</sup></span></p>
+    <p><span class="inline-math">kT<sub>0</sub></span> is the <span class="keyword">spectral density [W / Hz]</span> and the temperature needs to be given i Kelvins. <span class="inline-math">k = 1.38 × 10<sup>-23</sup></span></p>
 
 
     <h3>SIGNAL TO NOISE RATIO</h3>
@@ -103,7 +103,7 @@
 
   <h2 id="modulation">MODULATION</h2>
   <section class="sub-section">
-    <p>This section contain summaries and background on the methods of <span class="keyword">Modulating</span>, i.e embedding discernable data into, a signal. For any electromagnetic wave, there are only three mutable components that can be changed to achieve a pattern. First is the waves magnitude, or peak power, denoted as the <span class="keyword">Amplitude</span> <span class="inline math">A</span>. The <span class="keyword">Angular Frequency</span> <span class="inline math">ω = 2πƒ</span> determines how many radians per second the wave oscillates. Lastly, the <span class="keyword">Phase Shift</span> <span class="inline math">ϕ</span> represent the offset. In the sinusoidal case, given these three components, any wave <span class="inline math">s</span> can be expressed as a function of time:</p>
+    <p>This section contain summaries and background on the methods of <span class="keyword">Modulating</span>, i.e embedding discernable data into, a signal. For any electromagnetic wave, there are only three mutable components that can be changed to achieve a pattern. First is the waves magnitude, or peak power, denoted as the <span class="keyword">Amplitude</span> <span class="inline-math">A</span>. The <span class="keyword">Angular Frequency</span> <span class="inline-math">ω = 2πƒ</span> determines how many radians per second the wave oscillates. Lastly, the <span class="keyword">Phase Shift</span> <span class="inline-math">ϕ</span> represent the offset. In the sinusoidal case, given these three components, any wave <span class="inline-math">s</span> can be expressed as a function of time:</p>
 
     <div class="box formula math">s(t) = A × sin( ωt + ϕ )</div>
     <figure>
@@ -154,7 +154,7 @@
     <h4>YAGI DIRECTIONAL ANTENNAS</h4>
     <p>Sawtooth Shark antenna</p>
     <h4>APERTURE ANTENNAS</h4>
-    <p>Usually known as <span class="keyword">Parabolic Reflectors</span>, that concentrate the incoming wave onto the actual antenna. The parabolic dish needs to be approximately 5 times larger than the wavelength. With a diameter <span class="inline math">D > 5 × λ</span>. The aperture is approximately <span class="inline math">A<sub>e</sub> ≈ 0.5 × frac{ πD<sup>2</sup> }{ 4 } ≈ 0.4D<sup>2</sup></span>. What we know about the aperture being proportional to the gain:</p>
+    <p>Usually known as <span class="keyword">Parabolic Reflectors</span>, that concentrate the incoming wave onto the actual antenna. The parabolic dish needs to be approximately 5 times larger than the wavelength. With a diameter <span class="inline-math">D > 5 × λ</span>. The aperture is approximately <span class="inline-math">A<sub>e</sub> ≈ 0.5 × frac{ πD<sup>2</sup> }{ 4 } ≈ 0.4D<sup>2</sup></span>. What we know about the aperture being proportional to the gain:</p>
     <div class="box formula math">G(D) ≈ 1.6 × π( frac{ D }{ λ } )<sup>2</sup></div>
 
     <h3>POLARIZATION</h3>
@@ -176,7 +176,7 @@
 
     <h4>FIELD STRENGHT</h4>
     <p>The strenght of EM fields from an antenna depend on a set of factors. The first of which is <b>distance d</b>. Field strenght is inversely proportional to the distance. This means is will change rapidly depending on the distance from the antenna.</p>
-    <p>Less impactful, but still important is the <b>Power P</b>. Field strength increase with the square root of the power, meaning the cranking the power up is not especially optimal to achieve a increased effective output. The effective transmitted power has several components listed below. Combining them all give a value for the average transmitted power <span class="inline math">P<sub>avg</sub> = P<sub>TX</sub> × M × I × k</span></p>
+    <p>Less impactful, but still important is the <b>Power P</b>. Field strength increase with the square root of the power, meaning the cranking the power up is not especially optimal to achieve a increased effective output. The effective transmitted power has several components listed below. Combining them all give a value for the average transmitted power <span class="inline-math">P<sub>avg</sub> = P<sub>TX</sub> × M × I × k</span></p>
     <ul>
       <li>The <b>peak power P<sub>TX</sub></b>, i.e the concrete peak power output of the transmitting antenna. Usually listed in dB.</li>
       <li>The <b>Modulation (Duty) Factor M</b>, which is a factor representing the effect of the modulation type on the output power. This value is generally an estimated constant aquired from a reference table.</li>
@@ -187,7 +187,7 @@
     <p>The value of the Electric Field strength E is a function of distance, power and gain.</p>
     <div class="box formula math">E = frac{ sqrt{ 30 × P × G } }{ d }</div>
     <div class="box attention">Note that all units must be in linear space for this formula to work.</div>
-    <p>Provided the electric or magnetic field os known, this can be used to determine the <b>Radiation Intensity S (W/m<sup>2</sup></b> by applying the <b>intrinsic impedance of free space</b> <span class="inline math">Z<sub>0</sub> ≈ 120π ≈ 377Ω </span></p>
+    <p>Provided the electric or magnetic field os known, this can be used to determine the <b>Radiation Intensity S (W/m<sup>2</sup></b> by applying the <b>intrinsic impedance of free space</b> <span class="inline-math">Z<sub>0</sub> ≈ 120π ≈ 377Ω </span></p>
     <div class="box formula math">|S| = frac{ |E|<sup>2</sup> }{ Z<sub>0</sub> } = Z<sub>0</sub> × |H|<sup>2</sup></div>
 
   </section>
@@ -211,14 +211,14 @@
     <p>The <span class="keyword">ladder line</span> is a rigid construction that separates the positive and negative lead of the transmission lite with a constant physical distance. This makes it immune to noise as the magnetic field effects cancel each other out. It commonly has a much higher characteristic impedance, making it unpractical in some situation</p>
 
     <h3>VELOCITY FACTOR</h3>
-    <p>The speed of light inside depends on the medium it travels through. For any physical cable. The <span class="keyword">Veolcity Factor <em>v</em></span> is the ratio of the speed through a cable to the ideal speed in a vacuum. The real speed through the cable is thereby defined as <span class="inline math">c<sub>cable</sub> = v × c<sub>vacuum</sub></span>. The physical length that properly represent one single wavelenght is defined as <span class="inline math">λ<sub>cable</sub> = v × λ</span>.</p>
+    <p>The speed of light inside depends on the medium it travels through. For any physical cable. The <span class="keyword">Veolcity Factor <em>v</em></span> is the ratio of the speed through a cable to the ideal speed in a vacuum. The real speed through the cable is thereby defined as <span class="inline-math">c<sub>cable</sub> = v × c<sub>vacuum</sub></span>. The physical length that properly represent one single wavelenght is defined as <span class="inline-math">λ<sub>cable</sub> = v × λ</span>.</p>
 
   </section>
 
   <h2 id="matching">MATCHING</h2>
   <section class="sub-section">
-    <p><span class="keyword">Impedance Matching</span> a.k.a <span class="keyword">Antenna Tuning</span> is the process of matching up the impedances between the <em>transmitter</em> and the <em>load</em>, i.e antenna. Impedances are complex values where we want to separate two factors; the first being <span class="keyword">source impedance</span> <span class="inline math">Z<sub>0</sub> = R<sub>0</sub> + j0</span>, which is the impedance in the transmitter. This impedance is, most of the time, purely real, i.e no reactance component. The second factor is the <span class="keyword">load impedance</span> <span class="inline math">Z<sub>l</sub> = (R<sub>l</sub> + R<sub>rad</sub>) + jX<sub>l</sub></span> , make sure to not confuse the load impedance with the inductive reactance.</p>
-    <div class="box attention">Note that antenna reactance is highly dependent on frequency and we are only "tuning" it for a particular sub-range close to <span class="inline math">ƒ = frac{1}{ sqrt{ 4π<sup>2</sup>LC} }</span>.</div>
+    <p><span class="keyword">Impedance Matching</span> a.k.a <span class="keyword">Antenna Tuning</span> is the process of matching up the impedances between the <em>transmitter</em> and the <em>load</em>, i.e antenna. Impedances are complex values where we want to separate two factors; the first being <span class="keyword">source impedance</span> <span class="inline-math">Z<sub>0</sub> = R<sub>0</sub> + j0</span>, which is the impedance in the transmitter. This impedance is, most of the time, purely real, i.e no reactance component. The second factor is the <span class="keyword">load impedance</span> <span class="inline-math">Z<sub>l</sub> = (R<sub>l</sub> + R<sub>rad</sub>) + jX<sub>l</sub></span> , make sure to not confuse the load impedance with the inductive reactance.</p>
+    <div class="box attention">Note that antenna reactance is highly dependent on frequency and we are only "tuning" it for a particular sub-range close to <span class="inline-math">ƒ = frac{1}{ sqrt{ 4π<sup>2</sup>LC} }</span>.</div>
 
     <figure>
       <img src="rsc/radio/antennas/antenna-resistance-diagram.png" alt="image">
@@ -231,7 +231,7 @@
       <li><b>X<sub>l</sub></b> is the complex component, reactance, of the antennas impedance</li>
     </ul>
 
-    <p>Matching is achieved when the impedances are the same in transmitter, transmission line and antenna. <span class="inline math">R<sub>transmitter</sub> = R<sub>feeder cable</sub> = R<sub>antenna</sub></span> and <span class="inline math">X<sub>antenna</sub> = |X<sub>L</sub>| - |X<sub>C</sub>| = 0</span> will fullfill this criteria. This relationship will give a VSWR of 1, which is the optimal value. Texas Instruments have compiled a very useful pdf on <a href="https://www.ti.com/lit/an/scba034/scba034.pdf">tuning HF Antennas</a> which describe the matching process in further detail.</p>
+    <p>Matching is achieved when the impedances are the same in transmitter, transmission line and antenna. <span class="inline-math">R<sub>transmitter</sub> = R<sub>feeder cable</sub> = R<sub>antenna</sub></span> and <span class="inline-math">X<sub>antenna</sub> = |X<sub>L</sub>| - |X<sub>C</sub>| = 0</span> will fullfill this criteria. This relationship will give a VSWR of 1, which is the optimal value. Texas Instruments have compiled a very useful pdf on <a href="https://www.ti.com/lit/an/scba034/scba034.pdf">tuning HF Antennas</a> which describe the matching process in further detail.</p>
 
     <div class="box attention">Connecting a very poorly matched antenna can damage the transmitter.</div>
 
@@ -244,20 +244,20 @@
     </figure>
 
     <h4>RETURN LOSS</h4>
-    <p>The <span class="keyword">Return Loss</span> describes the arithmetic difference between transmitted and reflected power to an antenna in dBm, <span class="inline math">P <sub>forward</sub> - P <sub>reflected</sub> = return loss</span>. Larger values for the return loss ⇒ less power wasted.</p>
+    <p>The <span class="keyword">Return Loss</span> describes the arithmetic difference between transmitted and reflected power to an antenna in dBm, <span class="inline-math">P <sub>forward</sub> - P <sub>reflected</sub> = return loss</span>. Larger values for the return loss ⇒ less power wasted.</p>
 
     <h4>REFLECTION COEFFICIENT Γ</h4>
-    <p>The <span class="keyword">reflection coefficient Γ</span> is the ratio between the difference in impedances to the total impedance. This is the value we want to be 0. One can also determine Γ by ratio of the reflected and forward amplitudes <span class="inline math">V<sub>r</sub></span>:<span class="inline math">V<sub>f</sub></span></p>
+    <p>The <span class="keyword">reflection coefficient Γ</span> is the ratio between the difference in impedances to the total impedance. This is the value we want to be 0. One can also determine Γ by ratio of the reflected and forward amplitudes <span class="inline-math">V<sub>r</sub></span>:<span class="inline-math">V<sub>f</sub></span></p>
     <div class="box formula math">Γ = frac{ Z<sub>load</sub> - Z<sub>source</sub> }{ Z<sub>load</sub> + Z<sub>source</sub> } = frac{ V<sub>r</sub> }{ V<sub>f</sub> }</div>
 
 
     <h4>VOLTAGE STANDING WAVE RATIO</h4>
-    <p>The <span class="keyword">Voltage Standing Wave Ratio (VSWR)</span> is the ratio of the peak and bottom of the standing wave that appear when a transmitted <span class="keyword">forward voltage wave v<sub>f</sub>(t)</span>, <span class="inline math">V<sub>f</sub> sin(ωt + ϕ<sub>1</sub>)</span>, is superimposed by a <span class="keyword">reflected voltage wave v<sub>r</sub>(t)</span>, <span class="inline math">V<sub>r</sub> sin(ωt + ϕ<sub>2</sub>)</span>.</p>
+    <p>The <span class="keyword">Voltage Standing Wave Ratio (VSWR)</span> is the ratio of the peak and bottom of the standing wave that appear when a transmitted <span class="keyword">forward voltage wave v<sub>f</sub>(t)</span>, <span class="inline-math">V<sub>f</sub> sin(ωt + ϕ<sub>1</sub>)</span>, is superimposed by a <span class="keyword">reflected voltage wave v<sub>r</sub>(t)</span>, <span class="inline-math">V<sub>r</sub> sin(ωt + ϕ<sub>2</sub>)</span>.</p>
     <figure>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Standing_wave_2.gif/525px-Standing_wave_2.gif" alt="image">
       <figcaption>Animation illustrating the transmission voltage(blue), added to the reflected voltage(red), resulting in a sum voltage(black). In this case, the voltage is completely reflected, resulting in a Γ = -1, and a VSWR = ∞. Animation sourced from <a href="https://en.wikipedia.org/wiki/Standing_wave_ratio#Relationship_to_the_reflection_coefficient">the Wikipedia article on SWR</a>.</figcaption>
     </figure>
-    <p>The standing wave is the resulting sum of the forward and reflected voltages, with a maximum <span class="inline math">V<sub>PEAK</sub></span>, and bottom <span class="inline math">V<sub>MIN</sub></span>.</p>
+    <p>The standing wave is the resulting sum of the forward and reflected voltages, with a maximum <span class="inline-math">V<sub>PEAK</sub></span>, and bottom <span class="inline-math">V<sub>MIN</sub></span>.</p>
     <div class="box formula math">VSWR = frac{ V<sub>PEAK</sub> }{ V<sub>MIN</sub> } = frac{ 1 + |Γ| }{ 1 - |Γ| }</div>
 
     <h3>SMITH CHARTS</h3>
@@ -266,7 +266,7 @@
       <li>The horizontal axis represents the resistive component. Each vertical gridline circle represents a resistive ratio value.</li>
       <li>The vertical axis represents the reactance component. The top half inductive, bottom half capacitive. Each vertical gridline curve flowing from the right out towards the circumference represent a ractance ratio value.</li>
       <li>
-        <p>Each point on the chart takes the relative complex value, <span class="inline math">frac{ Z<sub>l</sub> }{ Z<sub>0</sub> }</span>, i.e</p>
+        <p>Each point on the chart takes the relative complex value, <span class="inline-math">frac{ Z<sub>l</sub> }{ Z<sub>0</sub> }</span>, i.e</p>
         <div class="box formula math">( x, y ) = frac{ R<sub>l</sub> + jX<sub>l</sub> }{ R<sub>0</sub> + jX<sub>0</sub> }</div></li>
     </ul>
     <p>A high resolution pdf, hosted by www.leleivre.com, <a href="https://www.leleivre.com/downloadables/smith_chart.pdf">can be downloaded here</a>.</p>
