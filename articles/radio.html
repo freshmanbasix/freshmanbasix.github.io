@@ -1,4 +1,4 @@
-/communication-model/shannon-weaver-model.<article id="radio" class="wiki-entry">
+<article id="radio" class="wiki-entry">
   <h1 class="column-header">RADIO</h1>
   <section class="sub-section">
     <div id="toc-container">
@@ -7,7 +7,6 @@
         <li><a href="#communication-model">COMMUNICATION MODEL</a></li>
         <li><a href="#the-channel">THE CHANNEL</li>
         <li><a href="#modulation">MODULATION</a></li>
-        <li><a href="#message-encoding">MESSAGE ENCODING</a></li>
         <li><a href="#frequency-bands">FREQUENCY BANDS</a></li>
         <li><a href="#antennas">ANTENNAS</a></li>
         <li><a href="#transmission-lines">TRANSMISSION LINES</a></li>
@@ -103,30 +102,68 @@
 
   <h2 id="modulation">MODULATION</h2>
   <section class="sub-section">
-    <p>This section contain summaries and background on the methods of <span class="keyword">Modulating</span>, i.e embedding discernable data into, a signal. For any electromagnetic wave, there are only three mutable components that can be changed to achieve a pattern. First is the waves magnitude, or peak power, denoted as the <span class="keyword">Amplitude</span> <span class="inline-math">A</span>. The <span class="keyword">Angular Frequency</span> <span class="inline-math">ω = 2πƒ</span> determines how many radians per second the wave oscillates. Lastly, the <span class="keyword">Phase Shift</span> <span class="inline-math">ϕ</span> represent the offset. In the sinusoidal case, given these three components, any wave <span class="inline-math">s</span> can be expressed as a function of time:</p>
-
+    <p>This section contain summaries and background on the methods of <span class="keyword">Modulating</span>, i.e embedding discernable data into, a signal. For any electromagnetic wave, there are only three mutable components that can be changed to achieve a pattern. First is the waves magnitude, or peak power, denoted as the <span class="keyword">Amplitude</span> <span class="inline-math">A</span>. The <span class="keyword">Linear Frequency</span> <span class="inline-math">ƒ</span> determines how many times per second the wave oscillates. Lastly, the <span class="keyword">Phase Shift</span> <span class="inline-math">ϕ</span> represent the offset. The frequency is also the defining factor in the <span class="keyword">Angular Frequency</span> <span class="inline-math">ω = 2πƒ</span>. This represent how many radians per second the wave changes. In the sinusoidal case, given these four components, any wave <span class="inline-math">s</span> can be expressed as a function of time:</p>
     <div class="box formula math">s(t) = A × sin( ωt + ϕ )</div>
+
     <figure>
       <img src="rsc/radio/modulation/sinusoidal-waves.png" alt="image">
-      <figcaption>Diagram illustrating the constituent parts of a sine wave</figcaption>
+      <figcaption>Diagram illustrating the constituent parts of a sine wave as represented in the xy-plane.</figcaption>
     </figure>
 
-    <p>In short, the process of modulating a signal makes use of a <span class="keyword">Carrier Wave Signal</span>, which is the baseline that receivers align against, and then applying a <span class="keyword">Modulating Wave Signal</span>, which is the container for the data, achieving a <span class="keyword">Modulated Wave Signal</span>. The modulation process is known by both parties and is performed in reversed order to extract the data once the modulated wave signal has been received.</p>
+    <h3>ANALOG MODULATION</h3>
+    <p>Analog modulation uses continous waveforms as a <span class="keyword">Modulating Signal</span>, making it a appropriate mdoulation scheme for voice, music etc. In short, the process of modulating a signal makes use of a <span class="keyword">Carrier Wave Signal</span>, which is the baseline that receivers align against, and then applying a <span class="keyword">Modulating Wave Signal</span>, which is the container for the data, achieving a <span class="keyword">Modulated Wave Signal</span>.</p>
+    <figure>
+      <img src="rsc/radio/modulation/analog-modulation-schematic.png" alt="image">
+      <figcaption>Simple illustration of the modulation process, combining carrier and modulation signals.</figcaption>
+    </figure>
 
-    <h3>ANALOG VS DIGITAL MODULATION</h3>
-    <p>Analog uses continous waveforms. Practical for voice in FM/AM bands. Discrete modulation applies a discrete combination of patterns to express a finite number of symbols that are transmitted at a certain symbol rate. Morse code, OnOff Keying etc. are examples of digital modulation.</p>
-
-    <h3>AMPLITUDE MODULATION</h3>
+    <h4>AMPLITUDE MODULATION</h4>
     <p><span class="keyword">Amplitude Modulation AM</span> is a linear method of encoding a carrier wave with a modulating wave that varies in amplitude. The result is a modulated wave with the frequency of the carrier wave whose envelope is identical to the modulating wave. The amplitude variations carry the data.</p>
+    <p>Quality of an AM signal can be expressed as the <span class="keyword">AM index m</span> which is the ratio of the sideband ampllitude over the carrier amplitude. This ratio can also be expressed in percent, usually then refered to as <span class="keyword">AM depth</span>. Rohde Schwarz have an <a href="https://www.youtube.com/watch?v=I46eP8uZh_Y&list=PLKxVoO5jUTlvsVtDcqrVn0ybqBVlLj2z8&index=29">excellent Youtube video</a> on the subject.</p>
+    <div class="box formula math">m = frac{sideband amplitude}{carrier amplitude}<br>N<sub>dB</sub> = 20 × log<sub>10</sub> (m/2)</div>
+    <figure>
+      <img src="rsc/radio/modulation/am-index.png" alt="image">
+      <figcaption>Illustration of the relationship between sidebands and carrier signal for a static modulating signal of f<sub>m</sub> Hertz.</figcaption>
+    </figure>
 
-    <h3>FREQUENCY & PHASE MODULATION FM/PM</h3>
-    <p>Here's an article <a href="https://electronicspost.com/difference-between-frequency-modulation-and-phase-modulation/">explaining the difference</a>.</p>
+    <p>The bandwidth of an AM signal is <span class="inline math">b = 2 × f<sub>m</sub></span>.</p>
 
-  </section>
+    <h4>FREQUENCY MODULATION FM/PM</h4>
+    <p>A non-linear method of alternating the frequency instead of amplitude as the encoding. As the modulating signal varies, so will the carrier. As such, we have on top of the carrier signal frequency <span class="inline math">f<sub>c</sub></span>, the <span class="keyword">Nominal Center Frequency f<sub>0</sub></span>, which is the carrier without any modulating signal applied to it. The <span class="keyword">Maximum Deviation Δf<sub>max</sub></span> is the maximum width of frequency range that the modulated signal varies from the nominal center. Meanwhile, the <span class="keyword">modulating frequency f<sub>m</sub></span> is, like in the AM case, the variation range of the modulating signal itself.</p>
 
-  <h2 id="message-encoding">MESSAGE ENCODING</h2>
-  <section class="sub-section">
-    <p>How to translate variations in a wave into symbols of data.</p>
+    <p>The relationship between deviation and modulating frequency is described by the <span class="keyword">Deviation Ratio β</span>, sometimes abbreviated DR. Different types of transmissions are divided into either <span class="keyword">Wideband FM</span>, for beta ⋝ 1, and <span class="keyword">Narrowband FM</span>, β &lt 1. Using <span class="keyword">Carson's Rule</span>, the bandwidth can be approximated as double the sum of the max deviation and the modulating frquency width.</p>
+    <div class="box formula math">deviation ratio β = frac{ Δf<sub>max</sub> }{ f<sub>m</sub> }</div>
+    <div class="box formula math">bandwidth ≈ 2(f<sub>m</sub> + Δf<sub>max</sub>) = 2 × f<sub>m</sub> × (1 + β)</div>
+
+    <h3>DIGITAL MODULATION</h3>
+
+    <p>Discrete modulation applies a discrete combination of patterns to express a finite number of symbols. It makes use of a <span class="keyword">Symbol Set</span>, which is the alphabet of different symbols that can be transmitted. A <span class="keyword">Symbol Duration T[s]</span>, which is the reciprocal of the <span class="keyword">Symbol Rate R[s<sup>-1</sup>]</span>. There are multitudes of different types of digital modulation schemes. One useful resource for identifying them is the <a href="https://en.wikipedia.org/wiki/Types_of_radio_emissions">ITU classification codes</a> for different radio emission types.</p>
+    <p>One very basic example is the <span class="keyword">On-Off Keying (OOK)</span>, which simply toggles the transmitter on and of, encoding the keys to the symbols into the pattern with which the transmission is toggled. An example could be morse code. Generally speaking, OOK is most appropriate for binary symbols, but can be used to express longer more complex symbol sets.</p>
+
+    <p>One important note is that higher datarate leads to lower SNR in the digital case. The signal in this case is represented by the <span class="keyword">Error Bitrate E<sub>b</sub></span>.</p>
+    <div class="box formula math">SNR<sub>digital</sub> = E<sub>b</sub> / N<sub>0</sub> = (P<sub>TX</sub> × T) / N<sub>0</sub> = P<sub>TX</sub> / (R × N<sub>0</sub>)</div>
+
+    <h4>FREQUENCY SHIFT KEYING</h4>
+    <p>Encode symbols by switching between a discrete number of different frequencies, also refered to as <span class="keyword">tones</span>. The number of frequencies are referenced in the shorthand <span class="keyword">M-ary FSK</span>, where M is equal to the number of tones and the bitdepth of each symbol is <span class="inline math">log<sub>2</sub>(M)</span>. <span class="keyword">Binary FSK</span> is a common term for <em>2-FSK</em>.</p>
+
+    <p>Tones generated by the same oscillator are called <span class="keyword">Coherent FSK</span> and allow for closer spacing of the tones. If multiple oscillators generate the different tones, the implementation is <span class="keyword">Non-Coherent FSK</span>, which is cheaper to produce, but risks <span class="keyword">Inter Symbol Interference(ISI)</span> if tones are packed close.</p>
+
+    <p>The different tones are deviations from the nominal center, and that distance is called the <span class="keyword">Deviation f<sub>d</sub></span>, sometimes <span class="keyword">Δf<sub>c</sub></span> or <span class="keyword">shift</span>. The <span class="keyword">Bandwidth BW</span> is a function of both deiviation and <span class="keyword">Bitrate f<sub>b</sub></span>. The most appropriate bandwidth is usually chosen by finding the <span class="keyword">Modulation Index h</span>. The optimal symbol detection is achieved when <span class="inline math">h ⋝ 1</span>.</p>
+
+    <div class="box attention">Some FSK methods can operate with a modulation index of less than 1, e.g <span class="keyword">Minimum Shift Keying</span>.</div>
+
+    <div class="box formula math">Bandwidth BW = 2(f<sub>d</sub> + f<sub>b</sub>)</div>
+    <div class="box formula math">mod index h = frac{ 2 × f<sub>d</sub> }{ f<sub>b</sub> }</div>
+
+    <h4>PHASE SHIFT KEYING</h4>
+    <p>Differences in phase of the carrier are used to indicate symbols. The symbol scheme is illustrated in a constellation diagram. Each symbol <span class="inline-math">s<sub>i</sub></span> in the set has some amplitude and phase, represented by distance from origin and angle around the z-axis. A received symbol <span class="inline-math">r</span> has levels of error probabilites <span class="inline-math">n<sub>i</sub></span>, represented by the respective distances to each symbol. The value of <span class="inline-math">r</span> is resolved by choosing the symbol nearest to r.</p>
+    <figure>
+      <img src="rsc/radio/modulation/psk-constellation-diagram.png" alt="image">
+      <figcaption>Example of a constellation diagram with positions for each symbol and a illustration of a received symbol r</figcaption>
+    </figure>
+
+    <div class="box attention">Frequency and amplitude are generally kept constant in phase shift keying.</div>
+
   </section>
 
   <h2 id="frequency-bands">FREQUENCY BANDS</h2>
@@ -221,7 +258,7 @@
     <div class="box attention">Note that antenna reactance is highly dependent on frequency and we are only "tuning" it for a particular sub-range close to <span class="inline-math">ƒ = frac{1}{ sqrt{ 4π<sup>2</sup>LC} }</span>.</div>
 
     <figure>
-      <img src="rsc/radio/antennas/antenna-resistance-diagram.png" alt="image">
+      <img src="rsc/radio/matching/antenna-resistance-diagram.png" alt="image">
       <figcaption>Overview of the impedance components of transmitter / receiver and antennas.</figcaption>
     </figure>
     <ul>
