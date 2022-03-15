@@ -153,25 +153,35 @@
 
     <p>The last major concept is that of <b>Inheritance</b>. All CSS rules work by defining properties. Some properties can be inherited from parent elements. Some apply only to the element itself and some will affect all its children. Knowing which is which is very important to achieve the intended outcome.</p>
 
-    <!-- Ruleset -->
-    <h3 id="ruleset">THE RULESET</h3>
-    <p>While HTML was a very simple language, the syntax of CSS is even more simple, even by far. There are two ways to include CSS styling in a HTML document:</p>
+    <h3>INCLUDING CSS</h3>
+    <p>There are three ways to include CSS into a document. The order at which they re processed by the browser determine which one is set last, so DON'T mix methods.</p>
     <ol>
       <li>
-        Like a schmuck, as the content of a <b>&ltstyle&gt</b> element, which must be the direct descendant of the &lthead&gt element.
-<div class="box snippet code">
-&lthead&gt
+        <p><b>Inline</b>, as the content of a <span class="inline-code">style</span> attribute</p>
+        <div class="box snippet code">&ltdiv style="<em>property:value;</em>"&gt</div>
+      </li>
+      <li>
+        <p><b>Internally</b>, as the content of a <span class="inline-code">&ltstyle&gt</span> tag inside the document <span class="inline-code">&lthead&gt</span>.</p>
+        <div class="box snippet code">&lthead&gt
   &ltstyle&gt
     #some rules
   &lt/style&gt
-&lt/head&gt
-</div>
+&lt/head&gt</div>
       </li>
-      <li>Professionally, as the content of a separate file, linked into the html file with a <b>&ltlink&gt</b> element. Multiple CSS files can be linked into the same HTML file but the cascading behaviour will apply.
+      <li>
+        <p><b>Externally</b>, as the source of a <span class="inline-code">&ltlink&gt</span> tag, also included in the <span class="inline-code">&lthead&gt</span> section.</p>
         <div class="box snippet code">&ltlink rel="stylesheet" type="text/css" href="style.css"&gt</div>
       </li>
     </ol>
-    <p>Below is an example of what the content of a CSS file might look like. The sample code below is an example of what is called a <b>ruleset</b>, or in short just a <b>css rule</b>.</p>
+
+    <p>Separate files can be included into a single one by using the <span class="keyword">@import</span> keyword.</p>
+
+    <div class="box snippet code">@import "<em>relative/path/to.css</em>"</div>
+    <div class="box snippet code">@import url("<em>url/to.css</em>")</div>
+
+    <!-- Ruleset -->
+    <h3 id="ruleset">THE RULESET</h3>
+    <p>While HTML was a very simple language, the syntax of CSS is even more simple, even by far. Below is an example of what the content of a CSS file might look like. The sample code below is an example of what is called a <b>ruleset</b>, or in short just a <b>css rule</b>.</p>
 <div class="box snippet code">
 body {
   width: 80vw;
@@ -227,7 +237,7 @@ properties-list ::=
     </figure>
 
     <!-- Environment variables -->
-    <h3 id="variables-environment">Variables and Environment</h3>
+    <h3 id="variables-environment">VARIABLES AND ENVIRONMENT</h3>
     <p>Variables can be very effective in structuring a large ruleset, especially when establishing a color palette. Variables can be declared and defined in a separate ruleset with the <span class="inline-code">:root</span> pseudo-class selector. This establishes the variable in the global scope and lets any ruleset access it.</p>
 <div class="box snippet code">
 :root {
