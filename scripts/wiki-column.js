@@ -23,6 +23,7 @@
             new Route('radio', 'radio.html'),
             new Route('calculus', 'calculus.html'),
             new Route('probability-statistics', 'probability-statistics.html'),
+            new Route('bike-mechanics', 'bike-mechanics.html'),
             new Route('contribute', 'contribute.html')
         ], 'wiki-column');
     }
