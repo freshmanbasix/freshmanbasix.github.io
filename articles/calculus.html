@@ -4,6 +4,8 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">CONTENT</h1>
       <ul class="toc">
+        <li><a href="#legend">LEGEND</a></li>
+        <li><a href="#number-set-theory">NUMBER & SET THEORY</a></li>
         <li><a href="#arithmetic">ARITHMETIC</a></li>
         <li><a href="#geometry">GEOMETRY</a></li>
         <li><a href="#trigonometry">TRIGONOMETRY</a></li>
@@ -15,10 +17,72 @@
     <p>Several concepts in this article will technically belong to fields of their own, but until such a time that enough material warrants a new article, it will remain in here.</p>
   </section>
 
+  <h2 id="legend">LEGEND</h2>
+  <section class="sub-section">
+    <p>Core mathematical terminology needs some introduction. This section will serve as a reference point for the rest of this article.</p>
+
+  </section>
+
+  <h2 id="number-set-theory">NUMBER & SET THEORY</h2>
+  <section class="sub-section">
+    <figure>
+      <img src="rsc/calculus/arithmetic/number-sets.png" alt="image">
+      <figcaption>Categories of number sets and their relationships</figcaption>
+    </figure>
+
+    <h3>MATHEMATICAL BUILDING BLOCKS</h3>
+    <p><span class="keyword">Expressions</span> are mathematical constructs without a stated equivalence. By themselves they express no relationship</p>
+    <div class="box formula math">[expression] x + m</div>
+    <p>An <span class="keyword">Equation</span> is a pair of expressions that have some stated relationship. They can be <em>equal(=)</em>, <em>strictly non-equal(≠)</em> or <em>unequal(&lt, ⋜, &gt, ⋝)</em>.</p>
+    <div class="box formula math">x + m = y       [equation]</div>
+
+    <p><span class="keyword">Inequalities</span> or <span class="keyword">Intervals</span> is a shorthand for equations where the expressions do not evaluate to the same. Intervals in particular describe a range within which an expression exists on the numberline</p>
+
+    <div class="box formula math">[inequality] x + m &lt y</div>
+    <div class="box formula math">[interval] x &lt m &lt y</div>
+
+    <figure>
+      <img src="rsc/calculus/arithmetic/intervals.png" alt="image">
+      <figcaption>Illustration of open and closed intervals on a numberline</figcaption>
+    </figure>
+
+
+    <p>Component names for the basic operations are listed below.</p>
+    <ul>
+      <li><b>Addend</b> + <b>Addend</b> = <b>Sum</b></li>
+      <li><b>Minuend</b> - <b>Subtrahend</b> = <b>Difference</b></li>
+      <li><b>Term</b> + <b>Term</b> = <b>Sum</b> <em>(for use with both positive and negative terms)</em></li>
+      <li><b>Factor</b> × <b>Factor</b> = <b>Product</b></li>
+      <li><b>Dividend</b> ÷ <b>Divisor</b> = <b>Quotient</b></li>
+      <li><b>Numerator</b> ÷ <b>Denominator</b> = <b>Quotient</b></li>
+    </ul>
+
+    <h3>NUMBER PROPERTIES</h3>
+    <p class="addme">commutative, associative etc.</p>
+    <p>The <span class="keyword">Commutative</span> property describe whether the order of the operands matter in a given operation. Addition is commutative, since <span class="inline-math">a + b = b + a</span> for any <span class="inline-math">{a, b ∈ ℝ}</span>. Multiplication is another example, but subtraction is not since <span class="inline-math">a - b ≠ b - a</span>.</p>
+
+    <p>Which operands to resolve first under a given operation is determined by the <span class="keyword">Associative</span> property. Addition and Multiplication are associative for example, because the following holds true: <span class="inline-math">(a + b) + c = a + (b + c)</span> and <span class="inline-math">(a × b) × c = a × (b × c)</span>.</p>
+
+    <p>The <span class="keyword">Distributive</span> property describe how a operand is distributed into an expression containing multiple terms under multiplication. <span class="inline-math">a(b + c) = a×b + a×c</span>.</p>
+
+    <p>If an operation is conducted with any two operands from the same set, and the result belongs to the same set, then this set is said to be <span class="keyword">Closed</span> under this operation.</p>
+
+    <p>All operations have a <span class="keyword">Neutral Element</span>, also refered to as the <span class="keyword">Identity</span>. For any operand from some set <span class="inline-math">a</span>, there is a <span class="inline-math">neutral(a)</span> such that <span class="inline-math">a + neutral(a) = a</span>. In addition, the identity is 0, for multiplication, the identity is 1.</p>
+
+    <p><span class="keyword">Inverse Elements</span> are such that a operation will result in the identity for the given operation. As such, the inverse will be different depending on the number itself. For addition; <span class="inline-math">a + inverse(a) = 0</span>. For multiplication; <span class="inline-math">b × inverse(b) = 1</span>. Inverses in addition is the number with equal magnitude but opposite side of 0 on the numberline. In multiplication, the inverse is called the <span class="keyword">reciprocal</span>, which is always 1 divided by the number itself, i.e <span class="inline-math">inverse(b) = 1 ÷ b</span>.</p>
+
+    <h3>NUMBER SYSTEMS & BASES</h3>
+  </section>
+
   <h2 id="arithmetic">ARITHMETIC</h2>
   <section class="sub-section">
     <p>Arithmetic is the general rules for calculating numbers. In this section, some very fundamental rules, theorems and useful defintions will be gathered, along with some descriptions of the notation that will be used in this article.</p>
-    <h3>NUMBER SYSTEMS & BASES</h3>
+
+    <h4>SYMBOL LEGEND</h4>
+    <p class="addme">List och mathematical symbols and their meanings</p>
+
+    <h3>OPERATIONAL ORDER</h3>
+    <p>Parenthesis, exponents, division, multiplication, sums or differences.</p>
 
     <h3>EXPONENTS</h3>
     <p><span class="keyword">Exponents</span> are a notational method to express <span class="keyword">powers</span>, <span class="inline-math">base <sup>exponent</sup></span>, which is to say some <span class="keyword">base</span> is <em>raised to the n-th power</em>.</p>
@@ -61,7 +125,7 @@
     <p><span class="keyword">Cartesian Coordinates</span> is the common standard of representing space by letting each point in  <span class="inline-math">P = [x<sub>1</sub>, ..., x<sub>n</sub>] ∈ ℝ<sup>n</sup></span> be represented by a multiple of 1 on n orthoganal axis. The regular xy-plane is often refered to as the <em>cartesian plane</em>. <span class="keyword">Euclidean Standard Space</span> ℝ<sup>3</sup>, i.e physical 3D space, is usually represented as <span class="inline-math">[x, y, z]</span> in cartesian coordinates.</p>
     <p>It is used as the basis as the common <span class="keyword">right-hand system</span>, which is a method to standardize direction in a system. It is defined by taking your right hand and letting:</p>
     <ul>
-      <li>the thumb be the positive x-axis</li>
+      <li>the thumbbe the positive x-axis</li>
       <li>the index finger be the positive y-axis</li>
       <li>the long finger be the positive z-axis</li>
       <li>The circular rotation around the z-axis, from the positive x-axis to the negative, is considered to be of a positive magnitude</li>
