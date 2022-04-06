@@ -5,18 +5,18 @@
     <div id="toc-container">
       <h1 class="column-header toc-header">CONTENT</h1>
       <ul class="toc">
-        <li><a href="#client-server-model-overview">Client Server Model Overview</a></li>
-        <li><a href="#web-servers">Web Servers</a></li>
-        <li><a href="#ssh">Secure Socket Shell</a></li>
-        <li><a href="#torrent-server">Torrent Server</a></li>
-        <li><a href="#network-storage-backup">Network Storage and Backup</a></li>
-        <li><a href="#git-server">GIT Server</a></li>
+        <li><a href="#client-server-model-overview">CLIENT SERVER MODEL OVERVIEW</a></li>
+        <li><a href="#web-servers">WEB SERVERS</a></li>
+        <li><a href="#ssh">SECURE SOCKET SHELL</a></li>
+        <li><a href="#torrent-server">TORRENT SERVER</a></li>
+        <li><a href="#network-storage-backup">NETWORK STORAGE AND BACKUP</a></li>
+        <li><a href="#git-server">GIT SERVER</a></li>
       </ul>
     </div>
     <p>This article will mainly cover hosting your own server and putting cool stuff on it, such as websites, back-ends, email etc.</p>
   </section>
 
-  <h2 id="client-server-model-overview">Client Server Model Overview</h2>
+  <h2 id="client-server-model-overview">CLIENT SERVER MODEL OVERVIEW</h2>
   <section class="sub-section">
     <figure>
       <img src="rsc/servers//server/hosting-overview.png" alt="image">
@@ -25,19 +25,22 @@
 
   </section>
 
-  <h2 id="web-servers">Web Servers</h2>
+  <h2 id="web-servers">WEB SERVERS</h2>
 
   <section class="sub-section">
-    <h3>Backend</h3>
-    <p>Setting up a website is done in two shakes of a rabbits ass. Just install the apache package on your linux machine and you're done.</p>
+    <h3>APACHE2</h3>
+    <p>Apache is a very common web server solution that can run on most devices and machines. <a href="https://httpd.apache.org/docs/">Full documentation available from apache project website</a>.</p>
 
+    <h4>INSTALL</h4>
+    <p>The following installs the apache package on a debian linux OS.</p>
     <div class="box snippet code">sudo apt-get install apache2</div>
 
-    <p>Default location for the outward facing website <span class="inline-code">/var/www/html/index.html</span></p>
+    <p>The default site can be visited through a browser by typing <span class="inline-code">localhost</span> or <span class="inline-code">127.0.0.1</span>. If you see a simple site declaring <em>Apache2 Ubuntu Default Page</em>, or something similar, the package has been configured correctly.</p>
 
-    <p>Slam open a browser and visit <span class="inline-code">localhost</span> or <span class="inline-code">197.0.0.1</span> to see if apache started up correctly. You'll see a simple placeholder site that clearly indicates that it's working.</p>
+    <p>Config files for apache are located in <span class="inline-code">/etc/apache2</span>. The default location for the outward facing website <span class="inline-code">/var/www/html</span></p>
 
-    <p>Config files for apache are located in <span class="inline-code">/etc/apache2</span></p>
+    <h4>VIRTUAL HOSTS</h4>
+    <p>Multiple websites can be hosted from the same apache server by configuring virtual hosts. Several variants ca be configured. In general, each host can be stored in a dedicated directory, preferably directly under <span class="inline-code">/var/www</span>. For each host, a configuration file must be setup in the <span class="inline-code">/etc/apache2/sites-available</span> directory. <a href="https://httpd.apache.org/docs/2.4/vhosts/">The officials docs host some useful information here</a>, and a practical <a href="https://www.bestdevops.com/setup-virtual-hosts-with-apache-web-server-on-linux/">tutorial is hosted here</a>.</p>
 
     <h3>DNS services</h3>
     <p>The <i>Domain Name System</i> infrastructure is what translates a human-readable web adress. This service needs to be bought. While technically possible, setting up your own private DNS server will only be plausible on a local network. On the internet, we turn to Domain Name Registrars.</p>
