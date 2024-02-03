@@ -1,0 +1,546 @@
+######################################
+## ARTICLE FORMATTING               ##
+######################################
+'.text.html.basic':
+  'wiki article':
+    'prefix': 'wiki'
+    'body': """
+    <article id="$1" class="wiki-entry">
+      <h1 class="column-header">$2</h1>
+      <section class="sub-section">
+        <div id="toc-container">
+          <h1 class="column-header toc-header">Table Of Contents</h1>
+          <ul class="toc">
+            <li><a href="#$3">$4</a></li>
+          </ul>
+        </div>
+        <p>$5</p>
+      </section>
+
+      <h2 id="$6">$7</h2>
+      <section class="sub-section">
+        $8
+      </section>
+    </article>
+    """
+
+  'sub section':
+    'prefix': 'subs'
+    'body': """
+    <h2 id="$1">$2</h2>
+    <section class="sub-section">
+    $3
+    </section>
+    """
+
+  'sub sub header':
+    'prefix': 'ssub'
+    'body': '<h3>$2</h3>'
+  'box quotation':
+    'prefix': 'bq'
+    'body': """
+      <figure class="blockquote">
+        <blockquote cite="$1">
+          <p>$3</p>
+        </blockquote>
+        <figcaption>- $4, <cite><a href="$2">$5</a></cite></figcaption>
+      </figure>
+      $6
+    """
+
+  'resource table':
+    'prefix': 'restab'
+    'body': """
+    <table>
+      <caption>${1:top caption}</caption>
+      <colgroup span="2"></colgroup>
+      <tr>
+        <td>${2:description}</td>
+        <td>${3:link}</td>
+      </tr>
+    </table>
+    """
+######################################
+## EMPHASIS BOXES
+######################################
+  'full image':
+    'prefix': 'pic'
+    'body': """
+      <figure>
+        <img src="rsc/$1.${2:png}" alt="image">
+        <figcaption>$3</figcaption>
+      </figure>
+      $4
+    """
+
+  'code snippet':
+    'prefix': 'snip'
+    'body': '<div class="box snippet code">$1</div>$2'
+
+  'math newline formula':
+    'prefix': 'formula'
+    'body': '<div class="box formula math">$1</div>$2'
+
+  'math formula image':
+    'prefix': 'fmath'
+    'body': """
+    <figure class="box math-formula">
+    <img src="rsc/$1.png" alt="image">
+    </figure>
+    """
+
+  'math definition block':
+    'prefix': 'dmath'
+    'body': """
+      <div class="box definition">
+        $1
+      </div>
+      """
+
+  'custom block quote':
+    'prefix': 'qo'
+    'body': """
+    <blockquote class="q">
+    <strong>$1</strong> $2
+    <br>
+    <br>
+    <i>$3</i>
+    <br>
+    $4
+    </blockquote>
+    $5
+    """
+
+#######################################
+## INLINE EMPHASIS BOXES
+#######################################
+  'inline keyword':
+    'prefix': 'ikey'
+    'body': '<span class="keyword">$1</span>$2'
+
+  'inline code':
+    'prefix': 'icode'
+    'body': '<span class="inline-code">$1</span>$2'
+
+  'math inline':
+    'prefix': 'imath'
+    'body': '<span class="inline-math">$1</span>$2'
+
+  'latex inline':
+    'prefix': 'itex'
+    'body': '\\\\($1\\\\)$2'
+
+  'latex display mode':
+    'prefix': 'dtex'
+    'body': '\\\\[$1\\\\]$2'
+
+  'add me':
+    'prefix': 'addme'
+    'body': '<p class="addme">$1</p>$2'
+
+
+###################################
+## INLINE CUSTOM SYMBOLS
+###################################
+
+  'math sub variable':
+    'prefix': 'subv'
+    'body': '$1<sub>$2</sub>$3'
+
+  'math sup variable':
+    'prefix': 'supv'
+    'body': '$1<sup>$2</sup>$3'
+
+  'math squared variable':
+    'prefix': 'squared'
+    'body': '$1<sup>2</sup>$2'
+
+  'attention block':
+    'prefix': 'att'
+    'body': '<div class="box attention">$1</div>$2'
+
+  'inline kakos':
+    'prefix': 'kako'
+    'body': '&lt$1&gt$2'
+
+  'probability function':
+    'prefix': 'probf'
+    'body': 'ρ<sub>${1:X}</sub>(${2:x})$3'
+
+  'density function':
+    'prefix': 'densf'
+    'body': 'ƒ<sub>${1:X}</sub>(${2:x})$3'
+
+  'distribution function':
+    'prefix': 'distf'
+    'body': 'F<sub>${1:X}</sub>(${2:x})$3'
+
+  'sum over i':
+    'prefix': 'sumi'
+    'body': '∑<sub>${1:i}</sub>$2'
+
+  'integrate over x':
+    'prefix': 'inti'
+    'body': '∫<sub>${1:0:1}</sub>$2'
+
+  'fraction shorthand':
+    'prefix': 'frac'
+    'body': 'frac{$1}{$2}$3'
+
+  'theta observed':
+    'prefix': 'obs'
+    'body': 'θ<sup>*</sup><sub>obs</sub>'
+
+##############################
+## MATHEMATICAL OPERATORS   ##
+##############################
+
+  'curly f':
+    'prefix': 'cf'
+    'body': 'ƒ'
+
+  'curly l':
+    'prefix': 'cl'
+    'body': '𝗅'
+
+  'curly i':
+    'prefix': 'ci'
+    'body': '𝑖'
+
+  'curly x':
+    'prefix': 'cx'
+    'body': '𝓍'
+
+  'x bar':
+    'prefix': 'xbar'
+    'body': 'x̄'
+
+  'X bar':
+    'prefix': 'Xbar'
+    'body': 'X̅'
+
+  'empty set':
+    'prefix': 'emptyset'
+    'body': 'Ø'
+
+  'infinity':
+    'prefix': 'inf'
+    'body': '∞'
+
+  'integral symbol':
+    'prefix': 'integral'
+    'body': '∫'
+
+  'contour integral symbol':
+    'prefix': 'cintegral'
+    'body': '∮'
+
+  'union symbol':
+    'prefix': 'cup'
+    'body': '∪'
+
+  'intersection symbol':
+    'prefix': 'cap'
+    'body': '∩'
+
+  'multiplication symbol':
+    'prefix': 'times'
+    'body': '×'
+
+  'division symbol':
+    'prefix': 'divby'
+    'body': '÷'
+
+  'plusminus symbol':
+    'prefix': 'plusminus'
+    'body': '±'
+
+  'xor operator':
+    'prefix': 'xor'
+    'body': '⊕'
+
+  'logical not':
+    'prefix': 'lognot'
+    'body': '¬'
+
+  'logical and':
+    'prefix': 'logand'
+    'body': '∧'
+
+  'logical or':
+    'prefix': 'logor'
+    'body': '∨'
+
+  'Not equals symbol':
+    'prefix': 'not equal'
+    'body': '≠'
+
+  'approximately equals symbol':
+    'prefix': 'approx'
+    'body': '≈'
+
+  'if and only iff':
+    'prefix': 'iff'
+    'body': '⟺'
+
+  'implication arrow':
+    'prefix': 'ifa'
+    'body': '⇒'
+
+  'left arrow with hook':
+    'prefix': 'hookleft'
+    'body': '↩'
+
+  'For All':
+    'prefix': 'forall'
+    'body': '∀'
+
+  'There Exist':
+    'prefix': 'thereis'
+    'body': '∃'
+
+  'Element of':
+    'prefix': 'eof'
+    'body': '∈'
+
+  'right arrow':
+    'prefix': 'ra'
+    'body': '→'
+
+  'equal to or less than':
+    'prefix': 'elt'
+    'body': '⋜'
+
+  'equal to or greater than':
+    'prefix': 'egt'
+    'body': '⋝'
+
+##############################
+## DOUBLE STRUCK CHARACTERS ##
+##############################
+  'Real Number Set':
+    'prefix': 'rdouble'
+    'body': 'ℝ'
+
+  'Natural Number Set':
+    'prefix': 'ndouble'
+    'body': 'ℕ'
+
+  'Integer Number Set':
+    'prefix': 'zdouble'
+    'body': 'ℤ'
+
+  'Double struck E':
+    'prefix': 'edouble'
+    'body': '𝔼'
+
+  'Double struck Q':
+    'prefix': 'qdouble'
+    'body': 'ℚ'
+
+  'Double struck I':
+    'prefix': 'idouble'
+    'body': '𝕀'
+
+  'Double struck C':
+    'prefix': 'cdouble'
+    'body': 'ℂ'
+
+  'Double struck B':
+    'prefix': 'bdouble'
+    'body': '𝔹'
+
+#################
+## GREEK ALPHABET
+#################
+  'alpha':
+    'prefix': 'alpha'
+    'body': 'α'
+
+  'Alpha':
+    'prefix': 'Alpha'
+    'body': 'Α'
+
+  'Beta':
+    'prefix': 'Beta'
+    'body': 'Β'
+
+  'beta':
+    'prefix': 'beta'
+    'body': 'β'
+
+  'Gamma':
+    'prefix': 'Gamma'
+    'body': 'Γ'
+
+  'gamma':
+    'prefix': 'gamma'
+    'body': 'γ'
+
+  'Delta':
+    'prefix': 'Delta'
+    'body': 'Δ'
+
+    'delta':
+      'prefix': 'delta'
+      'body': 'δ'
+
+  'Epsilon':
+    'prefix': 'Epsilon'
+    'body': 'Ε'
+
+  'epsilon':
+    'prefix': 'epsilon'
+    'body': 'ε'
+
+  'Zeta':
+    'prefix': 'Zeta'
+    'body': 'Ζ'
+
+  'zeta':
+    'prefix': 'zeta'
+    'body': 'ζ'
+
+  'Eta':
+    'prefix': 'Eta'
+    'body': 'Η'
+
+  'eta':
+    'prefix': 'eta'
+    'body': 'η'
+
+  'Theta':
+    'prefix': 'Theta'
+    'body': 'Θ'
+
+  'theta':
+    'prefix': 'theta'
+    'body': 'θ'
+
+  'Iota':
+    'prefix': 'Iota'
+    'body': 'Ι'
+
+  'iota':
+    'prefix': 'iota'
+    'body': 'ι'
+
+  'Kappa':
+    'prefix': 'Kappa'
+    'body': 'Κ'
+
+  'kappa':
+    'prefix': 'kappa'
+    'body': 'κ'
+
+  'Lambda':
+    'prefix': 'Lambda'
+    'body': 'Λ'
+
+  'lambda':
+    'prefix': 'lambda'
+    'body': 'λ'
+
+  'Mu':
+    'prefix': 'Mu'
+    'body': 'Μ'
+
+  'mu':
+    'prefix': 'mu'
+    'body': 'μ'
+
+  'Nu':
+    'prefix': 'Nu'
+    'body': 'N'
+
+  'nu':
+    'prefix': 'nu'
+    'body': 'ν'
+
+  'Xi':
+    'prefix': 'Xi'
+    'body': 'Ξ'
+
+  'xi':
+    'prefix': 'xi'
+    'body': 'ξ'
+
+  'Omicron':
+    'prefix': 'Omicron'
+    'body': 'Ο'
+
+  'omicron':
+    'prefix': 'omicron'
+    'body': 'ο'
+
+  'Pi':
+    'prefix': 'Pi'
+    'body': '∏'
+
+  'pi':
+    'prefix': 'pi'
+    'body': 'π'
+
+  'Rho':
+    'prefix': 'Rho'
+    'body': 'Ρ'
+
+  'rho':
+    'prefix': 'rho'
+    'body': 'ρ'
+
+  'Sigma':
+    'prefix': 'Sigma'
+    'body': '∑'
+
+  'sigma':
+    'prefix': 'sigma'
+    'body': 'σ'
+
+  'Tau':
+    'prefix': 'Tau'
+    'body': 'Τ'
+
+  'tau':
+    'prefix': 'tau'
+    'body': 'τ'
+
+  'Upsilon':
+    'prefix': 'Upsilon'
+    'body': 'Υ'
+
+  'upsilon':
+    'prefix': 'upsilon'
+    'body': 'υ'
+
+  'Phi':
+    'prefix': 'Phi'
+    'body': 'Φ'
+
+  'phi':
+    'prefix': 'phi'
+    'body': 'ϕ'
+
+  'Chi':
+    'prefix': 'Chi'
+    'body': 'Χ'
+
+  'chi':
+    'prefix': 'chi'
+    'body': 'χ'
+
+  'Psi':
+    'prefix': 'Psi'
+    'body': 'Ψ'
+
+  'psi':
+    'prefix': 'psi'
+    'body': 'ψ'
+
+  'Omega':
+    'prefix': 'Omega'
+    'body': 'Ω'
+
+  'omega':
+    'prefix': 'omega'
+    'body': 'ω'
