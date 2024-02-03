@@ -40,7 +40,34 @@
     <p>Config files for apache are located in <span class="inline-code">/etc/apache2</span>. The default location for the outward facing website <span class="inline-code">/var/www/html</span></p>
 
     <h4>VIRTUAL HOSTS</h4>
-    <p>Multiple websites can be hosted from the same apache server by configuring virtual hosts. Several variants ca be configured. In general, each host can be stored in a dedicated directory, preferably directly under <span class="inline-code">/var/www</span>. For each host, a configuration file must be setup in the <span class="inline-code">/etc/apache2/sites-available</span> directory. <a href="https://httpd.apache.org/docs/2.4/vhosts/">The officials docs host some useful information here</a>, and a practical <a href="https://www.bestdevops.com/setup-virtual-hosts-with-apache-web-server-on-linux/">tutorial is hosted here</a>.</p>
+    <p>Multiple websites can be hosted from the same apache server by configuring virtual hosts. Each virtualhost can be either <span class="keyword">Name-based</span> or <span class="keyword">IP-based</span>. The virtual hosts manage the incoming http requests and return the appropriate material. <a href="https://httpd.apache.org/docs/2.4/vhosts/">The officials docs host some useful information here</a>, and a practical <a href="https://www.bestdevops.com/setup-virtual-hosts-with-apache-web-server-on-linux/">tutorial is hosted here</a>.</p>
+
+    <ul>
+      <li>Name-based: multiple hostnames, i.e websites, is associated with the same IP.</li>
+      <li>IP-based: multiple IPs can be set to point to the same physical machine, each refering to a different website.</li>
+    </ul>
+
+    <p>The default model places the different hosts in separate <span class="inline-code">/var/www</span>. Other directories can be chosen but must be whitelisted in the global configs, <span class="inline-code">/etc/apache2/apache2.conf</span>. Each host requires a configuration entry, see example below.</p>
+
+    <div class="box snippet code">
+&ltVirtualHost *:80&gt
+  ServerName example.com
+  ServerAlias www.example.com
+
+  DocumentRoot /var/www/example
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+&ltVirtualHost&gt</div>
+
+    <p>When an incoming HTTP request is received, apache will go through each conf file listed under <span class="inline-code">/ets/apache/sites-enabled</span> in alphabetical order. The most exact match will win. IP and port is specified in the <em>VirtualHost</em> tag. The hostname is specified with the <span class="keyword">ServerName</span> directive. Aliases can be supplied with the <span class="keyword">ServerAlias</span> directive.</p>
+
+    <div class="box attention">Only exact matches will be recognized. If nothing matches, the default virtualhost will be the one that specifies no ServerName at all.</div>
+
+    <p>Best practice is to create one conf file per website and store them all in <span class="inline-code">/etc/apache2/sites-available</span>. This allows use of apaches native terminal commands:</p>
+    <div class="box snippet code">a2ensite example.conf <br>a2dissite example.conf</div>
+
+    <p></p>
 
     <h3>DNS services</h3>
     <p>The <i>Domain Name System</i> infrastructure is what translates a human-readable web adress. This service needs to be bought. While technically possible, setting up your own private DNS server will only be plausible on a local network. On the internet, we turn to Domain Name Registrars.</p>
